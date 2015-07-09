@@ -1,0 +1,7 @@
+http://www.luis.blog.br/dicionario-de-dados.aspx
+
+https://www.marilia.unesp.br/Home/Instituicao/Docentes/EdbertoFerneda/BD%20-%20Aspectos%20Basicos.pdf
+
+http://www.les.inf.puc-rio.br/wiki/images/7/7f/Aula1-diagrama_classes.pdf
+
+http://www.dsc.ufcg.edu.br/~jacques/cursos/map/html/uml/diagramas/classes/classes2.htm
