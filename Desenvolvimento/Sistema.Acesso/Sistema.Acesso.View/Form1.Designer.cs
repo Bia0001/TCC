@@ -1,4 +1,4 @@
-﻿namespace View
+﻿namespace Sistema.Acesso.View
 {
     partial class Form1
     {
