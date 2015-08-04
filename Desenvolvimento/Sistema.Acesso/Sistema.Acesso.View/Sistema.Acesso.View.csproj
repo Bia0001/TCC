@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>8964ed76-6300-465f-8cfd-07ddf2b48d60</ProjectGuid>
+    <ProjectGuid>{C2023BFA-5A59-4D30-87BF-95159FC55361}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sistema.Acesso.View</RootNamespace>
