@@ -117,14 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LOGO_SEM_FUNDO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO_SEM_FUNDO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancelar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABc0lEQVRYR8WWa4rDMAyEe4le
+        otD7w0KhNyj0GL1EViOkXTmeOLLzqOH74YlGM4WW5jJN01eh4plQ0ZFzFR7CjT1vAY/wI1zZc4eKAEbh
+        LeDyEdIlMGseXF7CYgkuluFOqgRmbDZ6sYuWqAUe7jRLyLnbzNwHaIny0g53aAk5rXCnKhEXZMKdooSc
+        TLhTlIgF8G2Pg2sgEME94c6DFRhZhPkRz70qsKFED0W4ZsaLCseVqMI1by6ouH8JGq5ZTAQwmDEuGmEx
+        HFDRgdEWxIU9NMMBFSNYYIvi4gyr4YCKESyxZXF5hu0FsMAWxcU9rJagIoDRFsSFIzRLcHG/cGexRC3s
+        H+7QEuXluHCnKrE1HPMjnr8SscDX/457X0j+P0VfCf5CYouyr2T1lylXoghXX7yo0C5Bwx08s5m5D1Th
+        6pkLKvISzXAHMzYbvTRc55kIYDAjLqlwB7PmaYYDKjowCk8hHe7AI+CXtRgOqHgmVDyP6fILMt1SmIcz
+        QGoAAAAASUVORK5CYII=
+</value>
   </data>
-  <data name="1438904756_ic_done_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1438904756_ic_done_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1438904778_ic_close_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1438904778_ic_close_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnEntrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAABiklEQVRYR8XWwUdFQRQG8IiI
+        aBvRKqJVRES0ilatov+jPyBatYpWrSJaRatWERHRqj8golVERERE3L6vGuadvpl7xmT6+PHuvHHOeffV
+        3DfUdd2/kostycWW5GJL1VFFS1RHFQ2QUTiFJfU+VUcVJWQEzrgFXmExsa8uiaJszk/Oi+AFFsTeuoiC
+        w3DCtwQOMW/218UUY/NjLmc8w9yfD4Cw+RGXHC48A7Dg+PfLdKJCB7x0uIWJvgHCrbyB7BA/Rfb50uEO
+        JkPz1AD2Vl7DGKSyB2Fvzj0MNE8NoG7lFfBQsdkFu1d5gCnbXA2Qu5WXEA+xDWqfxebTqjnF8dzKc+Ah
+        sxWt5TzCjGocxNkEW0DhX7Fat55gVjWN2Xg/WZ+BwyZHxfvdpvw6bnNS2QFb2EM+cHJy8f6LBW8gH7k5
+        ffGecGy+rBr08aTvjGfzFVXcw5tDsI3pHVZVYS9v1KOWzddU0RIl4RDhl84HrIMsWqI0HIJfx8bXFaKK
+        lqiOKlpCLrYkF1uSi+10Q5+2136R7RSG7QAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

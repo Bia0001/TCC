@@ -12,3 +12,17 @@ C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\o
 C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.pdb
 C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\MySql.Data.dll
 C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\Sistema.Acesso.DAL.dll.config
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\Sistema.Acesso.DAL.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\Sistema.Acesso.DAL.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\MySql.Data.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\Sistema.Acesso.Entidades.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\Sistema.Acesso.Entidades.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.pdb
