@@ -3,7 +3,7 @@ using Sistema.Acesso.Entidades;
 
 namespace Sistema.Acesso.DAL.Repositorio
 {
-    public class Vigilante : Repositorio<Vigilante>
+    public class VigilanteRepositorio : Repositorio<VigilanteRepositorio>
     {
     }
 }

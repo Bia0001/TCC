@@ -24,5 +24,8 @@ C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Ac
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\EntityFramework.xml
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.Migrations.Inicial.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.Migrations.Removendo_pk_de_classe_herdadas_de_pessoaFisica.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.csproj.GenerateResource.Cache
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.dll
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.DAL\obj\Debug\Sistema.Acesso.DAL.pdb

@@ -1,9 +1,11 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
+
 namespace Sistema.Acesso.Entidades
 {
     public class Endereco
     {
         /*propriedade*/
+        [Key]
         public int idEndereco { get; set; }
         public string logradouro { get; set; }
         public string numero { get; set; }
@@ -12,8 +14,6 @@ namespace Sistema.Acesso.Entidades
         public string cidade { get; set; }
         public string uf { get; set; }
         public string complemento { get; set; }
-
-        /*propriedade de navegação*/
-        public virtual PessoaFisica pessoaFisica { get; set; }
+        public PessoaFisica pessoaFisica { get; set; }
     }
 }

@@ -34,58 +34,31 @@
             this.tbcSistema = new System.Windows.Forms.TabControl();
             this.tbpInicio = new System.Windows.Forms.TabPage();
             this.tbpCadastroUsuario = new System.Windows.Forms.TabPage();
-            this.tbpSolicitacaoSaidaAluno = new System.Windows.Forms.TabPage();
-            this.btnCancelarSolicitacao = new System.Windows.Forms.Button();
-            this.btnConfirmarSolicitacao = new System.Windows.Forms.Button();
-            this.txtMotivo = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pnlDadosAluno = new System.Windows.Forms.Panel();
-            this.txtTelefone2 = new System.Windows.Forms.TextBox();
-            this.txtTelefone1 = new System.Windows.Forms.TextBox();
-            this.txtNomeCompletoAluno = new System.Windows.Forms.TextBox();
-            this.txtResponsavel2 = new System.Windows.Forms.TextBox();
-            this.txtResponsavel1 = new System.Windows.Forms.TextBox();
-            this.txtProntuarioAluno = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnlBuscarAluno = new System.Windows.Forms.Panel();
-            this.cmbBuscarAluno = new System.Windows.Forms.ComboBox();
-            this.pnlTituloBuscarAluno = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbpSolicitacoesAbertas = new System.Windows.Forms.TabPage();
-            this.dgvSolicitacoesAbertas = new System.Windows.Forms.DataGridView();
-            this.pnlMenuSA = new System.Windows.Forms.Panel();
-            this.btnEncerrarSolicitacao = new System.Windows.Forms.Button();
-            this.tbpSolicitacoesEncerradas = new System.Windows.Forms.TabPage();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dgvSolicitacoesEncerradas = new System.Windows.Forms.DataGridView();
-            this.dgvSolicitacoesExpiradas = new System.Windows.Forms.DataGridView();
-            this.pnlMenu = new System.Windows.Forms.Panel();
-            this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtCodigoUsuario = new System.Windows.Forms.TextBox();
-            this.txtNomeCompletoUsuario = new System.Windows.Forms.TextBox();
-            this.txtSexoUsuario = new System.Windows.Forms.TextBox();
-            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.txtCPFUsuario = new System.Windows.Forms.TextBox();
-            this.txtRGUsuario = new System.Windows.Forms.TextBox();
-            this.txtEmailUsuario = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtTelefoneUsuario = new System.Windows.Forms.TextBox();
-            this.txtCelularUsuario = new System.Windows.Forms.TextBox();
+            this.pnlMenuCU = new System.Windows.Forms.Panel();
+            this.btnSalvarUsuario = new System.Windows.Forms.Button();
+            this.btnLixeiraUsuario = new System.Windows.Forms.Button();
+            this.btnCancelarUsuario = new System.Windows.Forms.Button();
+            this.txtBuscarUsuario = new System.Windows.Forms.TextBox();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.gpbIdentificacaoUsuario = new System.Windows.Forms.GroupBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtNomeFantasia = new System.Windows.Forms.TextBox();
+            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtCNPJ = new System.Windows.Forms.TextBox();
+            this.txtProntuario = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.gpbEndereco = new System.Windows.Forms.GroupBox();
+            this.cmbCidadeUsuario = new System.Windows.Forms.ComboBox();
+            this.cmbUFUsuario = new System.Windows.Forms.ComboBox();
             this.txtComplementoUsuario = new System.Windows.Forms.TextBox();
             this.txtBairroUsuario = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -100,50 +73,77 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.cmbUFUsuario = new System.Windows.Forms.ComboBox();
-            this.cmbCidadeUsuario = new System.Windows.Forms.ComboBox();
-            this.gpbIdentificacaoUsuario = new System.Windows.Forms.GroupBox();
-            this.txtNomeFantasia = new System.Windows.Forms.TextBox();
-            this.txtRazaoSocial = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.txtCNPJ = new System.Windows.Forms.TextBox();
-            this.txtProntuario = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.pnlMenuCU = new System.Windows.Forms.Panel();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.txtBuscarUsuario = new System.Windows.Forms.TextBox();
-            this.btnCancelarUsuario = new System.Windows.Forms.Button();
-            this.btnLixeiraUsuario = new System.Windows.Forms.Button();
-            this.btnSalvarUsuario = new System.Windows.Forms.Button();
+            this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.txtCelularUsuario = new System.Windows.Forms.TextBox();
+            this.txtTelefoneUsuario = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtEmailUsuario = new System.Windows.Forms.TextBox();
+            this.txtRGUsuario = new System.Windows.Forms.TextBox();
+            this.txtCPFUsuario = new System.Windows.Forms.TextBox();
+            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
+            this.txtSexoUsuario = new System.Windows.Forms.TextBox();
+            this.txtNomeCompletoUsuario = new System.Windows.Forms.TextBox();
+            this.txtCodigoUsuario = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbpSolicitacaoSaidaAluno = new System.Windows.Forms.TabPage();
             this.btnCancelSolicitacao = new System.Windows.Forms.Button();
             this.btnSalvarSolicitacao = new System.Windows.Forms.Button();
+            this.btnCancelarSolicitacao = new System.Windows.Forms.Button();
+            this.btnConfirmarSolicitacao = new System.Windows.Forms.Button();
+            this.txtMotivo = new System.Windows.Forms.TextBox();
+            this.pnlBuscarAluno = new System.Windows.Forms.Panel();
+            this.cmbBuscarAluno = new System.Windows.Forms.ComboBox();
+            this.pnlTituloBuscarAluno = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnlDadosAluno = new System.Windows.Forms.Panel();
+            this.txtTelefone2 = new System.Windows.Forms.TextBox();
+            this.txtTelefone1 = new System.Windows.Forms.TextBox();
+            this.txtNomeCompletoAluno = new System.Windows.Forms.TextBox();
+            this.txtResponsavel2 = new System.Windows.Forms.TextBox();
+            this.txtResponsavel1 = new System.Windows.Forms.TextBox();
+            this.txtProntuarioAluno = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbpSolicitacoesAbertas = new System.Windows.Forms.TabPage();
+            this.dgvSolicitacoesAbertas = new System.Windows.Forms.DataGridView();
+            this.pnlMenuSA = new System.Windows.Forms.Panel();
+            this.btnEncerrarSolicitacao = new System.Windows.Forms.Button();
+            this.tbpSolicitacoesEncerradas = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvSolicitacoesEncerradas = new System.Windows.Forms.DataGridView();
+            this.dgvSolicitacoesExpiradas = new System.Windows.Forms.DataGridView();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.tbcSistema.SuspendLayout();
             this.tbpCadastroUsuario.SuspendLayout();
+            this.pnlMenuCU.SuspendLayout();
+            this.gpbIdentificacaoUsuario.SuspendLayout();
+            this.gpbEndereco.SuspendLayout();
+            this.gpbDadosPessoais.SuspendLayout();
             this.tbpSolicitacaoSaidaAluno.SuspendLayout();
-            this.pnlDadosAluno.SuspendLayout();
             this.pnlBuscarAluno.SuspendLayout();
             this.pnlTituloBuscarAluno.SuspendLayout();
+            this.pnlDadosAluno.SuspendLayout();
             this.tbpSolicitacoesAbertas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesAbertas)).BeginInit();
             this.pnlMenuSA.SuspendLayout();
             this.tbpSolicitacoesEncerradas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesEncerradas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesExpiradas)).BeginInit();
-            this.gpbDadosPessoais.SuspendLayout();
-            this.gpbEndereco.SuspendLayout();
-            this.gpbIdentificacaoUsuario.SuspendLayout();
-            this.pnlMenuCU.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -152,7 +152,7 @@
             this.panel1.Controls.Add(this.tbcSistema);
             this.panel1.Location = new System.Drawing.Point(1, 112);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1270, 546);
+            this.panel1.Size = new System.Drawing.Size(1270, 530);
             this.panel1.TabIndex = 0;
             // 
             // tbcSistema
@@ -176,7 +176,7 @@
             this.tbpInicio.Location = new System.Drawing.Point(4, 27);
             this.tbpInicio.Name = "tbpInicio";
             this.tbpInicio.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpInicio.Size = new System.Drawing.Size(1104, 564);
+            this.tbpInicio.Size = new System.Drawing.Size(1011, 492);
             this.tbpInicio.TabIndex = 0;
             this.tbpInicio.Text = "Início";
             this.tbpInicio.UseVisualStyleBackColor = true;
@@ -194,6 +194,591 @@
             this.tbpCadastroUsuario.Size = new System.Drawing.Size(1011, 492);
             this.tbpCadastroUsuario.TabIndex = 1;
             this.tbpCadastroUsuario.Text = "Cadastro de Usuário";
+            // 
+            // pnlMenuCU
+            // 
+            this.pnlMenuCU.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlMenuCU.Controls.Add(this.btnSalvarUsuario);
+            this.pnlMenuCU.Controls.Add(this.btnLixeiraUsuario);
+            this.pnlMenuCU.Controls.Add(this.btnCancelarUsuario);
+            this.pnlMenuCU.Controls.Add(this.txtBuscarUsuario);
+            this.pnlMenuCU.Controls.Add(this.btnEditar);
+            this.pnlMenuCU.Controls.Add(this.btnNovo);
+            this.pnlMenuCU.Location = new System.Drawing.Point(6, 3);
+            this.pnlMenuCU.Name = "pnlMenuCU";
+            this.pnlMenuCU.Size = new System.Drawing.Size(999, 70);
+            this.pnlMenuCU.TabIndex = 23;
+            // 
+            // btnSalvarUsuario
+            // 
+            this.btnSalvarUsuario.BackColor = System.Drawing.Color.Azure;
+            this.btnSalvarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarUsuario.Image")));
+            this.btnSalvarUsuario.Location = new System.Drawing.Point(882, 5);
+            this.btnSalvarUsuario.Name = "btnSalvarUsuario";
+            this.btnSalvarUsuario.Size = new System.Drawing.Size(81, 59);
+            this.btnSalvarUsuario.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnSalvarUsuario, "Salvar Usuário");
+            this.btnSalvarUsuario.UseVisualStyleBackColor = false;
+            // 
+            // btnLixeiraUsuario
+            // 
+            this.btnLixeiraUsuario.BackColor = System.Drawing.Color.Azure;
+            this.btnLixeiraUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnLixeiraUsuario.Image")));
+            this.btnLixeiraUsuario.Location = new System.Drawing.Point(784, 5);
+            this.btnLixeiraUsuario.Name = "btnLixeiraUsuario";
+            this.btnLixeiraUsuario.Size = new System.Drawing.Size(81, 59);
+            this.btnLixeiraUsuario.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.btnLixeiraUsuario, "Excluir Usuário");
+            this.btnLixeiraUsuario.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelarUsuario
+            // 
+            this.btnCancelarUsuario.BackColor = System.Drawing.Color.Azure;
+            this.btnCancelarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarUsuario.Image")));
+            this.btnCancelarUsuario.Location = new System.Drawing.Point(685, 5);
+            this.btnCancelarUsuario.Name = "btnCancelarUsuario";
+            this.btnCancelarUsuario.Size = new System.Drawing.Size(81, 59);
+            this.btnCancelarUsuario.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnCancelarUsuario, "Cancelar Usuário");
+            this.btnCancelarUsuario.UseVisualStyleBackColor = false;
+            // 
+            // txtBuscarUsuario
+            // 
+            this.txtBuscarUsuario.Location = new System.Drawing.Point(154, 25);
+            this.txtBuscarUsuario.Multiline = true;
+            this.txtBuscarUsuario.Name = "txtBuscarUsuario";
+            this.txtBuscarUsuario.Size = new System.Drawing.Size(276, 26);
+            this.txtBuscarUsuario.TabIndex = 3;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.Azure;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(454, 6);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(81, 59);
+            this.btnEditar.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.btnEditar, "Editar Usuário");
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.Azure;
+            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
+            this.btnNovo.Location = new System.Drawing.Point(12, 5);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(81, 59);
+            this.btnNovo.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.btnNovo, "Novo Usuário");
+            this.btnNovo.UseVisualStyleBackColor = false;
+            // 
+            // gpbIdentificacaoUsuario
+            // 
+            this.gpbIdentificacaoUsuario.Controls.Add(this.txtSenha);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.txtNomeFantasia);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.txtRazaoSocial);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.label25);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.label29);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.txtLogin);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.txtCNPJ);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.txtProntuario);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.txtUsuario);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.label30);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.label31);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.label32);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.label33);
+            this.gpbIdentificacaoUsuario.Controls.Add(this.label35);
+            this.gpbIdentificacaoUsuario.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbIdentificacaoUsuario.Location = new System.Drawing.Point(6, 350);
+            this.gpbIdentificacaoUsuario.Name = "gpbIdentificacaoUsuario";
+            this.gpbIdentificacaoUsuario.Size = new System.Drawing.Size(999, 136);
+            this.gpbIdentificacaoUsuario.TabIndex = 22;
+            this.gpbIdentificacaoUsuario.TabStop = false;
+            this.gpbIdentificacaoUsuario.Text = "Identificação do Usuário:";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.BackColor = System.Drawing.Color.Silver;
+            this.txtSenha.Location = new System.Drawing.Point(626, 110);
+            this.txtSenha.Multiline = true;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(203, 22);
+            this.txtSenha.TabIndex = 20;
+            // 
+            // txtNomeFantasia
+            // 
+            this.txtNomeFantasia.BackColor = System.Drawing.Color.Silver;
+            this.txtNomeFantasia.Location = new System.Drawing.Point(130, 107);
+            this.txtNomeFantasia.Multiline = true;
+            this.txtNomeFantasia.Name = "txtNomeFantasia";
+            this.txtNomeFantasia.Size = new System.Drawing.Size(300, 22);
+            this.txtNomeFantasia.TabIndex = 19;
+            // 
+            // txtRazaoSocial
+            // 
+            this.txtRazaoSocial.BackColor = System.Drawing.Color.Silver;
+            this.txtRazaoSocial.Location = new System.Drawing.Point(128, 68);
+            this.txtRazaoSocial.Multiline = true;
+            this.txtRazaoSocial.Name = "txtRazaoSocial";
+            this.txtRazaoSocial.Size = new System.Drawing.Size(302, 22);
+            this.txtRazaoSocial.TabIndex = 18;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(15, 110);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(109, 15);
+            this.label25.TabIndex = 17;
+            this.label25.Text = "Nome Fantasia:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(15, 72);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(93, 15);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "Razão Social:";
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.BackColor = System.Drawing.Color.Silver;
+            this.txtLogin.Location = new System.Drawing.Point(626, 71);
+            this.txtLogin.Multiline = true;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(203, 22);
+            this.txtLogin.TabIndex = 13;
+            // 
+            // txtCNPJ
+            // 
+            this.txtCNPJ.BackColor = System.Drawing.Color.Silver;
+            this.txtCNPJ.Location = new System.Drawing.Point(626, 33);
+            this.txtCNPJ.Multiline = true;
+            this.txtCNPJ.Name = "txtCNPJ";
+            this.txtCNPJ.Size = new System.Drawing.Size(203, 22);
+            this.txtCNPJ.TabIndex = 9;
+            // 
+            // txtProntuario
+            // 
+            this.txtProntuario.BackColor = System.Drawing.Color.Silver;
+            this.txtProntuario.Location = new System.Drawing.Point(372, 30);
+            this.txtProntuario.Multiline = true;
+            this.txtProntuario.Name = "txtProntuario";
+            this.txtProntuario.Size = new System.Drawing.Size(147, 22);
+            this.txtProntuario.TabIndex = 8;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtUsuario.Location = new System.Drawing.Point(89, 30);
+            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(160, 22);
+            this.txtUsuario.TabIndex = 7;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(568, 74);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(47, 15);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "Login:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(568, 33);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(45, 15);
+            this.label31.TabIndex = 5;
+            this.label31.Text = "CNPJ:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(568, 113);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(52, 15);
+            this.label32.TabIndex = 4;
+            this.label32.Text = "Senha:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(280, 33);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(84, 15);
+            this.label33.TabIndex = 2;
+            this.label33.Text = "Prontuário:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(15, 33);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(63, 15);
+            this.label35.TabIndex = 0;
+            this.label35.Text = "Usuário:";
+            // 
+            // gpbEndereco
+            // 
+            this.gpbEndereco.Controls.Add(this.cmbCidadeUsuario);
+            this.gpbEndereco.Controls.Add(this.cmbUFUsuario);
+            this.gpbEndereco.Controls.Add(this.txtComplementoUsuario);
+            this.gpbEndereco.Controls.Add(this.txtBairroUsuario);
+            this.gpbEndereco.Controls.Add(this.label18);
+            this.gpbEndereco.Controls.Add(this.label19);
+            this.gpbEndereco.Controls.Add(this.txtCEPUsuario);
+            this.gpbEndereco.Controls.Add(this.txtNumeroUsuario);
+            this.gpbEndereco.Controls.Add(this.txtLogradouroUsuario);
+            this.gpbEndereco.Controls.Add(this.txtCodigoEndereco);
+            this.gpbEndereco.Controls.Add(this.label20);
+            this.gpbEndereco.Controls.Add(this.label21);
+            this.gpbEndereco.Controls.Add(this.label24);
+            this.gpbEndereco.Controls.Add(this.label26);
+            this.gpbEndereco.Controls.Add(this.label27);
+            this.gpbEndereco.Controls.Add(this.label28);
+            this.gpbEndereco.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbEndereco.Location = new System.Drawing.Point(6, 212);
+            this.gpbEndereco.Name = "gpbEndereco";
+            this.gpbEndereco.Size = new System.Drawing.Size(999, 136);
+            this.gpbEndereco.TabIndex = 20;
+            this.gpbEndereco.TabStop = false;
+            this.gpbEndereco.Text = "Endereço:";
+            // 
+            // cmbCidadeUsuario
+            // 
+            this.cmbCidadeUsuario.BackColor = System.Drawing.Color.Silver;
+            this.cmbCidadeUsuario.FormattingEnabled = true;
+            this.cmbCidadeUsuario.Location = new System.Drawing.Point(541, 65);
+            this.cmbCidadeUsuario.Name = "cmbCidadeUsuario";
+            this.cmbCidadeUsuario.Size = new System.Drawing.Size(192, 23);
+            this.cmbCidadeUsuario.TabIndex = 21;
+            // 
+            // cmbUFUsuario
+            // 
+            this.cmbUFUsuario.BackColor = System.Drawing.Color.Silver;
+            this.cmbUFUsuario.FormattingEnabled = true;
+            this.cmbUFUsuario.Location = new System.Drawing.Point(374, 68);
+            this.cmbUFUsuario.Name = "cmbUFUsuario";
+            this.cmbUFUsuario.Size = new System.Drawing.Size(77, 23);
+            this.cmbUFUsuario.TabIndex = 20;
+            // 
+            // txtComplementoUsuario
+            // 
+            this.txtComplementoUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtComplementoUsuario.Location = new System.Drawing.Point(123, 107);
+            this.txtComplementoUsuario.Multiline = true;
+            this.txtComplementoUsuario.Name = "txtComplementoUsuario";
+            this.txtComplementoUsuario.Size = new System.Drawing.Size(205, 22);
+            this.txtComplementoUsuario.TabIndex = 19;
+            // 
+            // txtBairroUsuario
+            // 
+            this.txtBairroUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtBairroUsuario.Location = new System.Drawing.Point(89, 68);
+            this.txtBairroUsuario.Multiline = true;
+            this.txtBairroUsuario.Name = "txtBairroUsuario";
+            this.txtBairroUsuario.Size = new System.Drawing.Size(239, 22);
+            this.txtBairroUsuario.TabIndex = 18;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(15, 110);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(102, 15);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "Complemento:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(15, 69);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 15);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Bairro:";
+            // 
+            // txtCEPUsuario
+            // 
+            this.txtCEPUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtCEPUsuario.Location = new System.Drawing.Point(824, 66);
+            this.txtCEPUsuario.Multiline = true;
+            this.txtCEPUsuario.Name = "txtCEPUsuario";
+            this.txtCEPUsuario.Size = new System.Drawing.Size(144, 22);
+            this.txtCEPUsuario.TabIndex = 13;
+            // 
+            // txtNumeroUsuario
+            // 
+            this.txtNumeroUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtNumeroUsuario.Location = new System.Drawing.Point(826, 24);
+            this.txtNumeroUsuario.Multiline = true;
+            this.txtNumeroUsuario.Name = "txtNumeroUsuario";
+            this.txtNumeroUsuario.Size = new System.Drawing.Size(94, 22);
+            this.txtNumeroUsuario.TabIndex = 9;
+            // 
+            // txtLogradouroUsuario
+            // 
+            this.txtLogradouroUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtLogradouroUsuario.Location = new System.Drawing.Point(372, 24);
+            this.txtLogradouroUsuario.Multiline = true;
+            this.txtLogradouroUsuario.Name = "txtLogradouroUsuario";
+            this.txtLogradouroUsuario.Size = new System.Drawing.Size(359, 22);
+            this.txtLogradouroUsuario.TabIndex = 8;
+            // 
+            // txtCodigoEndereco
+            // 
+            this.txtCodigoEndereco.BackColor = System.Drawing.Color.Silver;
+            this.txtCodigoEndereco.Location = new System.Drawing.Point(88, 27);
+            this.txtCodigoEndereco.Multiline = true;
+            this.txtCodigoEndereco.Name = "txtCodigoEndereco";
+            this.txtCodigoEndereco.Size = new System.Drawing.Size(150, 22);
+            this.txtCodigoEndereco.TabIndex = 7;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(479, 71);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(56, 15);
+            this.label20.TabIndex = 6;
+            this.label20.Text = "Cidade:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(339, 71);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(29, 15);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "UF:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(756, 27);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(64, 15);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "Número:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(280, 27);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(86, 15);
+            this.label26.TabIndex = 2;
+            this.label26.Text = "Logradouro:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(756, 71);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(37, 15);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "CEP:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(15, 30);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(54, 15);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Código:";
+            // 
+            // gpbDadosPessoais
+            // 
+            this.gpbDadosPessoais.Controls.Add(this.txtCelularUsuario);
+            this.gpbDadosPessoais.Controls.Add(this.txtTelefoneUsuario);
+            this.gpbDadosPessoais.Controls.Add(this.label23);
+            this.gpbDadosPessoais.Controls.Add(this.label22);
+            this.gpbDadosPessoais.Controls.Add(this.txtEmailUsuario);
+            this.gpbDadosPessoais.Controls.Add(this.txtRGUsuario);
+            this.gpbDadosPessoais.Controls.Add(this.txtCPFUsuario);
+            this.gpbDadosPessoais.Controls.Add(this.dtpDataNascimento);
+            this.gpbDadosPessoais.Controls.Add(this.txtSexoUsuario);
+            this.gpbDadosPessoais.Controls.Add(this.txtNomeCompletoUsuario);
+            this.gpbDadosPessoais.Controls.Add(this.txtCodigoUsuario);
+            this.gpbDadosPessoais.Controls.Add(this.label17);
+            this.gpbDadosPessoais.Controls.Add(this.label16);
+            this.gpbDadosPessoais.Controls.Add(this.label15);
+            this.gpbDadosPessoais.Controls.Add(this.label14);
+            this.gpbDadosPessoais.Controls.Add(this.label13);
+            this.gpbDadosPessoais.Controls.Add(this.label12);
+            this.gpbDadosPessoais.Controls.Add(this.label11);
+            this.gpbDadosPessoais.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbDadosPessoais.Location = new System.Drawing.Point(6, 75);
+            this.gpbDadosPessoais.Name = "gpbDadosPessoais";
+            this.gpbDadosPessoais.Size = new System.Drawing.Size(999, 136);
+            this.gpbDadosPessoais.TabIndex = 0;
+            this.gpbDadosPessoais.TabStop = false;
+            this.gpbDadosPessoais.Text = "Dados Pessoais:";
+            // 
+            // txtCelularUsuario
+            // 
+            this.txtCelularUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtCelularUsuario.Location = new System.Drawing.Point(88, 106);
+            this.txtCelularUsuario.Multiline = true;
+            this.txtCelularUsuario.Name = "txtCelularUsuario";
+            this.txtCelularUsuario.Size = new System.Drawing.Size(150, 22);
+            this.txtCelularUsuario.TabIndex = 19;
+            // 
+            // txtTelefoneUsuario
+            // 
+            this.txtTelefoneUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtTelefoneUsuario.Location = new System.Drawing.Point(88, 65);
+            this.txtTelefoneUsuario.Multiline = true;
+            this.txtTelefoneUsuario.Name = "txtTelefoneUsuario";
+            this.txtTelefoneUsuario.Size = new System.Drawing.Size(150, 22);
+            this.txtTelefoneUsuario.TabIndex = 18;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(15, 106);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(61, 15);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "Celular:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(15, 68);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(67, 15);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "Telefone:";
+            // 
+            // txtEmailUsuario
+            // 
+            this.txtEmailUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtEmailUsuario.Location = new System.Drawing.Point(342, 103);
+            this.txtEmailUsuario.Multiline = true;
+            this.txtEmailUsuario.Name = "txtEmailUsuario";
+            this.txtEmailUsuario.Size = new System.Drawing.Size(392, 22);
+            this.txtEmailUsuario.TabIndex = 15;
+            // 
+            // txtRGUsuario
+            // 
+            this.txtRGUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtRGUsuario.Location = new System.Drawing.Point(803, 103);
+            this.txtRGUsuario.Multiline = true;
+            this.txtRGUsuario.Name = "txtRGUsuario";
+            this.txtRGUsuario.Size = new System.Drawing.Size(185, 22);
+            this.txtRGUsuario.TabIndex = 14;
+            // 
+            // txtCPFUsuario
+            // 
+            this.txtCPFUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtCPFUsuario.Location = new System.Drawing.Point(803, 65);
+            this.txtCPFUsuario.Multiline = true;
+            this.txtCPFUsuario.Name = "txtCPFUsuario";
+            this.txtCPFUsuario.Size = new System.Drawing.Size(185, 22);
+            this.txtCPFUsuario.TabIndex = 13;
+            // 
+            // dtpDataNascimento
+            // 
+            this.dtpDataNascimento.Location = new System.Drawing.Point(427, 65);
+            this.dtpDataNascimento.Name = "dtpDataNascimento";
+            this.dtpDataNascimento.Size = new System.Drawing.Size(307, 21);
+            this.dtpDataNascimento.TabIndex = 12;
+            // 
+            // txtSexoUsuario
+            // 
+            this.txtSexoUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtSexoUsuario.Location = new System.Drawing.Point(803, 26);
+            this.txtSexoUsuario.Multiline = true;
+            this.txtSexoUsuario.Name = "txtSexoUsuario";
+            this.txtSexoUsuario.Size = new System.Drawing.Size(185, 22);
+            this.txtSexoUsuario.TabIndex = 9;
+            // 
+            // txtNomeCompletoUsuario
+            // 
+            this.txtNomeCompletoUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtNomeCompletoUsuario.Location = new System.Drawing.Point(399, 26);
+            this.txtNomeCompletoUsuario.Multiline = true;
+            this.txtNomeCompletoUsuario.Name = "txtNomeCompletoUsuario";
+            this.txtNomeCompletoUsuario.Size = new System.Drawing.Size(335, 22);
+            this.txtNomeCompletoUsuario.TabIndex = 8;
+            // 
+            // txtCodigoUsuario
+            // 
+            this.txtCodigoUsuario.BackColor = System.Drawing.Color.Silver;
+            this.txtCodigoUsuario.Location = new System.Drawing.Point(88, 26);
+            this.txtCodigoUsuario.Multiline = true;
+            this.txtCodigoUsuario.Name = "txtCodigoUsuario";
+            this.txtCodigoUsuario.Size = new System.Drawing.Size(150, 22);
+            this.txtCodigoUsuario.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(280, 106);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(56, 15);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "E-mail:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(280, 68);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(141, 15);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Data de Nascimento:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(756, 29);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 15);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Sexo:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(756, 106);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 15);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "RG:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(280, 29);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 15);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Nome Completo:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(756, 68);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 15);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "CPF:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(15, 29);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 15);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Código:";
             // 
             // tbpSolicitacaoSaidaAluno
             // 
@@ -213,6 +798,28 @@
             this.tbpSolicitacaoSaidaAluno.Size = new System.Drawing.Size(1011, 492);
             this.tbpSolicitacaoSaidaAluno.TabIndex = 2;
             this.tbpSolicitacaoSaidaAluno.Text = "Solicitação de Saída do Aluno";
+            // 
+            // btnCancelSolicitacao
+            // 
+            this.btnCancelSolicitacao.BackColor = System.Drawing.Color.Azure;
+            this.btnCancelSolicitacao.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelSolicitacao.Image")));
+            this.btnCancelSolicitacao.Location = new System.Drawing.Point(802, 430);
+            this.btnCancelSolicitacao.Name = "btnCancelSolicitacao";
+            this.btnCancelSolicitacao.Size = new System.Drawing.Size(81, 59);
+            this.btnCancelSolicitacao.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnCancelSolicitacao, "Cancelar Solicitação");
+            this.btnCancelSolicitacao.UseVisualStyleBackColor = false;
+            // 
+            // btnSalvarSolicitacao
+            // 
+            this.btnSalvarSolicitacao.BackColor = System.Drawing.Color.Azure;
+            this.btnSalvarSolicitacao.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarSolicitacao.Image")));
+            this.btnSalvarSolicitacao.Location = new System.Drawing.Point(898, 430);
+            this.btnSalvarSolicitacao.Name = "btnSalvarSolicitacao";
+            this.btnSalvarSolicitacao.Size = new System.Drawing.Size(81, 59);
+            this.btnSalvarSolicitacao.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.btnSalvarSolicitacao, "Salvar Solicitação");
+            this.btnSalvarSolicitacao.UseVisualStyleBackColor = false;
             // 
             // btnCancelarSolicitacao
             // 
@@ -241,14 +848,43 @@
             this.txtMotivo.Size = new System.Drawing.Size(648, 124);
             this.txtMotivo.TabIndex = 3;
             // 
-            // label8
+            // pnlBuscarAluno
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(346, 271);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 15);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Motivo:";
+            this.pnlBuscarAluno.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.pnlBuscarAluno.Controls.Add(this.cmbBuscarAluno);
+            this.pnlBuscarAluno.Controls.Add(this.pnlTituloBuscarAluno);
+            this.pnlBuscarAluno.Location = new System.Drawing.Point(3, 3);
+            this.pnlBuscarAluno.Name = "pnlBuscarAluno";
+            this.pnlBuscarAluno.Size = new System.Drawing.Size(311, 558);
+            this.pnlBuscarAluno.TabIndex = 0;
+            // 
+            // cmbBuscarAluno
+            // 
+            this.cmbBuscarAluno.FormattingEnabled = true;
+            this.cmbBuscarAluno.Location = new System.Drawing.Point(3, 86);
+            this.cmbBuscarAluno.Name = "cmbBuscarAluno";
+            this.cmbBuscarAluno.Size = new System.Drawing.Size(305, 23);
+            this.cmbBuscarAluno.TabIndex = 1;
+            // 
+            // pnlTituloBuscarAluno
+            // 
+            this.pnlTituloBuscarAluno.BackColor = System.Drawing.Color.MidnightBlue;
+            this.pnlTituloBuscarAluno.Controls.Add(this.label1);
+            this.pnlTituloBuscarAluno.Location = new System.Drawing.Point(0, 27);
+            this.pnlTituloBuscarAluno.Name = "pnlTituloBuscarAluno";
+            this.pnlTituloBuscarAluno.Size = new System.Drawing.Size(311, 41);
+            this.pnlTituloBuscarAluno.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(19, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Buscar Aluno";
             // 
             // pnlDadosAluno
             // 
@@ -377,43 +1013,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Prontuário:";
             // 
-            // pnlBuscarAluno
+            // label8
             // 
-            this.pnlBuscarAluno.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.pnlBuscarAluno.Controls.Add(this.cmbBuscarAluno);
-            this.pnlBuscarAluno.Controls.Add(this.pnlTituloBuscarAluno);
-            this.pnlBuscarAluno.Location = new System.Drawing.Point(3, 3);
-            this.pnlBuscarAluno.Name = "pnlBuscarAluno";
-            this.pnlBuscarAluno.Size = new System.Drawing.Size(311, 558);
-            this.pnlBuscarAluno.TabIndex = 0;
-            // 
-            // cmbBuscarAluno
-            // 
-            this.cmbBuscarAluno.FormattingEnabled = true;
-            this.cmbBuscarAluno.Location = new System.Drawing.Point(3, 86);
-            this.cmbBuscarAluno.Name = "cmbBuscarAluno";
-            this.cmbBuscarAluno.Size = new System.Drawing.Size(305, 23);
-            this.cmbBuscarAluno.TabIndex = 1;
-            // 
-            // pnlTituloBuscarAluno
-            // 
-            this.pnlTituloBuscarAluno.BackColor = System.Drawing.Color.MidnightBlue;
-            this.pnlTituloBuscarAluno.Controls.Add(this.label1);
-            this.pnlTituloBuscarAluno.Location = new System.Drawing.Point(0, 27);
-            this.pnlTituloBuscarAluno.Name = "pnlTituloBuscarAluno";
-            this.pnlTituloBuscarAluno.Size = new System.Drawing.Size(311, 41);
-            this.pnlTituloBuscarAluno.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(19, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Buscar Aluno";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(346, 271);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 15);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Motivo:";
             // 
             // tbpSolicitacoesAbertas
             // 
@@ -518,615 +1125,8 @@
             this.pnlMenu.BackColor = System.Drawing.Color.CornflowerBlue;
             this.pnlMenu.Location = new System.Drawing.Point(1, 1);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(1270, 106);
+            this.pnlMenu.Size = new System.Drawing.Size(1284, 106);
             this.pnlMenu.TabIndex = 1;
-            // 
-            // gpbDadosPessoais
-            // 
-            this.gpbDadosPessoais.Controls.Add(this.txtCelularUsuario);
-            this.gpbDadosPessoais.Controls.Add(this.txtTelefoneUsuario);
-            this.gpbDadosPessoais.Controls.Add(this.label23);
-            this.gpbDadosPessoais.Controls.Add(this.label22);
-            this.gpbDadosPessoais.Controls.Add(this.txtEmailUsuario);
-            this.gpbDadosPessoais.Controls.Add(this.txtRGUsuario);
-            this.gpbDadosPessoais.Controls.Add(this.txtCPFUsuario);
-            this.gpbDadosPessoais.Controls.Add(this.dtpDataNascimento);
-            this.gpbDadosPessoais.Controls.Add(this.txtSexoUsuario);
-            this.gpbDadosPessoais.Controls.Add(this.txtNomeCompletoUsuario);
-            this.gpbDadosPessoais.Controls.Add(this.txtCodigoUsuario);
-            this.gpbDadosPessoais.Controls.Add(this.label17);
-            this.gpbDadosPessoais.Controls.Add(this.label16);
-            this.gpbDadosPessoais.Controls.Add(this.label15);
-            this.gpbDadosPessoais.Controls.Add(this.label14);
-            this.gpbDadosPessoais.Controls.Add(this.label13);
-            this.gpbDadosPessoais.Controls.Add(this.label12);
-            this.gpbDadosPessoais.Controls.Add(this.label11);
-            this.gpbDadosPessoais.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbDadosPessoais.Location = new System.Drawing.Point(6, 75);
-            this.gpbDadosPessoais.Name = "gpbDadosPessoais";
-            this.gpbDadosPessoais.Size = new System.Drawing.Size(999, 136);
-            this.gpbDadosPessoais.TabIndex = 0;
-            this.gpbDadosPessoais.TabStop = false;
-            this.gpbDadosPessoais.Text = "Dados Pessoais:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(15, 29);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 15);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Código:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(756, 68);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(36, 15);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "CPF:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(280, 29);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 15);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Nome Completo:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(756, 106);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(31, 15);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "RG:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(756, 29);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 15);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Sexo:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(280, 68);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(141, 15);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Data de Nascimento:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(280, 106);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(56, 15);
-            this.label17.TabIndex = 6;
-            this.label17.Text = "E-mail:";
-            // 
-            // txtCodigoUsuario
-            // 
-            this.txtCodigoUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtCodigoUsuario.Location = new System.Drawing.Point(88, 26);
-            this.txtCodigoUsuario.Multiline = true;
-            this.txtCodigoUsuario.Name = "txtCodigoUsuario";
-            this.txtCodigoUsuario.Size = new System.Drawing.Size(150, 22);
-            this.txtCodigoUsuario.TabIndex = 7;
-            // 
-            // txtNomeCompletoUsuario
-            // 
-            this.txtNomeCompletoUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtNomeCompletoUsuario.Location = new System.Drawing.Point(399, 26);
-            this.txtNomeCompletoUsuario.Multiline = true;
-            this.txtNomeCompletoUsuario.Name = "txtNomeCompletoUsuario";
-            this.txtNomeCompletoUsuario.Size = new System.Drawing.Size(335, 22);
-            this.txtNomeCompletoUsuario.TabIndex = 8;
-            // 
-            // txtSexoUsuario
-            // 
-            this.txtSexoUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtSexoUsuario.Location = new System.Drawing.Point(803, 26);
-            this.txtSexoUsuario.Multiline = true;
-            this.txtSexoUsuario.Name = "txtSexoUsuario";
-            this.txtSexoUsuario.Size = new System.Drawing.Size(185, 22);
-            this.txtSexoUsuario.TabIndex = 9;
-            // 
-            // dtpDataNascimento
-            // 
-            this.dtpDataNascimento.Location = new System.Drawing.Point(427, 65);
-            this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(307, 21);
-            this.dtpDataNascimento.TabIndex = 12;
-            // 
-            // txtCPFUsuario
-            // 
-            this.txtCPFUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtCPFUsuario.Location = new System.Drawing.Point(803, 65);
-            this.txtCPFUsuario.Multiline = true;
-            this.txtCPFUsuario.Name = "txtCPFUsuario";
-            this.txtCPFUsuario.Size = new System.Drawing.Size(185, 22);
-            this.txtCPFUsuario.TabIndex = 13;
-            // 
-            // txtRGUsuario
-            // 
-            this.txtRGUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtRGUsuario.Location = new System.Drawing.Point(803, 103);
-            this.txtRGUsuario.Multiline = true;
-            this.txtRGUsuario.Name = "txtRGUsuario";
-            this.txtRGUsuario.Size = new System.Drawing.Size(185, 22);
-            this.txtRGUsuario.TabIndex = 14;
-            // 
-            // txtEmailUsuario
-            // 
-            this.txtEmailUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtEmailUsuario.Location = new System.Drawing.Point(342, 103);
-            this.txtEmailUsuario.Multiline = true;
-            this.txtEmailUsuario.Name = "txtEmailUsuario";
-            this.txtEmailUsuario.Size = new System.Drawing.Size(392, 22);
-            this.txtEmailUsuario.TabIndex = 15;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(15, 68);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(67, 15);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "Telefone:";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(15, 106);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(61, 15);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "Celular:";
-            // 
-            // txtTelefoneUsuario
-            // 
-            this.txtTelefoneUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtTelefoneUsuario.Location = new System.Drawing.Point(88, 65);
-            this.txtTelefoneUsuario.Multiline = true;
-            this.txtTelefoneUsuario.Name = "txtTelefoneUsuario";
-            this.txtTelefoneUsuario.Size = new System.Drawing.Size(150, 22);
-            this.txtTelefoneUsuario.TabIndex = 18;
-            // 
-            // txtCelularUsuario
-            // 
-            this.txtCelularUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtCelularUsuario.Location = new System.Drawing.Point(88, 106);
-            this.txtCelularUsuario.Multiline = true;
-            this.txtCelularUsuario.Name = "txtCelularUsuario";
-            this.txtCelularUsuario.Size = new System.Drawing.Size(150, 22);
-            this.txtCelularUsuario.TabIndex = 19;
-            // 
-            // gpbEndereco
-            // 
-            this.gpbEndereco.Controls.Add(this.cmbCidadeUsuario);
-            this.gpbEndereco.Controls.Add(this.cmbUFUsuario);
-            this.gpbEndereco.Controls.Add(this.txtComplementoUsuario);
-            this.gpbEndereco.Controls.Add(this.txtBairroUsuario);
-            this.gpbEndereco.Controls.Add(this.label18);
-            this.gpbEndereco.Controls.Add(this.label19);
-            this.gpbEndereco.Controls.Add(this.txtCEPUsuario);
-            this.gpbEndereco.Controls.Add(this.txtNumeroUsuario);
-            this.gpbEndereco.Controls.Add(this.txtLogradouroUsuario);
-            this.gpbEndereco.Controls.Add(this.txtCodigoEndereco);
-            this.gpbEndereco.Controls.Add(this.label20);
-            this.gpbEndereco.Controls.Add(this.label21);
-            this.gpbEndereco.Controls.Add(this.label24);
-            this.gpbEndereco.Controls.Add(this.label26);
-            this.gpbEndereco.Controls.Add(this.label27);
-            this.gpbEndereco.Controls.Add(this.label28);
-            this.gpbEndereco.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbEndereco.Location = new System.Drawing.Point(6, 212);
-            this.gpbEndereco.Name = "gpbEndereco";
-            this.gpbEndereco.Size = new System.Drawing.Size(999, 136);
-            this.gpbEndereco.TabIndex = 20;
-            this.gpbEndereco.TabStop = false;
-            this.gpbEndereco.Text = "Endereço:";
-            // 
-            // txtComplementoUsuario
-            // 
-            this.txtComplementoUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtComplementoUsuario.Location = new System.Drawing.Point(123, 107);
-            this.txtComplementoUsuario.Multiline = true;
-            this.txtComplementoUsuario.Name = "txtComplementoUsuario";
-            this.txtComplementoUsuario.Size = new System.Drawing.Size(205, 22);
-            this.txtComplementoUsuario.TabIndex = 19;
-            // 
-            // txtBairroUsuario
-            // 
-            this.txtBairroUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtBairroUsuario.Location = new System.Drawing.Point(89, 68);
-            this.txtBairroUsuario.Multiline = true;
-            this.txtBairroUsuario.Name = "txtBairroUsuario";
-            this.txtBairroUsuario.Size = new System.Drawing.Size(239, 22);
-            this.txtBairroUsuario.TabIndex = 18;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 110);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(102, 15);
-            this.label18.TabIndex = 17;
-            this.label18.Text = "Complemento:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 69);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(54, 15);
-            this.label19.TabIndex = 16;
-            this.label19.Text = "Bairro:";
-            // 
-            // txtCEPUsuario
-            // 
-            this.txtCEPUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtCEPUsuario.Location = new System.Drawing.Point(824, 66);
-            this.txtCEPUsuario.Multiline = true;
-            this.txtCEPUsuario.Name = "txtCEPUsuario";
-            this.txtCEPUsuario.Size = new System.Drawing.Size(144, 22);
-            this.txtCEPUsuario.TabIndex = 13;
-            // 
-            // txtNumeroUsuario
-            // 
-            this.txtNumeroUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtNumeroUsuario.Location = new System.Drawing.Point(826, 24);
-            this.txtNumeroUsuario.Multiline = true;
-            this.txtNumeroUsuario.Name = "txtNumeroUsuario";
-            this.txtNumeroUsuario.Size = new System.Drawing.Size(94, 22);
-            this.txtNumeroUsuario.TabIndex = 9;
-            // 
-            // txtLogradouroUsuario
-            // 
-            this.txtLogradouroUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtLogradouroUsuario.Location = new System.Drawing.Point(372, 24);
-            this.txtLogradouroUsuario.Multiline = true;
-            this.txtLogradouroUsuario.Name = "txtLogradouroUsuario";
-            this.txtLogradouroUsuario.Size = new System.Drawing.Size(359, 22);
-            this.txtLogradouroUsuario.TabIndex = 8;
-            // 
-            // txtCodigoEndereco
-            // 
-            this.txtCodigoEndereco.BackColor = System.Drawing.Color.Silver;
-            this.txtCodigoEndereco.Location = new System.Drawing.Point(88, 27);
-            this.txtCodigoEndereco.Multiline = true;
-            this.txtCodigoEndereco.Name = "txtCodigoEndereco";
-            this.txtCodigoEndereco.Size = new System.Drawing.Size(150, 22);
-            this.txtCodigoEndereco.TabIndex = 7;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(479, 71);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(56, 15);
-            this.label20.TabIndex = 6;
-            this.label20.Text = "Cidade:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(339, 71);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(29, 15);
-            this.label21.TabIndex = 5;
-            this.label21.Text = "UF:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(756, 27);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(64, 15);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "Número:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(280, 27);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(86, 15);
-            this.label26.TabIndex = 2;
-            this.label26.Text = "Logradouro:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(756, 71);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(37, 15);
-            this.label27.TabIndex = 1;
-            this.label27.Text = "CEP:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(15, 30);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(54, 15);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Código:";
-            // 
-            // cmbUFUsuario
-            // 
-            this.cmbUFUsuario.BackColor = System.Drawing.Color.Silver;
-            this.cmbUFUsuario.FormattingEnabled = true;
-            this.cmbUFUsuario.Location = new System.Drawing.Point(374, 68);
-            this.cmbUFUsuario.Name = "cmbUFUsuario";
-            this.cmbUFUsuario.Size = new System.Drawing.Size(77, 23);
-            this.cmbUFUsuario.TabIndex = 20;
-            // 
-            // cmbCidadeUsuario
-            // 
-            this.cmbCidadeUsuario.BackColor = System.Drawing.Color.Silver;
-            this.cmbCidadeUsuario.FormattingEnabled = true;
-            this.cmbCidadeUsuario.Location = new System.Drawing.Point(541, 65);
-            this.cmbCidadeUsuario.Name = "cmbCidadeUsuario";
-            this.cmbCidadeUsuario.Size = new System.Drawing.Size(192, 23);
-            this.cmbCidadeUsuario.TabIndex = 21;
-            // 
-            // gpbIdentificacaoUsuario
-            // 
-            this.gpbIdentificacaoUsuario.Controls.Add(this.txtSenha);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.txtNomeFantasia);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.txtRazaoSocial);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.label25);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.label29);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.txtLogin);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.txtCNPJ);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.txtProntuario);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.txtUsuario);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.label30);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.label31);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.label32);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.label33);
-            this.gpbIdentificacaoUsuario.Controls.Add(this.label35);
-            this.gpbIdentificacaoUsuario.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbIdentificacaoUsuario.Location = new System.Drawing.Point(6, 350);
-            this.gpbIdentificacaoUsuario.Name = "gpbIdentificacaoUsuario";
-            this.gpbIdentificacaoUsuario.Size = new System.Drawing.Size(999, 136);
-            this.gpbIdentificacaoUsuario.TabIndex = 22;
-            this.gpbIdentificacaoUsuario.TabStop = false;
-            this.gpbIdentificacaoUsuario.Text = "Identificação do Usuário:";
-            // 
-            // txtNomeFantasia
-            // 
-            this.txtNomeFantasia.BackColor = System.Drawing.Color.Silver;
-            this.txtNomeFantasia.Location = new System.Drawing.Point(130, 107);
-            this.txtNomeFantasia.Multiline = true;
-            this.txtNomeFantasia.Name = "txtNomeFantasia";
-            this.txtNomeFantasia.Size = new System.Drawing.Size(300, 22);
-            this.txtNomeFantasia.TabIndex = 19;
-            // 
-            // txtRazaoSocial
-            // 
-            this.txtRazaoSocial.BackColor = System.Drawing.Color.Silver;
-            this.txtRazaoSocial.Location = new System.Drawing.Point(128, 68);
-            this.txtRazaoSocial.Multiline = true;
-            this.txtRazaoSocial.Name = "txtRazaoSocial";
-            this.txtRazaoSocial.Size = new System.Drawing.Size(302, 22);
-            this.txtRazaoSocial.TabIndex = 18;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(15, 110);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(109, 15);
-            this.label25.TabIndex = 17;
-            this.label25.Text = "Nome Fantasia:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(15, 72);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(93, 15);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "Razão Social:";
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.BackColor = System.Drawing.Color.Silver;
-            this.txtLogin.Location = new System.Drawing.Point(626, 71);
-            this.txtLogin.Multiline = true;
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(203, 22);
-            this.txtLogin.TabIndex = 13;
-            // 
-            // txtCNPJ
-            // 
-            this.txtCNPJ.BackColor = System.Drawing.Color.Silver;
-            this.txtCNPJ.Location = new System.Drawing.Point(626, 33);
-            this.txtCNPJ.Multiline = true;
-            this.txtCNPJ.Name = "txtCNPJ";
-            this.txtCNPJ.Size = new System.Drawing.Size(203, 22);
-            this.txtCNPJ.TabIndex = 9;
-            // 
-            // txtProntuario
-            // 
-            this.txtProntuario.BackColor = System.Drawing.Color.Silver;
-            this.txtProntuario.Location = new System.Drawing.Point(372, 30);
-            this.txtProntuario.Multiline = true;
-            this.txtProntuario.Name = "txtProntuario";
-            this.txtProntuario.Size = new System.Drawing.Size(147, 22);
-            this.txtProntuario.TabIndex = 8;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.Silver;
-            this.txtUsuario.Location = new System.Drawing.Point(89, 30);
-            this.txtUsuario.Multiline = true;
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(160, 22);
-            this.txtUsuario.TabIndex = 7;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(568, 74);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(47, 15);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "Login:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(568, 33);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(45, 15);
-            this.label31.TabIndex = 5;
-            this.label31.Text = "CNPJ:";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(568, 113);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(52, 15);
-            this.label32.TabIndex = 4;
-            this.label32.Text = "Senha:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(280, 33);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(84, 15);
-            this.label33.TabIndex = 2;
-            this.label33.Text = "Prontuário:";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(15, 33);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(63, 15);
-            this.label35.TabIndex = 0;
-            this.label35.Text = "Usuário:";
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.BackColor = System.Drawing.Color.Silver;
-            this.txtSenha.Location = new System.Drawing.Point(626, 110);
-            this.txtSenha.Multiline = true;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(203, 22);
-            this.txtSenha.TabIndex = 20;
-            // 
-            // pnlMenuCU
-            // 
-            this.pnlMenuCU.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.pnlMenuCU.Controls.Add(this.btnSalvarUsuario);
-            this.pnlMenuCU.Controls.Add(this.btnLixeiraUsuario);
-            this.pnlMenuCU.Controls.Add(this.btnCancelarUsuario);
-            this.pnlMenuCU.Controls.Add(this.txtBuscarUsuario);
-            this.pnlMenuCU.Controls.Add(this.btnEditar);
-            this.pnlMenuCU.Controls.Add(this.btnNovo);
-            this.pnlMenuCU.Location = new System.Drawing.Point(6, 3);
-            this.pnlMenuCU.Name = "pnlMenuCU";
-            this.pnlMenuCU.Size = new System.Drawing.Size(999, 70);
-            this.pnlMenuCU.TabIndex = 23;
-            // 
-            // btnNovo
-            // 
-            this.btnNovo.BackColor = System.Drawing.Color.Azure;
-            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
-            this.btnNovo.Location = new System.Drawing.Point(12, 5);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(81, 59);
-            this.btnNovo.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.btnNovo, "Novo Usuário");
-            this.btnNovo.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.Azure;
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(454, 6);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(81, 59);
-            this.btnEditar.TabIndex = 2;
-            this.toolTip1.SetToolTip(this.btnEditar, "Editar Usuário");
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // txtBuscarUsuario
-            // 
-            this.txtBuscarUsuario.Location = new System.Drawing.Point(154, 25);
-            this.txtBuscarUsuario.Multiline = true;
-            this.txtBuscarUsuario.Name = "txtBuscarUsuario";
-            this.txtBuscarUsuario.Size = new System.Drawing.Size(276, 26);
-            this.txtBuscarUsuario.TabIndex = 3;
-            // 
-            // btnCancelarUsuario
-            // 
-            this.btnCancelarUsuario.BackColor = System.Drawing.Color.Azure;
-            this.btnCancelarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarUsuario.Image")));
-            this.btnCancelarUsuario.Location = new System.Drawing.Point(685, 5);
-            this.btnCancelarUsuario.Name = "btnCancelarUsuario";
-            this.btnCancelarUsuario.Size = new System.Drawing.Size(81, 59);
-            this.btnCancelarUsuario.TabIndex = 4;
-            this.toolTip1.SetToolTip(this.btnCancelarUsuario, "Cancelar Usuário");
-            this.btnCancelarUsuario.UseVisualStyleBackColor = false;
-            // 
-            // btnLixeiraUsuario
-            // 
-            this.btnLixeiraUsuario.BackColor = System.Drawing.Color.Azure;
-            this.btnLixeiraUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnLixeiraUsuario.Image")));
-            this.btnLixeiraUsuario.Location = new System.Drawing.Point(784, 5);
-            this.btnLixeiraUsuario.Name = "btnLixeiraUsuario";
-            this.btnLixeiraUsuario.Size = new System.Drawing.Size(81, 59);
-            this.btnLixeiraUsuario.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.btnLixeiraUsuario, "Excluir Usuário");
-            this.btnLixeiraUsuario.UseVisualStyleBackColor = false;
-            // 
-            // btnSalvarUsuario
-            // 
-            this.btnSalvarUsuario.BackColor = System.Drawing.Color.Azure;
-            this.btnSalvarUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarUsuario.Image")));
-            this.btnSalvarUsuario.Location = new System.Drawing.Point(882, 5);
-            this.btnSalvarUsuario.Name = "btnSalvarUsuario";
-            this.btnSalvarUsuario.Size = new System.Drawing.Size(81, 59);
-            this.btnSalvarUsuario.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.btnSalvarUsuario, "Salvar Usuário");
-            this.btnSalvarUsuario.UseVisualStyleBackColor = false;
-            // 
-            // btnCancelSolicitacao
-            // 
-            this.btnCancelSolicitacao.BackColor = System.Drawing.Color.Azure;
-            this.btnCancelSolicitacao.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelSolicitacao.Image")));
-            this.btnCancelSolicitacao.Location = new System.Drawing.Point(802, 430);
-            this.btnCancelSolicitacao.Name = "btnCancelSolicitacao";
-            this.btnCancelSolicitacao.Size = new System.Drawing.Size(81, 59);
-            this.btnCancelSolicitacao.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.btnCancelSolicitacao, "Cancelar Solicitação");
-            this.btnCancelSolicitacao.UseVisualStyleBackColor = false;
-            // 
-            // btnSalvarSolicitacao
-            // 
-            this.btnSalvarSolicitacao.BackColor = System.Drawing.Color.Azure;
-            this.btnSalvarSolicitacao.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarSolicitacao.Image")));
-            this.btnSalvarSolicitacao.Location = new System.Drawing.Point(898, 430);
-            this.btnSalvarSolicitacao.Name = "btnSalvarSolicitacao";
-            this.btnSalvarSolicitacao.Size = new System.Drawing.Size(81, 59);
-            this.btnSalvarSolicitacao.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.btnSalvarSolicitacao, "Salvar Solicitação");
-            this.btnSalvarSolicitacao.UseVisualStyleBackColor = false;
             // 
             // FormSystem
             // 
@@ -1143,13 +1143,21 @@
             this.panel1.ResumeLayout(false);
             this.tbcSistema.ResumeLayout(false);
             this.tbpCadastroUsuario.ResumeLayout(false);
+            this.pnlMenuCU.ResumeLayout(false);
+            this.pnlMenuCU.PerformLayout();
+            this.gpbIdentificacaoUsuario.ResumeLayout(false);
+            this.gpbIdentificacaoUsuario.PerformLayout();
+            this.gpbEndereco.ResumeLayout(false);
+            this.gpbEndereco.PerformLayout();
+            this.gpbDadosPessoais.ResumeLayout(false);
+            this.gpbDadosPessoais.PerformLayout();
             this.tbpSolicitacaoSaidaAluno.ResumeLayout(false);
             this.tbpSolicitacaoSaidaAluno.PerformLayout();
-            this.pnlDadosAluno.ResumeLayout(false);
-            this.pnlDadosAluno.PerformLayout();
             this.pnlBuscarAluno.ResumeLayout(false);
             this.pnlTituloBuscarAluno.ResumeLayout(false);
             this.pnlTituloBuscarAluno.PerformLayout();
+            this.pnlDadosAluno.ResumeLayout(false);
+            this.pnlDadosAluno.PerformLayout();
             this.tbpSolicitacoesAbertas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesAbertas)).EndInit();
             this.pnlMenuSA.ResumeLayout(false);
@@ -1157,14 +1165,6 @@
             this.tbpSolicitacoesEncerradas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesEncerradas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesExpiradas)).EndInit();
-            this.gpbDadosPessoais.ResumeLayout(false);
-            this.gpbDadosPessoais.PerformLayout();
-            this.gpbEndereco.ResumeLayout(false);
-            this.gpbEndereco.PerformLayout();
-            this.gpbIdentificacaoUsuario.ResumeLayout(false);
-            this.gpbIdentificacaoUsuario.PerformLayout();
-            this.pnlMenuCU.ResumeLayout(false);
-            this.pnlMenuCU.PerformLayout();
             this.ResumeLayout(false);
 
         }

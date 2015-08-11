@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Sistema.Acesso.Entidades
 {
     public class PessoaFisica
     {
         /*propriedades*/
+        [Key]
         public int idPessoaFisica { get; set; }
         public string nome { get; set; }
         public string cpf { get; set; }

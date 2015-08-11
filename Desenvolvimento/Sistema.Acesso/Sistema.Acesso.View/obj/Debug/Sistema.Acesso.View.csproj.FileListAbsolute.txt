@@ -17,8 +17,6 @@ C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\
 C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\bin\Debug\MySql.Data.dll
 C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\bin\Debug\MySql.Data.Entity.EF6.dll
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\bin\Debug\Sistema.Acesso.View.exe.config
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.exe
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.pdb
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\bin\Debug\Sistema.Acesso.View.exe
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\bin\Debug\Sistema.Acesso.View.pdb
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\bin\Debug\EntityFramework.dll
@@ -33,6 +31,8 @@ C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Ac
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.csprojResolveAssemblyReference.cache
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.FormLogin.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.FormSystem.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.Properties.Resources.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.csproj.GenerateResource.Cache
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.FormSystem.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.exe
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.View\obj\Debug\Sistema.Acesso.View.pdb
