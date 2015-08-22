@@ -7,6 +7,7 @@ namespace Sistema.Ifsp.Model
     [Table("SolicitacaoSaida")]
     public class SolicitacaoSaida
     {
+        /*propriedade*/
         [Key]
         public int idSolicitacaoSaida { get; set; }
         [Required]
@@ -20,6 +21,7 @@ namespace Sistema.Ifsp.Model
         [Required]
         [StringLength(10)]
         public string status { get; set; }
+        /*propriedades de navegação*/
         public virtual Aluno Aluno { get; set; }        
         public virtual AssistenteAluno AssistenteAluno { get; set; }
         public virtual Vigilante Vigilante { get; set; }

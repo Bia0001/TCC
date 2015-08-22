@@ -27,19 +27,20 @@ namespace Sistema.Ifsp.View
         private frmMain()
         {
             InitializeComponent();
-            tmrAtualiza.Start();
             ExibirSolicitacoesGrid();
-
+            timerAtualizaGrids.Start();
         }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
+            /*Verifica se o campo de pesquisa está vazio*/
             if (txtPesquisa.Text == "")
             {
                 MessageBox.Show("Por favor preencha o campo de pesquisa!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-            {
+            {   /*Verifica qual radiobutton está selecionado para realizar pesquisa, se o radioButton por "Nome" estiver selecionado 
+                e a presquisa obter resultados, um novo form é chamado exibindo os resultados, desabilitando form atual*/
                 PrimeiroGerarSolicitacaoSaida();
                 if (rdbProntuario.Checked == true)
                 {
@@ -88,6 +89,7 @@ namespace Sistema.Ifsp.View
             }
         }
 
+        /*habiliatações e travamento de campos*/
         private void SegundoGerarSolicitacaoSaida()
         {
             txtProntuarioAluno.ReadOnly = true;
@@ -99,6 +101,7 @@ namespace Sistema.Ifsp.View
             txtMotivo.ReadOnly = false;
         }
 
+        /*habiliatações e travamento de campos*/
         private void PrimeiroGerarSolicitacaoSaida()
         {
             txtProntuarioAluno.ReadOnly = true;
@@ -110,6 +113,7 @@ namespace Sistema.Ifsp.View
             txtMotivo.ReadOnly = true;
         }
 
+        /*Preenche formulário de alunos com dados principais do aluno para geração de solicitação*/
         public void PreencherFormularioAluno(Aluno aluno)
         {
             txtProntuarioAluno.Text = aluno.Prontuario.prontuario;
@@ -122,6 +126,7 @@ namespace Sistema.Ifsp.View
 
         private void btnSalvarSolicitacao_Click(object sender, EventArgs e)
         {
+            /*Verificando se existe um motivo para aluno ser dispensado, analisando Text Motivo*/
             if (txtMotivo.Text == "")
             {
                 MessageBox.Show("Por favor escreva um motivo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -129,11 +134,15 @@ namespace Sistema.Ifsp.View
             else
             {
                 try
-                {            
+                {     
+                    /*pesquisando aluno atraves de seu prontuario*/       
                     var alunoBo = new AlunoBO();
                     var aluno = alunoBo.PesquisarProntuario(txtProntuarioAluno.Text);
                     var assistenteBo = new AssistenteAlunoBO();
                     var assistente = assistenteBo.PesquisarProntuario("2");
+                    /*criando nova intância de solicitação setando status como aberto e inserindo 
+                    data e hora atual como abertura, adicionando 45 minutos na hora atual para 
+                    previsão de encerramento e setando atores presentes na solicitação*/
                     var dt = DateTime.Now;
                     var solicitiacao = new SolicitacaoSaida()
                     {
@@ -144,6 +153,7 @@ namespace Sistema.Ifsp.View
                         previsaoEncerramento = dt.AddMinutes(45),
                         status = "Aberto"
                     };
+                    /*persistindo solicitação e exibindo mensagem*/
                     var solicitacaoBo = new SolicitacaoSaidaBO();
                     solicitacaoBo.Adicionar(solicitiacao);
                     TerceiroGeraSolicitacaoSaida();
@@ -157,6 +167,7 @@ namespace Sistema.Ifsp.View
             }
         }
 
+        /*Limpando campos*/
         private void TerceiroGeraSolicitacaoSaida()
         {
             txtPesquisa.Text = "";           
@@ -169,13 +180,18 @@ namespace Sistema.Ifsp.View
             txtMotivo.Text = "";
         }
 
+        /*Preencendo grids com alunos com status em: aberto, expirado e encerrados 
+        respectivamente em seus grids*/
         private void ExibirSolicitacoesGrid()
         {
+            /*limpando grids*/
             dgvSolicitacoesAbertas.Rows.Clear();
             dgvSolicitacoesEncerradas.Rows.Clear();
             dgvSolicitacoesExpiradas.Rows.Clear();
+            /*buscando solicitaçãos do dia atual*/
             var soliBO = new SolicitacaoSaidaBO();
             var solicitacoes = soliBO.PesquisarSolicitacoesHoje();
+            /*Separando solicitaçãos por grid de acordo com seu status*/
             foreach (SolicitacaoSaida s in solicitacoes)
             {
                 if (s.status == "Aberto")
@@ -193,6 +209,8 @@ namespace Sistema.Ifsp.View
             }
         }
 
+        /*Dando atividade ao evento Tick do timer.
+        Derminando que a cada Tick os gris serão atualziados*/
         private void tmrAtualiza_Tick(object sender, EventArgs e)
         {
             ExibirSolicitacoesGrid();
@@ -200,6 +218,7 @@ namespace Sistema.Ifsp.View
 
         private void btnEncerrarSolicitacao_Click(object sender, EventArgs e)
         {
+            /*Verificando se há solcitação selecionada*/
             if (dgvSolicitacoesAbertas.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Por selecione um aluno para liberar saída", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -208,7 +227,9 @@ namespace Sistema.Ifsp.View
             {
                 try
                 {
-                    /*Vigiante teste para finalização de solitação, cujo nome é Samuel e idPessoaFisica é 3*/
+                    /*Pesquisando solicitação no banco através de seu ID afim de validar sua integridade, alterar status para encerrado, 
+                    setar data atual para encerramento, setar ator vigilante que encerra solicitação e atualiza grid*/
+                    /*VIGILANTE TESTE para finalização de solitação, cujo nome é Samuel e idPessoaFisica é 3*/
                     var vigilanteBO = new VigilanteBO();
                     var vigilante = vigilanteBO.Pesquisar(3);
                     var solicitacaoBO = new SolicitacaoSaidaBO();

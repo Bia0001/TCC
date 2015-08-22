@@ -20,6 +20,7 @@ namespace Sistema.Ifsp.View
             PreencherGrid(alunos);
         }
 
+        /*Preenchendo grid com alunos*/
         private void PreencherGrid(List<Aluno> alunos)
         {
             dgvAlunos.ColumnCount = 2;
@@ -33,6 +34,7 @@ namespace Sistema.Ifsp.View
 
         private void btnSelecionarAluno_Click(object sender, EventArgs e)
         {
+            /*Verificando se alguma linha foi selecionada*/
             if (dgvAlunos.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Nenhum aluno selecionado. Por favor selecione um aluno", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -41,16 +43,17 @@ namespace Sistema.Ifsp.View
             {           
                 try
                 {
+                    /*Pesquisando aluno através do prontuário*/
                     var prontuario = dgvAlunos.CurrentRow.Cells[0].Value.ToString();
                     var alunoBo = new AlunoBO();
                     var aluno = alunoBo.PesquisarProntuario(prontuario);
                     if (aluno == null)
                     {
                         MessageBox.Show("Falha ao carregar aluno. Por favor tente novamente", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //Close();
                     }
                     else
                     {
+                        /*Retornando ao Form principal preenchendo os dados do aluno e fechando form atual*/
                         frmMain frmPrincipal = frmMain.GetInstance();
                         frmPrincipal.Show();
                         frmPrincipal.PreencherFormularioAluno(aluno);

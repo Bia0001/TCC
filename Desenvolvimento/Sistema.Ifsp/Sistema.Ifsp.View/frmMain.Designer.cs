@@ -142,7 +142,7 @@ namespace Sistema.Ifsp.View
             this.prontuarioAlunoExpirado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alunoExpirado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assistenteAlunoExpirado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tmrAtualiza = new System.Windows.Forms.Timer(this.components);
+            this.timerAtualizaGrids = new System.Windows.Forms.Timer(this.components);
             this.tbcSistema.SuspendLayout();
             this.tbpCadastroUsuario.SuspendLayout();
             this.pnlMenuCU.SuspendLayout();
@@ -1078,6 +1078,7 @@ namespace Sistema.Ifsp.View
             // 
             // dgvSolicitacoesAbertas
             // 
+            this.dgvSolicitacoesAbertas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSolicitacoesAbertas.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvSolicitacoesAbertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitacoesAbertas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1176,6 +1177,7 @@ namespace Sistema.Ifsp.View
             // 
             // dgvSolicitacoesEncerradas
             // 
+            this.dgvSolicitacoesEncerradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSolicitacoesEncerradas.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvSolicitacoesEncerradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitacoesEncerradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1186,6 +1188,7 @@ namespace Sistema.Ifsp.View
             this.dgvSolicitacoesEncerradas.Location = new System.Drawing.Point(554, 97);
             this.dgvSolicitacoesEncerradas.MultiSelect = false;
             this.dgvSolicitacoesEncerradas.Name = "dgvSolicitacoesEncerradas";
+            this.dgvSolicitacoesEncerradas.ReadOnly = true;
             this.dgvSolicitacoesEncerradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSolicitacoesEncerradas.Size = new System.Drawing.Size(401, 373);
             this.dgvSolicitacoesEncerradas.TabIndex = 1;
@@ -1216,6 +1219,7 @@ namespace Sistema.Ifsp.View
             // 
             // dgvSolicitacoesExpiradas
             // 
+            this.dgvSolicitacoesExpiradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSolicitacoesExpiradas.BackgroundColor = System.Drawing.Color.Silver;
             this.dgvSolicitacoesExpiradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitacoesExpiradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1226,6 +1230,7 @@ namespace Sistema.Ifsp.View
             this.dgvSolicitacoesExpiradas.Location = new System.Drawing.Point(59, 97);
             this.dgvSolicitacoesExpiradas.MultiSelect = false;
             this.dgvSolicitacoesExpiradas.Name = "dgvSolicitacoesExpiradas";
+            this.dgvSolicitacoesExpiradas.ReadOnly = true;
             this.dgvSolicitacoesExpiradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSolicitacoesExpiradas.Size = new System.Drawing.Size(401, 373);
             this.dgvSolicitacoesExpiradas.TabIndex = 0;
@@ -1254,11 +1259,11 @@ namespace Sistema.Ifsp.View
             this.assistenteAlunoExpirado.Name = "assistenteAlunoExpirado";
             this.assistenteAlunoExpirado.ReadOnly = true;
             // 
-            // tmrAtualiza
+            // timerAtualizaGrids
             // 
-            this.tmrAtualiza.Enabled = true;
-            this.tmrAtualiza.Interval = 5000;
-            this.tmrAtualiza.Tick += new System.EventHandler(this.tmrAtualiza_Tick);
+            this.timerAtualizaGrids.Enabled = true;
+            this.timerAtualizaGrids.Interval = 5000;
+            this.timerAtualizaGrids.Tick += new System.EventHandler(this.tmrAtualiza_Tick);
             // 
             // frmMain
             // 
@@ -1398,7 +1403,7 @@ namespace Sistema.Ifsp.View
         private System.Windows.Forms.RadioButton rdbProntuario;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
-        private Timer tmrAtualiza;
+        private Timer timerAtualizaGrids;
         private DataGridViewTextBoxColumn codigoEncerrado;
         private DataGridViewTextBoxColumn prontuarioEncerrado;
         private DataGridViewTextBoxColumn alunoEncerrado;

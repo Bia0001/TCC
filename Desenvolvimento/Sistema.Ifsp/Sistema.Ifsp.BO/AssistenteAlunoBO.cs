@@ -47,9 +47,5 @@ namespace Sistema.Ifsp.BO
             contexto.Set<AssistenteAluno>().Remove(assistente);
             contexto.SaveChanges();
         }
-        public void Dispose()
-        {
-            contexto.Dispose();
-        }
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+/*Dada Annotations
+[Key] seta propriedade como campo de chave primaria no banco de dados
+*/
 namespace Sistema.Ifsp.Model
 {
     [Table("PessoaFisica")]
     public class PessoaFisica
     {
+        /*propriedade*/
         [Key]
         public int idPessoaFisica { get; set; }
         [Required]

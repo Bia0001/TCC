@@ -35,35 +35,13 @@ namespace Sistema.Ifsp.BO
             contexto.Set<SolicitacaoSaida>().Remove(solicitacao);
             contexto.SaveChanges();
         }
-        public void Dispose()
-        {
-            contexto.Dispose();
-        }
 
-        /*Finalizando solicitação*/
-        public void Finalizar(SolicitacaoSaida solicitacao, Vigilante vigilante)
-        {
-            /*Verificando se essa solicitação ja foi finalizada*/
-            if (Pesquisar(solicitacao.idSolicitacaoSaida).status == "Encerrado")
-            {
-                throw new Exception("Atenção! Essa solicitação já foi encerrada"
-                    + "\nSe desejar verifique a aba de \"Solicitações Encerradas\" após 30 segundos para verificar quem há encerrou");
-            }
-            /*Atualizando solicitação como encerrada*/
-            else
-            {
-                solicitacao.encerramento = DateTime.Now;
-                solicitacao.Vigilante = vigilante;
-                solicitacao.status = "Encerrado";
-                Atualizar(solicitacao);
-                contexto.SaveChanges();
-            }
-        }
-
-        /*Pegando todas as solicitações de hoje e atualizando seus status*/
+        /*Pegando todas as solicitações geradas hoje e atualizando seus status caso expirado*/
         public IEnumerable<SolicitacaoSaida> PesquisarSolicitacoesHoje()
         {
+            /*criando variável com data atual*/
             var dt = DateTime.Now;
+            /*buscando solicitações cuja data seja de hoje*/
             var solicitacoes = contexto.SolicitacoesSaida.Where(s => s.abertura.Day == DateTime.Now.Day &&
             s.abertura.Month == dt.Month && s.abertura.Year == dt.Year).ToList();
             foreach (SolicitacaoSaida s in solicitacoes)
@@ -71,7 +49,7 @@ namespace Sistema.Ifsp.BO
                 /*Verificando se previsão de encerramento foi atingida para determinar expiração*/
                 if (s.status == "Aberto" && s.previsaoEncerramento < DateTime.Now)
                 {
-                    /*Se sim, atualiza status para "Expirado"*/
+                    /*Se sim, atualiza status para "Expirado" e salva no banco de dados*/
                     s.status = "Expirado";
                     Atualizar(s);
                     contexto.SaveChanges();
@@ -79,7 +57,7 @@ namespace Sistema.Ifsp.BO
                     PesquisarSolicitacoesHoje();
                 }
             }
-            /*Retornando solicitação com status atualizado*/
+            /*Retornando todas solicitaçãoes de hoje com status atualizado*/
             return solicitacoes;
         }
     }
