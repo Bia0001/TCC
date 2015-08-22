@@ -1,9 +1,0 @@
-C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\bin\Debug\Sistema.Acesso.Entidades.dll
-C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\bin\Debug\Sistema.Acesso.Entidades.pdb
-C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\obj\Debug\Sistema.Acesso.Entidades.dll
-C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\obj\Debug\Sistema.Acesso.Entidades.pdb
-C:\Users\Beatriz\Desktop\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\obj\Debug\Sistema.Acesso.Entidades.csprojResolveAssemblyReference.cache
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\bin\Debug\Sistema.Acesso.Entidades.dll
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\bin\Debug\Sistema.Acesso.Entidades.pdb
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\obj\Debug\Sistema.Acesso.Entidades.dll
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Acesso\Sistema.Acesso.Entidades\obj\Debug\Sistema.Acesso.Entidades.pdb
