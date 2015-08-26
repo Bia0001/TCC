@@ -44,3 +44,12 @@ C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmMain.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.Properties.Resources.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.csproj.GenerateResource.Cache
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.View.exe.config
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.exe
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.csprojResolveAssemblyReference.cache
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmListaPessoas.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmLogin.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmMain.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.Properties.Resources.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.csproj.GenerateResource.Cache
