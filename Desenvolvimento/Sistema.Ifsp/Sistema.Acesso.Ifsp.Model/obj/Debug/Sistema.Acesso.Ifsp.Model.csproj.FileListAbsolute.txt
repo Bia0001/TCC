@@ -1,0 +1,5 @@
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.Model\obj\Debug\Sistema.Acesso.Ifsp.Model.csprojResolveAssemblyReference.cache
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.Model\bin\Debug\Sistema.Acesso.Ifsp.Model.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.Model\bin\Debug\Sistema.Acesso.Ifsp.Model.pdb
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.Model\obj\Debug\Sistema.Acesso.Ifsp.Model.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.Model\obj\Debug\Sistema.Acesso.Ifsp.Model.pdb

@@ -1,0 +1,16 @@
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\Sistema.Acesso.Ifsp.DAO.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\Sistema.Acesso.Ifsp.DAO.pdb
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\Sistema.Acesso.Ifsp.Model.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\Sistema.Acesso.Ifsp.Model.pdb
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\obj\Debug\Sistema.Acesso.Ifsp.DAO.csprojResolveAssemblyReference.cache
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\obj\Debug\Sistema.Acesso.Ifsp.DAO.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\obj\Debug\Sistema.Acesso.Ifsp.DAO.pdb
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\Sistema.Acesso.Ifsp.DAL.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\EntityFramework.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\Sistema.Acesso.Ifsp.DAL.pdb
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\EntityFramework.xml
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\MySql.Data.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\Sistema.Acesso.Ifsp.DAO.dll.config
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.DAO\bin\Debug\EntityFramework.SqlServer.xml
