@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using Sistema.Ifsp.BO;
+using Sistema.Ifsp.DAO;
 using Sistema.Ifsp.Model;
 using System.Linq;
 using System.Text;
@@ -46,7 +46,7 @@ namespace Sistema.Ifsp.View
                 {
                     try
                     {
-                        var alunoBo = new AlunoBO();
+                        var alunoBo = new AlunoDAO();
                         var aluno = alunoBo.PesquisarProntuario(txtPesquisa.Text);
                         if (aluno == null)
                         {
@@ -68,7 +68,7 @@ namespace Sistema.Ifsp.View
                 {
                     try
                     {
-                        var alunoBo = new AlunoBO();
+                        var alunoBo = new AlunoDAO();
                         var alunos = alunoBo.Pesquisar(txtPesquisa.Text).ToList();
                         if (alunos.Count == 0)
                         {
@@ -136,9 +136,9 @@ namespace Sistema.Ifsp.View
                 try
                 {     
                     /*pesquisando aluno atraves de seu prontuario*/       
-                    var alunoBo = new AlunoBO();
+                    var alunoBo = new AlunoDAO();
                     var aluno = alunoBo.PesquisarProntuario(txtProntuarioAluno.Text);
-                    var assistenteBo = new AssistenteAlunoBO();
+                    var assistenteBo = new AssistenteAlunoDAO();
                     var assistente = assistenteBo.PesquisarProntuario("2");
                     /*criando nova intância de solicitação setando status como aberto e inserindo 
                     data e hora atual como abertura, adicionando 45 minutos na hora atual para 
@@ -154,7 +154,7 @@ namespace Sistema.Ifsp.View
                         status = "Aberto"
                     };
                     /*persistindo solicitação e exibindo mensagem*/
-                    var solicitacaoBo = new SolicitacaoSaidaBO();
+                    var solicitacaoBo = new SolicitacaoSaidaDAO();
                     solicitacaoBo.Adicionar(solicitiacao);
                     TerceiroGeraSolicitacaoSaida();
                     PrimeiroGerarSolicitacaoSaida();
@@ -189,7 +189,7 @@ namespace Sistema.Ifsp.View
             dgvSolicitacoesEncerradas.Rows.Clear();
             dgvSolicitacoesExpiradas.Rows.Clear();
             /*buscando solicitaçãos do dia atual*/
-            var soliBO = new SolicitacaoSaidaBO();
+            var soliBO = new SolicitacaoSaidaDAO();
             var solicitacoes = soliBO.PesquisarSolicitacoesHoje();
             /*Separando solicitaçãos por grid de acordo com seu status*/
             foreach (SolicitacaoSaida s in solicitacoes)
@@ -230,9 +230,9 @@ namespace Sistema.Ifsp.View
                     /*Pesquisando solicitação no banco através de seu ID afim de validar sua integridade, alterar status para encerrado, 
                     setar data atual para encerramento, setar ator vigilante que encerra solicitação e atualiza grid*/
                     /*VIGILANTE TESTE para finalização de solitação, cujo nome é Samuel e idPessoaFisica é 3*/
-                    var vigilanteBO = new VigilanteBO();
+                    var vigilanteBO = new VigilanteDAO();
                     var vigilante = vigilanteBO.Pesquisar(3);
-                    var solicitacaoBO = new SolicitacaoSaidaBO();
+                    var solicitacaoBO = new SolicitacaoSaidaDAO();
                     var solicitacao = solicitacaoBO.Pesquisar(Convert.ToInt32(dgvSolicitacoesAbertas.CurrentRow.Cells[0].Value));
                     solicitacao.encerramento = DateTime.Now;
                     solicitacao.status = "Encerrado";

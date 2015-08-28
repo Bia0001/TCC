@@ -3,12 +3,12 @@ using Sistema.Ifsp.Repositorio;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Sistema.Ifsp.BO
+namespace Sistema.Ifsp.DAO
 {
-    public class VigilanteBO
+    public class VigilanteDAO
     {
         private BancoContexto contexto;
-        public VigilanteBO()
+        public VigilanteDAO()
         {
             contexto = RepositorioBanco.GetInstance();
         }
@@ -21,6 +21,12 @@ namespace Sistema.Ifsp.BO
         public Vigilante Pesquisar(int id)
         {
             return contexto.Vigilantes.Find(id);
+        }
+
+        /*metodo para buscar todos alunos registrados*/
+        public IQueryable<Vigilante> Todos()
+        {
+            return contexto.Vigilantes;
         }
 
         /*método para atualizar registro de aluno*/

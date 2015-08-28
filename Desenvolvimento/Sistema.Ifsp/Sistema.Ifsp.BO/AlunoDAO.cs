@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Sistema.Ifsp.BO
+namespace Sistema.Ifsp.DAO
 {
-    public class AlunoBO
+    public class AlunoDAO
+
     {
         /*instância do contexto do banco de dados*/
         private BancoContexto contexto;
-        public AlunoBO()
+        public AlunoDAO()
         {
             contexto = RepositorioBanco.GetInstance();
         }
@@ -20,6 +21,12 @@ namespace Sistema.Ifsp.BO
         {
             contexto.Alunos.Add(aluno);
             contexto.SaveChanges();
+        }
+
+        /*metodo para buscar todos alunos registrados*/
+        public IQueryable<Aluno> Todos()
+        {
+            return contexto.Alunos;
         }
 
         /*método para pesquisar todos alunos cuja iniciais sejam iguais ao informado como argumento*/

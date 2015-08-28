@@ -1,4 +1,4 @@
-﻿using Sistema.Ifsp.BO;
+﻿using Sistema.Ifsp.DAO;
 using Sistema.Ifsp.Model;
 using System;
 using System.Collections.Generic;
@@ -45,7 +45,7 @@ namespace Sistema.Ifsp.View
                 {
                     /*Pesquisando aluno através do prontuário*/
                     var prontuario = dgvAlunos.CurrentRow.Cells[0].Value.ToString();
-                    var alunoBo = new AlunoBO();
+                    var alunoBo = new AlunoDAO();
                     var aluno = alunoBo.PesquisarProntuario(prontuario);
                     if (aluno == null)
                     {

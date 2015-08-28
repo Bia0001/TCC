@@ -76,9 +76,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sistema.Ifsp.BO\Sistema.Ifsp.BO.csproj">
+    <ProjectReference Include="..\Sistema.Ifsp.BO\Sistema.Ifsp.DAO.csproj">
       <Project>{df39707e-ac77-4d9d-8dd3-057900513f8b}</Project>
-      <Name>Sistema.Ifsp.BO</Name>
+      <Name>Sistema.Ifsp.DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sistema.Ifsp.Model\Sistema.Ifsp.Model.csproj">
       <Project>{9cc4c671-714d-4e77-9992-684267573ae7}</Project>

@@ -5,13 +5,13 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.Model", "Sistema.Ifsp.Model\Sistema.Ifsp.Model.csproj", "{9CC4C671-714D-4E77-9992-684267573AE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.BO", "Sistema.Ifsp.BO\Sistema.Ifsp.BO.csproj", "{DF39707E-AC77-4D9D-8DD3-057900513F8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.DAO", "Sistema.Ifsp.BO\Sistema.Ifsp.DAO.csproj", "{DF39707E-AC77-4D9D-8DD3-057900513F8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.View", "Sistema.Ifsp.View\Sistema.Ifsp.View.csproj", "{782045DE-25C8-4432-BD03-FF5FBC45B5FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.Test.Unitario", "Sistema.Ifsp.Test.Unitario\Sistema.Ifsp.Test.Unitario.csproj", "{C38233AD-D1D2-4583-85EF-413303E4FF14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.Repositorio", "Sistema.Ifsp.Repositorio\Sistema.Ifsp.Repositorio.csproj", "{21321128-9154-4C00-8D48-04DB87CC3DB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.DAL", "Sistema.Ifsp.Repositorio\Sistema.Ifsp.DAL.csproj", "{21321128-9154-4C00-8D48-04DB87CC3DB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

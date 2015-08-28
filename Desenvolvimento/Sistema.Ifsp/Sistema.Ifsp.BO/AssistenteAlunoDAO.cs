@@ -4,14 +4,20 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Sistema.Ifsp.BO
+namespace Sistema.Ifsp.DAO
 {
-    public class AssistenteAlunoBO
+    public class AssistenteAlunoDAO
     {
         private BancoContexto contexto;
-        public AssistenteAlunoBO()
+        public AssistenteAlunoDAO()
         {
             contexto = RepositorioBanco.GetInstance();
+        }
+
+        /*metodo para buscar todos alunos registrados*/
+        public IQueryable<AssistenteAluno> Todos()
+        {
+            return contexto.AssistentesAluno;
         }
 
         public void Adicionar(AssistenteAluno assistente)

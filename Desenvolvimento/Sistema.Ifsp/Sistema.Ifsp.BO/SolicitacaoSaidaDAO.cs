@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Sistema.Ifsp.BO
+namespace Sistema.Ifsp.DAO
 {
-    public class SolicitacaoSaidaBO
+    public class SolicitacaoSaidaDAO
     {
         private BancoContexto contexto;
-        public SolicitacaoSaidaBO()
+        public SolicitacaoSaidaDAO()
         {
             contexto = RepositorioBanco.GetInstance();
         }
@@ -18,6 +18,12 @@ namespace Sistema.Ifsp.BO
         {
             contexto.SolicitacoesSaida.Add(solicitacao);
             contexto.SaveChanges();
+        }
+
+        /*metodo para buscar todos alunos registrados*/
+        public IQueryable<SolicitacaoSaida> Todos()
+        {
+            return contexto.SolicitacoesSaida;
         }
         public SolicitacaoSaida Pesquisar(int id)
         {
