@@ -20,3 +20,6 @@ C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.View\bin\Debug\Sistem
 C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.View\bin\Debug\Sistema.Acesso.Ifsp.DAL.pdb
 C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.View\obj\Debug\Sistema.Acesso.Ifsp.View.frmAlunosConsulta.resources
 C:\Users\Jônatas\Desktop\Sistema.Ifsp\Sistema.Acesso.Ifsp.View\obj\Debug\Sistema.Acesso.Ifsp.View.frmPrincipal.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Acesso.Ifsp.View\bin\Debug\Sistema.Acesso.Ifsp.View.exe.config
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Acesso.Ifsp.View\obj\Debug\Sistema.Acesso.Ifsp.View.exe
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Acesso.Ifsp.View\obj\Debug\Sistema.Acesso.Ifsp.View.pdb

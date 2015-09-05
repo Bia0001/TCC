@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Sistema.Acesso.Ifsp.Model
 {
     [Table("PessoaFisica")]
-    public class PessoaFisica
+    public abstract class PessoaFisica
     {
         /*propriedade*/
         [Key]

@@ -8,16 +8,20 @@ namespace Sistema.Acesso.Ifsp.DAO
     public abstract class GenericDAO<TEntity> : IRepositorio<TEntity> where TEntity : class
     {
         BancoContexto ctx = RepositorioBanco.GetInstance();
+        /*Busca todos registros da entidade*/
         public IQueryable<TEntity> GetAll()
         {
             return ctx.Set<TEntity>();
         }
-
+        
+        /* a => a.Idade == 35*/
+        /*Busca todos os registro mediante um criterio*/
         public IQueryable<TEntity> Get(Func<TEntity, bool> predicate)
         {
             return GetAll().Where(predicate).AsQueryable();
         }
 
+        /*Busca um registro pela chave primaria*/
         public TEntity Find(params object[] key)
         {
             return ctx.Set<TEntity>().Find(key);
@@ -28,6 +32,7 @@ namespace Sistema.Acesso.Ifsp.DAO
             ctx.Entry(obj).State = EntityState.Modified;
         }
 
+        /*Efetiva as alterações no banco de dados*/
         public void Commit()
         {
             ctx.SaveChanges();
