@@ -1,1 +1,17 @@
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.View.exe.config
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.View.exe
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.View.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\EntityFramework.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\MySql.Data.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\EntityFramework.xml
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.csprojResolveAssemblyReference.cache
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.Form1.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.Properties.Resources.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.csproj.GenerateResource.Cache
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.exe
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.Control.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.Control.pdb

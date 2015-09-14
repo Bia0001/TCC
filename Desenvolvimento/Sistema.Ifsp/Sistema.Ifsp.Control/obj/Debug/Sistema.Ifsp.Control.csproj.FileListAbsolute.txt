@@ -1,0 +1,15 @@
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\Sistema.Ifsp.Control.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\Sistema.Ifsp.Control.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\Sistema.Ifsp.Dao.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\Sistema.Ifsp.Model.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\Sistema.Ifsp.DAL.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\EntityFramework.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\Sistema.Ifsp.Dao.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\Sistema.Ifsp.Model.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\Sistema.Ifsp.DAL.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\EntityFramework.xml
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\obj\Debug\Sistema.Ifsp.Control.csprojResolveAssemblyReference.cache
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\obj\Debug\Sistema.Ifsp.Control.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\obj\Debug\Sistema.Ifsp.Control.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Control\bin\Debug\MySql.Data.dll

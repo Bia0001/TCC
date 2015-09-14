@@ -57,11 +57,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorSistemaDAO.cs" />
+    <Compile Include="CRUD.cs" />
+    <Compile Include="ICRUD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema.Ifsp.DAL\Sistema.Ifsp.DAL.csproj">
+      <Project>{f81715ae-3ffe-422c-be5f-26018fe058ea}</Project>
+      <Name>Sistema.Ifsp.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Ifsp.Model\Sistema.Ifsp.Model.csproj">
+      <Project>{d5c114a4-7537-48ea-9e93-d558baafaebc}</Project>
+      <Name>Sistema.Ifsp.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

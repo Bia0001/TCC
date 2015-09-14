@@ -57,12 +57,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoContexto.cs" />
     <Compile Include="Contexto.cs" />
+    <Compile Include="Migrations\201509140010408_criando-banco.cs" />
+    <Compile Include="Migrations\201509140010408_criando-banco.Designer.cs">
+      <DependentUpon>201509140010408_criando-banco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MySqlConfiguration.cs" />
+    <Compile Include="MySqlHistoryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema.Ifsp.Model\Sistema.Ifsp.Model.csproj">
+      <Project>{d5c114a4-7537-48ea-9e93-d558baafaebc}</Project>
+      <Name>Sistema.Ifsp.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509140010408_criando-banco.resx">
+      <DependentUpon>201509140010408_criando-banco.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
