@@ -4,10 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Sistema.Ifsp.Model
 {
     [Table("AdministradorSitema")]
-    public class AdministradorSistema
+    public class AdministradorSistema : Funcionario
     {
-        [Key]
-        public int idAdministradorSistema { get; set; }
-        public Prontuario prontuario { get; set; }
+
     }
 }

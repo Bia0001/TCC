@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sistema.Ifsp.Model
 {
@@ -6,5 +7,6 @@ namespace Sistema.Ifsp.Model
     [Table("Porteiro")]
     public class Porteiro : Terceirizado
     {
+        public virtual ICollection<SolicitacaoSaida> MyProperty { get; set; }
     }
 }

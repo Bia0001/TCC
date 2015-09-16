@@ -10,44 +10,68 @@ namespace Sistema.Ifsp.Dao
     {
         Contexto ctx = AcessoContexto.GetInstance();
 
-        public void Adicionar(TEntity obj)
+        public bool adicionar(TEntity obj)
         {
-            ctx.Set<TEntity>().Add(obj);
+            try
+            {
+                ctx.Set<TEntity>().Add(obj);
+                ctx.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
+
         }
 
-        public void Atualizar(TEntity obj)
+        public bool atualizar(TEntity obj)
         {
-            ctx.Entry(obj).State = EntityState.Modified;
+            try
+            {
+                ctx.Entry(obj).State = EntityState.Modified;
+                ctx.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            
         }
 
-        public void Excluir(Func<TEntity, bool> predicate)
+        public bool excluir(Func<TEntity, bool> predicate)
         {
-            ctx.Set<TEntity>().Where(predicate).ToList().ForEach(del => ctx.Set<TEntity>().Remove(del));
+            try
+            {
+                ctx.Set<TEntity>().Where(predicate).ToList().ForEach(del => ctx.Set<TEntity>().Remove(del));
+                ctx.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }  
         }
 
         /*pesquisar através do atributo chave*/
-        public TEntity Find(params object[] key)
+        public TEntity find(params object[] key)
         {
             return ctx.Set<TEntity>().Find(key);
         }
 
         /*recebe como parametro uma empressão Lambda como critério 
         de pesqusia e retorna uma lista de registros*/
-        public IQueryable<TEntity> Get(Func<TEntity, bool> predicate)
+        public IQueryable<TEntity> get(Func<TEntity, bool> predicate)
         {
-            return GetAll().Where(predicate).AsQueryable();
+            return getAll().Where(predicate).AsQueryable();
         }
 
         /*traz todos os registro de uma tabela*/
-        public IQueryable<TEntity> GetAll()
+        public IQueryable<TEntity> getAll()
         {
             return ctx.Set<TEntity>();
-        }
-
-        /*eftiva no banco de dados todas as alterações realizadas em memória*/
-        public void SalvarTodos()
-        {
-            ctx.SaveChanges();
         }
     }
 }

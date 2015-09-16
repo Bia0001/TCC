@@ -5,12 +5,11 @@ namespace Sistema.Ifsp.Dao
 {
     interface ICRUD<TEntity> where TEntity : class
     {
-        IQueryable<TEntity> GetAll();
-        IQueryable<TEntity> Get(Func<TEntity, bool> predicate);
-        TEntity Find(params object[] key);
-        void Atualizar(TEntity obj);
-        void SalvarTodos();
-        void Adicionar(TEntity obj);
-        void Excluir(Func<TEntity, bool> predicate);
+        IQueryable<TEntity> getAll();
+        IQueryable<TEntity> get(Func<TEntity, bool> predicate);
+        TEntity find(params object[] key);
+        bool atualizar(TEntity obj);
+        bool adicionar(TEntity obj);
+        bool excluir(Func<TEntity, bool> predicate);
     }
 }

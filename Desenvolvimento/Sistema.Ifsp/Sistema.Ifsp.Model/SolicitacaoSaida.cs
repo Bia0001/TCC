@@ -7,7 +7,7 @@ namespace Sistema.Ifsp.Model
     [Table("SolicitacaoSaida")]
     public class SolicitacaoSaida : Solicitacao
     {
-        public DateTime encerramento { get; set; }
-        public virtual ICollection<Porteiro> porteiro { get; set; }
+        public DateTime? encerramento { get; set; }
+        public Porteiro porteiro { get; set; }
     }
 }

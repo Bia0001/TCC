@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AlunoControl.cs" />
+    <Compile Include="IProntuarioControl.cs" />
+    <Compile Include="PessoaFisicaControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolicitacaoControl.cs" />
+    <Compile Include="SolicitacaoSaidaControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sistema.Ifsp.Dao\Sistema.Ifsp.Dao.csproj">

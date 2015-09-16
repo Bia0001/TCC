@@ -10,10 +10,15 @@ namespace Sistema.Ifsp.Model
     {
         [Key]
         public int idSolicitacao { get; set; }
+        [Required]
         public DateTime aberura { get; set; }
+        [Required]
         public string motivo { get; set; }
+        [Required]
         public StatusSolicitacao status { get; set; }
-        public virtual ICollection<Aluno> aluno { get; set; }
-        public virtual ICollection<AssistenteAluno> assistenteAluno { get; set; }
+        [Required]
+        public Aluno aluno { get; set; }
+        [Required]
+        public AssistenteAluno assistenteAluno { get; set; }
     }
 }
