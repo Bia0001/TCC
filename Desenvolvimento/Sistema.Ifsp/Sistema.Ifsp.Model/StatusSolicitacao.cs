@@ -2,8 +2,8 @@
 {
     public enum StatusSolicitacao
     {
-        Aberto,
-        Encerrado,
-        Expirado
+        aberto,
+        encerrado,
+        expirado
     }
 }

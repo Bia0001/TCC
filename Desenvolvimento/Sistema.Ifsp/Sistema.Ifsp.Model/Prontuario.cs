@@ -8,6 +8,7 @@ namespace Sistema.Ifsp.Model
     {
         [Key]
         public int idProntuario { get; set; }
+        [Required]
         public string prontuario { get; set; }
     }
 }

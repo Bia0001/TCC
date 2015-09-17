@@ -12,17 +12,22 @@ namespace Sistema.Ifsp.DAL
         public Contexto() : base("ConnDB") { }
 
         public DbSet<Aluno> aluno { get; set; }
+        public DbSet<Funcionario> funcionario { get; set; }
+        public DbSet<AssistenteAluno> assistenteAluno { get; set; }
+        public DbSet<AssistenteAdministracao> assistenteAdministracao { get; set; }
+        public DbSet<AssistenteCoordenadoria> assistenteCoordenadoria { get; set; }
         public DbSet<PessoaFisica> pessoaFisica { get; set; }
         public DbSet<Porteiro> porteiro { get; set; }
         public DbSet<Terceirizado> terceirizado { get; set; }
-        public DbSet<UsoEstacionamento> usoEstacionamento { get; set; }
-        public DbSet<AssistenteAdministracao> assistenteAdminsitracao { get; set; }
-        public DbSet<AssistenteAluno> assistenteAluno { get; set; }
-        public DbSet<AssistenteCoordenadoria> assistenteCoordenadoria { get; set; }
+        public DbSet<UsoEstacionamentoMoto> usoEstacionamentoMoto { get; set; }
+        public DbSet<UsoEstacionamentoCarro> usoEstacionamentoCarro { get; set; }
+        public DbSet<UsoEstacionamentoVeiculo> usoEstacionamentoVeiculo { get; set; }
         public DbSet<Solicitacao> solicitacao { get; set; }
         public DbSet<SolicitacaoEntrada> solicitacaoEntrada { get; set; }
         public DbSet<SolicitacaoSaida> solicitacaoSaida { get; set; }
         public DbSet<AdministradorSistema> administradorSistema { get; set; }
+        public DbSet<Visitante> visitante { get; set; }
+        public DbSet<Fornecedor> fornecedor { get; set; }
 
         /*removendo convenção de pluralização do Entity Fremework*/
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

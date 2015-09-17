@@ -2,7 +2,7 @@
 
 namespace Sistema.Ifsp.DAO
 {
-    public class AssistenteAlunoDAO : CRUD<AssistenteAluno>
+    public class UsoEstacionamentoMotoDAO : CRUD<UsoEstacionamentoMoto>
     {
     }
 }

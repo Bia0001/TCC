@@ -5,11 +5,9 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.View", "Sistema.Ifsp.View\Sistema.Ifsp.View.csproj", "{6174495D-2F4E-4C78-850B-003CB0A9F8BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.Dao", "Sistema.Ifsp.Dao\Sistema.Ifsp.Dao.csproj", "{9A273933-44DC-4509-AE64-6007CCA1F37A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.DAO", "Sistema.Ifsp.Dao\Sistema.Ifsp.DAO.csproj", "{9A273933-44DC-4509-AE64-6007CCA1F37A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.Model", "Sistema.Ifsp.Model\Sistema.Ifsp.Model.csproj", "{D5C114A4-7537-48EA-9E93-D558BAAFAEBC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.Control", "Sistema.Ifsp.Control\Sistema.Ifsp.Control.csproj", "{F389DDB0-BD1F-445F-BF9D-2BE9A1FC19AF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Ifsp.DAL", "Sistema.Ifsp.DAL\Sistema.Ifsp.DAL.csproj", "{F81715AE-3FFE-422C-BE5F-26018FE058EA}"
 EndProject
@@ -33,10 +31,6 @@ Global
 		{D5C114A4-7537-48EA-9E93-D558BAAFAEBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5C114A4-7537-48EA-9E93-D558BAAFAEBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5C114A4-7537-48EA-9E93-D558BAAFAEBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F389DDB0-BD1F-445F-BF9D-2BE9A1FC19AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F389DDB0-BD1F-445F-BF9D-2BE9A1FC19AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F389DDB0-BD1F-445F-BF9D-2BE9A1FC19AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F389DDB0-BD1F-445F-BF9D-2BE9A1FC19AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F81715AE-3FFE-422C-BE5F-26018FE058EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F81715AE-3FFE-422C-BE5F-26018FE058EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F81715AE-3FFE-422C-BE5F-26018FE058EA}.Release|Any CPU.ActiveCfg = Release|Any CPU

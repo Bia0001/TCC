@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Sistema.Ifsp.Model;
-using Sistema.Ifsp.Dao;
+using Sistema.Ifsp.DAO;
 
 namespace Sistema.Ifsp.Control
 {

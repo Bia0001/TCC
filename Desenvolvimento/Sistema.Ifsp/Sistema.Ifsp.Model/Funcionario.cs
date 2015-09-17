@@ -5,6 +5,8 @@ namespace Sistema.Ifsp.Model
     [Table("Funcionario")]
     public class Funcionario : PessoaFisica
     {
-        public Area area { get; set; }
+        public string area { get; set; }
+        public Prontuario prontuario { get; set; }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿using Sistema.Ifsp.Dao;
+﻿using Sistema.Ifsp.DAO;
 using Sistema.Ifsp.Model;
 using System;
 using System.Collections.Generic;

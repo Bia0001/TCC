@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Sistema.Ifsp.Model
 {
     [Table("Terceirizado")]
-    public class Terceirizado
+    public class Terceirizado : PessoaFisica
     {
         [Key]
-        public Area area { get; set; }
+        public string area { get; set; }
         public string empresa { get; set; }
     }
 }

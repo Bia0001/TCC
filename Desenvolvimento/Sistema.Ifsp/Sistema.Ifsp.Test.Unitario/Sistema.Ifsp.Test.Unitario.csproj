@@ -73,14 +73,18 @@
     <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sistema.Ifsp.Control\Sistema.Ifsp.Control.csproj">
-      <Project>{f389ddb0-bd1f-445f-bf9d-2be9a1fc19af}</Project>
-      <Name>Sistema.Ifsp.Control</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema.Ifsp.Dao\Sistema.Ifsp.DAO.csproj">
+      <Project>{9a273933-44dc-4509-ae64-6007cca1f37a}</Project>
+      <Name>Sistema.Ifsp.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Ifsp.Model\Sistema.Ifsp.Model.csproj">
+      <Project>{d5c114a4-7537-48ea-9e93-d558baafaebc}</Project>
+      <Name>Sistema.Ifsp.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

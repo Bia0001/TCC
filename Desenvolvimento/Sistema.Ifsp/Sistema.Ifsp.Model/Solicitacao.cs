@@ -15,8 +15,6 @@ namespace Sistema.Ifsp.Model
         [Required]
         public string motivo { get; set; }
         [Required]
-        public StatusSolicitacao status { get; set; }
-        [Required]
         public Aluno aluno { get; set; }
         [Required]
         public AssistenteAluno assistenteAluno { get; set; }

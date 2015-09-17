@@ -8,7 +8,7 @@ namespace Sistema.Ifsp.Model
     public class Fornecedor
     {
         [Key]
-        public int idVisitante { get; set; }
+        public int idFornecedor { get; set; }
         public string nome { get; set; }
         public string rg { get; set; }
         public DateTime entrada { get; set; }

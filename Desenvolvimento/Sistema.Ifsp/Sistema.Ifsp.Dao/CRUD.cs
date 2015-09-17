@@ -3,7 +3,7 @@ using System;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Sistema.Ifsp.Dao
+namespace Sistema.Ifsp.DAO
 {
     /*implementando métodos de persistência genéricos que servira todos as c*/
     public abstract class CRUD<TEntity> : ICRUD<TEntity> where TEntity : class

@@ -59,9 +59,9 @@
   <ItemGroup>
     <Compile Include="AcessoContexto.cs" />
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201509151812245_criando-banco.cs" />
-    <Compile Include="Migrations\201509151812245_criando-banco.Designer.cs">
-      <DependentUpon>201509151812245_criando-banco.cs</DependentUpon>
+    <Compile Include="Migrations\201509170041463_criando-banco.cs" />
+    <Compile Include="Migrations\201509170041463_criando-banco.Designer.cs">
+      <DependentUpon>201509170041463_criando-banco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlConfiguration.cs" />
@@ -79,8 +79,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509151812245_criando-banco.resx">
-      <DependentUpon>201509151812245_criando-banco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509170041463_criando-banco.resx">
+      <DependentUpon>201509170041463_criando-banco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

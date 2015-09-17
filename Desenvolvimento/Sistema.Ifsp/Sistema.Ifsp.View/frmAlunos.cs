@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema.Ifsp.View
 {
-    public partial class Form1 : Form
+    public partial class frmAlunos : Form
     {
-        public Form1()
+        public frmAlunos()
         {
             InitializeComponent();
         }

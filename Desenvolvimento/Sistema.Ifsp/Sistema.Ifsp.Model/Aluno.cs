@@ -15,6 +15,6 @@ namespace Sistema.Ifsp.Model
         public string contato2 { get; set; }
         [Required]
         public Prontuario prontuario { get; set; }
-        public virtual ICollection<Solicitacao> solicitacao { get; set; }
+        public virtual ICollection<Solicitacao> solicitacoes { get; set; }
     }
 }

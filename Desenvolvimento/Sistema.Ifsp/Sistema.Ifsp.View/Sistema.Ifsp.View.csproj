@@ -63,16 +63,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmAlunos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmAlunos.Designer.cs">
+      <DependentUpon>frmAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SingletonGeneric.cs" />
+    <EmbeddedResource Include="frmAlunos.resx">
+      <DependentUpon>frmAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,9 +108,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sistema.Ifsp.Control\Sistema.Ifsp.Control.csproj">
-      <Project>{f389ddb0-bd1f-445f-bf9d-2be9a1fc19af}</Project>
-      <Name>Sistema.Ifsp.Control</Name>
+    <ProjectReference Include="..\Sistema.Ifsp.Dao\Sistema.Ifsp.DAO.csproj">
+      <Project>{9a273933-44dc-4509-ae64-6007cca1f37a}</Project>
+      <Name>Sistema.Ifsp.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Ifsp.Model\Sistema.Ifsp.Model.csproj">
+      <Project>{d5c114a4-7537-48ea-9e93-d558baafaebc}</Project>
+      <Name>Sistema.Ifsp.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

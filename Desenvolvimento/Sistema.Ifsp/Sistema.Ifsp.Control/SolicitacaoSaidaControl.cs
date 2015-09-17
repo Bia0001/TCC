@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sistema.Ifsp.Model;
-using Sistema.Ifsp.Dao;
+using Sistema.Ifsp.DAO;
 
 namespace Sistema.Ifsp.Control
 {

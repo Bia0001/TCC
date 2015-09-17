@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Sistema.Ifsp.Dao
+namespace Sistema.Ifsp.DAO
 {
     interface ICRUD<TEntity> where TEntity : class
     {

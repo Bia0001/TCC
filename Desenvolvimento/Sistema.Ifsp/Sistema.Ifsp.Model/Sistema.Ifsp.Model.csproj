@@ -43,11 +43,9 @@
   <ItemGroup>
     <Compile Include="AdministradorSistema.cs" />
     <Compile Include="Aluno.cs" />
-    <Compile Include="Area.cs" />
     <Compile Include="AssistenteAdministracao.cs" />
     <Compile Include="AssistenteAluno.cs" />
-    <Compile Include="AssistenteCoordenacao.cs" />
-    <Compile Include="DiaDaSemana.cs" />
+    <Compile Include="AssistenteCoordenadoria.cs" />
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="PessoaFisica.cs" />
@@ -60,7 +58,9 @@
     <Compile Include="StatusSolicitacao.cs" />
     <Compile Include="Terceirizado.cs" />
     <Compile Include="TipoVaga.cs" />
-    <Compile Include="UsoEstacionamento.cs" />
+    <Compile Include="UsoEstacionamentoCarro.cs" />
+    <Compile Include="UsoEstacionamentoMoto.cs" />
+    <Compile Include="UsoEstacionamentoVeiculo.cs" />
     <Compile Include="Visitante.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
