@@ -11,12 +11,12 @@ namespace Sistema.Ifsp.Model
         [Key]
         public int idSolicitacao { get; set; }
         [Required]
-        public DateTime aberura { get; set; }
+        public DateTime abertura { get; set; }
         [Required]
         public string motivo { get; set; }
         [Required]
-        public Aluno aluno { get; set; }
+        public virtual Aluno aluno { get; set; }
         [Required]
-        public AssistenteAluno assistenteAluno { get; set; }
+        public virtual AssistenteAluno assistenteAluno { get; set; }
     }
 }

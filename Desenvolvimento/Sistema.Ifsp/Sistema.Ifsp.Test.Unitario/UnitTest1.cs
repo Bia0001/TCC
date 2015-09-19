@@ -3,6 +3,8 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sistema.Ifsp.Model;
+using Sistema.Ifsp.DAO;
+using System.Linq;
 
 namespace Sistema.Ifsp.Test.Unitario
 {
@@ -22,23 +24,62 @@ namespace Sistema.Ifsp.Test.Unitario
         [TestMethod]
         public void TestMethod1()
         {
-            var a = new Aluno()
+            //    var a = new Aluno()
+            //    {
+            //        celular = "1999748362",
+            //        contato1 = "1993748392",
+            //        contato2 = "1992480483",
+            //        nascimento = new DateTime(1992, 03, 04),
+            //        nome = "Wesley Penteado",
+            //        prontuario = new Prontuario()
+            //        {
+            //            prontuario = "1320010"
+            //        },
+            //        responsavel1 = "Marta Antunes Fuent",
+            //        responsavel2 = "Cintia Pereira Moraes",
+            //        rg = "507382748",
+            //        sexo = 'M',
+            //        telefone = "19966338844"
+            //    };
+            //    var aDao = new AlunoDAO();
+            //    aDao.adicionar(a);
+
+            //var a = new AssistenteAluno()
+            //{
+            //    area = "Assistentecia",
+            //    celular = "199283723",
+            //    nascimento = new DateTime(1984, 04, 04),
+            //    nome = "Mulher do Vitor",
+            //    prontuario = new Prontuario()
+            //    {
+            //        prontuario = "1400020",
+            //    },
+            //    rg = "39846263",
+            //    sexo = 'F',
+            //    telefone = "34920493"
+            //};
+            //var aDao = new AssistenteAlunoDAO();
+            //var a = aDao.find(2);
+            //Assert.AreEqual(a.nome, "Muher do Vitor");
+            //Assert.AreEqual(a.idPessoaFisica, 2);
+
+            //var aDao = new AlunoDAO();
+            //Aluno aluno = aDao.get(a => a.prontuario.prontuario == "1320010").FirstOrDefault();
+            //Assert.AreEqual(1, aluno.idPessoaFisica);
+
+            var p = new Porteiro()
             {
-                celular = "1999748362",
-                contato1 = "1993748392",
-                contato2 = "1992480483",
-                nascimento = new DateTime(1992, 03, 04),
-                nome = "Willian Moraes Fuent",
-                prontuario = new Prontuario()
-                {
-                    prontuario = "1320010"
-                },
-                responsavel1 = "Wagner Antunes Fuent",
-                responsavel2 = "Mafalda Pereira Moraes",
-                rg = "507382748",
+                area = "Portaria",
+                empresa = "SA Vigilantes e Porteiros",
+                celular = "1900000000",
+                nascimento = new DateTime(1976, 04, 04),
+                nome = "Samuel Oliveira da Silva",
+                rg = "490008888",
                 sexo = 'M',
-                telefone = "19966338844"
+                telefone = "1934910000",
             };
+            var pDao = new PorteiroDAO();
+            pDao.adicionar(p);
         }
     }
 }

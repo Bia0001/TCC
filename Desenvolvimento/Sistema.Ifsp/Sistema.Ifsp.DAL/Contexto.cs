@@ -28,7 +28,7 @@ namespace Sistema.Ifsp.DAL
         public DbSet<AdministradorSistema> administradorSistema { get; set; }
         public DbSet<Visitante> visitante { get; set; }
         public DbSet<Fornecedor> fornecedor { get; set; }
-
+        public DbSet<Prontuario> prontuario { get; set; }
         /*removendo convenção de pluralização do Entity Fremework*/
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

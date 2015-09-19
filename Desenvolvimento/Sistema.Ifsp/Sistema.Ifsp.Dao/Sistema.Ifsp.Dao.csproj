@@ -71,6 +71,7 @@
     <Compile Include="ICRUD.cs" />
     <Compile Include="PessoaFisicaDAO.cs" />
     <Compile Include="PorteiroDAO.cs" />
+    <Compile Include="ProntuarioDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SolicitacaoDAO.cs" />
     <Compile Include="SolicitacaoEntradaDAO.cs" />
