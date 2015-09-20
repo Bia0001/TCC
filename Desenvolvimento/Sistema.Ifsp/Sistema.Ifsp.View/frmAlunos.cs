@@ -56,5 +56,11 @@ namespace Sistema.Ifsp.View
                 }
             }
         }
+
+        private void frmAlunos_Load(object sender, EventArgs e)
+        {        
+
+        }
+
     }
 }

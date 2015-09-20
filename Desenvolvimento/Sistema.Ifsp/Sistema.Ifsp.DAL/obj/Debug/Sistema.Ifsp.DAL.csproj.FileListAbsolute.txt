@@ -15,3 +15,20 @@ C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.criandobanco.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.alterandoStatusSolicitacao.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\Sistema.Ifsp.DAL.dll.config
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\Sistema.Ifsp.DAL.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\Sistema.Ifsp.DAL.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\MySql.Data.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\Sistema.Ifsp.Model.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\Sistema.Ifsp.Model.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.criandobanco.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.alterandoStatusSolicitacao.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.pdb

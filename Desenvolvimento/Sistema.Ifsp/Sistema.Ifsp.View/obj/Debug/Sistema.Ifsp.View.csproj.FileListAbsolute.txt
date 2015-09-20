@@ -20,3 +20,25 @@ C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.Dao.pdb
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.Model.pdb
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.DAL.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.View.exe.config
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.exe
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.View.exe
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.View.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\EntityFramework.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\MySql.Data.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.Dao.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.Model.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.DAL.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.Dao.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.Model.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\EntityFramework.xml
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\bin\Debug\Sistema.Ifsp.DAL.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.csprojResolveAssemblyReference.cache
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmAlunos.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmPrincipal.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.Properties.Resources.resources
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.csproj.GenerateResource.Cache

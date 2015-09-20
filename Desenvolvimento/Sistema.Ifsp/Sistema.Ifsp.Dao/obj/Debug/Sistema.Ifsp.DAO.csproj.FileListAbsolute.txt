@@ -14,3 +14,19 @@ C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\obj\Debug\Sistema.Ifsp.DAO.csprojResolveAssemblyReference.cache
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\obj\Debug\Sistema.Ifsp.Dao.dll
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\obj\Debug\Sistema.Ifsp.Dao.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\Sistema.Ifsp.Dao.dll.config
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\Sistema.Ifsp.Dao.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\Sistema.Ifsp.Dao.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\EntityFramework.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\MySql.Data.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\Sistema.Ifsp.DAL.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\Sistema.Ifsp.Model.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\Sistema.Ifsp.DAL.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\Sistema.Ifsp.Model.pdb
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\EntityFramework.xml
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\obj\Debug\Sistema.Ifsp.DAO.csprojResolveAssemblyReference.cache
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\obj\Debug\Sistema.Ifsp.Dao.dll
+C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.Dao\obj\Debug\Sistema.Ifsp.Dao.pdb
