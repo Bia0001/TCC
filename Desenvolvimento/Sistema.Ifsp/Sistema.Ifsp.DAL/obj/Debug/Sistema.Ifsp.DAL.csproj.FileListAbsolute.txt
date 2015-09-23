@@ -12,9 +12,6 @@ C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csprojResolveAssemblyReference.cache
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.dll
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.pdb
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.criandobanco.resources
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.alterandoStatusSolicitacao.resources
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\Sistema.Ifsp.DAL.dll.config
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\Sistema.Ifsp.DAL.dll
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\bin\Debug\Sistema.Ifsp.DAL.pdb
@@ -32,3 +29,5 @@ C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.dll
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.pdb
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.criandobanco.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache

@@ -33,6 +33,8 @@
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.principal = new System.Windows.Forms.TabControl();
             this.tabSolicitacoes = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGerarSolicitacaoAluno = new System.Windows.Forms.Button();
             this.txtMotivoAluno = new System.Windows.Forms.TextBox();
             this.txtPesquisarAluno = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -42,6 +44,7 @@
             this.txtProntuarioAluno = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNomeAluno = new System.Windows.Forms.TextBox();
+            this.btnPesquisarAluno = new System.Windows.Forms.Button();
             this.rdbNomeAluno = new System.Windows.Forms.RadioButton();
             this.rdbProntuarioAluno = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,8 +57,41 @@
             this.txtResponsavel2Aluno = new System.Windows.Forms.TextBox();
             this.txtResponsavel1Aluno = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabControleEstacionamento = new System.Windows.Forms.TabPage();
+            this.tabCadastrarUsoEstacionamento = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnPesquisarPessoaEstacionamento = new System.Windows.Forms.Button();
+            this.txtPesquisarPessoaEstacionamento = new System.Windows.Forms.TextBox();
+            this.rdbNomeEstacionamento = new System.Windows.Forms.RadioButton();
+            this.rdbCodigoEstacionamento = new System.Windows.Forms.RadioButton();
+            this.grpCodicoPlava = new System.Windows.Forms.GroupBox();
+            this.txtCodigoPlaca = new System.Windows.Forms.TextBox();
+            this.btnSalvarEstacionamento = new System.Windows.Forms.Button();
+            this.grpDiasDaSemana = new System.Windows.Forms.GroupBox();
+            this.cmbDomingo = new System.Windows.Forms.ComboBox();
+            this.cmbSabado = new System.Windows.Forms.ComboBox();
+            this.cmbSexta = new System.Windows.Forms.ComboBox();
+            this.cmbQuinta = new System.Windows.Forms.ComboBox();
+            this.cmbQuarta = new System.Windows.Forms.ComboBox();
+            this.cmbTerca = new System.Windows.Forms.ComboBox();
+            this.cmbSegunda = new System.Windows.Forms.ComboBox();
+            this.ckbDomingo = new System.Windows.Forms.CheckBox();
+            this.ckbSabado = new System.Windows.Forms.CheckBox();
+            this.ckbSexta = new System.Windows.Forms.CheckBox();
+            this.ckbQuinta = new System.Windows.Forms.CheckBox();
+            this.ckbQuarta = new System.Windows.Forms.CheckBox();
+            this.ckbTerca = new System.Windows.Forms.CheckBox();
+            this.ckbSegunda = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbTerceirizado = new System.Windows.Forms.RadioButton();
+            this.rdbDiscente = new System.Windows.Forms.RadioButton();
+            this.rdbDoscente = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtRequisitandoEstacionamento = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabSolicitacoesSaidaFinalizadasExpiradas = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvSolicitacoesExpiradas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,36 +104,67 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSolicitacoesSaidaAbertas = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.btnFinalizarSolicitacao = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.dgvSolicitacoesAbertas = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label12 = new System.Windows.Forms.Label();
+            this.tabEntradaVisitanteForncedor = new System.Windows.Forms.TabPage();
+            this.btnRegistrarEntradaFornecedorVisitante = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdbFornecedor = new System.Windows.Forms.RadioButton();
+            this.rdbVisitante = new System.Windows.Forms.RadioButton();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtMotivoFornecedorVisitante = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtEmpresaFornecedorVisitante = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtRgFornecedorVisitante = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtNomeFornecedorVisitante = new System.Windows.Forms.TextBox();
+            this.tabRegistrarSaidaFornecedor = new System.Windows.Forms.TabPage();
+            this.btnRegistarSaidaFornecedor = new System.Windows.Forms.Button();
+            this.dgvFornecedores = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabRegistrarSaidaVisitante = new System.Windows.Forms.TabPage();
+            this.btnResgistrarSaidaVisitante = new System.Windows.Forms.Button();
+            this.dgvVisitante = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerAtualizaSolicitacoes = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnGerarSolicitacaoAluno = new System.Windows.Forms.Button();
-            this.btnPesquisarAluno = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.principal.SuspendLayout();
             this.tabSolicitacoes.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabCadastrarUsoEstacionamento.SuspendLayout();
+            this.grpCodicoPlava.SuspendLayout();
+            this.grpDiasDaSemana.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabSolicitacoesSaidaFinalizadasExpiradas.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesExpiradas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesFinalizadas)).BeginInit();
             this.tabSolicitacoesSaidaAbertas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesAbertas)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesAbertas)).BeginInit();
+            this.tabEntradaVisitanteForncedor.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.tabRegistrarSaidaFornecedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
+            this.tabRegistrarSaidaVisitante.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -119,11 +186,14 @@
             // principal
             // 
             this.principal.Controls.Add(this.tabSolicitacoes);
-            this.principal.Controls.Add(this.tabControleEstacionamento);
+            this.principal.Controls.Add(this.tabCadastrarUsoEstacionamento);
             this.principal.Controls.Add(this.tabSolicitacoesSaidaFinalizadasExpiradas);
             this.principal.Controls.Add(this.tabSolicitacoesSaidaAbertas);
+            this.principal.Controls.Add(this.tabEntradaVisitanteForncedor);
+            this.principal.Controls.Add(this.tabRegistrarSaidaFornecedor);
+            this.principal.Controls.Add(this.tabRegistrarSaidaVisitante);
             this.principal.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.principal.Location = new System.Drawing.Point(42, 53);
+            this.principal.Location = new System.Drawing.Point(40, 63);
             this.principal.Name = "principal";
             this.principal.SelectedIndex = 0;
             this.principal.Size = new System.Drawing.Size(1098, 593);
@@ -163,6 +233,27 @@
             this.tabSolicitacoes.TabIndex = 0;
             this.tabSolicitacoes.Text = "Gerar Solicitações";
             this.tabSolicitacoes.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel1.Controls.Add(this.btnGerarSolicitacaoAluno);
+            this.panel1.Location = new System.Drawing.Point(3, 519);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1084, 40);
+            this.panel1.TabIndex = 29;
+            // 
+            // btnGerarSolicitacaoAluno
+            // 
+            this.btnGerarSolicitacaoAluno.BackColor = System.Drawing.Color.White;
+            this.btnGerarSolicitacaoAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
+            this.btnGerarSolicitacaoAluno.Location = new System.Drawing.Point(962, 0);
+            this.btnGerarSolicitacaoAluno.Name = "btnGerarSolicitacaoAluno";
+            this.btnGerarSolicitacaoAluno.Size = new System.Drawing.Size(75, 40);
+            this.btnGerarSolicitacaoAluno.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.btnGerarSolicitacaoAluno, "Gerar Solicitação");
+            this.btnGerarSolicitacaoAluno.UseVisualStyleBackColor = false;
+            this.btnGerarSolicitacaoAluno.Click += new System.EventHandler(this.btnGerarSolicitacaoAluno_Click);
             // 
             // txtMotivoAluno
             // 
@@ -247,6 +338,18 @@
             this.txtNomeAluno.ReadOnly = true;
             this.txtNomeAluno.Size = new System.Drawing.Size(480, 25);
             this.txtNomeAluno.TabIndex = 17;
+            // 
+            // btnPesquisarAluno
+            // 
+            this.btnPesquisarAluno.BackColor = System.Drawing.Color.White;
+            this.btnPesquisarAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._6;
+            this.btnPesquisarAluno.Location = new System.Drawing.Point(535, 103);
+            this.btnPesquisarAluno.Name = "btnPesquisarAluno";
+            this.btnPesquisarAluno.Size = new System.Drawing.Size(59, 40);
+            this.btnPesquisarAluno.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.btnPesquisarAluno, "Pesquisar");
+            this.btnPesquisarAluno.UseVisualStyleBackColor = false;
+            this.btnPesquisarAluno.Click += new System.EventHandler(this.btnPesquisarAluno_Click);
             // 
             // rdbNomeAluno
             // 
@@ -356,15 +459,383 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Pesquisa:";
             // 
-            // tabControleEstacionamento
+            // tabCadastrarUsoEstacionamento
             // 
-            this.tabControleEstacionamento.Location = new System.Drawing.Point(4, 27);
-            this.tabControleEstacionamento.Name = "tabControleEstacionamento";
-            this.tabControleEstacionamento.Padding = new System.Windows.Forms.Padding(3);
-            this.tabControleEstacionamento.Size = new System.Drawing.Size(1090, 562);
-            this.tabControleEstacionamento.TabIndex = 1;
-            this.tabControleEstacionamento.Text = "Controle do Estacionamento";
-            this.tabControleEstacionamento.UseVisualStyleBackColor = true;
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.label14);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.btnPesquisarPessoaEstacionamento);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.txtPesquisarPessoaEstacionamento);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.rdbNomeEstacionamento);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.rdbCodigoEstacionamento);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.grpCodicoPlava);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.btnSalvarEstacionamento);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.grpDiasDaSemana);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.groupBox1);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.label15);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.txtRequisitandoEstacionamento);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.label11);
+            this.tabCadastrarUsoEstacionamento.Location = new System.Drawing.Point(4, 27);
+            this.tabCadastrarUsoEstacionamento.Name = "tabCadastrarUsoEstacionamento";
+            this.tabCadastrarUsoEstacionamento.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCadastrarUsoEstacionamento.Size = new System.Drawing.Size(1090, 562);
+            this.tabCadastrarUsoEstacionamento.TabIndex = 1;
+            this.tabCadastrarUsoEstacionamento.Text = "Cadastrar Uso do Estacionamento";
+            this.tabCadastrarUsoEstacionamento.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(79, 69);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(102, 18);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Pesquisar por:";
+            // 
+            // btnPesquisarPessoaEstacionamento
+            // 
+            this.btnPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(917, 123);
+            this.btnPesquisarPessoaEstacionamento.Name = "btnPesquisarPessoaEstacionamento";
+            this.btnPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(82, 33);
+            this.btnPesquisarPessoaEstacionamento.TabIndex = 10;
+            this.btnPesquisarPessoaEstacionamento.Text = "Pesquisar";
+            this.btnPesquisarPessoaEstacionamento.UseVisualStyleBackColor = true;
+            this.btnPesquisarPessoaEstacionamento.Click += new System.EventHandler(this.btnPesquisarPessoaEstacionamento_Click);
+            // 
+            // txtPesquisarPessoaEstacionamento
+            // 
+            this.txtPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(82, 127);
+            this.txtPesquisarPessoaEstacionamento.Name = "txtPesquisarPessoaEstacionamento";
+            this.txtPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(829, 25);
+            this.txtPesquisarPessoaEstacionamento.TabIndex = 1;
+            // 
+            // rdbNomeEstacionamento
+            // 
+            this.rdbNomeEstacionamento.AutoSize = true;
+            this.rdbNomeEstacionamento.Location = new System.Drawing.Point(160, 99);
+            this.rdbNomeEstacionamento.Name = "rdbNomeEstacionamento";
+            this.rdbNomeEstacionamento.Size = new System.Drawing.Size(67, 22);
+            this.rdbNomeEstacionamento.TabIndex = 1;
+            this.rdbNomeEstacionamento.Text = "Nome";
+            this.rdbNomeEstacionamento.UseVisualStyleBackColor = true;
+            // 
+            // rdbCodigoEstacionamento
+            // 
+            this.rdbCodigoEstacionamento.AutoSize = true;
+            this.rdbCodigoEstacionamento.Checked = true;
+            this.rdbCodigoEstacionamento.Location = new System.Drawing.Point(82, 99);
+            this.rdbCodigoEstacionamento.Name = "rdbCodigoEstacionamento";
+            this.rdbCodigoEstacionamento.Size = new System.Drawing.Size(72, 22);
+            this.rdbCodigoEstacionamento.TabIndex = 0;
+            this.rdbCodigoEstacionamento.TabStop = true;
+            this.rdbCodigoEstacionamento.Text = "Código";
+            this.rdbCodigoEstacionamento.UseVisualStyleBackColor = true;
+            // 
+            // grpCodicoPlava
+            // 
+            this.grpCodicoPlava.Controls.Add(this.txtCodigoPlaca);
+            this.grpCodicoPlava.Location = new System.Drawing.Point(82, 426);
+            this.grpCodicoPlava.Name = "grpCodicoPlava";
+            this.grpCodicoPlava.Size = new System.Drawing.Size(419, 108);
+            this.grpCodicoPlava.TabIndex = 11;
+            this.grpCodicoPlava.TabStop = false;
+            this.grpCodicoPlava.Text = "Insira o código da placa:";
+            // 
+            // txtCodigoPlaca
+            // 
+            this.txtCodigoPlaca.Location = new System.Drawing.Point(17, 49);
+            this.txtCodigoPlaca.Name = "txtCodigoPlaca";
+            this.txtCodigoPlaca.Size = new System.Drawing.Size(379, 25);
+            this.txtCodigoPlaca.TabIndex = 0;
+            // 
+            // btnSalvarEstacionamento
+            // 
+            this.btnSalvarEstacionamento.Location = new System.Drawing.Point(924, 502);
+            this.btnSalvarEstacionamento.Name = "btnSalvarEstacionamento";
+            this.btnSalvarEstacionamento.Size = new System.Drawing.Size(75, 32);
+            this.btnSalvarEstacionamento.TabIndex = 7;
+            this.btnSalvarEstacionamento.Text = "Salvar";
+            this.btnSalvarEstacionamento.UseVisualStyleBackColor = true;
+            // 
+            // grpDiasDaSemana
+            // 
+            this.grpDiasDaSemana.Controls.Add(this.cmbDomingo);
+            this.grpDiasDaSemana.Controls.Add(this.cmbSabado);
+            this.grpDiasDaSemana.Controls.Add(this.cmbSexta);
+            this.grpDiasDaSemana.Controls.Add(this.cmbQuinta);
+            this.grpDiasDaSemana.Controls.Add(this.cmbQuarta);
+            this.grpDiasDaSemana.Controls.Add(this.cmbTerca);
+            this.grpDiasDaSemana.Controls.Add(this.cmbSegunda);
+            this.grpDiasDaSemana.Controls.Add(this.ckbDomingo);
+            this.grpDiasDaSemana.Controls.Add(this.ckbSabado);
+            this.grpDiasDaSemana.Controls.Add(this.ckbSexta);
+            this.grpDiasDaSemana.Controls.Add(this.ckbQuinta);
+            this.grpDiasDaSemana.Controls.Add(this.ckbQuarta);
+            this.grpDiasDaSemana.Controls.Add(this.ckbTerca);
+            this.grpDiasDaSemana.Controls.Add(this.ckbSegunda);
+            this.grpDiasDaSemana.Location = new System.Drawing.Point(552, 188);
+            this.grpDiasDaSemana.Name = "grpDiasDaSemana";
+            this.grpDiasDaSemana.Size = new System.Drawing.Size(447, 228);
+            this.grpDiasDaSemana.TabIndex = 6;
+            this.grpDiasDaSemana.TabStop = false;
+            this.grpDiasDaSemana.Text = "Dias da Semana";
+            // 
+            // cmbDomingo
+            // 
+            this.cmbDomingo.FormattingEnabled = true;
+            this.cmbDomingo.Items.AddRange(new object[] {
+            "Manhã",
+            "Tarde",
+            "Noite",
+            "Manhã e Tarde",
+            "Manhã e Noite",
+            "Tarde e Noite",
+            "Manhã, Tarde e Noite"});
+            this.cmbDomingo.Location = new System.Drawing.Point(175, 184);
+            this.cmbDomingo.Name = "cmbDomingo";
+            this.cmbDomingo.Size = new System.Drawing.Size(204, 26);
+            this.cmbDomingo.TabIndex = 13;
+            // 
+            // cmbSabado
+            // 
+            this.cmbSabado.FormattingEnabled = true;
+            this.cmbSabado.Items.AddRange(new object[] {
+            "Manhã",
+            "Tarde",
+            "Noite",
+            "Manhã e Tarde",
+            "Manhã e Noite",
+            "Tarde e Noite",
+            "Manhã, Tarde e Noite"});
+            this.cmbSabado.Location = new System.Drawing.Point(175, 157);
+            this.cmbSabado.Name = "cmbSabado";
+            this.cmbSabado.Size = new System.Drawing.Size(204, 26);
+            this.cmbSabado.TabIndex = 12;
+            // 
+            // cmbSexta
+            // 
+            this.cmbSexta.FormattingEnabled = true;
+            this.cmbSexta.Items.AddRange(new object[] {
+            "Manhã",
+            "Tarde",
+            "Noite",
+            "Manhã e Tarde",
+            "Manhã e Noite",
+            "Tarde e Noite",
+            "Manhã, Tarde e Noite"});
+            this.cmbSexta.Location = new System.Drawing.Point(175, 130);
+            this.cmbSexta.Name = "cmbSexta";
+            this.cmbSexta.Size = new System.Drawing.Size(204, 26);
+            this.cmbSexta.TabIndex = 11;
+            // 
+            // cmbQuinta
+            // 
+            this.cmbQuinta.FormattingEnabled = true;
+            this.cmbQuinta.Items.AddRange(new object[] {
+            "Manhã",
+            "Tarde",
+            "Noite",
+            "Manhã e Tarde",
+            "Manhã e Noite",
+            "Tarde e Noite",
+            "Manhã, Tarde e Noite"});
+            this.cmbQuinta.Location = new System.Drawing.Point(175, 103);
+            this.cmbQuinta.Name = "cmbQuinta";
+            this.cmbQuinta.Size = new System.Drawing.Size(204, 26);
+            this.cmbQuinta.TabIndex = 10;
+            // 
+            // cmbQuarta
+            // 
+            this.cmbQuarta.FormattingEnabled = true;
+            this.cmbQuarta.Items.AddRange(new object[] {
+            "Manhã",
+            "Tarde",
+            "Noite",
+            "Manhã e Tarde",
+            "Manhã e Noite",
+            "Tarde e Noite",
+            "Manhã, Tarde e Noite"});
+            this.cmbQuarta.Location = new System.Drawing.Point(175, 76);
+            this.cmbQuarta.Name = "cmbQuarta";
+            this.cmbQuarta.Size = new System.Drawing.Size(204, 26);
+            this.cmbQuarta.TabIndex = 9;
+            // 
+            // cmbTerca
+            // 
+            this.cmbTerca.FormattingEnabled = true;
+            this.cmbTerca.Items.AddRange(new object[] {
+            "Manhã",
+            "Tarde",
+            "Noite",
+            "Manhã e Tarde",
+            "Manhã e Noite",
+            "Tarde e Noite",
+            "Manhã, Tarde e Noite"});
+            this.cmbTerca.Location = new System.Drawing.Point(175, 49);
+            this.cmbTerca.Name = "cmbTerca";
+            this.cmbTerca.Size = new System.Drawing.Size(204, 26);
+            this.cmbTerca.TabIndex = 8;
+            // 
+            // cmbSegunda
+            // 
+            this.cmbSegunda.FormattingEnabled = true;
+            this.cmbSegunda.Items.AddRange(new object[] {
+            "Manhã",
+            "Tarde",
+            "Noite",
+            "Manhã e Tarde",
+            "Manhã e Noite",
+            "Tarde e Noite",
+            "Manhã, Tarde e Noite"});
+            this.cmbSegunda.Location = new System.Drawing.Point(175, 22);
+            this.cmbSegunda.Name = "cmbSegunda";
+            this.cmbSegunda.Size = new System.Drawing.Size(204, 26);
+            this.cmbSegunda.TabIndex = 7;
+            // 
+            // ckbDomingo
+            // 
+            this.ckbDomingo.AutoSize = true;
+            this.ckbDomingo.Location = new System.Drawing.Point(17, 192);
+            this.ckbDomingo.Name = "ckbDomingo";
+            this.ckbDomingo.Size = new System.Drawing.Size(89, 22);
+            this.ckbDomingo.TabIndex = 6;
+            this.ckbDomingo.Text = "Domingo";
+            this.ckbDomingo.UseVisualStyleBackColor = true;
+            this.ckbDomingo.Click += new System.EventHandler(this.ckbDomingo_Click);
+            // 
+            // ckbSabado
+            // 
+            this.ckbSabado.AutoSize = true;
+            this.ckbSabado.Location = new System.Drawing.Point(17, 164);
+            this.ckbSabado.Name = "ckbSabado";
+            this.ckbSabado.Size = new System.Drawing.Size(75, 22);
+            this.ckbSabado.TabIndex = 5;
+            this.ckbSabado.Text = "Sábado";
+            this.ckbSabado.UseVisualStyleBackColor = true;
+            this.ckbSabado.Click += new System.EventHandler(this.ckbSabado_Click);
+            // 
+            // ckbSexta
+            // 
+            this.ckbSexta.AutoSize = true;
+            this.ckbSexta.Location = new System.Drawing.Point(17, 136);
+            this.ckbSexta.Name = "ckbSexta";
+            this.ckbSexta.Size = new System.Drawing.Size(103, 22);
+            this.ckbSexta.TabIndex = 4;
+            this.ckbSexta.Text = "Sexta-Feira";
+            this.ckbSexta.UseVisualStyleBackColor = true;
+            this.ckbSexta.Click += new System.EventHandler(this.ckbSexta_Click);
+            // 
+            // ckbQuinta
+            // 
+            this.ckbQuinta.AutoSize = true;
+            this.ckbQuinta.Location = new System.Drawing.Point(17, 108);
+            this.ckbQuinta.Name = "ckbQuinta";
+            this.ckbQuinta.Size = new System.Drawing.Size(114, 22);
+            this.ckbQuinta.TabIndex = 3;
+            this.ckbQuinta.Text = "Quinta-Feira";
+            this.ckbQuinta.UseVisualStyleBackColor = true;
+            this.ckbQuinta.Click += new System.EventHandler(this.ckbQuinta_Click);
+            // 
+            // ckbQuarta
+            // 
+            this.ckbQuarta.AutoSize = true;
+            this.ckbQuarta.Location = new System.Drawing.Point(17, 80);
+            this.ckbQuarta.Name = "ckbQuarta";
+            this.ckbQuarta.Size = new System.Drawing.Size(115, 22);
+            this.ckbQuarta.TabIndex = 2;
+            this.ckbQuarta.Text = "Quarta-Feira";
+            this.ckbQuarta.UseVisualStyleBackColor = true;
+            this.ckbQuarta.Click += new System.EventHandler(this.chkQuarta_Click);
+            // 
+            // ckbTerca
+            // 
+            this.ckbTerca.AutoSize = true;
+            this.ckbTerca.Location = new System.Drawing.Point(17, 52);
+            this.ckbTerca.Name = "ckbTerca";
+            this.ckbTerca.Size = new System.Drawing.Size(104, 22);
+            this.ckbTerca.TabIndex = 1;
+            this.ckbTerca.Text = "Terça-Feira";
+            this.ckbTerca.UseVisualStyleBackColor = true;
+            this.ckbTerca.Click += new System.EventHandler(this.ckbTerca_Click);
+            // 
+            // ckbSegunda
+            // 
+            this.ckbSegunda.AutoSize = true;
+            this.ckbSegunda.Location = new System.Drawing.Point(17, 24);
+            this.ckbSegunda.Name = "ckbSegunda";
+            this.ckbSegunda.Size = new System.Drawing.Size(124, 22);
+            this.ckbSegunda.TabIndex = 0;
+            this.ckbSegunda.Text = "Segunda-Feira";
+            this.ckbSegunda.UseVisualStyleBackColor = true;
+            this.ckbSegunda.Click += new System.EventHandler(this.ckbSegunda_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdbTerceirizado);
+            this.groupBox1.Controls.Add(this.rdbDiscente);
+            this.groupBox1.Controls.Add(this.rdbDoscente);
+            this.groupBox1.Location = new System.Drawing.Point(82, 272);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(419, 130);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo de Vaga:";
+            // 
+            // rdbTerceirizado
+            // 
+            this.rdbTerceirizado.AutoSize = true;
+            this.rdbTerceirizado.Location = new System.Drawing.Point(16, 90);
+            this.rdbTerceirizado.Name = "rdbTerceirizado";
+            this.rdbTerceirizado.Size = new System.Drawing.Size(107, 22);
+            this.rdbTerceirizado.TabIndex = 2;
+            this.rdbTerceirizado.Text = "Terceirizado";
+            this.rdbTerceirizado.UseVisualStyleBackColor = true;
+            // 
+            // rdbDiscente
+            // 
+            this.rdbDiscente.AutoSize = true;
+            this.rdbDiscente.Location = new System.Drawing.Point(16, 62);
+            this.rdbDiscente.Name = "rdbDiscente";
+            this.rdbDiscente.Size = new System.Drawing.Size(82, 22);
+            this.rdbDiscente.TabIndex = 1;
+            this.rdbDiscente.Text = "Discente";
+            this.rdbDiscente.UseVisualStyleBackColor = true;
+            // 
+            // rdbDoscente
+            // 
+            this.rdbDoscente.AutoSize = true;
+            this.rdbDoscente.Checked = true;
+            this.rdbDoscente.Location = new System.Drawing.Point(16, 34);
+            this.rdbDoscente.Name = "rdbDoscente";
+            this.rdbDoscente.Size = new System.Drawing.Size(86, 22);
+            this.rdbDoscente.TabIndex = 0;
+            this.rdbDoscente.TabStop = true;
+            this.rdbDoscente.Text = "Doscente";
+            this.rdbDoscente.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(79, 188);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 18);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Requisitando:";
+            // 
+            // txtRequisitandoEstacionamento
+            // 
+            this.txtRequisitandoEstacionamento.Location = new System.Drawing.Point(82, 209);
+            this.txtRequisitandoEstacionamento.Name = "txtRequisitandoEstacionamento";
+            this.txtRequisitandoEstacionamento.ReadOnly = true;
+            this.txtRequisitandoEstacionamento.Size = new System.Drawing.Size(419, 25);
+            this.txtRequisitandoEstacionamento.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(411, 24);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(235, 18);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Cadastrar Uso do Estacionamento";
             // 
             // tabSolicitacoesSaidaFinalizadasExpiradas
             // 
@@ -380,6 +851,35 @@
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Text = "Solicitações de Saída Finalizadas e Expiradas";
             this.tabSolicitacoesSaidaFinalizadasExpiradas.UseVisualStyleBackColor = true;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Location = new System.Drawing.Point(555, 51);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(490, 29);
+            this.panel3.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(25, 6);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(179, 18);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Solicitações Expiradas";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Location = new System.Drawing.Point(44, 51);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(490, 29);
+            this.panel2.TabIndex = 4;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -390,7 +890,6 @@
             this.label10.Size = new System.Drawing.Size(188, 18);
             this.label10.TabIndex = 2;
             this.label10.Text = "Solicitações Finalizadas";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // dgvSolicitacoesExpiradas
             // 
@@ -485,6 +984,15 @@
             this.tabSolicitacoesSaidaAbertas.Text = "Solicitações de Saída Abertas";
             this.tabSolicitacoesSaidaAbertas.UseVisualStyleBackColor = true;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel5.Controls.Add(this.btnFinalizarSolicitacao);
+            this.panel5.Location = new System.Drawing.Point(3, 511);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1084, 47);
+            this.panel5.TabIndex = 5;
+            // 
             // btnFinalizarSolicitacao
             // 
             this.btnFinalizarSolicitacao.BackColor = System.Drawing.Color.White;
@@ -496,6 +1004,26 @@
             this.toolTip1.SetToolTip(this.btnFinalizarSolicitacao, "Finalizar Solicitação");
             this.btnFinalizarSolicitacao.UseVisualStyleBackColor = false;
             this.btnFinalizarSolicitacao.Click += new System.EventHandler(this.btnFinalizarSolicitacao_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.ForeColor = System.Drawing.Color.White;
+            this.panel4.Location = new System.Drawing.Point(44, 38);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(326, 35);
+            this.panel4.TabIndex = 4;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(29, 9);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(160, 18);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Solicitações Abertas";
             // 
             // dgvSolicitacoesAbertas
             // 
@@ -537,102 +1065,260 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // label12
+            // tabEntradaVisitanteForncedor
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(29, 9);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(160, 18);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Solicitações Abertas";
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.btnRegistrarEntradaFornecedorVisitante);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.groupBox2);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.label19);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.txtMotivoFornecedorVisitante);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.label18);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.txtEmpresaFornecedorVisitante);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.label17);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.txtRgFornecedorVisitante);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.label16);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.txtNomeFornecedorVisitante);
+            this.tabEntradaVisitanteForncedor.Location = new System.Drawing.Point(4, 27);
+            this.tabEntradaVisitanteForncedor.Name = "tabEntradaVisitanteForncedor";
+            this.tabEntradaVisitanteForncedor.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEntradaVisitanteForncedor.Size = new System.Drawing.Size(1090, 562);
+            this.tabEntradaVisitanteForncedor.TabIndex = 4;
+            this.tabEntradaVisitanteForncedor.Text = "Registrar Entrada de Visitante de Forncedor";
+            this.tabEntradaVisitanteForncedor.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistrarEntradaFornecedorVisitante
+            // 
+            this.btnRegistrarEntradaFornecedorVisitante.Location = new System.Drawing.Point(941, 504);
+            this.btnRegistrarEntradaFornecedorVisitante.Name = "btnRegistrarEntradaFornecedorVisitante";
+            this.btnRegistrarEntradaFornecedorVisitante.Size = new System.Drawing.Size(93, 28);
+            this.btnRegistrarEntradaFornecedorVisitante.TabIndex = 14;
+            this.btnRegistrarEntradaFornecedorVisitante.Text = "Registrar";
+            this.btnRegistrarEntradaFornecedorVisitante.UseVisualStyleBackColor = true;
+            this.btnRegistrarEntradaFornecedorVisitante.Click += new System.EventHandler(this.btnRegistrarEntradaFornecedorVisitante_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rdbFornecedor);
+            this.groupBox2.Controls.Add(this.rdbVisitante);
+            this.groupBox2.Location = new System.Drawing.Point(53, 18);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(981, 81);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Registrar entrada de:";
+            // 
+            // rdbFornecedor
+            // 
+            this.rdbFornecedor.AutoSize = true;
+            this.rdbFornecedor.Checked = true;
+            this.rdbFornecedor.Location = new System.Drawing.Point(19, 36);
+            this.rdbFornecedor.Name = "rdbFornecedor";
+            this.rdbFornecedor.Size = new System.Drawing.Size(101, 22);
+            this.rdbFornecedor.TabIndex = 12;
+            this.rdbFornecedor.TabStop = true;
+            this.rdbFornecedor.Text = "Fornecedor";
+            this.rdbFornecedor.UseVisualStyleBackColor = true;
+            // 
+            // rdbVisitante
+            // 
+            this.rdbVisitante.AutoSize = true;
+            this.rdbVisitante.Location = new System.Drawing.Point(135, 36);
+            this.rdbVisitante.Name = "rdbVisitante";
+            this.rdbVisitante.Size = new System.Drawing.Size(84, 22);
+            this.rdbVisitante.TabIndex = 11;
+            this.rdbVisitante.Text = "Visitante";
+            this.rdbVisitante.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(50, 429);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(60, 18);
+            this.label19.TabIndex = 10;
+            this.label19.Text = "Motivo:";
+            // 
+            // txtMotivoFornecedorVisitante
+            // 
+            this.txtMotivoFornecedorVisitante.Location = new System.Drawing.Point(53, 450);
+            this.txtMotivoFornecedorVisitante.Name = "txtMotivoFornecedorVisitante";
+            this.txtMotivoFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
+            this.txtMotivoFornecedorVisitante.TabIndex = 9;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(50, 322);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 18);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "Empresa:";
+            // 
+            // txtEmpresaFornecedorVisitante
+            // 
+            this.txtEmpresaFornecedorVisitante.Location = new System.Drawing.Point(53, 343);
+            this.txtEmpresaFornecedorVisitante.Name = "txtEmpresaFornecedorVisitante";
+            this.txtEmpresaFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
+            this.txtEmpresaFornecedorVisitante.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(50, 219);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(36, 18);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "RG:";
+            // 
+            // txtRgFornecedorVisitante
+            // 
+            this.txtRgFornecedorVisitante.Location = new System.Drawing.Point(53, 240);
+            this.txtRgFornecedorVisitante.Name = "txtRgFornecedorVisitante";
+            this.txtRgFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
+            this.txtRgFornecedorVisitante.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(50, 120);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(54, 18);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Nome:";
+            // 
+            // txtNomeFornecedorVisitante
+            // 
+            this.txtNomeFornecedorVisitante.Location = new System.Drawing.Point(53, 141);
+            this.txtNomeFornecedorVisitante.Name = "txtNomeFornecedorVisitante";
+            this.txtNomeFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
+            this.txtNomeFornecedorVisitante.TabIndex = 0;
+            // 
+            // tabRegistrarSaidaFornecedor
+            // 
+            this.tabRegistrarSaidaFornecedor.Controls.Add(this.btnRegistarSaidaFornecedor);
+            this.tabRegistrarSaidaFornecedor.Controls.Add(this.dgvFornecedores);
+            this.tabRegistrarSaidaFornecedor.Location = new System.Drawing.Point(4, 27);
+            this.tabRegistrarSaidaFornecedor.Name = "tabRegistrarSaidaFornecedor";
+            this.tabRegistrarSaidaFornecedor.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRegistrarSaidaFornecedor.Size = new System.Drawing.Size(1090, 562);
+            this.tabRegistrarSaidaFornecedor.TabIndex = 5;
+            this.tabRegistrarSaidaFornecedor.Text = "Regitrar Saída de Fornecedor";
+            this.tabRegistrarSaidaFornecedor.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistarSaidaFornecedor
+            // 
+            this.btnRegistarSaidaFornecedor.Location = new System.Drawing.Point(857, 504);
+            this.btnRegistarSaidaFornecedor.Name = "btnRegistarSaidaFornecedor";
+            this.btnRegistarSaidaFornecedor.Size = new System.Drawing.Size(172, 27);
+            this.btnRegistarSaidaFornecedor.TabIndex = 1;
+            this.btnRegistarSaidaFornecedor.Text = "Registrar Saída";
+            this.btnRegistarSaidaFornecedor.UseVisualStyleBackColor = true;
+            // 
+            // dgvFornecedores
+            // 
+            this.dgvFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.dgvFornecedores.Location = new System.Drawing.Point(60, 53);
+            this.dgvFornecedores.MultiSelect = false;
+            this.dgvFornecedores.Name = "dgvFornecedores";
+            this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFornecedores.Size = new System.Drawing.Size(969, 433);
+            this.dgvFornecedores.TabIndex = 0;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Código";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Nome";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Empresa";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Entrada";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // tabRegistrarSaidaVisitante
+            // 
+            this.tabRegistrarSaidaVisitante.Controls.Add(this.btnResgistrarSaidaVisitante);
+            this.tabRegistrarSaidaVisitante.Controls.Add(this.dgvVisitante);
+            this.tabRegistrarSaidaVisitante.Location = new System.Drawing.Point(4, 27);
+            this.tabRegistrarSaidaVisitante.Name = "tabRegistrarSaidaVisitante";
+            this.tabRegistrarSaidaVisitante.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRegistrarSaidaVisitante.Size = new System.Drawing.Size(1090, 562);
+            this.tabRegistrarSaidaVisitante.TabIndex = 6;
+            this.tabRegistrarSaidaVisitante.Text = "Registrar Saída de Visitante";
+            this.tabRegistrarSaidaVisitante.UseVisualStyleBackColor = true;
+            // 
+            // btnResgistrarSaidaVisitante
+            // 
+            this.btnResgistrarSaidaVisitante.Location = new System.Drawing.Point(855, 514);
+            this.btnResgistrarSaidaVisitante.Name = "btnResgistrarSaidaVisitante";
+            this.btnResgistrarSaidaVisitante.Size = new System.Drawing.Size(172, 27);
+            this.btnResgistrarSaidaVisitante.TabIndex = 2;
+            this.btnResgistrarSaidaVisitante.Text = "Registrar Saída";
+            this.btnResgistrarSaidaVisitante.UseVisualStyleBackColor = true;
+            // 
+            // dgvVisitante
+            // 
+            this.dgvVisitante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVisitante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVisitante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.dgvVisitante.Location = new System.Drawing.Point(58, 52);
+            this.dgvVisitante.MultiSelect = false;
+            this.dgvVisitante.Name = "dgvVisitante";
+            this.dgvVisitante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVisitante.Size = new System.Drawing.Size(969, 433);
+            this.dgvVisitante.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Empresa";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Entrada";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // timerAtualizaSolicitacoes
             // 
             this.timerAtualizaSolicitacoes.Enabled = true;
             this.timerAtualizaSolicitacoes.Interval = 61500;
             this.timerAtualizaSolicitacoes.Tick += new System.EventHandler(this.timerAtualizaSolicitacoes_Tick);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel1.Controls.Add(this.btnGerarSolicitacaoAluno);
-            this.panel1.Location = new System.Drawing.Point(3, 519);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 40);
-            this.panel1.TabIndex = 29;
-            // 
-            // btnGerarSolicitacaoAluno
-            // 
-            this.btnGerarSolicitacaoAluno.BackColor = System.Drawing.Color.White;
-            this.btnGerarSolicitacaoAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.btnGerarSolicitacaoAluno.Location = new System.Drawing.Point(962, 0);
-            this.btnGerarSolicitacaoAluno.Name = "btnGerarSolicitacaoAluno";
-            this.btnGerarSolicitacaoAluno.Size = new System.Drawing.Size(75, 40);
-            this.btnGerarSolicitacaoAluno.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btnGerarSolicitacaoAluno, "Gerar Solicitação");
-            this.btnGerarSolicitacaoAluno.UseVisualStyleBackColor = false;
-            this.btnGerarSolicitacaoAluno.Click += new System.EventHandler(this.btnGerarSolicitacaoAluno_Click);
-            // 
-            // btnPesquisarAluno
-            // 
-            this.btnPesquisarAluno.BackColor = System.Drawing.Color.White;
-            this.btnPesquisarAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._6;
-            this.btnPesquisarAluno.Location = new System.Drawing.Point(535, 103);
-            this.btnPesquisarAluno.Name = "btnPesquisarAluno";
-            this.btnPesquisarAluno.Size = new System.Drawing.Size(59, 40);
-            this.btnPesquisarAluno.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.btnPesquisarAluno, "Pesquisar");
-            this.btnPesquisarAluno.UseVisualStyleBackColor = false;
-            this.btnPesquisarAluno.Click += new System.EventHandler(this.btnPesquisarAluno_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(44, 51);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(490, 29);
-            this.panel2.TabIndex = 4;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Location = new System.Drawing.Point(555, 51);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(490, 29);
-            this.panel3.TabIndex = 5;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(25, 6);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(179, 18);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Solicitações Expiradas";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(44, 38);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(326, 35);
-            this.panel4.TabIndex = 4;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel5.Controls.Add(this.btnFinalizarSolicitacao);
-            this.panel5.Location = new System.Drawing.Point(3, 511);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1084, 47);
-            this.panel5.TabIndex = 5;
             // 
             // frmPrincipal
             // 
@@ -652,19 +1338,35 @@
             this.principal.ResumeLayout(false);
             this.tabSolicitacoes.ResumeLayout(false);
             this.tabSolicitacoes.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.tabCadastrarUsoEstacionamento.ResumeLayout(false);
+            this.tabCadastrarUsoEstacionamento.PerformLayout();
+            this.grpCodicoPlava.ResumeLayout(false);
+            this.grpCodicoPlava.PerformLayout();
+            this.grpDiasDaSemana.ResumeLayout(false);
+            this.grpDiasDaSemana.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabSolicitacoesSaidaFinalizadasExpiradas.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesExpiradas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesFinalizadas)).EndInit();
             this.tabSolicitacoesSaidaAbertas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesAbertas)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesAbertas)).EndInit();
+            this.tabEntradaVisitanteForncedor.ResumeLayout(false);
+            this.tabEntradaVisitanteForncedor.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.tabRegistrarSaidaFornecedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
+            this.tabRegistrarSaidaVisitante.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,7 +1377,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.TabControl principal;
-        private System.Windows.Forms.TabPage tabControleEstacionamento;
+        private System.Windows.Forms.TabPage tabCadastrarUsoEstacionamento;
         private System.Windows.Forms.TabPage tabSolicitacoes;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox ckbSolicitacaoSaida;
@@ -728,5 +1430,62 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txtPesquisarPessoaEstacionamento;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtRequisitandoEstacionamento;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbTerceirizado;
+        private System.Windows.Forms.RadioButton rdbDiscente;
+        private System.Windows.Forms.RadioButton rdbDoscente;
+        private System.Windows.Forms.GroupBox grpDiasDaSemana;
+        private System.Windows.Forms.Button btnSalvarEstacionamento;
+        private System.Windows.Forms.Button btnPesquisarPessoaEstacionamento;
+        private System.Windows.Forms.CheckBox ckbDomingo;
+        private System.Windows.Forms.CheckBox ckbSabado;
+        private System.Windows.Forms.CheckBox ckbSexta;
+        private System.Windows.Forms.CheckBox ckbQuinta;
+        private System.Windows.Forms.CheckBox ckbQuarta;
+        private System.Windows.Forms.CheckBox ckbTerca;
+        private System.Windows.Forms.CheckBox ckbSegunda;
+        private System.Windows.Forms.GroupBox grpCodicoPlava;
+        private System.Windows.Forms.TextBox txtCodigoPlaca;
+        private System.Windows.Forms.ComboBox cmbDomingo;
+        private System.Windows.Forms.ComboBox cmbSabado;
+        private System.Windows.Forms.ComboBox cmbSexta;
+        private System.Windows.Forms.ComboBox cmbQuinta;
+        private System.Windows.Forms.ComboBox cmbQuarta;
+        private System.Windows.Forms.ComboBox cmbTerca;
+        private System.Windows.Forms.ComboBox cmbSegunda;
+        private System.Windows.Forms.RadioButton rdbNomeEstacionamento;
+        private System.Windows.Forms.RadioButton rdbCodigoEstacionamento;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TabPage tabEntradaVisitanteForncedor;
+        private System.Windows.Forms.TextBox txtNomeFornecedorVisitante;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtMotivoFornecedorVisitante;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtEmpresaFornecedorVisitante;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtRgFornecedorVisitante;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rdbFornecedor;
+        private System.Windows.Forms.RadioButton rdbVisitante;
+        private System.Windows.Forms.Button btnRegistrarEntradaFornecedorVisitante;
+        private System.Windows.Forms.TabPage tabRegistrarSaidaFornecedor;
+        private System.Windows.Forms.Button btnRegistarSaidaFornecedor;
+        private System.Windows.Forms.DataGridView dgvFornecedores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.TabPage tabRegistrarSaidaVisitante;
+        private System.Windows.Forms.Button btnResgistrarSaidaVisitante;
+        private System.Windows.Forms.DataGridView dgvVisitante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     }
 }

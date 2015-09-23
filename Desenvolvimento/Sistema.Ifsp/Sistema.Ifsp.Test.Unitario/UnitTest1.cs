@@ -24,41 +24,42 @@ namespace Sistema.Ifsp.Test.Unitario
         [TestMethod]
         public void TestMethod1()
         {
-            //    var a = new Aluno()
-            //    {
-            //        celular = "1999748362",
-            //        contato1 = "1993748392",
-            //        contato2 = "1992480483",
-            //        nascimento = new DateTime(1992, 03, 04),
-            //        nome = "Wesley Penteado",
-            //        prontuario = new Prontuario()
-            //        {
-            //            prontuario = "1320010"
-            //        },
-            //        responsavel1 = "Marta Antunes Fuent",
-            //        responsavel2 = "Cintia Pereira Moraes",
-            //        rg = "507382748",
-            //        sexo = 'M',
-            //        telefone = "19966338844"
-            //    };
-            //    var aDao = new AlunoDAO();
-            //    aDao.adicionar(a);
+            var a = new Aluno()
+            {
+                celular = "1999748362",
+                contato1 = "1993748392",
+                contato2 = "1992480483",
+                nascimento = new DateTime(1992, 03, 04),
+                nome = "Wesley Penteado",
+                prontuario = new Prontuario()
+                {
+                    prontuario = "1320010"
+                },
+                responsavel1 = "Marta Antunes Fuent",
+                responsavel2 = "Cintia Pereira Moraes",
+                rg = "507382748",
+                sexo = 'M',
+                telefone = "19966338844"
+            };
+            var aDao = new AlunoDAO();
+            aDao.adicionar(a);
 
-            //var a = new AssistenteAluno()
-            //{
-            //    area = "Assistentecia",
-            //    celular = "199283723",
-            //    nascimento = new DateTime(1984, 04, 04),
-            //    nome = "Mulher do Vitor",
-            //    prontuario = new Prontuario()
-            //    {
-            //        prontuario = "1400020",
-            //    },
-            //    rg = "39846263",
-            //    sexo = 'F',
-            //    telefone = "34920493"
-            //};
-            //var aDao = new AssistenteAlunoDAO();
+            var assistente = new AssistenteAluno()
+            {
+                area = "Assistentecia",
+                celular = "199283723",
+                nascimento = new DateTime(1984, 04, 04),
+                nome = "Lucia Almeida Soares",
+                prontuario = new Prontuario()
+                {
+                    prontuario = "1400020",
+                },
+                rg = "39846263",
+                sexo = 'F',
+                telefone = "34920493"
+            };
+            var assisteteDAO = new AssistenteAlunoDAO();
+            assisteteDAO.adicionar(assistente);
             //var a = aDao.find(2);
             //Assert.AreEqual(a.nome, "Muher do Vitor");
             //Assert.AreEqual(a.idPessoaFisica, 2);

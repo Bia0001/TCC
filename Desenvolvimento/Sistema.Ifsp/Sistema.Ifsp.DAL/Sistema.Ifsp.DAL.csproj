@@ -60,13 +60,9 @@
   <ItemGroup>
     <Compile Include="AcessoContexto.cs" />
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201509180030013_criando-banco.cs" />
-    <Compile Include="Migrations\201509180030013_criando-banco.Designer.cs">
-      <DependentUpon>201509180030013_criando-banco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509190048563_alterando-StatusSolicitacao.cs" />
-    <Compile Include="Migrations\201509190048563_alterando-StatusSolicitacao.Designer.cs">
-      <DependentUpon>201509190048563_alterando-StatusSolicitacao.cs</DependentUpon>
+    <Compile Include="Migrations\201509222316362_criando-banco.cs" />
+    <Compile Include="Migrations\201509222316362_criando-banco.Designer.cs">
+      <DependentUpon>201509222316362_criando-banco.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlConfiguration.cs" />
@@ -84,11 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509180030013_criando-banco.resx">
-      <DependentUpon>201509180030013_criando-banco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509190048563_alterando-StatusSolicitacao.resx">
-      <DependentUpon>201509190048563_alterando-StatusSolicitacao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509222316362_criando-banco.resx">
+      <DependentUpon>201509222316362_criando-banco.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

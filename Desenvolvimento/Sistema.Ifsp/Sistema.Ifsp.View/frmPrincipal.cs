@@ -29,14 +29,16 @@ namespace Sistema.Ifsp.View
             var assistenteDao = new AssistenteAlunoDAO();
             assistenteAluno = assistenteDao.find(2);
             var porteiroDao = new PorteiroDAO();
-            porteiro = porteiroDao.find(4);
+            porteiro = porteiroDao.find(3);
             preencherGridsSolicitacoes();
         }
         /*variaveis*/
-        public Aluno aluno { get; set; }
-        Porteiro porteiro;
-        AssistenteAluno assistenteAluno;
-        IQueryable<Aluno> alunos;
+        AssistenteAdministracao assistenteAdministracao; // usado em cadasrar uso do estacionamento
+        public Aluno aluno { set; get; } //usado na tab de solicitações
+        PessoaFisica pessoaFisica; // usado na tab cadastro do uso de estacionamento
+        Porteiro porteiro; // usado na finalização da solicitação de saída
+        AssistenteAluno assistenteAluno; // usado na tab de solitações
+        IQueryable<Aluno> alunos; // usado na tab de solicitações
         int tempoExpiraçãoSolicitacao = 45;
 
         /*BOTÕES*/
@@ -88,6 +90,7 @@ namespace Sistema.Ifsp.View
                         }
                         else if (alunos.Count() == 1)
                         {
+                            aluno = alunos.First();
                             preencherDadosAluno(alunos.First());
                             gerarSolicitacoes2();
                         }
@@ -124,7 +127,7 @@ namespace Sistema.Ifsp.View
                             aluno = aluno,
                             assistenteAluno = assistenteAluno,
                             motivo = txtMotivoAluno.Text,
-                            status = StatusSolicitacao.aberto
+                            status = StatusSolicitacao.aberto,
                         };
                         var solicitacaoSaidaDao = new SolicitacaoSaidaDAO();
                         if (solicitacaoSaidaDao.adicionar(s))
@@ -135,7 +138,7 @@ namespace Sistema.Ifsp.View
                         }
                         else
                         {
-                            mensagem("Falha ao gerar solicitação de saida");
+                            mensagem("Falha ao gerar solicitação de saida. Tente novamente");
                             gerarSolicitacoes1();
                         }
                         
@@ -337,9 +340,213 @@ namespace Sistema.Ifsp.View
             }
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void ckbSegunda_Click(object sender, EventArgs e)
         {
+            if (ckbSegunda.Checked == true)
+            {
+                cmbSegunda.Enabled = true;
+            }
+            else
+            {
+                cmbSegunda.Enabled = false;
+            }
+        }
 
+        private void ckbTerca_Click(object sender, EventArgs e)
+        {
+            if (ckbTerca.Checked == true)
+            {
+                cmbTerca.Enabled = true;
+            }
+            else
+            {
+                cmbTerca.Enabled = false;
+            }
+        }
+
+        private void chkQuarta_Click(object sender, EventArgs e)
+        {
+            if (ckbQuarta.Checked == true)
+            {
+                cmbQuarta.Enabled = true;
+            }
+            else
+            {
+                cmbQuarta.Enabled = false;
+            }
+        }
+
+        private void ckbQuinta_Click(object sender, EventArgs e)
+        {
+            if (ckbQuinta.Checked == true)
+            {
+                cmbQuinta.Enabled = true;
+            }
+            else
+            {
+                cmbQuinta.Enabled = false;
+            }
+        }
+
+        private void ckbSexta_Click(object sender, EventArgs e)
+        {
+            if (ckbSexta.Checked == true)
+            {
+                cmbSexta.Enabled = true;
+            }
+            else
+            {
+                cmbSexta.Enabled = false;
+            }
+        }
+
+        private void ckbSabado_Click(object sender, EventArgs e)
+        {
+            if (ckbSabado.Checked == true)
+            {
+                cmbSabado.Enabled = true;
+            }
+            else
+            {
+                cmbSabado.Enabled = false;
+            }
+        }
+
+        private void ckbDomingo_Click(object sender, EventArgs e)
+        {
+            if (ckbDomingo.Checked == true)
+            {
+                cmbDomingo.Enabled = true;
+            }
+            else
+            {
+                cmbDomingo.Enabled = false;
+            }
+        }
+        
+
+        /*Pesquisando pessoa fisica*/
+        private PessoaFisica pesquisarPessoaFisica(int id)
+        {
+            var pDAO = new PessoaFisicaDAO();
+            return pDAO.find(id);
+        }
+
+        private void btnPesquisarPessoaEstacionamento_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (rdbCodigoEstacionamento.Checked == true)
+                {
+                    var p = pesquisarPessoaFisica(Convert.ToInt32(txtPesquisarPessoaEstacionamento.Text));
+                    if (p == null)
+                    {
+                        mensagem("Pessoa não encontrada");
+                    }
+                    else
+                    {
+                        txtRequisitandoEstacionamento.Text = p.nome;
+                        var usosDAO = new UsoEstacionamentoCarroDAO();
+                        var usos = usosDAO.get(u => u.pessoaFisica == p);
+                        if (usos.Count() == 0)
+                        {
+                            mensagem("Não há cadastro para uso do estacionamento. Preencha os dados e clique em salvar para cadastrar!");
+                            pessoaFisica = p;
+                        }
+                        else
+                        {
+                            txtCodigoPlaca.Text = usos.First().codAcessoEstacionamento;
+                            switch (usos.First().tipoVaga)
+                            {
+                                case TipoVaga.discente:
+                                    rdbDiscente.Checked = true;
+                                    rdbDoscente.Checked = false;
+                                    rdbTerceirizado.Checked = false;
+                                    break;
+                                case TipoVaga.doscente:
+                                    rdbDiscente.Checked = false;
+                                    rdbDoscente.Checked = true;
+                                    rdbTerceirizado.Checked = false;
+                                    break;
+                                case TipoVaga.terceirizado:
+                                    rdbDiscente.Checked = false;
+                                    rdbDoscente.Checked = false;
+                                    rdbTerceirizado.Checked = true;
+                                    break;
+                            }
+                            foreach (UsoEstacionamentoCarro u in usos)
+                            {
+                                if (u.diaDaSemana == "Monday")
+                                {
+                                    cmbSegunda.SelectedItem = u.turno;
+                                }
+                                else if (u.diaDaSemana == "Tuesday")
+                                {
+                                    cmbTerca.SelectedItem = u.turno;
+                                }
+                                else if (u.diaDaSemana == "Wednesday")
+                                {
+                                    cmbQuarta.SelectedItem = u.turno;
+                                }
+                                else if (u.diaDaSemana == "Thursday")
+                                {
+                                    cmbQuinta.SelectedItem = u.turno;
+                                }
+                                else if (u.diaDaSemana == "Friday")
+                                {
+                                    cmbSexta.SelectedItem = u.turno;
+                                }
+                                else if (u.diaDaSemana == "Saturday")
+                                {
+                                    cmbSabado.SelectedItem = u.turno;
+                                }
+                                else if (u.diaDaSemana == "Sunday")
+                                {
+                                    cmbDomingo.SelectedItem = u.turno;
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnRegistrarEntradaFornecedorVisitante_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtNomeFornecedorVisitante.Text) || 
+                String.IsNullOrWhiteSpace(txtRgFornecedorVisitante.Text) ||
+                String.IsNullOrWhiteSpace(txtMotivoFornecedorVisitante.Text))
+            {
+                mensagem("Por favor verifique se todos os campos foram preenchidos");
+            }
+            else
+            {
+                if (rdbFornecedor.Checked == true)
+                {
+                    var f = new Fornecedor()
+                    {
+                        empresa = txtEmpresaFornecedorVisitante.Text,
+                        entrada = DateTime.Now,
+                        motivo = txtMotivoFornecedorVisitante.Text,
+                        nome = txtNomeFornecedorVisitante.Text,
+                        rg = txtRgFornecedorVisitante.Text
+                    };
+                    var fDAO = new FornecedorDAO();
+                    if (fDAO.adicionar(f))
+                    {
+                        mensagem("Entrada de Forncedor registrada com sucesso!");
+                    }
+                }
+            }
         }
     }
 }

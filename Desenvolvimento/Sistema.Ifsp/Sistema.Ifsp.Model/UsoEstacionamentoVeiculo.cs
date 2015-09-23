@@ -12,9 +12,7 @@ namespace Sistema.Ifsp.Model
         [Required]
         public string diaDaSemana { get; set; }
         [Required]
-        public DateTime entrada { get; set; }
-        [Required]
-        public DateTime saida { get; set; }
+        public string turno { get; set; }
         [Required]
         public TipoVaga tipoVaga{ get; set; }
         [Required]

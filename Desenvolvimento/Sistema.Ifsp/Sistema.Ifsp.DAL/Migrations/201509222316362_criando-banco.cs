@@ -48,7 +48,7 @@ namespace Sistema.Ifsp.DAL.Migrations
                 c => new
                     {
                         idSolicitacao = c.Int(nullable: false, identity: true),
-                        aberura = c.DateTime(nullable: false, precision: 0),
+                        abertura = c.DateTime(nullable: false, precision: 0),
                         motivo = c.String(nullable: false, unicode: false),
                         aluno_idPessoaFisica = c.Int(nullable: false),
                         assistenteAluno_idPessoaFisica = c.Int(nullable: false),
@@ -65,8 +65,7 @@ namespace Sistema.Ifsp.DAL.Migrations
                     {
                         idUsoEstacionamento = c.Int(nullable: false, identity: true),
                         diaDaSemana = c.String(nullable: false, unicode: false),
-                        entrada = c.DateTime(nullable: false, precision: 0),
-                        saida = c.DateTime(nullable: false, precision: 0),
+                        turno = c.String(nullable: false, unicode: false),
                         tipoVaga = c.Int(nullable: false),
                         codAcessoEstacionamento = c.String(unicode: false),
                         pessoaFisica_idPessoaFisica = c.Int(nullable: false),
