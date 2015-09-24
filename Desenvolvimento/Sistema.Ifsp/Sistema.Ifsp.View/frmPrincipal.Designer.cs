@@ -34,10 +34,10 @@
             this.principal = new System.Windows.Forms.TabControl();
             this.tabSolicitacoes = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCancelarSolicitação = new System.Windows.Forms.Button();
             this.btnGerarSolicitacaoAluno = new System.Windows.Forms.Button();
             this.txtMotivoAluno = new System.Windows.Forms.TextBox();
             this.txtPesquisarAluno = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.ckbSolicitacaoSaida = new System.Windows.Forms.CheckBox();
             this.ckbSolicitacaoEntrada = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -109,10 +109,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvSolicitacoesAbertas = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabEntradaVisitanteForncedor = new System.Windows.Forms.TabPage();
             this.btnRegistrarEntradaFornecedorVisitante = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -142,6 +138,15 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerAtualizaSolicitacoes = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.lblSaidaSupervisionada = new System.Windows.Forms.Label();
+            this.rdbSimSaidaSupervisionada = new System.Windows.Forms.RadioButton();
+            this.rdbNaoSaidaSupervisionada = new System.Windows.Forms.RadioButton();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.principal.SuspendLayout();
             this.tabSolicitacoes.SuspendLayout();
@@ -165,6 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             this.tabRegistrarSaidaVisitante.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -193,7 +199,7 @@
             this.principal.Controls.Add(this.tabRegistrarSaidaFornecedor);
             this.principal.Controls.Add(this.tabRegistrarSaidaVisitante);
             this.principal.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.principal.Location = new System.Drawing.Point(40, 63);
+            this.principal.Location = new System.Drawing.Point(40, 65);
             this.principal.Name = "principal";
             this.principal.SelectedIndex = 0;
             this.principal.Size = new System.Drawing.Size(1098, 593);
@@ -202,10 +208,13 @@
             // 
             // tabSolicitacoes
             // 
+            this.tabSolicitacoes.Controls.Add(this.groupBox3);
+            this.tabSolicitacoes.Controls.Add(this.rdbNaoSaidaSupervisionada);
+            this.tabSolicitacoes.Controls.Add(this.rdbSimSaidaSupervisionada);
+            this.tabSolicitacoes.Controls.Add(this.lblSaidaSupervisionada);
             this.tabSolicitacoes.Controls.Add(this.panel1);
             this.tabSolicitacoes.Controls.Add(this.txtMotivoAluno);
             this.tabSolicitacoes.Controls.Add(this.txtPesquisarAluno);
-            this.tabSolicitacoes.Controls.Add(this.label9);
             this.tabSolicitacoes.Controls.Add(this.ckbSolicitacaoSaida);
             this.tabSolicitacoes.Controls.Add(this.ckbSolicitacaoEntrada);
             this.tabSolicitacoes.Controls.Add(this.label8);
@@ -213,8 +222,6 @@
             this.tabSolicitacoes.Controls.Add(this.label7);
             this.tabSolicitacoes.Controls.Add(this.txtNomeAluno);
             this.tabSolicitacoes.Controls.Add(this.btnPesquisarAluno);
-            this.tabSolicitacoes.Controls.Add(this.rdbNomeAluno);
-            this.tabSolicitacoes.Controls.Add(this.rdbProntuarioAluno);
             this.tabSolicitacoes.Controls.Add(this.label6);
             this.tabSolicitacoes.Controls.Add(this.label5);
             this.tabSolicitacoes.Controls.Add(this.txtContato2Aluno);
@@ -237,11 +244,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel1.Controls.Add(this.btnCancelarSolicitação);
             this.panel1.Controls.Add(this.btnGerarSolicitacaoAluno);
             this.panel1.Location = new System.Drawing.Point(3, 519);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1084, 40);
             this.panel1.TabIndex = 29;
+            // 
+            // btnCancelarSolicitação
+            // 
+            this.btnCancelarSolicitação.Location = new System.Drawing.Point(863, 9);
+            this.btnCancelarSolicitação.Name = "btnCancelarSolicitação";
+            this.btnCancelarSolicitação.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelarSolicitação.TabIndex = 14;
+            this.btnCancelarSolicitação.Text = "Cancelar";
+            this.btnCancelarSolicitação.UseVisualStyleBackColor = true;
+            this.btnCancelarSolicitação.Click += new System.EventHandler(this.btnCancelarSolicitação_Click);
             // 
             // btnGerarSolicitacaoAluno
             // 
@@ -261,7 +279,7 @@
             this.txtMotivoAluno.Location = new System.Drawing.Point(49, 438);
             this.txtMotivoAluno.Multiline = true;
             this.txtMotivoAluno.Name = "txtMotivoAluno";
-            this.txtMotivoAluno.Size = new System.Drawing.Size(991, 39);
+            this.txtMotivoAluno.Size = new System.Drawing.Size(991, 27);
             this.txtMotivoAluno.TabIndex = 28;
             // 
             // txtPesquisarAluno
@@ -271,15 +289,6 @@
             this.txtPesquisarAluno.Name = "txtPesquisarAluno";
             this.txtPesquisarAluno.Size = new System.Drawing.Size(480, 25);
             this.txtPesquisarAluno.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(144, 18);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Pesquisar aluno por:";
             // 
             // ckbSolicitacaoSaida
             // 
@@ -354,7 +363,7 @@
             // rdbNomeAluno
             // 
             this.rdbNomeAluno.AutoSize = true;
-            this.rdbNomeAluno.Location = new System.Drawing.Point(167, 43);
+            this.rdbNomeAluno.Location = new System.Drawing.Point(122, 30);
             this.rdbNomeAluno.Name = "rdbNomeAluno";
             this.rdbNomeAluno.Size = new System.Drawing.Size(67, 22);
             this.rdbNomeAluno.TabIndex = 15;
@@ -365,7 +374,7 @@
             // 
             this.rdbProntuarioAluno.AutoSize = true;
             this.rdbProntuarioAluno.Checked = true;
-            this.rdbProntuarioAluno.Location = new System.Drawing.Point(51, 43);
+            this.rdbProntuarioAluno.Location = new System.Drawing.Point(6, 30);
             this.rdbProntuarioAluno.Name = "rdbProntuarioAluno";
             this.rdbProntuarioAluno.Size = new System.Drawing.Size(98, 22);
             this.rdbProntuarioAluno.TabIndex = 14;
@@ -1033,6 +1042,7 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
+            this.Column9,
             this.dataGridViewTextBoxColumn8});
             this.dgvSolicitacoesAbertas.Location = new System.Drawing.Point(44, 92);
             this.dgvSolicitacoesAbertas.MultiSelect = false;
@@ -1040,30 +1050,6 @@
             this.dgvSolicitacoesAbertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSolicitacoesAbertas.Size = new System.Drawing.Size(996, 380);
             this.dgvSolicitacoesAbertas.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Prontuário do Aluno";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Nome do Aluno";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Aberto por:";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // tabEntradaVisitanteForncedor
             // 
@@ -1320,6 +1306,78 @@
             this.timerAtualizaSolicitacoes.Interval = 61500;
             this.timerAtualizaSolicitacoes.Tick += new System.EventHandler(this.timerAtualizaSolicitacoes_Tick);
             // 
+            // lblSaidaSupervisionada
+            // 
+            this.lblSaidaSupervisionada.AutoSize = true;
+            this.lblSaidaSupervisionada.Location = new System.Drawing.Point(48, 483);
+            this.lblSaidaSupervisionada.Name = "lblSaidaSupervisionada";
+            this.lblSaidaSupervisionada.Size = new System.Drawing.Size(152, 18);
+            this.lblSaidaSupervisionada.TabIndex = 30;
+            this.lblSaidaSupervisionada.Text = "Saída supervisionada:";
+            // 
+            // rdbSimSaidaSupervisionada
+            // 
+            this.rdbSimSaidaSupervisionada.AutoSize = true;
+            this.rdbSimSaidaSupervisionada.Checked = true;
+            this.rdbSimSaidaSupervisionada.Location = new System.Drawing.Point(206, 481);
+            this.rdbSimSaidaSupervisionada.Name = "rdbSimSaidaSupervisionada";
+            this.rdbSimSaidaSupervisionada.Size = new System.Drawing.Size(52, 22);
+            this.rdbSimSaidaSupervisionada.TabIndex = 31;
+            this.rdbSimSaidaSupervisionada.TabStop = true;
+            this.rdbSimSaidaSupervisionada.Text = "Sim";
+            this.rdbSimSaidaSupervisionada.UseVisualStyleBackColor = true;
+            // 
+            // rdbNaoSaidaSupervisionada
+            // 
+            this.rdbNaoSaidaSupervisionada.AutoSize = true;
+            this.rdbNaoSaidaSupervisionada.Location = new System.Drawing.Point(264, 481);
+            this.rdbNaoSaidaSupervisionada.Name = "rdbNaoSaidaSupervisionada";
+            this.rdbNaoSaidaSupervisionada.Size = new System.Drawing.Size(54, 22);
+            this.rdbNaoSaidaSupervisionada.TabIndex = 32;
+            this.rdbNaoSaidaSupervisionada.Text = "Não";
+            this.rdbNaoSaidaSupervisionada.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Prontuário do Aluno";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Nome do Aluno";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Saída supervisionada";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Aberto por:";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rdbProntuarioAluno);
+            this.groupBox3.Controls.Add(this.rdbNomeAluno);
+            this.groupBox3.Location = new System.Drawing.Point(49, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(480, 73);
+            this.groupBox3.TabIndex = 33;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pesquisar aluno por:";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1367,6 +1425,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             this.tabRegistrarSaidaVisitante.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1379,7 +1439,6 @@
         private System.Windows.Forms.TabControl principal;
         private System.Windows.Forms.TabPage tabCadastrarUsoEstacionamento;
         private System.Windows.Forms.TabPage tabSolicitacoes;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.CheckBox ckbSolicitacaoSaida;
         private System.Windows.Forms.CheckBox ckbSolicitacaoEntrada;
         private System.Windows.Forms.Label label8;
@@ -1418,10 +1477,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Timer timerAtualizaSolicitacoes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -1487,5 +1542,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.Button btnCancelarSolicitação;
+        private System.Windows.Forms.RadioButton rdbNaoSaidaSupervisionada;
+        private System.Windows.Forms.RadioButton rdbSimSaidaSupervisionada;
+        private System.Windows.Forms.Label lblSaidaSupervisionada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

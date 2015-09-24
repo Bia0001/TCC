@@ -12,7 +12,7 @@ namespace Sistema.Ifsp.Model
         public string nome { get; set; }
         public string rg { get; set; }
         public DateTime entrada { get; set; }
-        public DateTime saida { get; set; }
+        public DateTime? saida { get; set; }
         public string empresa { get; set; }
         public string motivo { get; set; }
     }

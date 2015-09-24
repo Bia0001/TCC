@@ -31,3 +31,5 @@ C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.pdb
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.criandobanco.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.adicionandoatributoemsolicitacaoSaida.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.adicionandoatributoemsolicitacaoSaida2.resources

@@ -98,11 +98,11 @@ namespace Sistema.Ifsp.View
                         {
                             frmAlunos f = new frmAlunos(alunos);
                             f.ShowDialog();
-                        }                        
+                        }
                     }
                     catch (Exception ex)
                     {
-                        mensagem("Nenhum aluno encontrado. Detalhes: "+ ex);
+                        mensagem("Nenhum aluno encontrado. Detalhes: " + ex);
                         gerarSolicitacoes1();
                     }
                 }
@@ -111,64 +111,81 @@ namespace Sistema.Ifsp.View
 
         private void btnGerarSolicitacaoAluno_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtMotivoAluno.Text))
+            if(MessageBox.Show("Deseja realmete gerar solicitação?", "Dúvida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                mensagem("Por favor. Insirar o Motivo");
-            }
-            else
-            {
-                if (ckbSolicitacaoSaida.Checked == true)
+                if (String.IsNullOrEmpty(txtMotivoAluno.Text))
                 {
-                    try
+                    mensagem("Por favor. Insirar o Motivo");
+                }
+                else
+                {
+                    if (ckbSolicitacaoSaida.Checked == true)
                     {
-                        var s = new SolicitacaoSaida()
+                        try
+                        {
+                            bool saidaSupervisionada = true;
+                            if (rdbSimSaidaSupervisionada.Checked == true)
+                            {
+                                saidaSupervisionada = true;
+                            }
+                            else
+                            {
+                                saidaSupervisionada = false;
+                            }
+                            var s = new SolicitacaoSaida()
+                            {
+                                abertura = DateTime.Now,
+                                aluno = aluno,
+                                assistenteAluno = assistenteAluno,
+                                motivo = txtMotivoAluno.Text,
+                                status = StatusSolicitacao.aberto,
+                                saidaSupervisionada = saidaSupervisionada
+                            };
+                            var solicitacaoSaidaDao = new SolicitacaoSaidaDAO();
+                            if (solicitacaoSaidaDao.adicionar(s))
+                            {
+                                mensagem("Solicitação de saída gerada com sucesso!");
+                                gerarSolicitacoes1();
+                                preencherGridsSolicitacoes();
+                            }
+                            else
+                            {
+                                mensagem("Falha ao gerar solicitação de saida. Tente novamente");
+                                gerarSolicitacoes1();
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            mensagem("Falha ao gerar solicitação. Detalhes: " + ex);
+                        }
+                    }
+                    else
+                    {
+                        var s = new SolicitacaoEntrada()
                         {
                             abertura = DateTime.Now,
                             aluno = aluno,
                             assistenteAluno = assistenteAluno,
-                            motivo = txtMotivoAluno.Text,
-                            status = StatusSolicitacao.aberto,
+                            motivo = txtMotivoAluno.Text
                         };
-                        var solicitacaoSaidaDao = new SolicitacaoSaidaDAO();
-                        if (solicitacaoSaidaDao.adicionar(s))
+                        var sDao = new SolicitacaoEntradaDAO();
+                        if (sDao.adicionar(s))
                         {
-                            mensagem("Solicitação de saída gerada com sucesso!");
+                            mensagem("Solicitação de entrada concedida com sucesso!");
                             gerarSolicitacoes1();
-                            preencherGridsSolicitacoes();
                         }
                         else
                         {
-                            mensagem("Falha ao gerar solicitação de saida. Tente novamente");
+                            mensagem("Falha ao conceder solicitação de entrada. Tente novamente!");
                             gerarSolicitacoes1();
                         }
-                        
-                    }
-                    catch (Exception ex)
-                    {
-                        mensagem("Falha ao gerar solicitação. Detalhes: "+ex);
                     }
                 }
-                else
-                {
-                    var s = new SolicitacaoEntrada()
-                    {
-                        abertura = DateTime.Now,
-                        aluno = aluno,
-                        assistenteAluno = assistenteAluno,
-                        motivo = txtMotivoAluno.Text
-                    };
-                    var sDao = new SolicitacaoEntradaDAO();
-                    if (sDao.adicionar(s))
-                    {
-                        mensagem("Solicitação de entrada concedida com sucesso!");
-                        gerarSolicitacoes1();
-                    }
-                    else
-                    {
-                        mensagem("Falha ao conceder solicitação de entrada. Tente novamente!");
-                        gerarSolicitacoes1();
-                    }
-                }
+            }
+            else
+            {
+                return;
             }
         }
 
@@ -183,7 +200,7 @@ namespace Sistema.Ifsp.View
         }
 
         private void preencherGridsSolicitacoes()
-        {            
+        {
             dgvSolicitacoesAbertas.Rows.Clear();
             dgvSolicitacoesAbertas.Refresh();
             dgvSolicitacoesExpiradas.Rows.Clear();
@@ -199,8 +216,17 @@ namespace Sistema.Ifsp.View
             {
                 if (solicitacao.status == StatusSolicitacao.aberto)
                 {
+                    string saidaSupervisionada = null;
+                    if (solicitacao.saidaSupervisionada == true)
+                    {
+                        saidaSupervisionada = "Sim";
+                    }
+                    else
+                    {
+                        saidaSupervisionada = "Não";
+                    }
                     dgvSolicitacoesAbertas.Rows.Add(solicitacao.idSolicitacao, solicitacao.aluno.prontuario.prontuario,
-                        solicitacao.aluno.nome, solicitacao.assistenteAluno.nome);
+                        solicitacao.aluno.nome,  saidaSupervisionada, solicitacao.assistenteAluno.nome);
                 }
                 else if (solicitacao.status == StatusSolicitacao.expirado)
                 {
@@ -212,7 +238,7 @@ namespace Sistema.Ifsp.View
                     dgvSolicitacoesFinalizadas.Rows.Add(solicitacao.idSolicitacao, solicitacao.aluno.prontuario.prontuario,
                         solicitacao.aluno.nome, solicitacao.assistenteAluno.nome);
                 }
-            }   
+            }
         }
 
         private void atualizandoStatusSolicitacoes()
@@ -258,8 +284,8 @@ namespace Sistema.Ifsp.View
             var aDAO = new AlunoDAO();
             return aDAO.get(a => a.prontuario.prontuario == prontuario).FirstOrDefault();
         }
-        
-        
+
+
 
         /*CONTROLES DOS FORMULÁRIOS*/
         private void gerarSolicitacoes1()
@@ -296,13 +322,23 @@ namespace Sistema.Ifsp.View
         private void ckbSolicitacaoSaida_Click(object sender, EventArgs e)
         {
             ckbSolicitacaoEntrada.Checked = false;
+            lblSaidaSupervisionada.Visible = true;
+            rdbSimSaidaSupervisionada.Enabled = true;
+            rdbSimSaidaSupervisionada.Visible = true;
+            rdbNaoSaidaSupervisionada.Enabled = true;
+            rdbNaoSaidaSupervisionada.Visible = true;
+            rdbSimSaidaSupervisionada.Checked = true;
         }
 
         private void ckbSolicitacaoEntrada_Click(object sender, EventArgs e)
         {
             ckbSolicitacaoSaida.Checked = false;
+            lblSaidaSupervisionada.Visible = false;
+            rdbSimSaidaSupervisionada.Enabled = false;
+            rdbSimSaidaSupervisionada.Visible = false;
+            rdbNaoSaidaSupervisionada.Enabled = false;
+            rdbNaoSaidaSupervisionada.Visible = false;
         }
-
         private void timerAtualizaSolicitacoes_Tick(object sender, EventArgs e)
         {
             preencherGridsSolicitacoes();
@@ -310,33 +346,40 @@ namespace Sistema.Ifsp.View
 
         private void btnFinalizarSolicitacao_Click(object sender, EventArgs e)
         {
-            if (dgvSolicitacoesAbertas.SelectedRows.Count == 0)
+            if (MessageBox.Show("Deseja realmente finalizar essa solicitação?", "Dúvida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                mensagem("Por favor selecione a linha que corresponde a solicitação desejada");
+                if (dgvSolicitacoesAbertas.SelectedRows.Count == 0)
+                {
+                    mensagem("Por favor selecione a linha que corresponde a solicitação desejada");
+                }
+                else
+                {
+                    var ssDAO = new SolicitacaoSaidaDAO();
+                    var ss = ssDAO.find(Convert.ToInt32(dgvSolicitacoesAbertas.CurrentRow.Cells[0].Value));
+                    ss.encerramento = DateTime.Now;
+                    ss.status = StatusSolicitacao.encerrado;
+                    ss.porteiro = porteiro;
+                    try
+                    {
+                        if (ssDAO.atualizar(ss))
+                        {
+                            mensagem("Solicitação finalizada com sucesso! Agora o aluno pode ser dispensado!");
+                            preencherGridsSolicitacoes();
+                        }
+                        else
+                        {
+                            mensagem("Falha ao finalizar solicitação");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        mensagem("Falhar ao finalizar solicitação. Detalhes: " + ex);
+                    }
+                }
             }
             else
             {
-                var ssDAO = new SolicitacaoSaidaDAO();
-                var ss = ssDAO.find(Convert.ToInt32(dgvSolicitacoesAbertas.CurrentRow.Cells[0].Value));
-                ss.encerramento = DateTime.Now;
-                ss.status = StatusSolicitacao.encerrado;
-                ss.porteiro = porteiro;
-                try
-                {
-                    if (ssDAO.atualizar(ss))
-                    {
-                        mensagem("Solicitação finalizada com sucesso! Agora o aluno pode ser dispensado!");
-                        preencherGridsSolicitacoes();
-                    }
-                    else
-                    {
-                        mensagem("Falha ao finalizar solicitação");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    mensagem("Falhar ao finalizar solicitação. Detalhes: "+ ex);
-                }
+                return;
             }
         }
 
@@ -423,7 +466,7 @@ namespace Sistema.Ifsp.View
                 cmbDomingo.Enabled = false;
             }
         }
-        
+
 
         /*Pesquisando pessoa fisica*/
         private PessoaFisica pesquisarPessoaFisica(int id)
@@ -522,7 +565,7 @@ namespace Sistema.Ifsp.View
 
         private void btnRegistrarEntradaFornecedorVisitante_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtNomeFornecedorVisitante.Text) || 
+            if (String.IsNullOrWhiteSpace(txtNomeFornecedorVisitante.Text) ||
                 String.IsNullOrWhiteSpace(txtRgFornecedorVisitante.Text) ||
                 String.IsNullOrWhiteSpace(txtMotivoFornecedorVisitante.Text))
             {
@@ -544,9 +587,48 @@ namespace Sistema.Ifsp.View
                     if (fDAO.adicionar(f))
                     {
                         mensagem("Entrada de Forncedor registrada com sucesso!");
+                        limparTelaRegistrarEntradaVisitanteFornecedor();
+                    }
+                    else
+                    {
+                        mensagem("Falha ao registrar entrada de fornecedor");
+                    }
+                }
+                else
+                {
+                    var v = new Visitante()
+                    {
+                        empresa = txtEmpresaFornecedorVisitante.Text,
+                        entrada = DateTime.Now,
+                        motivo = txtMotivoFornecedorVisitante.Text,
+                        nome = txtNomeFornecedorVisitante.Text,
+                        rg = txtRgFornecedorVisitante.Text
+                    };
+                    var vDAO = new VisitanteDAO();
+                    if (vDAO.adicionar(v))
+                    {
+                        mensagem("Entrada de visitante registrada com sucesso!");
+                        limparTelaRegistrarEntradaVisitanteFornecedor();
+                    }
+                    else
+                    {
+                        mensagem("Falha ao regstrar entrada de visitante");
                     }
                 }
             }
+        }
+
+        private void limparTelaRegistrarEntradaVisitanteFornecedor()
+        {
+            txtNomeFornecedorVisitante.Text = null;
+            txtRgFornecedorVisitante.Text = null;
+            txtEmpresaFornecedorVisitante.Text = null;
+            txtMotivoFornecedorVisitante.Text = null;
+        }
+
+        private void btnCancelarSolicitação_Click(object sender, EventArgs e)
+        {
+            gerarSolicitacoes1();
         }
     }
 }
