@@ -63,6 +63,16 @@ namespace Sistema.Ifsp.View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _12 {
+            get {
+                object obj = ResourceManager.GetObject("12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _13 {
             get {
                 object obj = ResourceManager.GetObject("13", resourceCulture);
@@ -96,6 +106,36 @@ namespace Sistema.Ifsp.View.Properties {
         internal static System.Drawing.Bitmap _61 {
             get {
                 object obj = ResourceManager.GetObject("61", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo1ControlePortaria___Copia {
+            get {
+                object obj = ResourceManager.GetObject("Logo1ControlePortaria - Copia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo1ControlePortaria1 {
+            get {
+                object obj = ResourceManager.GetObject("Logo1ControlePortaria1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogoPequeno {
+            get {
+                object obj = ResourceManager.GetObject("LogoPequeno", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

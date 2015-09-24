@@ -630,5 +630,20 @@ namespace Sistema.Ifsp.View
         {
             gerarSolicitacoes1();
         }
+
+        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripContainer1_BottomToolStripPanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

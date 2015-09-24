@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.principal = new System.Windows.Forms.TabControl();
             this.tabSolicitacoes = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rdbProntuarioAluno = new System.Windows.Forms.RadioButton();
+            this.rdbNomeAluno = new System.Windows.Forms.RadioButton();
+            this.rdbNaoSaidaSupervisionada = new System.Windows.Forms.RadioButton();
+            this.rdbSimSaidaSupervisionada = new System.Windows.Forms.RadioButton();
+            this.lblSaidaSupervisionada = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancelarSolicitação = new System.Windows.Forms.Button();
             this.btnGerarSolicitacaoAluno = new System.Windows.Forms.Button();
@@ -45,8 +50,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtNomeAluno = new System.Windows.Forms.TextBox();
             this.btnPesquisarAluno = new System.Windows.Forms.Button();
-            this.rdbNomeAluno = new System.Windows.Forms.RadioButton();
-            this.rdbProntuarioAluno = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtContato2Aluno = new System.Windows.Forms.TextBox();
@@ -58,14 +61,15 @@
             this.txtResponsavel1Aluno = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCadastrarUsoEstacionamento = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnCancelarEstacionamento = new System.Windows.Forms.Button();
+            this.btnSalvarEstacionamento = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.btnPesquisarPessoaEstacionamento = new System.Windows.Forms.Button();
             this.txtPesquisarPessoaEstacionamento = new System.Windows.Forms.TextBox();
             this.rdbNomeEstacionamento = new System.Windows.Forms.RadioButton();
             this.rdbCodigoEstacionamento = new System.Windows.Forms.RadioButton();
             this.grpCodicoPlava = new System.Windows.Forms.GroupBox();
             this.txtCodigoPlaca = new System.Windows.Forms.TextBox();
-            this.btnSalvarEstacionamento = new System.Windows.Forms.Button();
             this.grpDiasDaSemana = new System.Windows.Forms.GroupBox();
             this.cmbDomingo = new System.Windows.Forms.ComboBox();
             this.cmbSabado = new System.Windows.Forms.ComboBox();
@@ -87,7 +91,7 @@
             this.rdbDoscente = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
             this.txtRequisitandoEstacionamento = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.btnPesquisarPessoaEstacionamento = new System.Windows.Forms.Button();
             this.tabSolicitacoesSaidaFinalizadasExpiradas = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -106,10 +110,15 @@
             this.tabSolicitacoesSaidaAbertas = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnFinalizarSolicitacao = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.dgvSolicitacoesAbertas = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabEntradaVisitanteForncedor = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCancelarRegistro = new System.Windows.Forms.Button();
             this.btnRegistrarEntradaFornecedorVisitante = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rdbFornecedor = new System.Windows.Forms.RadioButton();
@@ -123,6 +132,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtNomeFornecedorVisitante = new System.Windows.Forms.TextBox();
             this.tabRegistrarSaidaFornecedor = new System.Windows.Forms.TabPage();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btnRegistarSaidaFornecedor = new System.Windows.Forms.Button();
             this.dgvFornecedores = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,6 +140,7 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabRegistrarSaidaVisitante = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.btnResgistrarSaidaVisitante = new System.Windows.Forms.Button();
             this.dgvVisitante = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,20 +149,22 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timerAtualizaSolicitacoes = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.lblSaidaSupervisionada = new System.Windows.Forms.Label();
-            this.rdbSimSaidaSupervisionada = new System.Windows.Forms.RadioButton();
-            this.rdbNaoSaidaSupervisionada = new System.Windows.Forms.RadioButton();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.menuStrip1.SuspendLayout();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.pnlMenu = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreNósToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.principal.SuspendLayout();
             this.tabSolicitacoes.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabCadastrarUsoEstacionamento.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.grpCodicoPlava.SuspendLayout();
             this.grpDiasDaSemana.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -162,35 +175,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesFinalizadas)).BeginInit();
             this.tabSolicitacoesSaidaAbertas.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesAbertas)).BeginInit();
             this.tabEntradaVisitanteForncedor.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabRegistrarSaidaFornecedor.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).BeginInit();
             this.tabRegistrarSaidaVisitante.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.pnlMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.toolStripContainer1.ContentPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // arquivoToolStripMenuItem
-            // 
-            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
             // principal
             // 
+            this.principal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.principal.Controls.Add(this.tabSolicitacoes);
             this.principal.Controls.Add(this.tabCadastrarUsoEstacionamento);
             this.principal.Controls.Add(this.tabSolicitacoesSaidaFinalizadasExpiradas);
@@ -199,10 +204,10 @@
             this.principal.Controls.Add(this.tabRegistrarSaidaFornecedor);
             this.principal.Controls.Add(this.tabRegistrarSaidaVisitante);
             this.principal.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.principal.Location = new System.Drawing.Point(40, 65);
+            this.principal.Location = new System.Drawing.Point(45, 103);
             this.principal.Name = "principal";
             this.principal.SelectedIndex = 0;
-            this.principal.Size = new System.Drawing.Size(1098, 593);
+            this.principal.Size = new System.Drawing.Size(1098, 618);
             this.principal.TabIndex = 1;
             this.principal.Tag = "";
             // 
@@ -236,139 +241,23 @@
             this.tabSolicitacoes.Location = new System.Drawing.Point(4, 27);
             this.tabSolicitacoes.Name = "tabSolicitacoes";
             this.tabSolicitacoes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSolicitacoes.Size = new System.Drawing.Size(1090, 562);
+            this.tabSolicitacoes.Size = new System.Drawing.Size(1090, 587);
             this.tabSolicitacoes.TabIndex = 0;
             this.tabSolicitacoes.Text = "Gerar Solicitações";
             this.tabSolicitacoes.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // groupBox3
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel1.Controls.Add(this.btnCancelarSolicitação);
-            this.panel1.Controls.Add(this.btnGerarSolicitacaoAluno);
-            this.panel1.Location = new System.Drawing.Point(3, 519);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 40);
-            this.panel1.TabIndex = 29;
-            // 
-            // btnCancelarSolicitação
-            // 
-            this.btnCancelarSolicitação.Location = new System.Drawing.Point(863, 9);
-            this.btnCancelarSolicitação.Name = "btnCancelarSolicitação";
-            this.btnCancelarSolicitação.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelarSolicitação.TabIndex = 14;
-            this.btnCancelarSolicitação.Text = "Cancelar";
-            this.btnCancelarSolicitação.UseVisualStyleBackColor = true;
-            this.btnCancelarSolicitação.Click += new System.EventHandler(this.btnCancelarSolicitação_Click);
-            // 
-            // btnGerarSolicitacaoAluno
-            // 
-            this.btnGerarSolicitacaoAluno.BackColor = System.Drawing.Color.White;
-            this.btnGerarSolicitacaoAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.btnGerarSolicitacaoAluno.Location = new System.Drawing.Point(962, 0);
-            this.btnGerarSolicitacaoAluno.Name = "btnGerarSolicitacaoAluno";
-            this.btnGerarSolicitacaoAluno.Size = new System.Drawing.Size(75, 40);
-            this.btnGerarSolicitacaoAluno.TabIndex = 13;
-            this.toolTip1.SetToolTip(this.btnGerarSolicitacaoAluno, "Gerar Solicitação");
-            this.btnGerarSolicitacaoAluno.UseVisualStyleBackColor = false;
-            this.btnGerarSolicitacaoAluno.Click += new System.EventHandler(this.btnGerarSolicitacaoAluno_Click);
-            // 
-            // txtMotivoAluno
-            // 
-            this.txtMotivoAluno.BackColor = System.Drawing.SystemColors.Control;
-            this.txtMotivoAluno.Location = new System.Drawing.Point(49, 438);
-            this.txtMotivoAluno.Multiline = true;
-            this.txtMotivoAluno.Name = "txtMotivoAluno";
-            this.txtMotivoAluno.Size = new System.Drawing.Size(991, 27);
-            this.txtMotivoAluno.TabIndex = 28;
-            // 
-            // txtPesquisarAluno
-            // 
-            this.txtPesquisarAluno.BackColor = System.Drawing.SystemColors.Control;
-            this.txtPesquisarAluno.Location = new System.Drawing.Point(49, 111);
-            this.txtPesquisarAluno.Name = "txtPesquisarAluno";
-            this.txtPesquisarAluno.Size = new System.Drawing.Size(480, 25);
-            this.txtPesquisarAluno.TabIndex = 27;
-            // 
-            // ckbSolicitacaoSaida
-            // 
-            this.ckbSolicitacaoSaida.AutoSize = true;
-            this.ckbSolicitacaoSaida.Checked = true;
-            this.ckbSolicitacaoSaida.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbSolicitacaoSaida.Location = new System.Drawing.Point(630, 45);
-            this.ckbSolicitacaoSaida.Name = "ckbSolicitacaoSaida";
-            this.ckbSolicitacaoSaida.Size = new System.Drawing.Size(200, 22);
-            this.ckbSolicitacaoSaida.TabIndex = 25;
-            this.ckbSolicitacaoSaida.Text = "Gerar Solicitação de Saída";
-            this.ckbSolicitacaoSaida.UseVisualStyleBackColor = true;
-            this.ckbSolicitacaoSaida.Click += new System.EventHandler(this.ckbSolicitacaoSaida_Click);
-            // 
-            // ckbSolicitacaoEntrada
-            // 
-            this.ckbSolicitacaoEntrada.AutoSize = true;
-            this.ckbSolicitacaoEntrada.Location = new System.Drawing.Point(853, 45);
-            this.ckbSolicitacaoEntrada.Name = "ckbSolicitacaoEntrada";
-            this.ckbSolicitacaoEntrada.Size = new System.Drawing.Size(213, 22);
-            this.ckbSolicitacaoEntrada.TabIndex = 24;
-            this.ckbSolicitacaoEntrada.Text = "Gerar solicitação de entrada";
-            this.ckbSolicitacaoEntrada.UseVisualStyleBackColor = true;
-            this.ckbSolicitacaoEntrada.Click += new System.EventHandler(this.ckbSolicitacaoEntrada_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(557, 178);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 18);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Prontuário do aluno:";
-            // 
-            // txtProntuarioAluno
-            // 
-            this.txtProntuarioAluno.Location = new System.Drawing.Point(560, 199);
-            this.txtProntuarioAluno.Name = "txtProntuarioAluno";
-            this.txtProntuarioAluno.ReadOnly = true;
-            this.txtProntuarioAluno.Size = new System.Drawing.Size(480, 25);
-            this.txtProntuarioAluno.TabIndex = 19;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(48, 178);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 18);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Nome do aluno:";
-            // 
-            // txtNomeAluno
-            // 
-            this.txtNomeAluno.Location = new System.Drawing.Point(49, 199);
-            this.txtNomeAluno.Name = "txtNomeAluno";
-            this.txtNomeAluno.ReadOnly = true;
-            this.txtNomeAluno.Size = new System.Drawing.Size(480, 25);
-            this.txtNomeAluno.TabIndex = 17;
-            // 
-            // btnPesquisarAluno
-            // 
-            this.btnPesquisarAluno.BackColor = System.Drawing.Color.White;
-            this.btnPesquisarAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._6;
-            this.btnPesquisarAluno.Location = new System.Drawing.Point(535, 103);
-            this.btnPesquisarAluno.Name = "btnPesquisarAluno";
-            this.btnPesquisarAluno.Size = new System.Drawing.Size(59, 40);
-            this.btnPesquisarAluno.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.btnPesquisarAluno, "Pesquisar");
-            this.btnPesquisarAluno.UseVisualStyleBackColor = false;
-            this.btnPesquisarAluno.Click += new System.EventHandler(this.btnPesquisarAluno_Click);
-            // 
-            // rdbNomeAluno
-            // 
-            this.rdbNomeAluno.AutoSize = true;
-            this.rdbNomeAluno.Location = new System.Drawing.Point(122, 30);
-            this.rdbNomeAluno.Name = "rdbNomeAluno";
-            this.rdbNomeAluno.Size = new System.Drawing.Size(67, 22);
-            this.rdbNomeAluno.TabIndex = 15;
-            this.rdbNomeAluno.Text = "Nome";
-            this.rdbNomeAluno.UseVisualStyleBackColor = true;
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.rdbProntuarioAluno);
+            this.groupBox3.Controls.Add(this.rdbNomeAluno);
+            this.groupBox3.Location = new System.Drawing.Point(49, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(209, 63);
+            this.groupBox3.TabIndex = 33;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Pesquisar aluno por:";
             // 
             // rdbProntuarioAluno
             // 
@@ -382,8 +271,204 @@
             this.rdbProntuarioAluno.Text = "Prontuário";
             this.rdbProntuarioAluno.UseVisualStyleBackColor = true;
             // 
+            // rdbNomeAluno
+            // 
+            this.rdbNomeAluno.AutoSize = true;
+            this.rdbNomeAluno.Location = new System.Drawing.Point(122, 30);
+            this.rdbNomeAluno.Name = "rdbNomeAluno";
+            this.rdbNomeAluno.Size = new System.Drawing.Size(67, 22);
+            this.rdbNomeAluno.TabIndex = 15;
+            this.rdbNomeAluno.Text = "Nome";
+            this.rdbNomeAluno.UseVisualStyleBackColor = true;
+            // 
+            // rdbNaoSaidaSupervisionada
+            // 
+            this.rdbNaoSaidaSupervisionada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbNaoSaidaSupervisionada.AutoSize = true;
+            this.rdbNaoSaidaSupervisionada.Location = new System.Drawing.Point(986, 122);
+            this.rdbNaoSaidaSupervisionada.Name = "rdbNaoSaidaSupervisionada";
+            this.rdbNaoSaidaSupervisionada.Size = new System.Drawing.Size(54, 22);
+            this.rdbNaoSaidaSupervisionada.TabIndex = 32;
+            this.rdbNaoSaidaSupervisionada.Text = "Não";
+            this.rdbNaoSaidaSupervisionada.UseVisualStyleBackColor = true;
+            // 
+            // rdbSimSaidaSupervisionada
+            // 
+            this.rdbSimSaidaSupervisionada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbSimSaidaSupervisionada.AutoSize = true;
+            this.rdbSimSaidaSupervisionada.Checked = true;
+            this.rdbSimSaidaSupervisionada.Location = new System.Drawing.Point(912, 122);
+            this.rdbSimSaidaSupervisionada.Name = "rdbSimSaidaSupervisionada";
+            this.rdbSimSaidaSupervisionada.Size = new System.Drawing.Size(52, 22);
+            this.rdbSimSaidaSupervisionada.TabIndex = 31;
+            this.rdbSimSaidaSupervisionada.TabStop = true;
+            this.rdbSimSaidaSupervisionada.Text = "Sim";
+            this.rdbSimSaidaSupervisionada.UseVisualStyleBackColor = true;
+            // 
+            // lblSaidaSupervisionada
+            // 
+            this.lblSaidaSupervisionada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSaidaSupervisionada.AutoSize = true;
+            this.lblSaidaSupervisionada.Location = new System.Drawing.Point(886, 98);
+            this.lblSaidaSupervisionada.Name = "lblSaidaSupervisionada";
+            this.lblSaidaSupervisionada.Size = new System.Drawing.Size(154, 18);
+            this.lblSaidaSupervisionada.TabIndex = 30;
+            this.lblSaidaSupervisionada.Text = "Saída Supervisionada:";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel1.Controls.Add(this.btnCancelarSolicitação);
+            this.panel1.Controls.Add(this.btnGerarSolicitacaoAluno);
+            this.panel1.Location = new System.Drawing.Point(0, 535);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1094, 56);
+            this.panel1.TabIndex = 29;
+            // 
+            // btnCancelarSolicitação
+            // 
+            this.btnCancelarSolicitação.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarSolicitação.BackColor = System.Drawing.Color.White;
+            this.btnCancelarSolicitação.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
+            this.btnCancelarSolicitação.Location = new System.Drawing.Point(844, 2);
+            this.btnCancelarSolicitação.Name = "btnCancelarSolicitação";
+            this.btnCancelarSolicitação.Size = new System.Drawing.Size(86, 47);
+            this.btnCancelarSolicitação.TabIndex = 14;
+            this.toolTip1.SetToolTip(this.btnCancelarSolicitação, "Cancelar");
+            this.btnCancelarSolicitação.UseVisualStyleBackColor = false;
+            this.btnCancelarSolicitação.Click += new System.EventHandler(this.btnCancelarSolicitação_Click);
+            // 
+            // btnGerarSolicitacaoAluno
+            // 
+            this.btnGerarSolicitacaoAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGerarSolicitacaoAluno.BackColor = System.Drawing.Color.White;
+            this.btnGerarSolicitacaoAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
+            this.btnGerarSolicitacaoAluno.Location = new System.Drawing.Point(952, 2);
+            this.btnGerarSolicitacaoAluno.Name = "btnGerarSolicitacaoAluno";
+            this.btnGerarSolicitacaoAluno.Size = new System.Drawing.Size(85, 47);
+            this.btnGerarSolicitacaoAluno.TabIndex = 13;
+            this.toolTip1.SetToolTip(this.btnGerarSolicitacaoAluno, "Gerar Solicitação");
+            this.btnGerarSolicitacaoAluno.UseVisualStyleBackColor = false;
+            this.btnGerarSolicitacaoAluno.Click += new System.EventHandler(this.btnGerarSolicitacaoAluno_Click);
+            // 
+            // txtMotivoAluno
+            // 
+            this.txtMotivoAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMotivoAluno.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMotivoAluno.Location = new System.Drawing.Point(49, 438);
+            this.txtMotivoAluno.Multiline = true;
+            this.txtMotivoAluno.Name = "txtMotivoAluno";
+            this.txtMotivoAluno.Size = new System.Drawing.Size(991, 47);
+            this.txtMotivoAluno.TabIndex = 28;
+            // 
+            // txtPesquisarAluno
+            // 
+            this.txtPesquisarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtPesquisarAluno.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPesquisarAluno.Location = new System.Drawing.Point(49, 119);
+            this.txtPesquisarAluno.Name = "txtPesquisarAluno";
+            this.txtPesquisarAluno.Size = new System.Drawing.Size(480, 25);
+            this.txtPesquisarAluno.TabIndex = 27;
+            // 
+            // ckbSolicitacaoSaida
+            // 
+            this.ckbSolicitacaoSaida.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbSolicitacaoSaida.AutoSize = true;
+            this.ckbSolicitacaoSaida.Checked = true;
+            this.ckbSolicitacaoSaida.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbSolicitacaoSaida.Location = new System.Drawing.Point(593, 45);
+            this.ckbSolicitacaoSaida.Name = "ckbSolicitacaoSaida";
+            this.ckbSolicitacaoSaida.Size = new System.Drawing.Size(200, 22);
+            this.ckbSolicitacaoSaida.TabIndex = 25;
+            this.ckbSolicitacaoSaida.Text = "Gerar Solicitação de Saída";
+            this.ckbSolicitacaoSaida.UseVisualStyleBackColor = true;
+            this.ckbSolicitacaoSaida.Click += new System.EventHandler(this.ckbSolicitacaoSaida_Click);
+            // 
+            // ckbSolicitacaoEntrada
+            // 
+            this.ckbSolicitacaoEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbSolicitacaoEntrada.AutoSize = true;
+            this.ckbSolicitacaoEntrada.Location = new System.Drawing.Point(822, 45);
+            this.ckbSolicitacaoEntrada.Name = "ckbSolicitacaoEntrada";
+            this.ckbSolicitacaoEntrada.Size = new System.Drawing.Size(218, 22);
+            this.ckbSolicitacaoEntrada.TabIndex = 24;
+            this.ckbSolicitacaoEntrada.Text = "Gerar Solicitação de Entrada";
+            this.ckbSolicitacaoEntrada.UseVisualStyleBackColor = true;
+            this.ckbSolicitacaoEntrada.Click += new System.EventHandler(this.ckbSolicitacaoEntrada_Click);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(557, 178);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(147, 18);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Prontuário do aluno:";
+            // 
+            // txtProntuarioAluno
+            // 
+            this.txtProntuarioAluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProntuarioAluno.Enabled = false;
+            this.txtProntuarioAluno.Location = new System.Drawing.Point(560, 199);
+            this.txtProntuarioAluno.Name = "txtProntuarioAluno";
+            this.txtProntuarioAluno.ReadOnly = true;
+            this.txtProntuarioAluno.Size = new System.Drawing.Size(480, 25);
+            this.txtProntuarioAluno.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(48, 178);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 18);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Nome do aluno:";
+            // 
+            // txtNomeAluno
+            // 
+            this.txtNomeAluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtNomeAluno.Enabled = false;
+            this.txtNomeAluno.Location = new System.Drawing.Point(49, 199);
+            this.txtNomeAluno.Name = "txtNomeAluno";
+            this.txtNomeAluno.ReadOnly = true;
+            this.txtNomeAluno.Size = new System.Drawing.Size(480, 25);
+            this.txtNomeAluno.TabIndex = 17;
+            // 
+            // btnPesquisarAluno
+            // 
+            this.btnPesquisarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPesquisarAluno.AutoSize = true;
+            this.btnPesquisarAluno.BackColor = System.Drawing.Color.White;
+            this.btnPesquisarAluno.Image = global::Sistema.Ifsp.View.Properties.Resources._6;
+            this.btnPesquisarAluno.Location = new System.Drawing.Point(535, 104);
+            this.btnPesquisarAluno.Name = "btnPesquisarAluno";
+            this.btnPesquisarAluno.Size = new System.Drawing.Size(59, 40);
+            this.btnPesquisarAluno.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.btnPesquisarAluno, "Pesquisar");
+            this.btnPesquisarAluno.UseVisualStyleBackColor = false;
+            this.btnPesquisarAluno.Click += new System.EventHandler(this.btnPesquisarAluno_Click);
+            // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(48, 417);
             this.label6.Name = "label6";
@@ -393,15 +478,20 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(557, 346);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(142, 18);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Contato secundario:";
+            this.label5.Text = "Contato secundário:";
             // 
             // txtContato2Aluno
             // 
+            this.txtContato2Aluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtContato2Aluno.Enabled = false;
             this.txtContato2Aluno.Location = new System.Drawing.Point(560, 367);
             this.txtContato2Aluno.Name = "txtContato2Aluno";
             this.txtContato2Aluno.ReadOnly = true;
@@ -410,6 +500,8 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(46, 346);
             this.label4.Name = "label4";
@@ -419,6 +511,8 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(557, 260);
             this.label3.Name = "label3";
@@ -428,6 +522,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(46, 260);
             this.label2.Name = "label2";
@@ -437,6 +533,9 @@
             // 
             // txtContato1Aluno
             // 
+            this.txtContato1Aluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtContato1Aluno.Enabled = false;
             this.txtContato1Aluno.Location = new System.Drawing.Point(49, 367);
             this.txtContato1Aluno.Name = "txtContato1Aluno";
             this.txtContato1Aluno.ReadOnly = true;
@@ -445,6 +544,9 @@
             // 
             // txtResponsavel2Aluno
             // 
+            this.txtResponsavel2Aluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtResponsavel2Aluno.Enabled = false;
             this.txtResponsavel2Aluno.Location = new System.Drawing.Point(560, 281);
             this.txtResponsavel2Aluno.Name = "txtResponsavel2Aluno";
             this.txtResponsavel2Aluno.ReadOnly = true;
@@ -453,6 +555,9 @@
             // 
             // txtResponsavel1Aluno
             // 
+            this.txtResponsavel1Aluno.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtResponsavel1Aluno.Enabled = false;
             this.txtResponsavel1Aluno.Location = new System.Drawing.Point(49, 281);
             this.txtResponsavel1Aluno.Name = "txtResponsavel1Aluno";
             this.txtResponsavel1Aluno.ReadOnly = true;
@@ -461,8 +566,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 90);
+            this.label1.Location = new System.Drawing.Point(46, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 0;
@@ -470,56 +577,89 @@
             // 
             // tabCadastrarUsoEstacionamento
             // 
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.panel8);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.label14);
-            this.tabCadastrarUsoEstacionamento.Controls.Add(this.btnPesquisarPessoaEstacionamento);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.txtPesquisarPessoaEstacionamento);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.rdbNomeEstacionamento);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.rdbCodigoEstacionamento);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.grpCodicoPlava);
-            this.tabCadastrarUsoEstacionamento.Controls.Add(this.btnSalvarEstacionamento);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.grpDiasDaSemana);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.groupBox1);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.label15);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.txtRequisitandoEstacionamento);
-            this.tabCadastrarUsoEstacionamento.Controls.Add(this.label11);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.btnPesquisarPessoaEstacionamento);
             this.tabCadastrarUsoEstacionamento.Location = new System.Drawing.Point(4, 27);
             this.tabCadastrarUsoEstacionamento.Name = "tabCadastrarUsoEstacionamento";
             this.tabCadastrarUsoEstacionamento.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCadastrarUsoEstacionamento.Size = new System.Drawing.Size(1090, 562);
+            this.tabCadastrarUsoEstacionamento.Size = new System.Drawing.Size(1090, 587);
             this.tabCadastrarUsoEstacionamento.TabIndex = 1;
             this.tabCadastrarUsoEstacionamento.Text = "Cadastrar Uso do Estacionamento";
             this.tabCadastrarUsoEstacionamento.UseVisualStyleBackColor = true;
             // 
+            // panel8
+            // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel8.Controls.Add(this.btnCancelarEstacionamento);
+            this.panel8.Controls.Add(this.btnSalvarEstacionamento);
+            this.panel8.Location = new System.Drawing.Point(0, 535);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(1094, 52);
+            this.panel8.TabIndex = 13;
+            // 
+            // btnCancelarEstacionamento
+            // 
+            this.btnCancelarEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarEstacionamento.BackColor = System.Drawing.Color.White;
+            this.btnCancelarEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
+            this.btnCancelarEstacionamento.Location = new System.Drawing.Point(807, 2);
+            this.btnCancelarEstacionamento.Name = "btnCancelarEstacionamento";
+            this.btnCancelarEstacionamento.Size = new System.Drawing.Size(85, 48);
+            this.btnCancelarEstacionamento.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.btnCancelarEstacionamento, "Cancelar");
+            this.btnCancelarEstacionamento.UseVisualStyleBackColor = false;
+            // 
+            // btnSalvarEstacionamento
+            // 
+            this.btnSalvarEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvarEstacionamento.BackColor = System.Drawing.Color.White;
+            this.btnSalvarEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
+            this.btnSalvarEstacionamento.Location = new System.Drawing.Point(917, 2);
+            this.btnSalvarEstacionamento.Name = "btnSalvarEstacionamento";
+            this.btnSalvarEstacionamento.Size = new System.Drawing.Size(82, 49);
+            this.btnSalvarEstacionamento.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnSalvarEstacionamento, "Salvar");
+            this.btnSalvarEstacionamento.UseVisualStyleBackColor = false;
+            // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(79, 69);
+            this.label14.Location = new System.Drawing.Point(79, 30);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(102, 18);
             this.label14.TabIndex = 12;
             this.label14.Text = "Pesquisar por:";
             // 
-            // btnPesquisarPessoaEstacionamento
-            // 
-            this.btnPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(917, 123);
-            this.btnPesquisarPessoaEstacionamento.Name = "btnPesquisarPessoaEstacionamento";
-            this.btnPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(82, 33);
-            this.btnPesquisarPessoaEstacionamento.TabIndex = 10;
-            this.btnPesquisarPessoaEstacionamento.Text = "Pesquisar";
-            this.btnPesquisarPessoaEstacionamento.UseVisualStyleBackColor = true;
-            this.btnPesquisarPessoaEstacionamento.Click += new System.EventHandler(this.btnPesquisarPessoaEstacionamento_Click);
-            // 
             // txtPesquisarPessoaEstacionamento
             // 
-            this.txtPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(82, 127);
+            this.txtPesquisarPessoaEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisarPessoaEstacionamento.BackColor = System.Drawing.SystemColors.Control;
+            this.txtPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(82, 88);
             this.txtPesquisarPessoaEstacionamento.Name = "txtPesquisarPessoaEstacionamento";
             this.txtPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(829, 25);
             this.txtPesquisarPessoaEstacionamento.TabIndex = 1;
             // 
             // rdbNomeEstacionamento
             // 
+            this.rdbNomeEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.rdbNomeEstacionamento.AutoSize = true;
-            this.rdbNomeEstacionamento.Location = new System.Drawing.Point(160, 99);
+            this.rdbNomeEstacionamento.Location = new System.Drawing.Point(160, 60);
             this.rdbNomeEstacionamento.Name = "rdbNomeEstacionamento";
             this.rdbNomeEstacionamento.Size = new System.Drawing.Size(67, 22);
             this.rdbNomeEstacionamento.TabIndex = 1;
@@ -528,9 +668,11 @@
             // 
             // rdbCodigoEstacionamento
             // 
+            this.rdbCodigoEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.rdbCodigoEstacionamento.AutoSize = true;
             this.rdbCodigoEstacionamento.Checked = true;
-            this.rdbCodigoEstacionamento.Location = new System.Drawing.Point(82, 99);
+            this.rdbCodigoEstacionamento.Location = new System.Drawing.Point(82, 60);
             this.rdbCodigoEstacionamento.Name = "rdbCodigoEstacionamento";
             this.rdbCodigoEstacionamento.Size = new System.Drawing.Size(72, 22);
             this.rdbCodigoEstacionamento.TabIndex = 0;
@@ -540,8 +682,10 @@
             // 
             // grpCodicoPlava
             // 
+            this.grpCodicoPlava.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.grpCodicoPlava.Controls.Add(this.txtCodigoPlaca);
-            this.grpCodicoPlava.Location = new System.Drawing.Point(82, 426);
+            this.grpCodicoPlava.Location = new System.Drawing.Point(82, 401);
             this.grpCodicoPlava.Name = "grpCodicoPlava";
             this.grpCodicoPlava.Size = new System.Drawing.Size(419, 108);
             this.grpCodicoPlava.TabIndex = 11;
@@ -550,22 +694,16 @@
             // 
             // txtCodigoPlaca
             // 
+            this.txtCodigoPlaca.BackColor = System.Drawing.SystemColors.Control;
             this.txtCodigoPlaca.Location = new System.Drawing.Point(17, 49);
             this.txtCodigoPlaca.Name = "txtCodigoPlaca";
             this.txtCodigoPlaca.Size = new System.Drawing.Size(379, 25);
             this.txtCodigoPlaca.TabIndex = 0;
             // 
-            // btnSalvarEstacionamento
-            // 
-            this.btnSalvarEstacionamento.Location = new System.Drawing.Point(924, 502);
-            this.btnSalvarEstacionamento.Name = "btnSalvarEstacionamento";
-            this.btnSalvarEstacionamento.Size = new System.Drawing.Size(75, 32);
-            this.btnSalvarEstacionamento.TabIndex = 7;
-            this.btnSalvarEstacionamento.Text = "Salvar";
-            this.btnSalvarEstacionamento.UseVisualStyleBackColor = true;
-            // 
             // grpDiasDaSemana
             // 
+            this.grpDiasDaSemana.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpDiasDaSemana.Controls.Add(this.cmbDomingo);
             this.grpDiasDaSemana.Controls.Add(this.cmbSabado);
             this.grpDiasDaSemana.Controls.Add(this.cmbSexta);
@@ -580,15 +718,16 @@
             this.grpDiasDaSemana.Controls.Add(this.ckbQuarta);
             this.grpDiasDaSemana.Controls.Add(this.ckbTerca);
             this.grpDiasDaSemana.Controls.Add(this.ckbSegunda);
-            this.grpDiasDaSemana.Location = new System.Drawing.Point(552, 188);
+            this.grpDiasDaSemana.Location = new System.Drawing.Point(552, 148);
             this.grpDiasDaSemana.Name = "grpDiasDaSemana";
             this.grpDiasDaSemana.Size = new System.Drawing.Size(447, 228);
             this.grpDiasDaSemana.TabIndex = 6;
             this.grpDiasDaSemana.TabStop = false;
-            this.grpDiasDaSemana.Text = "Dias da Semana";
+            this.grpDiasDaSemana.Text = "Dias da Semana:";
             // 
             // cmbDomingo
             // 
+            this.cmbDomingo.BackColor = System.Drawing.SystemColors.Control;
             this.cmbDomingo.FormattingEnabled = true;
             this.cmbDomingo.Items.AddRange(new object[] {
             "Manhã",
@@ -605,6 +744,7 @@
             // 
             // cmbSabado
             // 
+            this.cmbSabado.BackColor = System.Drawing.SystemColors.Control;
             this.cmbSabado.FormattingEnabled = true;
             this.cmbSabado.Items.AddRange(new object[] {
             "Manhã",
@@ -621,6 +761,7 @@
             // 
             // cmbSexta
             // 
+            this.cmbSexta.BackColor = System.Drawing.SystemColors.Control;
             this.cmbSexta.FormattingEnabled = true;
             this.cmbSexta.Items.AddRange(new object[] {
             "Manhã",
@@ -637,6 +778,7 @@
             // 
             // cmbQuinta
             // 
+            this.cmbQuinta.BackColor = System.Drawing.SystemColors.Control;
             this.cmbQuinta.FormattingEnabled = true;
             this.cmbQuinta.Items.AddRange(new object[] {
             "Manhã",
@@ -653,6 +795,7 @@
             // 
             // cmbQuarta
             // 
+            this.cmbQuarta.BackColor = System.Drawing.SystemColors.Control;
             this.cmbQuarta.FormattingEnabled = true;
             this.cmbQuarta.Items.AddRange(new object[] {
             "Manhã",
@@ -669,6 +812,7 @@
             // 
             // cmbTerca
             // 
+            this.cmbTerca.BackColor = System.Drawing.SystemColors.Control;
             this.cmbTerca.FormattingEnabled = true;
             this.cmbTerca.Items.AddRange(new object[] {
             "Manhã",
@@ -685,6 +829,7 @@
             // 
             // cmbSegunda
             // 
+            this.cmbSegunda.BackColor = System.Drawing.SystemColors.Control;
             this.cmbSegunda.FormattingEnabled = true;
             this.cmbSegunda.Items.AddRange(new object[] {
             "Manhã",
@@ -778,10 +923,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.rdbTerceirizado);
             this.groupBox1.Controls.Add(this.rdbDiscente);
             this.groupBox1.Controls.Add(this.rdbDoscente);
-            this.groupBox1.Location = new System.Drawing.Point(82, 272);
+            this.groupBox1.Location = new System.Drawing.Point(82, 232);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(419, 130);
             this.groupBox1.TabIndex = 5;
@@ -822,8 +969,10 @@
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(79, 188);
+            this.label15.Location = new System.Drawing.Point(79, 148);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 18);
             this.label15.TabIndex = 4;
@@ -831,20 +980,27 @@
             // 
             // txtRequisitandoEstacionamento
             // 
-            this.txtRequisitandoEstacionamento.Location = new System.Drawing.Point(82, 209);
+            this.txtRequisitandoEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtRequisitandoEstacionamento.Location = new System.Drawing.Point(82, 169);
             this.txtRequisitandoEstacionamento.Name = "txtRequisitandoEstacionamento";
             this.txtRequisitandoEstacionamento.ReadOnly = true;
             this.txtRequisitandoEstacionamento.Size = new System.Drawing.Size(419, 25);
             this.txtRequisitandoEstacionamento.TabIndex = 3;
             // 
-            // label11
+            // btnPesquisarPessoaEstacionamento
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(411, 24);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(235, 18);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Cadastrar Uso do Estacionamento";
+            this.btnPesquisarPessoaEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPesquisarPessoaEstacionamento.BackColor = System.Drawing.Color.White;
+            this.btnPesquisarPessoaEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._6;
+            this.btnPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(917, 73);
+            this.btnPesquisarPessoaEstacionamento.Name = "btnPesquisarPessoaEstacionamento";
+            this.btnPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(70, 40);
+            this.btnPesquisarPessoaEstacionamento.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnPesquisarPessoaEstacionamento, "Pesquisar");
+            this.btnPesquisarPessoaEstacionamento.UseVisualStyleBackColor = false;
+            this.btnPesquisarPessoaEstacionamento.Click += new System.EventHandler(this.btnPesquisarPessoaEstacionamento_Click);
             // 
             // tabSolicitacoesSaidaFinalizadasExpiradas
             // 
@@ -855,13 +1011,15 @@
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Location = new System.Drawing.Point(4, 27);
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Name = "tabSolicitacoesSaidaFinalizadasExpiradas";
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSolicitacoesSaidaFinalizadasExpiradas.Size = new System.Drawing.Size(1090, 562);
+            this.tabSolicitacoesSaidaFinalizadasExpiradas.Size = new System.Drawing.Size(1090, 587);
             this.tabSolicitacoesSaidaFinalizadasExpiradas.TabIndex = 2;
             this.tabSolicitacoesSaidaFinalizadasExpiradas.Text = "Solicitações de Saída Finalizadas e Expiradas";
             this.tabSolicitacoesSaidaFinalizadasExpiradas.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel3.Controls.Add(this.label13);
             this.panel3.Location = new System.Drawing.Point(555, 51);
@@ -882,6 +1040,8 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel2.Controls.Add(this.label10);
             this.panel2.Location = new System.Drawing.Point(44, 51);
@@ -902,7 +1062,10 @@
             // 
             // dgvSolicitacoesExpiradas
             // 
+            this.dgvSolicitacoesExpiradas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSolicitacoesExpiradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSolicitacoesExpiradas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSolicitacoesExpiradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitacoesExpiradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -913,7 +1076,7 @@
             this.dgvSolicitacoesExpiradas.MultiSelect = false;
             this.dgvSolicitacoesExpiradas.Name = "dgvSolicitacoesExpiradas";
             this.dgvSolicitacoesExpiradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitacoesExpiradas.Size = new System.Drawing.Size(490, 410);
+            this.dgvSolicitacoesExpiradas.Size = new System.Drawing.Size(490, 449);
             this.dgvSolicitacoesExpiradas.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -942,7 +1105,10 @@
             // 
             // dgvSolicitacoesFinalizadas
             // 
+            this.dgvSolicitacoesFinalizadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvSolicitacoesFinalizadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSolicitacoesFinalizadas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSolicitacoesFinalizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitacoesFinalizadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -953,7 +1119,7 @@
             this.dgvSolicitacoesFinalizadas.MultiSelect = false;
             this.dgvSolicitacoesFinalizadas.Name = "dgvSolicitacoesFinalizadas";
             this.dgvSolicitacoesFinalizadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitacoesFinalizadas.Size = new System.Drawing.Size(490, 410);
+            this.dgvSolicitacoesFinalizadas.Size = new System.Drawing.Size(490, 449);
             this.dgvSolicitacoesFinalizadas.TabIndex = 0;
             // 
             // Column1
@@ -983,60 +1149,46 @@
             // tabSolicitacoesSaidaAbertas
             // 
             this.tabSolicitacoesSaidaAbertas.Controls.Add(this.panel5);
-            this.tabSolicitacoesSaidaAbertas.Controls.Add(this.panel4);
             this.tabSolicitacoesSaidaAbertas.Controls.Add(this.dgvSolicitacoesAbertas);
             this.tabSolicitacoesSaidaAbertas.Location = new System.Drawing.Point(4, 27);
             this.tabSolicitacoesSaidaAbertas.Name = "tabSolicitacoesSaidaAbertas";
             this.tabSolicitacoesSaidaAbertas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSolicitacoesSaidaAbertas.Size = new System.Drawing.Size(1090, 562);
+            this.tabSolicitacoesSaidaAbertas.Size = new System.Drawing.Size(1090, 587);
             this.tabSolicitacoesSaidaAbertas.TabIndex = 3;
             this.tabSolicitacoesSaidaAbertas.Text = "Solicitações de Saída Abertas";
             this.tabSolicitacoesSaidaAbertas.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel5.Controls.Add(this.btnFinalizarSolicitacao);
-            this.panel5.Location = new System.Drawing.Point(3, 511);
+            this.panel5.Location = new System.Drawing.Point(0, 539);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1084, 47);
+            this.panel5.Size = new System.Drawing.Size(1094, 52);
             this.panel5.TabIndex = 5;
             // 
             // btnFinalizarSolicitacao
             // 
+            this.btnFinalizarSolicitacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFinalizarSolicitacao.BackColor = System.Drawing.Color.White;
-            this.btnFinalizarSolicitacao.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.btnFinalizarSolicitacao.Location = new System.Drawing.Point(962, 2);
+            this.btnFinalizarSolicitacao.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
+            this.btnFinalizarSolicitacao.Location = new System.Drawing.Point(956, 1);
             this.btnFinalizarSolicitacao.Name = "btnFinalizarSolicitacao";
-            this.btnFinalizarSolicitacao.Size = new System.Drawing.Size(75, 43);
+            this.btnFinalizarSolicitacao.Size = new System.Drawing.Size(81, 47);
             this.btnFinalizarSolicitacao.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnFinalizarSolicitacao, "Finalizar Solicitação");
             this.btnFinalizarSolicitacao.UseVisualStyleBackColor = false;
             this.btnFinalizarSolicitacao.Click += new System.EventHandler(this.btnFinalizarSolicitacao_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(44, 38);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(326, 35);
-            this.panel4.TabIndex = 4;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(29, 9);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(160, 18);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Solicitações Abertas";
-            // 
             // dgvSolicitacoesAbertas
             // 
+            this.dgvSolicitacoesAbertas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSolicitacoesAbertas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSolicitacoesAbertas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvSolicitacoesAbertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitacoesAbertas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -1044,16 +1196,46 @@
             this.dataGridViewTextBoxColumn7,
             this.Column9,
             this.dataGridViewTextBoxColumn8});
-            this.dgvSolicitacoesAbertas.Location = new System.Drawing.Point(44, 92);
+            this.dgvSolicitacoesAbertas.Location = new System.Drawing.Point(41, 63);
             this.dgvSolicitacoesAbertas.MultiSelect = false;
             this.dgvSolicitacoesAbertas.Name = "dgvSolicitacoesAbertas";
             this.dgvSolicitacoesAbertas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSolicitacoesAbertas.Size = new System.Drawing.Size(996, 380);
+            this.dgvSolicitacoesAbertas.Size = new System.Drawing.Size(996, 430);
             this.dgvSolicitacoesAbertas.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Prontuário do Aluno";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Nome do Aluno";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Saída supervisionada";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Aberto por:";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // tabEntradaVisitanteForncedor
             // 
-            this.tabEntradaVisitanteForncedor.Controls.Add(this.btnRegistrarEntradaFornecedorVisitante);
+            this.tabEntradaVisitanteForncedor.Controls.Add(this.panel4);
             this.tabEntradaVisitanteForncedor.Controls.Add(this.groupBox2);
             this.tabEntradaVisitanteForncedor.Controls.Add(this.label19);
             this.tabEntradaVisitanteForncedor.Controls.Add(this.txtMotivoFornecedorVisitante);
@@ -1066,23 +1248,53 @@
             this.tabEntradaVisitanteForncedor.Location = new System.Drawing.Point(4, 27);
             this.tabEntradaVisitanteForncedor.Name = "tabEntradaVisitanteForncedor";
             this.tabEntradaVisitanteForncedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEntradaVisitanteForncedor.Size = new System.Drawing.Size(1090, 562);
+            this.tabEntradaVisitanteForncedor.Size = new System.Drawing.Size(1090, 587);
             this.tabEntradaVisitanteForncedor.TabIndex = 4;
-            this.tabEntradaVisitanteForncedor.Text = "Registrar Entrada de Visitante de Forncedor";
+            this.tabEntradaVisitanteForncedor.Text = "Registrar Entrada de Visitante/Forncedor";
             this.tabEntradaVisitanteForncedor.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel4.Controls.Add(this.btnCancelarRegistro);
+            this.panel4.Controls.Add(this.btnRegistrarEntradaFornecedorVisitante);
+            this.panel4.Location = new System.Drawing.Point(-4, 539);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1098, 52);
+            this.panel4.TabIndex = 15;
+            // 
+            // btnCancelarRegistro
+            // 
+            this.btnCancelarRegistro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarRegistro.BackColor = System.Drawing.Color.White;
+            this.btnCancelarRegistro.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
+            this.btnCancelarRegistro.Location = new System.Drawing.Point(834, 2);
+            this.btnCancelarRegistro.Name = "btnCancelarRegistro";
+            this.btnCancelarRegistro.Size = new System.Drawing.Size(86, 44);
+            this.btnCancelarRegistro.TabIndex = 15;
+            this.toolTip1.SetToolTip(this.btnCancelarRegistro, "Cancelar Registro");
+            this.btnCancelarRegistro.UseVisualStyleBackColor = false;
             // 
             // btnRegistrarEntradaFornecedorVisitante
             // 
-            this.btnRegistrarEntradaFornecedorVisitante.Location = new System.Drawing.Point(941, 504);
+            this.btnRegistrarEntradaFornecedorVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrarEntradaFornecedorVisitante.BackColor = System.Drawing.Color.White;
+            this.btnRegistrarEntradaFornecedorVisitante.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
+            this.btnRegistrarEntradaFornecedorVisitante.Location = new System.Drawing.Point(952, 2);
             this.btnRegistrarEntradaFornecedorVisitante.Name = "btnRegistrarEntradaFornecedorVisitante";
-            this.btnRegistrarEntradaFornecedorVisitante.Size = new System.Drawing.Size(93, 28);
+            this.btnRegistrarEntradaFornecedorVisitante.Size = new System.Drawing.Size(86, 44);
             this.btnRegistrarEntradaFornecedorVisitante.TabIndex = 14;
-            this.btnRegistrarEntradaFornecedorVisitante.Text = "Registrar";
-            this.btnRegistrarEntradaFornecedorVisitante.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.btnRegistrarEntradaFornecedorVisitante, "Registrar");
+            this.btnRegistrarEntradaFornecedorVisitante.UseVisualStyleBackColor = false;
             this.btnRegistrarEntradaFornecedorVisitante.Click += new System.EventHandler(this.btnRegistrarEntradaFornecedorVisitante_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.rdbFornecedor);
             this.groupBox2.Controls.Add(this.rdbVisitante);
             this.groupBox2.Location = new System.Drawing.Point(53, 18);
@@ -1090,7 +1302,8 @@
             this.groupBox2.Size = new System.Drawing.Size(981, 81);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Registrar entrada de:";
+            this.groupBox2.Text = "Registrar Entrada de:";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // rdbFornecedor
             // 
@@ -1116,8 +1329,11 @@
             // 
             // label19
             // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(50, 429);
+            this.label19.Location = new System.Drawing.Point(50, 390);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(60, 18);
             this.label19.TabIndex = 10;
@@ -1125,15 +1341,23 @@
             // 
             // txtMotivoFornecedorVisitante
             // 
-            this.txtMotivoFornecedorVisitante.Location = new System.Drawing.Point(53, 450);
+            this.txtMotivoFornecedorVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMotivoFornecedorVisitante.BackColor = System.Drawing.SystemColors.Control;
+            this.txtMotivoFornecedorVisitante.Location = new System.Drawing.Point(53, 411);
+            this.txtMotivoFornecedorVisitante.Multiline = true;
             this.txtMotivoFornecedorVisitante.Name = "txtMotivoFornecedorVisitante";
-            this.txtMotivoFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
+            this.txtMotivoFornecedorVisitante.Size = new System.Drawing.Size(981, 72);
             this.txtMotivoFornecedorVisitante.TabIndex = 9;
             // 
             // label18
             // 
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(50, 322);
+            this.label18.Location = new System.Drawing.Point(50, 300);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(72, 18);
             this.label18.TabIndex = 8;
@@ -1141,15 +1365,22 @@
             // 
             // txtEmpresaFornecedorVisitante
             // 
-            this.txtEmpresaFornecedorVisitante.Location = new System.Drawing.Point(53, 343);
+            this.txtEmpresaFornecedorVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmpresaFornecedorVisitante.BackColor = System.Drawing.SystemColors.Control;
+            this.txtEmpresaFornecedorVisitante.Location = new System.Drawing.Point(53, 321);
             this.txtEmpresaFornecedorVisitante.Name = "txtEmpresaFornecedorVisitante";
             this.txtEmpresaFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
             this.txtEmpresaFornecedorVisitante.TabIndex = 7;
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(50, 219);
+            this.label17.Location = new System.Drawing.Point(50, 210);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(36, 18);
             this.label17.TabIndex = 6;
@@ -1157,15 +1388,22 @@
             // 
             // txtRgFornecedorVisitante
             // 
-            this.txtRgFornecedorVisitante.Location = new System.Drawing.Point(53, 240);
+            this.txtRgFornecedorVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtRgFornecedorVisitante.BackColor = System.Drawing.SystemColors.Control;
+            this.txtRgFornecedorVisitante.Location = new System.Drawing.Point(53, 231);
             this.txtRgFornecedorVisitante.Name = "txtRgFornecedorVisitante";
             this.txtRgFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
             this.txtRgFornecedorVisitante.TabIndex = 5;
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(50, 120);
+            this.label16.Location = new System.Drawing.Point(50, 129);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(54, 18);
             this.label16.TabIndex = 4;
@@ -1173,35 +1411,57 @@
             // 
             // txtNomeFornecedorVisitante
             // 
-            this.txtNomeFornecedorVisitante.Location = new System.Drawing.Point(53, 141);
+            this.txtNomeFornecedorVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNomeFornecedorVisitante.BackColor = System.Drawing.SystemColors.Control;
+            this.txtNomeFornecedorVisitante.Location = new System.Drawing.Point(53, 150);
             this.txtNomeFornecedorVisitante.Name = "txtNomeFornecedorVisitante";
             this.txtNomeFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
             this.txtNomeFornecedorVisitante.TabIndex = 0;
             // 
             // tabRegistrarSaidaFornecedor
             // 
-            this.tabRegistrarSaidaFornecedor.Controls.Add(this.btnRegistarSaidaFornecedor);
+            this.tabRegistrarSaidaFornecedor.Controls.Add(this.panel6);
             this.tabRegistrarSaidaFornecedor.Controls.Add(this.dgvFornecedores);
             this.tabRegistrarSaidaFornecedor.Location = new System.Drawing.Point(4, 27);
             this.tabRegistrarSaidaFornecedor.Name = "tabRegistrarSaidaFornecedor";
             this.tabRegistrarSaidaFornecedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistrarSaidaFornecedor.Size = new System.Drawing.Size(1090, 562);
+            this.tabRegistrarSaidaFornecedor.Size = new System.Drawing.Size(1090, 587);
             this.tabRegistrarSaidaFornecedor.TabIndex = 5;
             this.tabRegistrarSaidaFornecedor.Text = "Regitrar Saída de Fornecedor";
             this.tabRegistrarSaidaFornecedor.UseVisualStyleBackColor = true;
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel6.Controls.Add(this.btnRegistarSaidaFornecedor);
+            this.panel6.Location = new System.Drawing.Point(0, 540);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1090, 51);
+            this.panel6.TabIndex = 16;
+            // 
             // btnRegistarSaidaFornecedor
             // 
-            this.btnRegistarSaidaFornecedor.Location = new System.Drawing.Point(857, 504);
+            this.btnRegistarSaidaFornecedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistarSaidaFornecedor.BackColor = System.Drawing.Color.White;
+            this.btnRegistarSaidaFornecedor.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
+            this.btnRegistarSaidaFornecedor.Location = new System.Drawing.Point(943, 1);
             this.btnRegistarSaidaFornecedor.Name = "btnRegistarSaidaFornecedor";
-            this.btnRegistarSaidaFornecedor.Size = new System.Drawing.Size(172, 27);
+            this.btnRegistarSaidaFornecedor.Size = new System.Drawing.Size(86, 45);
             this.btnRegistarSaidaFornecedor.TabIndex = 1;
-            this.btnRegistarSaidaFornecedor.Text = "Registrar Saída";
-            this.btnRegistarSaidaFornecedor.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.btnRegistarSaidaFornecedor, "Registrar Saída de Fornecedor");
+            this.btnRegistarSaidaFornecedor.UseVisualStyleBackColor = false;
             // 
             // dgvFornecedores
             // 
+            this.dgvFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvFornecedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFornecedores.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
@@ -1212,7 +1472,7 @@
             this.dgvFornecedores.MultiSelect = false;
             this.dgvFornecedores.Name = "dgvFornecedores";
             this.dgvFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFornecedores.Size = new System.Drawing.Size(969, 433);
+            this.dgvFornecedores.Size = new System.Drawing.Size(969, 441);
             this.dgvFornecedores.TabIndex = 0;
             // 
             // Column5
@@ -1241,28 +1501,46 @@
             // 
             // tabRegistrarSaidaVisitante
             // 
-            this.tabRegistrarSaidaVisitante.Controls.Add(this.btnResgistrarSaidaVisitante);
+            this.tabRegistrarSaidaVisitante.Controls.Add(this.panel7);
             this.tabRegistrarSaidaVisitante.Controls.Add(this.dgvVisitante);
             this.tabRegistrarSaidaVisitante.Location = new System.Drawing.Point(4, 27);
             this.tabRegistrarSaidaVisitante.Name = "tabRegistrarSaidaVisitante";
             this.tabRegistrarSaidaVisitante.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRegistrarSaidaVisitante.Size = new System.Drawing.Size(1090, 562);
+            this.tabRegistrarSaidaVisitante.Size = new System.Drawing.Size(1090, 587);
             this.tabRegistrarSaidaVisitante.TabIndex = 6;
             this.tabRegistrarSaidaVisitante.Text = "Registrar Saída de Visitante";
             this.tabRegistrarSaidaVisitante.UseVisualStyleBackColor = true;
             // 
+            // panel7
+            // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel7.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel7.Controls.Add(this.btnResgistrarSaidaVisitante);
+            this.panel7.Location = new System.Drawing.Point(0, 539);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1090, 48);
+            this.panel7.TabIndex = 17;
+            // 
             // btnResgistrarSaidaVisitante
             // 
-            this.btnResgistrarSaidaVisitante.Location = new System.Drawing.Point(855, 514);
+            this.btnResgistrarSaidaVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResgistrarSaidaVisitante.BackColor = System.Drawing.Color.White;
+            this.btnResgistrarSaidaVisitante.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
+            this.btnResgistrarSaidaVisitante.Location = new System.Drawing.Point(935, 2);
             this.btnResgistrarSaidaVisitante.Name = "btnResgistrarSaidaVisitante";
-            this.btnResgistrarSaidaVisitante.Size = new System.Drawing.Size(172, 27);
+            this.btnResgistrarSaidaVisitante.Size = new System.Drawing.Size(92, 44);
             this.btnResgistrarSaidaVisitante.TabIndex = 2;
-            this.btnResgistrarSaidaVisitante.Text = "Registrar Saída";
-            this.btnResgistrarSaidaVisitante.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.btnResgistrarSaidaVisitante, "Registrar Saída de Visitante");
+            this.btnResgistrarSaidaVisitante.UseVisualStyleBackColor = false;
             // 
             // dgvVisitante
             // 
+            this.dgvVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvVisitante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVisitante.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvVisitante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisitante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn9,
@@ -1273,7 +1551,7 @@
             this.dgvVisitante.MultiSelect = false;
             this.dgvVisitante.Name = "dgvVisitante";
             this.dgvVisitante.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVisitante.Size = new System.Drawing.Size(969, 433);
+            this.dgvVisitante.Size = new System.Drawing.Size(969, 443);
             this.dgvVisitante.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn9
@@ -1306,99 +1584,145 @@
             this.timerAtualizaSolicitacoes.Interval = 61500;
             this.timerAtualizaSolicitacoes.Tick += new System.EventHandler(this.timerAtualizaSolicitacoes_Tick);
             // 
-            // lblSaidaSupervisionada
+            // btnLogout
             // 
-            this.lblSaidaSupervisionada.AutoSize = true;
-            this.lblSaidaSupervisionada.Location = new System.Drawing.Point(48, 483);
-            this.lblSaidaSupervisionada.Name = "lblSaidaSupervisionada";
-            this.lblSaidaSupervisionada.Size = new System.Drawing.Size(152, 18);
-            this.lblSaidaSupervisionada.TabIndex = 30;
-            this.lblSaidaSupervisionada.Text = "Saída supervisionada:";
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.AutoSize = true;
+            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.Location = new System.Drawing.Point(947, 11);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(78, 35);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.Text = "Logout";
+            this.toolTip1.SetToolTip(this.btnLogout, "Sair");
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
-            // rdbSimSaidaSupervisionada
+            // pnlMenu
             // 
-            this.rdbSimSaidaSupervisionada.AutoSize = true;
-            this.rdbSimSaidaSupervisionada.Checked = true;
-            this.rdbSimSaidaSupervisionada.Location = new System.Drawing.Point(206, 481);
-            this.rdbSimSaidaSupervisionada.Name = "rdbSimSaidaSupervisionada";
-            this.rdbSimSaidaSupervisionada.Size = new System.Drawing.Size(52, 22);
-            this.rdbSimSaidaSupervisionada.TabIndex = 31;
-            this.rdbSimSaidaSupervisionada.TabStop = true;
-            this.rdbSimSaidaSupervisionada.Text = "Sim";
-            this.rdbSimSaidaSupervisionada.UseVisualStyleBackColor = true;
+            this.pnlMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlMenu.AutoScroll = true;
+            this.pnlMenu.BackColor = System.Drawing.Color.White;
+            this.pnlMenu.Controls.Add(this.pictureBox1);
+            this.pnlMenu.Controls.Add(this.label9);
+            this.pnlMenu.Controls.Add(this.btnLogout);
+            this.pnlMenu.Controls.Add(this.toolStripContainer1);
+            this.pnlMenu.Location = new System.Drawing.Point(3, 2);
+            this.pnlMenu.Name = "pnlMenu";
+            this.pnlMenu.Size = new System.Drawing.Size(1181, 83);
+            this.pnlMenu.TabIndex = 2;
             // 
-            // rdbNaoSaidaSupervisionada
+            // pictureBox1
             // 
-            this.rdbNaoSaidaSupervisionada.AutoSize = true;
-            this.rdbNaoSaidaSupervisionada.Location = new System.Drawing.Point(264, 481);
-            this.rdbNaoSaidaSupervisionada.Name = "rdbNaoSaidaSupervisionada";
-            this.rdbNaoSaidaSupervisionada.Size = new System.Drawing.Size(54, 22);
-            this.rdbNaoSaidaSupervisionada.TabIndex = 32;
-            this.rdbNaoSaidaSupervisionada.Text = "Não";
-            this.rdbNaoSaidaSupervisionada.UseVisualStyleBackColor = true;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Image = global::Sistema.Ifsp.View.Properties.Resources.LogoPequeno;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(201, 77);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn5
+            // label9
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1046, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 16);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "[Usuário Atual]";
             // 
-            // dataGridViewTextBoxColumn6
+            // toolStripContainer1
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Prontuário do Aluno";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn7
+            // toolStripContainer1.BottomToolStripPanel
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Nome do Aluno";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.toolStripContainer1.BottomToolStripPanel.Click += new System.EventHandler(this.toolStripContainer1_BottomToolStripPanel_Click);
             // 
-            // Column9
+            // toolStripContainer1.ContentPanel
             // 
-            this.Column9.HeaderText = "Saída supervisionada";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.menu);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(507, 11);
+            this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
+            this.toolStripContainer1.Location = new System.Drawing.Point(267, 47);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(507, 36);
+            this.toolStripContainer1.TabIndex = 3;
+            this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // dataGridViewTextBoxColumn8
+            // menu
             // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Aberto por:";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.menu.BackColor = System.Drawing.Color.LightSlateGray;
+            this.menu.Dock = System.Windows.Forms.DockStyle.None;
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivoToolStripMenuItem,
+            this.ferramentasToolStripMenuItem,
+            this.ajudaToolStripMenuItem,
+            this.sobreNósToolStripMenuItem});
+            this.menu.Location = new System.Drawing.Point(25, 10);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(355, 24);
+            this.menu.TabIndex = 1;
+            this.menu.Text = "menuStrip1";
             // 
-            // groupBox3
+            // arquivoToolStripMenuItem
             // 
-            this.groupBox3.Controls.Add(this.rdbProntuarioAluno);
-            this.groupBox3.Controls.Add(this.rdbNomeAluno);
-            this.groupBox3.Location = new System.Drawing.Point(49, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(480, 73);
-            this.groupBox3.TabIndex = 33;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Pesquisar aluno por:";
+            this.arquivoToolStripMenuItem.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.arquivoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // ferramentasToolStripMenuItem
+            // 
+            this.ferramentasToolStripMenuItem.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ferramentasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.ferramentasToolStripMenuItem.Name = "ferramentasToolStripMenuItem";
+            this.ferramentasToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.ferramentasToolStripMenuItem.Text = "Ferramentas";
+            // 
+            // ajudaToolStripMenuItem
+            // 
+            this.ajudaToolStripMenuItem.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ajudaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.ajudaToolStripMenuItem.Name = "ajudaToolStripMenuItem";
+            this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.ajudaToolStripMenuItem.Text = "Ajuda";
+            // 
+            // sobreNósToolStripMenuItem
+            // 
+            this.sobreNósToolStripMenuItem.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sobreNósToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.sobreNósToolStripMenuItem.Name = "sobreNósToolStripMenuItem";
+            this.sobreNósToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.sobreNósToolStripMenuItem.Text = "Sobre Nós";
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1184, 695);
+            this.ClientSize = new System.Drawing.Size(1184, 733);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.principal);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.principal.ResumeLayout(false);
             this.tabSolicitacoes.ResumeLayout(false);
             this.tabSolicitacoes.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.tabCadastrarUsoEstacionamento.ResumeLayout(false);
             this.tabCadastrarUsoEstacionamento.PerformLayout();
+            this.panel8.ResumeLayout(false);
             this.grpCodicoPlava.ResumeLayout(false);
             this.grpCodicoPlava.PerformLayout();
             this.grpDiasDaSemana.ResumeLayout(false);
@@ -1414,28 +1738,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesFinalizadas)).EndInit();
             this.tabSolicitacoesSaidaAbertas.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitacoesAbertas)).EndInit();
             this.tabEntradaVisitanteForncedor.ResumeLayout(false);
             this.tabEntradaVisitanteForncedor.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabRegistrarSaidaFornecedor.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedores)).EndInit();
             this.tabRegistrarSaidaVisitante.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.toolStripContainer1.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer1.ContentPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.TabControl principal;
         private System.Windows.Forms.TabPage tabCadastrarUsoEstacionamento;
         private System.Windows.Forms.TabPage tabSolicitacoes;
@@ -1467,7 +1796,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabPage tabSolicitacoesSaidaAbertas;
         private System.Windows.Forms.DataGridView dgvSolicitacoesAbertas;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnFinalizarSolicitacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -1484,9 +1812,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtPesquisarPessoaEstacionamento;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtRequisitandoEstacionamento;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1552,5 +1878,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel pnlMenu;
+        private System.Windows.Forms.MenuStrip menu;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ferramentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sobreNósToolStripMenuItem;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnCancelarEstacionamento;
+        private System.Windows.Forms.Button btnCancelarRegistro;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
