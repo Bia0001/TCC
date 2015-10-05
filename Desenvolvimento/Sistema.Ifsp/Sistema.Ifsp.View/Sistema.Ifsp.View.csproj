@@ -70,16 +70,35 @@
     <Compile Include="frmAlunos.Designer.cs">
       <DependentUpon>frmAlunos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCodigoPlaca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCodigoPlaca.Designer.cs">
+      <DependentUpon>frmCodigoPlaca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPessoasFisicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPessoasFisicas.Designer.cs">
+      <DependentUpon>frmPessoasFisicas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GerarCodigoPlacaException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAlunos.resx">
       <DependentUpon>frmAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCodigoPlaca.resx">
+      <DependentUpon>frmCodigoPlaca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPessoasFisicas.resx">
+      <DependentUpon>frmPessoasFisicas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>

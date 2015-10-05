@@ -61,16 +61,26 @@
             this.txtResponsavel1Aluno = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCadastrarUsoEstacionamento = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbDocente = new System.Windows.Forms.ComboBox();
+            this.lblCodigoPlaca = new System.Windows.Forms.Label();
+            this.txtCodigoPlaca = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCancelarEstacionamento = new System.Windows.Forms.Button();
-            this.btnSalvarEstacionamento = new System.Windows.Forms.Button();
+            this.btnSalvarUsoEstacionamento = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtPesquisarPessoaEstacionamento = new System.Windows.Forms.TextBox();
             this.rdbNomeEstacionamento = new System.Windows.Forms.RadioButton();
             this.rdbCodigoEstacionamento = new System.Windows.Forms.RadioButton();
-            this.grpCodicoPlava = new System.Windows.Forms.GroupBox();
-            this.txtCodigoPlaca = new System.Windows.Forms.TextBox();
             this.grpDiasDaSemana = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.cmbDomingo = new System.Windows.Forms.ComboBox();
             this.cmbSabado = new System.Windows.Forms.ComboBox();
             this.cmbSexta = new System.Windows.Forms.ComboBox();
@@ -78,17 +88,6 @@
             this.cmbQuarta = new System.Windows.Forms.ComboBox();
             this.cmbTerca = new System.Windows.Forms.ComboBox();
             this.cmbSegunda = new System.Windows.Forms.ComboBox();
-            this.ckbDomingo = new System.Windows.Forms.CheckBox();
-            this.ckbSabado = new System.Windows.Forms.CheckBox();
-            this.ckbSexta = new System.Windows.Forms.CheckBox();
-            this.ckbQuinta = new System.Windows.Forms.CheckBox();
-            this.ckbQuarta = new System.Windows.Forms.CheckBox();
-            this.ckbTerca = new System.Windows.Forms.CheckBox();
-            this.ckbSegunda = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbTerceirizado = new System.Windows.Forms.RadioButton();
-            this.rdbDiscente = new System.Windows.Forms.RadioButton();
-            this.rdbDoscente = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
             this.txtRequisitandoEstacionamento = new System.Windows.Forms.TextBox();
             this.btnPesquisarPessoaEstacionamento = new System.Windows.Forms.Button();
@@ -165,9 +164,7 @@
             this.panel1.SuspendLayout();
             this.tabCadastrarUsoEstacionamento.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.grpCodicoPlava.SuspendLayout();
             this.grpDiasDaSemana.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.tabSolicitacoesSaidaFinalizadasExpiradas.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -577,14 +574,16 @@
             // 
             // tabCadastrarUsoEstacionamento
             // 
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.label12);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.cmbDocente);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.lblCodigoPlaca);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.txtCodigoPlaca);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.panel8);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.label14);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.txtPesquisarPessoaEstacionamento);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.rdbNomeEstacionamento);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.rdbCodigoEstacionamento);
-            this.tabCadastrarUsoEstacionamento.Controls.Add(this.grpCodicoPlava);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.grpDiasDaSemana);
-            this.tabCadastrarUsoEstacionamento.Controls.Add(this.groupBox1);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.label15);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.txtRequisitandoEstacionamento);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.btnPesquisarPessoaEstacionamento);
@@ -596,41 +595,92 @@
             this.tabCadastrarUsoEstacionamento.Text = "Cadastrar Uso do Estacionamento";
             this.tabCadastrarUsoEstacionamento.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(79, 430);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 18);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Docente?";
+            // 
+            // cmbDocente
+            // 
+            this.cmbDocente.FormattingEnabled = true;
+            this.cmbDocente.Items.AddRange(new object[] {
+            "Não",
+            "Sim"});
+            this.cmbDocente.Location = new System.Drawing.Point(82, 451);
+            this.cmbDocente.Name = "cmbDocente";
+            this.cmbDocente.Size = new System.Drawing.Size(121, 26);
+            this.cmbDocente.TabIndex = 15;
+            this.cmbDocente.Text = "Não";
+            // 
+            // lblCodigoPlaca
+            // 
+            this.lblCodigoPlaca.AutoSize = true;
+            this.lblCodigoPlaca.Location = new System.Drawing.Point(615, 430);
+            this.lblCodigoPlaca.Name = "lblCodigoPlaca";
+            this.lblCodigoPlaca.Size = new System.Drawing.Size(113, 18);
+            this.lblCodigoPlaca.TabIndex = 14;
+            this.lblCodigoPlaca.Text = "Código da placa";
+            // 
+            // txtCodigoPlaca
+            // 
+            this.txtCodigoPlaca.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCodigoPlaca.Location = new System.Drawing.Point(618, 451);
+            this.txtCodigoPlaca.Name = "txtCodigoPlaca";
+            this.txtCodigoPlaca.Size = new System.Drawing.Size(379, 25);
+            this.txtCodigoPlaca.TabIndex = 0;
+            // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel8.Controls.Add(this.btnAlterar);
             this.panel8.Controls.Add(this.btnCancelarEstacionamento);
-            this.panel8.Controls.Add(this.btnSalvarEstacionamento);
+            this.panel8.Controls.Add(this.btnSalvarUsoEstacionamento);
             this.panel8.Location = new System.Drawing.Point(0, 535);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1094, 52);
             this.panel8.TabIndex = 13;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(820, 15);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 16;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCancelarEstacionamento
             // 
             this.btnCancelarEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarEstacionamento.BackColor = System.Drawing.Color.White;
             this.btnCancelarEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
-            this.btnCancelarEstacionamento.Location = new System.Drawing.Point(807, 2);
+            this.btnCancelarEstacionamento.Location = new System.Drawing.Point(708, 2);
             this.btnCancelarEstacionamento.Name = "btnCancelarEstacionamento";
             this.btnCancelarEstacionamento.Size = new System.Drawing.Size(85, 48);
             this.btnCancelarEstacionamento.TabIndex = 15;
             this.toolTip1.SetToolTip(this.btnCancelarEstacionamento, "Cancelar");
             this.btnCancelarEstacionamento.UseVisualStyleBackColor = false;
+            this.btnCancelarEstacionamento.Click += new System.EventHandler(this.btnCancelarEstacionamento_Click);
             // 
-            // btnSalvarEstacionamento
+            // btnSalvarUsoEstacionamento
             // 
-            this.btnSalvarEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSalvarEstacionamento.BackColor = System.Drawing.Color.White;
-            this.btnSalvarEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
-            this.btnSalvarEstacionamento.Location = new System.Drawing.Point(917, 2);
-            this.btnSalvarEstacionamento.Name = "btnSalvarEstacionamento";
-            this.btnSalvarEstacionamento.Size = new System.Drawing.Size(82, 49);
-            this.btnSalvarEstacionamento.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.btnSalvarEstacionamento, "Salvar");
-            this.btnSalvarEstacionamento.UseVisualStyleBackColor = false;
+            this.btnSalvarUsoEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvarUsoEstacionamento.BackColor = System.Drawing.Color.White;
+            this.btnSalvarUsoEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._2;
+            this.btnSalvarUsoEstacionamento.Location = new System.Drawing.Point(917, 2);
+            this.btnSalvarUsoEstacionamento.Name = "btnSalvarUsoEstacionamento";
+            this.btnSalvarUsoEstacionamento.Size = new System.Drawing.Size(82, 49);
+            this.btnSalvarUsoEstacionamento.TabIndex = 7;
+            this.toolTip1.SetToolTip(this.btnSalvarUsoEstacionamento, "Salvar");
+            this.btnSalvarUsoEstacionamento.UseVisualStyleBackColor = false;
+            this.btnSalvarUsoEstacionamento.Click += new System.EventHandler(this.btnSalvarEstacionamento_Click);
             // 
             // label14
             // 
@@ -651,7 +701,7 @@
             this.txtPesquisarPessoaEstacionamento.BackColor = System.Drawing.SystemColors.Control;
             this.txtPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(82, 88);
             this.txtPesquisarPessoaEstacionamento.Name = "txtPesquisarPessoaEstacionamento";
-            this.txtPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(829, 25);
+            this.txtPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(841, 25);
             this.txtPesquisarPessoaEstacionamento.TabIndex = 1;
             // 
             // rdbNomeEstacionamento
@@ -680,30 +730,17 @@
             this.rdbCodigoEstacionamento.Text = "Código";
             this.rdbCodigoEstacionamento.UseVisualStyleBackColor = true;
             // 
-            // grpCodicoPlava
-            // 
-            this.grpCodicoPlava.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.grpCodicoPlava.Controls.Add(this.txtCodigoPlaca);
-            this.grpCodicoPlava.Location = new System.Drawing.Point(82, 401);
-            this.grpCodicoPlava.Name = "grpCodicoPlava";
-            this.grpCodicoPlava.Size = new System.Drawing.Size(419, 108);
-            this.grpCodicoPlava.TabIndex = 11;
-            this.grpCodicoPlava.TabStop = false;
-            this.grpCodicoPlava.Text = "Insira o código da placa:";
-            // 
-            // txtCodigoPlaca
-            // 
-            this.txtCodigoPlaca.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCodigoPlaca.Location = new System.Drawing.Point(17, 49);
-            this.txtCodigoPlaca.Name = "txtCodigoPlaca";
-            this.txtCodigoPlaca.Size = new System.Drawing.Size(379, 25);
-            this.txtCodigoPlaca.TabIndex = 0;
-            // 
             // grpDiasDaSemana
             // 
             this.grpDiasDaSemana.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpDiasDaSemana.Controls.Add(this.label26);
+            this.grpDiasDaSemana.Controls.Add(this.label23);
+            this.grpDiasDaSemana.Controls.Add(this.label24);
+            this.grpDiasDaSemana.Controls.Add(this.label25);
+            this.grpDiasDaSemana.Controls.Add(this.label22);
+            this.grpDiasDaSemana.Controls.Add(this.label21);
+            this.grpDiasDaSemana.Controls.Add(this.label20);
             this.grpDiasDaSemana.Controls.Add(this.cmbDomingo);
             this.grpDiasDaSemana.Controls.Add(this.cmbSabado);
             this.grpDiasDaSemana.Controls.Add(this.cmbSexta);
@@ -711,268 +748,208 @@
             this.grpDiasDaSemana.Controls.Add(this.cmbQuarta);
             this.grpDiasDaSemana.Controls.Add(this.cmbTerca);
             this.grpDiasDaSemana.Controls.Add(this.cmbSegunda);
-            this.grpDiasDaSemana.Controls.Add(this.ckbDomingo);
-            this.grpDiasDaSemana.Controls.Add(this.ckbSabado);
-            this.grpDiasDaSemana.Controls.Add(this.ckbSexta);
-            this.grpDiasDaSemana.Controls.Add(this.ckbQuinta);
-            this.grpDiasDaSemana.Controls.Add(this.ckbQuarta);
-            this.grpDiasDaSemana.Controls.Add(this.ckbTerca);
-            this.grpDiasDaSemana.Controls.Add(this.ckbSegunda);
-            this.grpDiasDaSemana.Location = new System.Drawing.Point(552, 148);
+            this.grpDiasDaSemana.Location = new System.Drawing.Point(82, 213);
             this.grpDiasDaSemana.Name = "grpDiasDaSemana";
-            this.grpDiasDaSemana.Size = new System.Drawing.Size(447, 228);
+            this.grpDiasDaSemana.Size = new System.Drawing.Size(917, 214);
             this.grpDiasDaSemana.TabIndex = 6;
             this.grpDiasDaSemana.TabStop = false;
             this.grpDiasDaSemana.Text = "Dias da Semana:";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(14, 127);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(75, 18);
+            this.label26.TabIndex = 23;
+            this.label26.Text = "Domingo:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(358, 93);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(61, 18);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "Sabado:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(14, 93);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(85, 18);
+            this.label24.TabIndex = 21;
+            this.label24.Text = "Sexta-feira:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(358, 59);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(96, 18);
+            this.label25.TabIndex = 20;
+            this.label25.Text = "Quinta-feira:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(14, 59);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(97, 18);
+            this.label22.TabIndex = 19;
+            this.label22.Text = "Quarta-feira:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(358, 25);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(86, 18);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "Terça-feira:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(14, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(106, 18);
+            this.label20.TabIndex = 17;
+            this.label20.Text = "Segunda-feira:";
             // 
             // cmbDomingo
             // 
             this.cmbDomingo.BackColor = System.Drawing.SystemColors.Control;
             this.cmbDomingo.FormattingEnabled = true;
             this.cmbDomingo.Items.AddRange(new object[] {
+            "Sem uso",
             "Manhã",
             "Tarde",
             "Noite",
-            "Manhã e Tarde",
-            "Manhã e Noite",
-            "Tarde e Noite",
-            "Manhã, Tarde e Noite"});
-            this.cmbDomingo.Location = new System.Drawing.Point(175, 184);
+            "Manhã e tarde",
+            "Manhã e noite",
+            "Tarde e noite"});
+            this.cmbDomingo.Location = new System.Drawing.Point(126, 124);
             this.cmbDomingo.Name = "cmbDomingo";
             this.cmbDomingo.Size = new System.Drawing.Size(204, 26);
             this.cmbDomingo.TabIndex = 13;
+            this.cmbDomingo.Text = "Sem uso";
             // 
             // cmbSabado
             // 
             this.cmbSabado.BackColor = System.Drawing.SystemColors.Control;
             this.cmbSabado.FormattingEnabled = true;
             this.cmbSabado.Items.AddRange(new object[] {
+            "Sem uso",
             "Manhã",
             "Tarde",
             "Noite",
-            "Manhã e Tarde",
-            "Manhã e Noite",
-            "Tarde e Noite",
-            "Manhã, Tarde e Noite"});
-            this.cmbSabado.Location = new System.Drawing.Point(175, 157);
+            "Manhã e tarde",
+            "Manhã e noite",
+            "Tarde e noite"});
+            this.cmbSabado.Location = new System.Drawing.Point(470, 90);
             this.cmbSabado.Name = "cmbSabado";
             this.cmbSabado.Size = new System.Drawing.Size(204, 26);
             this.cmbSabado.TabIndex = 12;
+            this.cmbSabado.Text = "Sem uso";
             // 
             // cmbSexta
             // 
             this.cmbSexta.BackColor = System.Drawing.SystemColors.Control;
             this.cmbSexta.FormattingEnabled = true;
             this.cmbSexta.Items.AddRange(new object[] {
+            "Sem uso",
             "Manhã",
             "Tarde",
             "Noite",
-            "Manhã e Tarde",
-            "Manhã e Noite",
-            "Tarde e Noite",
-            "Manhã, Tarde e Noite"});
-            this.cmbSexta.Location = new System.Drawing.Point(175, 130);
+            "Manhã e tarde",
+            "Manhã e noite",
+            "Tarde e noite"});
+            this.cmbSexta.Location = new System.Drawing.Point(126, 90);
             this.cmbSexta.Name = "cmbSexta";
             this.cmbSexta.Size = new System.Drawing.Size(204, 26);
             this.cmbSexta.TabIndex = 11;
+            this.cmbSexta.Text = "Sem uso";
             // 
             // cmbQuinta
             // 
             this.cmbQuinta.BackColor = System.Drawing.SystemColors.Control;
             this.cmbQuinta.FormattingEnabled = true;
             this.cmbQuinta.Items.AddRange(new object[] {
+            "Sem uso",
             "Manhã",
             "Tarde",
             "Noite",
-            "Manhã e Tarde",
-            "Manhã e Noite",
-            "Tarde e Noite",
-            "Manhã, Tarde e Noite"});
-            this.cmbQuinta.Location = new System.Drawing.Point(175, 103);
+            "Manhã e tarde",
+            "Manhã e noite",
+            "Tarde e noite"});
+            this.cmbQuinta.Location = new System.Drawing.Point(470, 56);
             this.cmbQuinta.Name = "cmbQuinta";
             this.cmbQuinta.Size = new System.Drawing.Size(204, 26);
             this.cmbQuinta.TabIndex = 10;
+            this.cmbQuinta.Text = "Sem uso";
             // 
             // cmbQuarta
             // 
             this.cmbQuarta.BackColor = System.Drawing.SystemColors.Control;
             this.cmbQuarta.FormattingEnabled = true;
             this.cmbQuarta.Items.AddRange(new object[] {
+            "Sem uso",
             "Manhã",
             "Tarde",
             "Noite",
-            "Manhã e Tarde",
-            "Manhã e Noite",
-            "Tarde e Noite",
-            "Manhã, Tarde e Noite"});
-            this.cmbQuarta.Location = new System.Drawing.Point(175, 76);
+            "Manhã e tarde",
+            "Manhã e noite",
+            "Tarde e noite"});
+            this.cmbQuarta.Location = new System.Drawing.Point(126, 56);
             this.cmbQuarta.Name = "cmbQuarta";
             this.cmbQuarta.Size = new System.Drawing.Size(204, 26);
             this.cmbQuarta.TabIndex = 9;
+            this.cmbQuarta.Text = "Sem uso";
             // 
             // cmbTerca
             // 
             this.cmbTerca.BackColor = System.Drawing.SystemColors.Control;
             this.cmbTerca.FormattingEnabled = true;
             this.cmbTerca.Items.AddRange(new object[] {
+            "Sem uso",
             "Manhã",
             "Tarde",
             "Noite",
-            "Manhã e Tarde",
-            "Manhã e Noite",
-            "Tarde e Noite",
-            "Manhã, Tarde e Noite"});
-            this.cmbTerca.Location = new System.Drawing.Point(175, 49);
+            "Manhã e tarde",
+            "Manhã e noite",
+            "Tarde e noite"});
+            this.cmbTerca.Location = new System.Drawing.Point(470, 22);
             this.cmbTerca.Name = "cmbTerca";
             this.cmbTerca.Size = new System.Drawing.Size(204, 26);
             this.cmbTerca.TabIndex = 8;
+            this.cmbTerca.Text = "Sem uso";
             // 
             // cmbSegunda
             // 
             this.cmbSegunda.BackColor = System.Drawing.SystemColors.Control;
             this.cmbSegunda.FormattingEnabled = true;
             this.cmbSegunda.Items.AddRange(new object[] {
+            "Sem uso",
             "Manhã",
             "Tarde",
             "Noite",
-            "Manhã e Tarde",
-            "Manhã e Noite",
-            "Tarde e Noite",
-            "Manhã, Tarde e Noite"});
-            this.cmbSegunda.Location = new System.Drawing.Point(175, 22);
+            "Manhã e tarde",
+            "Manhã e noite",
+            "Tarde e noite"});
+            this.cmbSegunda.Location = new System.Drawing.Point(126, 22);
             this.cmbSegunda.Name = "cmbSegunda";
             this.cmbSegunda.Size = new System.Drawing.Size(204, 26);
             this.cmbSegunda.TabIndex = 7;
-            // 
-            // ckbDomingo
-            // 
-            this.ckbDomingo.AutoSize = true;
-            this.ckbDomingo.Location = new System.Drawing.Point(17, 192);
-            this.ckbDomingo.Name = "ckbDomingo";
-            this.ckbDomingo.Size = new System.Drawing.Size(89, 22);
-            this.ckbDomingo.TabIndex = 6;
-            this.ckbDomingo.Text = "Domingo";
-            this.ckbDomingo.UseVisualStyleBackColor = true;
-            this.ckbDomingo.Click += new System.EventHandler(this.ckbDomingo_Click);
-            // 
-            // ckbSabado
-            // 
-            this.ckbSabado.AutoSize = true;
-            this.ckbSabado.Location = new System.Drawing.Point(17, 164);
-            this.ckbSabado.Name = "ckbSabado";
-            this.ckbSabado.Size = new System.Drawing.Size(75, 22);
-            this.ckbSabado.TabIndex = 5;
-            this.ckbSabado.Text = "Sábado";
-            this.ckbSabado.UseVisualStyleBackColor = true;
-            this.ckbSabado.Click += new System.EventHandler(this.ckbSabado_Click);
-            // 
-            // ckbSexta
-            // 
-            this.ckbSexta.AutoSize = true;
-            this.ckbSexta.Location = new System.Drawing.Point(17, 136);
-            this.ckbSexta.Name = "ckbSexta";
-            this.ckbSexta.Size = new System.Drawing.Size(103, 22);
-            this.ckbSexta.TabIndex = 4;
-            this.ckbSexta.Text = "Sexta-Feira";
-            this.ckbSexta.UseVisualStyleBackColor = true;
-            this.ckbSexta.Click += new System.EventHandler(this.ckbSexta_Click);
-            // 
-            // ckbQuinta
-            // 
-            this.ckbQuinta.AutoSize = true;
-            this.ckbQuinta.Location = new System.Drawing.Point(17, 108);
-            this.ckbQuinta.Name = "ckbQuinta";
-            this.ckbQuinta.Size = new System.Drawing.Size(114, 22);
-            this.ckbQuinta.TabIndex = 3;
-            this.ckbQuinta.Text = "Quinta-Feira";
-            this.ckbQuinta.UseVisualStyleBackColor = true;
-            this.ckbQuinta.Click += new System.EventHandler(this.ckbQuinta_Click);
-            // 
-            // ckbQuarta
-            // 
-            this.ckbQuarta.AutoSize = true;
-            this.ckbQuarta.Location = new System.Drawing.Point(17, 80);
-            this.ckbQuarta.Name = "ckbQuarta";
-            this.ckbQuarta.Size = new System.Drawing.Size(115, 22);
-            this.ckbQuarta.TabIndex = 2;
-            this.ckbQuarta.Text = "Quarta-Feira";
-            this.ckbQuarta.UseVisualStyleBackColor = true;
-            this.ckbQuarta.Click += new System.EventHandler(this.chkQuarta_Click);
-            // 
-            // ckbTerca
-            // 
-            this.ckbTerca.AutoSize = true;
-            this.ckbTerca.Location = new System.Drawing.Point(17, 52);
-            this.ckbTerca.Name = "ckbTerca";
-            this.ckbTerca.Size = new System.Drawing.Size(104, 22);
-            this.ckbTerca.TabIndex = 1;
-            this.ckbTerca.Text = "Terça-Feira";
-            this.ckbTerca.UseVisualStyleBackColor = true;
-            this.ckbTerca.Click += new System.EventHandler(this.ckbTerca_Click);
-            // 
-            // ckbSegunda
-            // 
-            this.ckbSegunda.AutoSize = true;
-            this.ckbSegunda.Location = new System.Drawing.Point(17, 24);
-            this.ckbSegunda.Name = "ckbSegunda";
-            this.ckbSegunda.Size = new System.Drawing.Size(124, 22);
-            this.ckbSegunda.TabIndex = 0;
-            this.ckbSegunda.Text = "Segunda-Feira";
-            this.ckbSegunda.UseVisualStyleBackColor = true;
-            this.ckbSegunda.Click += new System.EventHandler(this.ckbSegunda_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.rdbTerceirizado);
-            this.groupBox1.Controls.Add(this.rdbDiscente);
-            this.groupBox1.Controls.Add(this.rdbDoscente);
-            this.groupBox1.Location = new System.Drawing.Point(82, 232);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(419, 130);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tipo de Vaga:";
-            // 
-            // rdbTerceirizado
-            // 
-            this.rdbTerceirizado.AutoSize = true;
-            this.rdbTerceirizado.Location = new System.Drawing.Point(16, 90);
-            this.rdbTerceirizado.Name = "rdbTerceirizado";
-            this.rdbTerceirizado.Size = new System.Drawing.Size(107, 22);
-            this.rdbTerceirizado.TabIndex = 2;
-            this.rdbTerceirizado.Text = "Terceirizado";
-            this.rdbTerceirizado.UseVisualStyleBackColor = true;
-            // 
-            // rdbDiscente
-            // 
-            this.rdbDiscente.AutoSize = true;
-            this.rdbDiscente.Location = new System.Drawing.Point(16, 62);
-            this.rdbDiscente.Name = "rdbDiscente";
-            this.rdbDiscente.Size = new System.Drawing.Size(82, 22);
-            this.rdbDiscente.TabIndex = 1;
-            this.rdbDiscente.Text = "Discente";
-            this.rdbDiscente.UseVisualStyleBackColor = true;
-            // 
-            // rdbDoscente
-            // 
-            this.rdbDoscente.AutoSize = true;
-            this.rdbDoscente.Checked = true;
-            this.rdbDoscente.Location = new System.Drawing.Point(16, 34);
-            this.rdbDoscente.Name = "rdbDoscente";
-            this.rdbDoscente.Size = new System.Drawing.Size(86, 22);
-            this.rdbDoscente.TabIndex = 0;
-            this.rdbDoscente.TabStop = true;
-            this.rdbDoscente.Text = "Doscente";
-            this.rdbDoscente.UseVisualStyleBackColor = true;
+            this.cmbSegunda.Text = "Sem uso";
             // 
             // label15
             // 
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(79, 148);
+            this.label15.Location = new System.Drawing.Point(79, 127);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 18);
             this.label15.TabIndex = 4;
@@ -982,10 +959,10 @@
             // 
             this.txtRequisitandoEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtRequisitandoEstacionamento.Location = new System.Drawing.Point(82, 169);
+            this.txtRequisitandoEstacionamento.Location = new System.Drawing.Point(82, 148);
             this.txtRequisitandoEstacionamento.Name = "txtRequisitandoEstacionamento";
             this.txtRequisitandoEstacionamento.ReadOnly = true;
-            this.txtRequisitandoEstacionamento.Size = new System.Drawing.Size(419, 25);
+            this.txtRequisitandoEstacionamento.Size = new System.Drawing.Size(917, 25);
             this.txtRequisitandoEstacionamento.TabIndex = 3;
             // 
             // btnPesquisarPessoaEstacionamento
@@ -994,7 +971,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPesquisarPessoaEstacionamento.BackColor = System.Drawing.Color.White;
             this.btnPesquisarPessoaEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._6;
-            this.btnPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(917, 73);
+            this.btnPesquisarPessoaEstacionamento.Location = new System.Drawing.Point(929, 73);
             this.btnPesquisarPessoaEstacionamento.Name = "btnPesquisarPessoaEstacionamento";
             this.btnPesquisarPessoaEstacionamento.Size = new System.Drawing.Size(70, 40);
             this.btnPesquisarPessoaEstacionamento.TabIndex = 10;
@@ -1303,7 +1280,6 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registrar Entrada de:";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // rdbFornecedor
             // 
@@ -1638,15 +1614,10 @@
             // toolStripContainer1
             // 
             // 
-            // toolStripContainer1.BottomToolStripPanel
-            // 
-            this.toolStripContainer1.BottomToolStripPanel.Click += new System.EventHandler(this.toolStripContainer1_BottomToolStripPanel_Click);
-            // 
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.menu);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(507, 11);
-            this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.toolStripContainer1.Location = new System.Drawing.Point(267, 47);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(507, 36);
@@ -1713,7 +1684,6 @@
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.principal.ResumeLayout(false);
             this.tabSolicitacoes.ResumeLayout(false);
             this.tabSolicitacoes.PerformLayout();
@@ -1723,12 +1693,8 @@
             this.tabCadastrarUsoEstacionamento.ResumeLayout(false);
             this.tabCadastrarUsoEstacionamento.PerformLayout();
             this.panel8.ResumeLayout(false);
-            this.grpCodicoPlava.ResumeLayout(false);
-            this.grpCodicoPlava.PerformLayout();
             this.grpDiasDaSemana.ResumeLayout(false);
             this.grpDiasDaSemana.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.tabSolicitacoesSaidaFinalizadasExpiradas.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -1766,7 +1732,6 @@
         #endregion
 
         private System.Windows.Forms.TabControl principal;
-        private System.Windows.Forms.TabPage tabCadastrarUsoEstacionamento;
         private System.Windows.Forms.TabPage tabSolicitacoes;
         private System.Windows.Forms.CheckBox ckbSolicitacaoSaida;
         private System.Windows.Forms.CheckBox ckbSolicitacaoEntrada;
@@ -1812,35 +1777,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox txtPesquisarPessoaEstacionamento;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtRequisitandoEstacionamento;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdbTerceirizado;
-        private System.Windows.Forms.RadioButton rdbDiscente;
-        private System.Windows.Forms.RadioButton rdbDoscente;
-        private System.Windows.Forms.GroupBox grpDiasDaSemana;
-        private System.Windows.Forms.Button btnSalvarEstacionamento;
-        private System.Windows.Forms.Button btnPesquisarPessoaEstacionamento;
-        private System.Windows.Forms.CheckBox ckbDomingo;
-        private System.Windows.Forms.CheckBox ckbSabado;
-        private System.Windows.Forms.CheckBox ckbSexta;
-        private System.Windows.Forms.CheckBox ckbQuinta;
-        private System.Windows.Forms.CheckBox ckbQuarta;
-        private System.Windows.Forms.CheckBox ckbTerca;
-        private System.Windows.Forms.CheckBox ckbSegunda;
-        private System.Windows.Forms.GroupBox grpCodicoPlava;
-        private System.Windows.Forms.TextBox txtCodigoPlaca;
-        private System.Windows.Forms.ComboBox cmbDomingo;
-        private System.Windows.Forms.ComboBox cmbSabado;
-        private System.Windows.Forms.ComboBox cmbSexta;
-        private System.Windows.Forms.ComboBox cmbQuinta;
-        private System.Windows.Forms.ComboBox cmbQuarta;
-        private System.Windows.Forms.ComboBox cmbTerca;
-        private System.Windows.Forms.ComboBox cmbSegunda;
-        private System.Windows.Forms.RadioButton rdbNomeEstacionamento;
-        private System.Windows.Forms.RadioButton rdbCodigoEstacionamento;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage tabEntradaVisitanteForncedor;
         private System.Windows.Forms.TextBox txtNomeFornecedorVisitante;
         private System.Windows.Forms.Label label19;
@@ -1890,9 +1826,38 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button btnCancelarEstacionamento;
         private System.Windows.Forms.Button btnCancelarRegistro;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabPage tabCadastrarUsoEstacionamento;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbDocente;
+        private System.Windows.Forms.Label lblCodigoPlaca;
+        private System.Windows.Forms.TextBox txtCodigoPlaca;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnCancelarEstacionamento;
+        private System.Windows.Forms.Button btnSalvarUsoEstacionamento;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtPesquisarPessoaEstacionamento;
+        private System.Windows.Forms.RadioButton rdbNomeEstacionamento;
+        private System.Windows.Forms.RadioButton rdbCodigoEstacionamento;
+        private System.Windows.Forms.GroupBox grpDiasDaSemana;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox cmbDomingo;
+        private System.Windows.Forms.ComboBox cmbSabado;
+        private System.Windows.Forms.ComboBox cmbSexta;
+        private System.Windows.Forms.ComboBox cmbQuinta;
+        private System.Windows.Forms.ComboBox cmbQuarta;
+        private System.Windows.Forms.ComboBox cmbTerca;
+        private System.Windows.Forms.ComboBox cmbSegunda;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtRequisitandoEstacionamento;
+        private System.Windows.Forms.Button btnPesquisarPessoaEstacionamento;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

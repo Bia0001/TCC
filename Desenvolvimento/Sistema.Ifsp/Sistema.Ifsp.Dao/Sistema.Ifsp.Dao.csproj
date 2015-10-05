@@ -78,8 +78,7 @@
     <Compile Include="SolicitacaoEntradaDAO.cs" />
     <Compile Include="SolicitacaoSaidaDAO.cs" />
     <Compile Include="TerceirizadoDAO.cs" />
-    <Compile Include="UsoEstacionamentoCarroDAO.cs" />
-    <Compile Include="UsoEstacionamentoMotoDAO.cs" />
+    <Compile Include="VagaDAO.cs" />
     <Compile Include="VisitanteDAO.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -35,11 +35,14 @@ namespace Sistema.Ifsp.View
         /*variaveis*/
         AssistenteAdministracao assistenteAdministracao; // usado em cadasrar uso do estacionamento
         public Aluno aluno { set; get; } //usado na tab de solicitações
-        PessoaFisica pessoaFisica; // usado na tab cadastro do uso de estacionamento
+        public PessoaFisica pessoaFisica { set; get; }// usado na tab cadastro do uso de estacionamento
         Porteiro porteiro; // usado na finalização da solicitação de saída
         AssistenteAluno assistenteAluno; // usado na tab de solitações
         IQueryable<Aluno> alunos; // usado na tab de solicitações
         int tempoExpiraçãoSolicitacao = 45;
+        private IQueryable<PessoaFisica> pessoas;
+        private List<Vaga> vagas;
+        Vaga vaga;
 
         /*BOTÕES*/
         private void btnPesquisarAluno_Click(object sender, EventArgs e)
@@ -111,7 +114,7 @@ namespace Sistema.Ifsp.View
 
         private void btnGerarSolicitacaoAluno_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Deseja realmete gerar solicitação?", "Dúvida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmete gerar solicitação?", "Dúvida", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (String.IsNullOrEmpty(txtMotivoAluno.Text))
                 {
@@ -226,7 +229,7 @@ namespace Sistema.Ifsp.View
                         saidaSupervisionada = "Não";
                     }
                     dgvSolicitacoesAbertas.Rows.Add(solicitacao.idSolicitacao, solicitacao.aluno.prontuario.prontuario,
-                        solicitacao.aluno.nome,  saidaSupervisionada, solicitacao.assistenteAluno.nome);
+                        solicitacao.aluno.nome, saidaSupervisionada, solicitacao.assistenteAluno.nome);
                 }
                 else if (solicitacao.status == StatusSolicitacao.expirado)
                 {
@@ -383,184 +386,150 @@ namespace Sistema.Ifsp.View
             }
         }
 
-        private void ckbSegunda_Click(object sender, EventArgs e)
+        /*Comparando atributo "PERÍODO" para valores string de combobox*/
+        private int getIntPeriodo(string periodo)
         {
-            if (ckbSegunda.Checked == true)
+            int inteiro = 0;
+            if (periodo == "Manhã")
             {
-                cmbSegunda.Enabled = true;
+                inteiro = 1;
             }
-            else
+            else if (periodo == "Tarde")
             {
-                cmbSegunda.Enabled = false;
+                inteiro = 2;
             }
-        }
-
-        private void ckbTerca_Click(object sender, EventArgs e)
-        {
-            if (ckbTerca.Checked == true)
+            else if (periodo == "Noite")
             {
-                cmbTerca.Enabled = true;
+                inteiro = 3;
             }
-            else
+            else if (periodo == "Manhã e tarde")
             {
-                cmbTerca.Enabled = false;
+                inteiro = 4;
             }
-        }
-
-        private void chkQuarta_Click(object sender, EventArgs e)
-        {
-            if (ckbQuarta.Checked == true)
+            else if (periodo == "Manhã e noite")
             {
-                cmbQuarta.Enabled = true;
+                inteiro = 5;
             }
-            else
+            else if (periodo == "Tarde e noite")
             {
-                cmbQuarta.Enabled = false;
+                inteiro = 6;
             }
-        }
-
-        private void ckbQuinta_Click(object sender, EventArgs e)
-        {
-            if (ckbQuinta.Checked == true)
+            else if (periodo == "Sem uso")
             {
-                cmbQuinta.Enabled = true;
+                inteiro = 0;
             }
-            else
-            {
-                cmbQuinta.Enabled = false;
-            }
-        }
-
-        private void ckbSexta_Click(object sender, EventArgs e)
-        {
-            if (ckbSexta.Checked == true)
-            {
-                cmbSexta.Enabled = true;
-            }
-            else
-            {
-                cmbSexta.Enabled = false;
-            }
-        }
-
-        private void ckbSabado_Click(object sender, EventArgs e)
-        {
-            if (ckbSabado.Checked == true)
-            {
-                cmbSabado.Enabled = true;
-            }
-            else
-            {
-                cmbSabado.Enabled = false;
-            }
-        }
-
-        private void ckbDomingo_Click(object sender, EventArgs e)
-        {
-            if (ckbDomingo.Checked == true)
-            {
-                cmbDomingo.Enabled = true;
-            }
-            else
-            {
-                cmbDomingo.Enabled = false;
-            }
-        }
-
-
-        /*Pesquisando pessoa fisica*/
-        private PessoaFisica pesquisarPessoaFisica(int id)
-        {
-            var pDAO = new PessoaFisicaDAO();
-            return pDAO.find(id);
+            return inteiro;
         }
 
         private void btnPesquisarPessoaEstacionamento_Click(object sender, EventArgs e)
         {
             try
             {
-                if (rdbCodigoEstacionamento.Checked == true)
+                if (string.IsNullOrWhiteSpace(txtPesquisarPessoaEstacionamento.Text))
                 {
-                    var p = pesquisarPessoaFisica(Convert.ToInt32(txtPesquisarPessoaEstacionamento.Text));
-                    if (p == null)
-                    {
-                        mensagem("Pessoa não encontrada");
-                    }
-                    else
-                    {
-                        txtRequisitandoEstacionamento.Text = p.nome;
-                        var usosDAO = new UsoEstacionamentoCarroDAO();
-                        var usos = usosDAO.get(u => u.pessoaFisica == p);
-                        if (usos.Count() == 0)
-                        {
-                            mensagem("Não há cadastro para uso do estacionamento. Preencha os dados e clique em salvar para cadastrar!");
-                            pessoaFisica = p;
-                        }
-                        else
-                        {
-                            txtCodigoPlaca.Text = usos.First().codAcessoEstacionamento;
-                            switch (usos.First().tipoVaga)
-                            {
-                                case TipoVaga.discente:
-                                    rdbDiscente.Checked = true;
-                                    rdbDoscente.Checked = false;
-                                    rdbTerceirizado.Checked = false;
-                                    break;
-                                case TipoVaga.doscente:
-                                    rdbDiscente.Checked = false;
-                                    rdbDoscente.Checked = true;
-                                    rdbTerceirizado.Checked = false;
-                                    break;
-                                case TipoVaga.terceirizado:
-                                    rdbDiscente.Checked = false;
-                                    rdbDoscente.Checked = false;
-                                    rdbTerceirizado.Checked = true;
-                                    break;
-                            }
-                            foreach (UsoEstacionamentoCarro u in usos)
-                            {
-                                if (u.diaDaSemana == "Monday")
-                                {
-                                    cmbSegunda.SelectedItem = u.turno;
-                                }
-                                else if (u.diaDaSemana == "Tuesday")
-                                {
-                                    cmbTerca.SelectedItem = u.turno;
-                                }
-                                else if (u.diaDaSemana == "Wednesday")
-                                {
-                                    cmbQuarta.SelectedItem = u.turno;
-                                }
-                                else if (u.diaDaSemana == "Thursday")
-                                {
-                                    cmbQuinta.SelectedItem = u.turno;
-                                }
-                                else if (u.diaDaSemana == "Friday")
-                                {
-                                    cmbSexta.SelectedItem = u.turno;
-                                }
-                                else if (u.diaDaSemana == "Saturday")
-                                {
-                                    cmbSabado.SelectedItem = u.turno;
-                                }
-                                else if (u.diaDaSemana == "Sunday")
-                                {
-                                    cmbDomingo.SelectedItem = u.turno;
-                                }
-                            }
-                        }
-                    }
+                    mensagem("Por favor digite valor no campo de pesquisa");
                 }
                 else
                 {
-
+                    if (rdbCodigoEstacionamento.Checked == true)
+                    {
+                        var pDAO = new PessoaFisicaDAO();
+                        var vDAO = new VagaDAO();
+                        if (rdbCodigoEstacionamento.Checked == true)
+                        {
+                            pessoaFisica = pDAO.find(Convert.ToInt32(txtPesquisarPessoaEstacionamento.Text));
+                            if (pessoaFisica.Equals(null))
+                            {
+                                mensagem("Nenhuma pessoa encontrada");
+                            }
+                            else
+                            {
+                                /*Verificando pessoa fisica possui vaga*/
+                                preencherFormEstacionamento();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var pDAO = new PessoaFisicaDAO();
+                        var ps = pDAO.get(p => p.nome.StartsWith(txtPesquisarPessoaEstacionamento.Text, StringComparison.CurrentCultureIgnoreCase));
+                        frmPessoasFisicas f = new frmPessoasFisicas(ps);
+                        f.ShowDialog();
+                    }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                mensagem("Falha ao carregar dados. Detalhes: " + ex);
             }
+        }
+
+        public void preencherFormEstacionamento()
+        {
+            var vDAO = new VagaDAO();
+            vaga = vDAO.get(v => v.pessoaFisica == pessoaFisica).FirstOrDefault();
+            if (vaga == null)
+            {
+                txtRequisitandoEstacionamento.Text = pessoaFisica.nome;
+                txtPesquisarPessoaEstacionamento.ReadOnly = true;
+                btnPesquisarPessoaEstacionamento.Enabled = false;
+                /*Se pessoa fisica não possui vaga, pergunta-se o interesse em cadastrar*/
+                var resutado = MessageBox.Show("Não há cadastro para uso do estacionamento por essa pessoa.\nDeseja cadastrar?",
+                    "Deseja cadastrar?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult.Yes == resutado)
+                {
+                    btnSalvarUsoEstacionamento.Enabled = true;
+                    btnAlterar.Enabled = false;
+                }
+                else if (DialogResult.No == resutado)
+                {
+                    telaUsoEstacionamentoInicial();
+                }
+            }
+            /*se não, preenche formulário*/
+            else
+            {
+                btnSalvarUsoEstacionamento.Enabled = false;
+                btnAlterar.Enabled = true;
+                txtCodigoPlaca.Text = vaga.codigoPlaca;
+                txtRequisitandoEstacionamento.Text = vaga.pessoaFisica.nome;
+                if (vaga.isDocente)
+                {
+                    cmbDocente.SelectedIndex = 1;
+                }
+                else
+                {
+                    cmbDocente.SelectedIndex = 0;
+                }
+                cmbSegunda.SelectedIndex = getIntPeriodo(vaga.segunda_feira.periodo);
+                cmbTerca.SelectedIndex = getIntPeriodo(vaga.terca_feira.periodo);
+                cmbQuarta.SelectedIndex = getIntPeriodo(vaga.quarta_feira.periodo);
+                cmbQuinta.SelectedIndex = getIntPeriodo(vaga.quinta_feira.periodo);
+                cmbSexta.SelectedIndex = getIntPeriodo(vaga.sexta_feira.periodo);
+                cmbSabado.SelectedIndex = getIntPeriodo(vaga.sabado.periodo);
+                cmbDomingo.SelectedIndex = getIntPeriodo(vaga.domingo.periodo);
+            }
+        }
+
+        private void telaUsoEstacionamentoInicial()
+        {
+            rdbCodigoEstacionamento.Checked = true;
+            rdbNomeEstacionamento.Checked = false;
+            txtPesquisarPessoaEstacionamento.ReadOnly = false;
+            txtPesquisarPessoaEstacionamento.Text = null;
+            txtRequisitandoEstacionamento.Text = null;
+            txtCodigoPlaca.Text = null;
+            btnCancelarEstacionamento.Enabled = false;
+            btnSalvarUsoEstacionamento.Enabled = false;
+            btnPesquisarPessoaEstacionamento.Enabled = true;
+            cmbDocente.SelectedIndex = 0;
+            cmbDomingo.SelectedIndex = 0;
+            cmbSegunda.SelectedIndex = 0;
+            cmbTerca.SelectedIndex = 0;
+            cmbQuarta.SelectedIndex = 0;
+            cmbQuinta.SelectedIndex = 0;
+            cmbSexta.SelectedIndex = 0;
+            cmbSabado.SelectedIndex = 0;
         }
 
         private void btnRegistrarEntradaFornecedorVisitante_Click(object sender, EventArgs e)
@@ -631,19 +600,193 @@ namespace Sistema.Ifsp.View
             gerarSolicitacoes1();
         }
 
-        private void toolStripContainer1_ContentPanel_Load(object sender, EventArgs e)
+        /*gerando código para placa do estacionamento*/
+        private string getCodigoPlacaCarro()
         {
-
+            var vagaDAO = new VagaDAO();
+            try
+            {
+                var vaga = vagaDAO.get(v => v.isDocente == false).Last();
+                int c = Convert.ToInt32(vaga.codigoPlaca) + 1;
+                string codigo = c.ToString();
+                if (codigo.Length == 1)
+                {
+                    return codigo = "000" + codigo;
+                }
+                else if (codigo.Length == 2)
+                {
+                    return codigo = "00" + codigo;
+                }
+                else if (codigo.Length == 3)
+                {
+                    return codigo = "0" + codigo;
+                }
+                else
+                {
+                    return codigo;
+                }
+            }
+            catch (Exception)
+            {
+                return "0001";
+            }
         }
 
-        private void toolStripContainer1_BottomToolStripPanel_Click(object sender, EventArgs e)
+        /*Persistindo no banco de dados os dias de uso do estacionamento*/
+        private void btnSalvarEstacionamento_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                /*verifiando se o campo código da plava foi preenchido caso o cadastro seja para um menbro do corpo docente*/
+                if (cmbDocente.SelectedText == "Sim" && (txtCodigoPlaca.Text == "" || txtCodigoPlaca.Text == null))
+                {
+                    mensagem("Preencha todos os campos");
+                }
+                else
+                {
+                    bool docente = false;
+                    string domingo_periodo = null;
+                    string segunda_periodo = null;
+                    string terca_periodo = null;
+                    string quarta_periodo = null;
+                    string quinta_periodo = null;
+                    string sexta_periodo = null;
+                    string sabado_periodo = null;
+                    string codigo_placa = null;
+                    /*Verificando se o menbro a se cadastrar é docente ou não*/
+                    if (cmbDocente.SelectedItem.ToString() == "Sim")
+                    {
+                        codigo_placa = txtCodigoPlaca.Text;
+                        docente = true;
+                    }
+                    else
+                    {
+                        codigo_placa = getCodigoPlacaCarro();
+                    }
+                    /*Quais dias e períodos foram selecionados*/
+                    if (cmbDomingo.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                    {
+                        domingo_periodo = cmbDomingo.SelectedItem.ToString();
+                    }
+                    if (cmbSegunda.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                    {
+                        segunda_periodo = cmbSegunda.SelectedItem.ToString();
+                    }
+                    if (cmbTerca.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                    {
+                        terca_periodo = cmbTerca.SelectedItem.ToString();
+                    }
+                    if (cmbQuarta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                    {
+                        quarta_periodo = cmbQuarta.SelectedItem.ToString();
+                    }
+                    if (cmbQuinta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                    {
+                        quinta_periodo = cmbQuinta.SelectedItem.ToString();
+                    }
+                    if (cmbSexta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                    {
+                        sexta_periodo = cmbSexta.SelectedItem.ToString();
+                    }
+                    if (cmbSabado.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                    {
+                        sabado_periodo = cmbSabado.SelectedItem.ToString();
+                    }
+                    var vaga = new Vaga()
+                    {
+                        codigoPlaca = codigo_placa,
+                        domingo = new Dia()
+                        {
+                            periodo = domingo_periodo
+                        },
+                        isDocente = docente,
+                        pessoaFisica = pessoaFisica,
+                        quarta_feira = new Dia()
+                        {
+                            periodo = quarta_periodo
+                        },
+                        quinta_feira = new Dia()
+                        {
+                            periodo = quinta_periodo
+                        },
+                        sabado = new Dia()
+                        {
+                            periodo = sabado_periodo
+                        },
+                        segunda_feira = new Dia()
+                        {
+                            periodo = segunda_periodo
+                        },
+                        sexta_feira = new Dia()
+                        {
+                            periodo = sexta_periodo
+                        },
+                        terca_feira = new Dia()
+                        {
+                            periodo = terca_periodo
+                        }
+                    };
+                    var vDAO = new VagaDAO();
+                    if (vDAO.adicionar(vaga))
+                    {
+                        telaUsoEstacionamentoInicial();
+                        mensagem("Cadastro realizado com sucesso");
+                        frmCodigoPlaca f = new frmCodigoPlaca(codigo_placa);
+                        f.Show();
+                    }
+                    else
+                    {
+                        mensagem("Falha ao cadastrar uso do estacionamento. Tente novamente");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                mensagem("Falha ao cadastrar uso do estacionamento. Detalhes: " + ex);
+            }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void btnCancelarEstacionamento_Click(object sender, EventArgs e)
         {
+            telaUsoEstacionamentoInicial();
+        }
 
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            bool docente = false;
+            if (cmbDocente.SelectedIndex == 1)
+            {
+                docente = true;
+            }
+            btnPesquisarPessoaEstacionamento.Enabled = false;
+            txtPesquisarPessoaEstacionamento.ReadOnly = true;
+            vaga.codigoPlaca = txtCodigoPlaca.Text;
+            vaga.domingo.periodo = cmbDomingo.SelectedText;
+            vaga.isDocente = docente;
+            vaga.pessoaFisica = pessoaFisica;
+            vaga.quarta_feira.periodo = cmbQuarta.SelectedText;
+            vaga.quinta_feira.periodo = cmbQuinta.SelectedText;
+            vaga.sabado.periodo = cmbSabado.Text;
+            vaga.segunda_feira.periodo = cmbSegunda.Text;
+            vaga.sexta_feira.periodo = cmbSexta.Text;
+            vaga.terca_feira.periodo = cmbTerca.Text;
+            var vDAO = new VagaDAO();
+            try
+            {
+                if (vDAO.atualizar(vaga))
+                {
+                    mensagem("Cadastro atualizado com sucesso");
+                    telaUsoEstacionamentoInicial();
+                }
+                else
+                {
+                    mensagem("Falha ao atualizar cadasro. Tente novamente");
+                }
+            }
+            catch (Exception ex)
+            {
+                mensagem("Falha ao atualizar cadasro. Detalhes: " + ex);
+            }
         }
     }
 }

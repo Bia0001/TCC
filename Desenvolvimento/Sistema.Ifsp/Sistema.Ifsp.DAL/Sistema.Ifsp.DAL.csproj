@@ -60,17 +60,13 @@
   <ItemGroup>
     <Compile Include="AcessoContexto.cs" />
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201509222316362_criando-banco.cs" />
-    <Compile Include="Migrations\201509222316362_criando-banco.Designer.cs">
-      <DependentUpon>201509222316362_criando-banco.cs</DependentUpon>
+    <Compile Include="Migrations\201510032217582_criando-base-de-dados.cs" />
+    <Compile Include="Migrations\201510032217582_criando-base-de-dados.Designer.cs">
+      <DependentUpon>201510032217582_criando-base-de-dados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201509232017369_adicionando-atributo-em-solicitacaoSaida.cs" />
-    <Compile Include="Migrations\201509232017369_adicionando-atributo-em-solicitacaoSaida.Designer.cs">
-      <DependentUpon>201509232017369_adicionando-atributo-em-solicitacaoSaida.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201509232042286_adicionando-atributo-em-solicitacaoSaida-2.cs" />
-    <Compile Include="Migrations\201509232042286_adicionando-atributo-em-solicitacaoSaida-2.Designer.cs">
-      <DependentUpon>201509232042286_adicionando-atributo-em-solicitacaoSaida-2.cs</DependentUpon>
+    <Compile Include="Migrations\201510032355553_excluindo-atributo-nome-da-classe-vaga.cs" />
+    <Compile Include="Migrations\201510032355553_excluindo-atributo-nome-da-classe-vaga.Designer.cs">
+      <DependentUpon>201510032355553_excluindo-atributo-nome-da-classe-vaga.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlConfiguration.cs" />
@@ -88,14 +84,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509222316362_criando-banco.resx">
-      <DependentUpon>201509222316362_criando-banco.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510032217582_criando-base-de-dados.resx">
+      <DependentUpon>201510032217582_criando-base-de-dados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509232017369_adicionando-atributo-em-solicitacaoSaida.resx">
-      <DependentUpon>201509232017369_adicionando-atributo-em-solicitacaoSaida.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201509232042286_adicionando-atributo-em-solicitacaoSaida-2.resx">
-      <DependentUpon>201509232042286_adicionando-atributo-em-solicitacaoSaida-2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201510032355553_excluindo-atributo-nome-da-classe-vaga.resx">
+      <DependentUpon>201510032355553_excluindo-atributo-nome-da-classe-vaga.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

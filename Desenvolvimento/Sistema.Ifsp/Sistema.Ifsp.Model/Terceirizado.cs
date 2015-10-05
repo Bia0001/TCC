@@ -6,7 +6,6 @@ namespace Sistema.Ifsp.Model
     [Table("Terceirizado")]
     public class Terceirizado : PessoaFisica
     {
-        [Key]
         public string area { get; set; }
         public string empresa { get; set; }
     }

@@ -3,7 +3,7 @@
     public enum TipoVaga
     {
         discente,
-        doscente,
+        docente,
         terceirizado
     }
 }

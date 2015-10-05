@@ -7,13 +7,13 @@ namespace Sistema.Ifsp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class adicionandoatributoemsolicitacaoSaida : IMigrationMetadata
+    public sealed partial class criandobasededados : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(adicionandoatributoemsolicitacaoSaida));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(criandobasededados));
         
         string IMigrationMetadata.Id
         {
-            get { return "201509232017369_adicionando-atributo-em-solicitacaoSaida"; }
+            get { return "201510032217582_criando-base-de-dados"; }
         }
         
         string IMigrationMetadata.Source

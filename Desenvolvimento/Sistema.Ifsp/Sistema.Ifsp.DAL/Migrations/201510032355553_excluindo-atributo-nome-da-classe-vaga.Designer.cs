@@ -7,13 +7,13 @@ namespace Sistema.Ifsp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class criandobanco : IMigrationMetadata
+    public sealed partial class excluindoatributonomedaclassevaga : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(criandobanco));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(excluindoatributonomedaclassevaga));
         
         string IMigrationMetadata.Id
         {
-            get { return "201509222316362_criando-banco"; }
+            get { return "201510032355553_excluindo-atributo-nome-da-classe-vaga"; }
         }
         
         string IMigrationMetadata.Source

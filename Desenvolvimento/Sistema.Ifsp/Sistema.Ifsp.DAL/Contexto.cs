@@ -19,9 +19,6 @@ namespace Sistema.Ifsp.DAL
         public DbSet<PessoaFisica> pessoaFisica { get; set; }
         public DbSet<Porteiro> porteiro { get; set; }
         public DbSet<Terceirizado> terceirizado { get; set; }
-        public DbSet<UsoEstacionamentoMoto> usoEstacionamentoMoto { get; set; }
-        public DbSet<UsoEstacionamentoCarro> usoEstacionamentoCarro { get; set; }
-        public DbSet<UsoEstacionamentoVeiculo> usoEstacionamentoVeiculo { get; set; }
         public DbSet<Solicitacao> solicitacao { get; set; }
         public DbSet<SolicitacaoEntrada> solicitacaoEntrada { get; set; }
         public DbSet<SolicitacaoSaida> solicitacaoSaida { get; set; }
@@ -29,6 +26,7 @@ namespace Sistema.Ifsp.DAL
         public DbSet<Visitante> visitante { get; set; }
         public DbSet<Fornecedor> fornecedor { get; set; }
         public DbSet<Prontuario> prontuario { get; set; }
+        public DbSet<Vaga> vaga { get; set; }
         /*removendo convenção de pluralização do Entity Fremework*/
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -42,3 +42,5 @@ C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmPrincipal.resources
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.Properties.Resources.resources
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.csproj.GenerateResource.Cache
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmPessoasFisicas.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmCodigoPlaca.resources

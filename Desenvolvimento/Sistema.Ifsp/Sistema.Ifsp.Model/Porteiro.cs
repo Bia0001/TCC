@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sistema.Ifsp.Model
 {
-
     [Table("Porteiro")]
     public class Porteiro : Terceirizado
     {
