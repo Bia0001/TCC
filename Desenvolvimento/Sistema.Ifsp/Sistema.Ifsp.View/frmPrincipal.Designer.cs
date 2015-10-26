@@ -61,11 +61,12 @@
             this.txtResponsavel1Aluno = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCadastrarUsoEstacionamento = new System.Windows.Forms.TabPage();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblDocente = new System.Windows.Forms.Label();
             this.cmbDocente = new System.Windows.Forms.ComboBox();
             this.lblCodigoPlaca = new System.Windows.Forms.Label();
             this.txtCodigoPlaca = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnDeletar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCancelarEstacionamento = new System.Windows.Forms.Button();
             this.btnSalvarUsoEstacionamento = new System.Windows.Forms.Button();
@@ -146,6 +147,11 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblVagasReservadas = new System.Windows.Forms.Label();
+            this.lblTotalVeiculosEstaacionamento = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.timerAtualizaSolicitacoes = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
@@ -158,6 +164,7 @@
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreNósToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerAtualizaEstacionamento = new System.Windows.Forms.Timer(this.components);
             this.principal.SuspendLayout();
             this.tabSolicitacoes.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -182,6 +189,7 @@
             this.tabRegistrarSaidaVisitante.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -200,6 +208,7 @@
             this.principal.Controls.Add(this.tabEntradaVisitanteForncedor);
             this.principal.Controls.Add(this.tabRegistrarSaidaFornecedor);
             this.principal.Controls.Add(this.tabRegistrarSaidaVisitante);
+            this.principal.Controls.Add(this.tabPage1);
             this.principal.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.principal.Location = new System.Drawing.Point(45, 103);
             this.principal.Name = "principal";
@@ -574,7 +583,7 @@
             // 
             // tabCadastrarUsoEstacionamento
             // 
-            this.tabCadastrarUsoEstacionamento.Controls.Add(this.label12);
+            this.tabCadastrarUsoEstacionamento.Controls.Add(this.lblDocente);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.cmbDocente);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.lblCodigoPlaca);
             this.tabCadastrarUsoEstacionamento.Controls.Add(this.txtCodigoPlaca);
@@ -595,17 +604,18 @@
             this.tabCadastrarUsoEstacionamento.Text = "Cadastrar Uso do Estacionamento";
             this.tabCadastrarUsoEstacionamento.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // lblDocente
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(79, 430);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 18);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Docente?";
+            this.lblDocente.AutoSize = true;
+            this.lblDocente.Location = new System.Drawing.Point(79, 430);
+            this.lblDocente.Name = "lblDocente";
+            this.lblDocente.Size = new System.Drawing.Size(69, 18);
+            this.lblDocente.TabIndex = 16;
+            this.lblDocente.Text = "Docente?";
             // 
             // cmbDocente
             // 
+            this.cmbDocente.Enabled = false;
             this.cmbDocente.FormattingEnabled = true;
             this.cmbDocente.Items.AddRange(new object[] {
             "Não",
@@ -615,6 +625,7 @@
             this.cmbDocente.Size = new System.Drawing.Size(121, 26);
             this.cmbDocente.TabIndex = 15;
             this.cmbDocente.Text = "Não";
+            this.cmbDocente.SelectedIndexChanged += new System.EventHandler(this.cmbDocente_SelectedIndexChanged);
             // 
             // lblCodigoPlaca
             // 
@@ -624,6 +635,7 @@
             this.lblCodigoPlaca.Size = new System.Drawing.Size(113, 18);
             this.lblCodigoPlaca.TabIndex = 14;
             this.lblCodigoPlaca.Text = "Código da placa";
+            this.lblCodigoPlaca.Visible = false;
             // 
             // txtCodigoPlaca
             // 
@@ -632,12 +644,14 @@
             this.txtCodigoPlaca.Name = "txtCodigoPlaca";
             this.txtCodigoPlaca.Size = new System.Drawing.Size(379, 25);
             this.txtCodigoPlaca.TabIndex = 0;
+            this.txtCodigoPlaca.Visible = false;
             // 
             // panel8
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel8.Controls.Add(this.btnDeletar);
             this.panel8.Controls.Add(this.btnAlterar);
             this.panel8.Controls.Add(this.btnCancelarEstacionamento);
             this.panel8.Controls.Add(this.btnSalvarUsoEstacionamento);
@@ -645,6 +659,16 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1094, 52);
             this.panel8.TabIndex = 13;
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Location = new System.Drawing.Point(728, 15);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(75, 23);
+            this.btnDeletar.TabIndex = 17;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnAlterar
             // 
@@ -661,7 +685,7 @@
             this.btnCancelarEstacionamento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelarEstacionamento.BackColor = System.Drawing.Color.White;
             this.btnCancelarEstacionamento.Image = global::Sistema.Ifsp.View.Properties.Resources._12;
-            this.btnCancelarEstacionamento.Location = new System.Drawing.Point(708, 2);
+            this.btnCancelarEstacionamento.Location = new System.Drawing.Point(618, 2);
             this.btnCancelarEstacionamento.Name = "btnCancelarEstacionamento";
             this.btnCancelarEstacionamento.Size = new System.Drawing.Size(85, 48);
             this.btnCancelarEstacionamento.TabIndex = 15;
@@ -771,7 +795,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(61, 18);
             this.label23.TabIndex = 22;
-            this.label23.Text = "Sabado:";
+            this.label23.Text = "Sábado:";
             // 
             // label24
             // 
@@ -1039,6 +1063,7 @@
             // 
             // dgvSolicitacoesExpiradas
             // 
+            this.dgvSolicitacoesExpiradas.AllowUserToAddRows = false;
             this.dgvSolicitacoesExpiradas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSolicitacoesExpiradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1082,6 +1107,7 @@
             // 
             // dgvSolicitacoesFinalizadas
             // 
+            this.dgvSolicitacoesFinalizadas.AllowUserToAddRows = false;
             this.dgvSolicitacoesFinalizadas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvSolicitacoesFinalizadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -1161,6 +1187,7 @@
             // 
             // dgvSolicitacoesAbertas
             // 
+            this.dgvSolicitacoesAbertas.AllowUserToAddRows = false;
             this.dgvSolicitacoesAbertas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1430,9 +1457,11 @@
             this.btnRegistarSaidaFornecedor.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnRegistarSaidaFornecedor, "Registrar Saída de Fornecedor");
             this.btnRegistarSaidaFornecedor.UseVisualStyleBackColor = false;
+            this.btnRegistarSaidaFornecedor.Click += new System.EventHandler(this.btnRegistarSaidaFornecedor_Click);
             // 
             // dgvFornecedores
             // 
+            this.dgvFornecedores.AllowUserToAddRows = false;
             this.dgvFornecedores.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1503,15 +1532,17 @@
             this.btnResgistrarSaidaVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnResgistrarSaidaVisitante.BackColor = System.Drawing.Color.White;
             this.btnResgistrarSaidaVisitante.Image = global::Sistema.Ifsp.View.Properties.Resources._13;
-            this.btnResgistrarSaidaVisitante.Location = new System.Drawing.Point(935, 2);
+            this.btnResgistrarSaidaVisitante.Location = new System.Drawing.Point(935, 1);
             this.btnResgistrarSaidaVisitante.Name = "btnResgistrarSaidaVisitante";
             this.btnResgistrarSaidaVisitante.Size = new System.Drawing.Size(92, 44);
             this.btnResgistrarSaidaVisitante.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnResgistrarSaidaVisitante, "Registrar Saída de Visitante");
             this.btnResgistrarSaidaVisitante.UseVisualStyleBackColor = false;
+            this.btnResgistrarSaidaVisitante.Click += new System.EventHandler(this.btnResgistrarSaidaVisitante_Click);
             // 
             // dgvVisitante
             // 
+            this.dgvVisitante.AllowUserToAddRows = false;
             this.dgvVisitante.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1553,6 +1584,57 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "Entrada";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.lblVagasReservadas);
+            this.tabPage1.Controls.Add(this.lblTotalVeiculosEstaacionamento);
+            this.tabPage1.Controls.Add(this.label27);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1090, 587);
+            this.tabPage1.TabIndex = 7;
+            this.tabPage1.Text = "Estacionamento";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // lblVagasReservadas
+            // 
+            this.lblVagasReservadas.AutoSize = true;
+            this.lblVagasReservadas.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVagasReservadas.Location = new System.Drawing.Point(895, 205);
+            this.lblVagasReservadas.Name = "lblVagasReservadas";
+            this.lblVagasReservadas.Size = new System.Drawing.Size(0, 31);
+            this.lblVagasReservadas.TabIndex = 3;
+            // 
+            // lblTotalVeiculosEstaacionamento
+            // 
+            this.lblTotalVeiculosEstaacionamento.AutoSize = true;
+            this.lblTotalVeiculosEstaacionamento.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalVeiculosEstaacionamento.Location = new System.Drawing.Point(895, 43);
+            this.lblTotalVeiculosEstaacionamento.Name = "lblTotalVeiculosEstaacionamento";
+            this.lblTotalVeiculosEstaacionamento.Size = new System.Drawing.Size(0, 31);
+            this.lblTotalVeiculosEstaacionamento.TabIndex = 2;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(36, 205);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(412, 31);
+            this.label27.TabIndex = 1;
+            this.label27.Text = "Quantidades de vagas a reservar:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(36, 43);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(565, 31);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Cadastrado para uso do estacionamento hoje:";
             // 
             // timerAtualizaSolicitacoes
             // 
@@ -1671,6 +1753,11 @@
             this.sobreNósToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
             this.sobreNósToolStripMenuItem.Text = "Sobre Nós";
             // 
+            // timerAtualizaEstacionamento
+            // 
+            this.timerAtualizaEstacionamento.Interval = 1000;
+            this.timerAtualizaEstacionamento.Tick += new System.EventHandler(this.timerAtualizaEstacionamento_Tick);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1716,6 +1803,8 @@
             this.tabRegistrarSaidaVisitante.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1829,7 +1918,7 @@
         private System.Windows.Forms.Button btnCancelarRegistro;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabCadastrarUsoEstacionamento;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblDocente;
         private System.Windows.Forms.ComboBox cmbDocente;
         private System.Windows.Forms.Label lblCodigoPlaca;
         private System.Windows.Forms.TextBox txtCodigoPlaca;
@@ -1859,5 +1948,12 @@
         private System.Windows.Forms.Button btnPesquisarPessoaEstacionamento;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label lblVagasReservadas;
+        private System.Windows.Forms.Label lblTotalVeiculosEstaacionamento;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Timer timerAtualizaEstacionamento;
+        private System.Windows.Forms.Button btnDeletar;
     }
 }

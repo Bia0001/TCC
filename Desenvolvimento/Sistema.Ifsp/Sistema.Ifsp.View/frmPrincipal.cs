@@ -31,7 +31,27 @@ namespace Sistema.Ifsp.View
             var porteiroDao = new PorteiroDAO();
             porteiro = porteiroDao.find(3);
             preencherGridsSolicitacoes();
+            preencherGridVisitanteFornecedores();
         }
+
+        private void preencherGridVisitanteFornecedores()
+        {
+            dgvFornecedores.Rows.Clear();
+            dgvVisitante.Rows.Clear();
+            FornecedorDAO fDao = new FornecedorDAO();
+            VisitanteDAO vDao = new VisitanteDAO();
+            var fornecedores = fDao.get(f => f.entrada.Day == DateTime.Now.Day && f.entrada.Month == DateTime.Now.Month && f.entrada.Year == DateTime.Now.Year && f.saida == f.entrada);
+            var visitantes = vDao.get(v => v.entrada.Day == DateTime.Now.Day && v.entrada.Month == DateTime.Now.Month && v.entrada.Year == DateTime.Now.Year && v.saida == v.entrada);
+            foreach (Fornecedor item in fornecedores)
+            {
+                dgvFornecedores.Rows.Add(item.idFornecedor, item.nome, item.empresa, item.entrada);
+            }
+            foreach (Visitante item in visitantes)
+            {
+                dgvVisitante.Rows.Add(item.idVisitante, item.nome, item.empresa, item.entrada);
+            }
+        }
+
         /*variaveis*/
         AssistenteAdministracao assistenteAdministracao; // usado em cadasrar uso do estacionamento
         public Aluno aluno { set; get; } //usado na tab de solicitações
@@ -473,6 +493,7 @@ namespace Sistema.Ifsp.View
                 txtRequisitandoEstacionamento.Text = pessoaFisica.nome;
                 txtPesquisarPessoaEstacionamento.ReadOnly = true;
                 btnPesquisarPessoaEstacionamento.Enabled = false;
+                cmbDocente.Enabled = true;
                 /*Se pessoa fisica não possui vaga, pergunta-se o interesse em cadastrar*/
                 var resutado = MessageBox.Show("Não há cadastro para uso do estacionamento por essa pessoa.\nDeseja cadastrar?",
                     "Deseja cadastrar?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -491,8 +512,13 @@ namespace Sistema.Ifsp.View
             {
                 btnSalvarUsoEstacionamento.Enabled = false;
                 btnAlterar.Enabled = true;
+                btnDeletar.Enabled = true;
                 txtCodigoPlaca.Text = vaga.codigoPlaca;
                 txtRequisitandoEstacionamento.Text = vaga.pessoaFisica.nome;
+                txtRequisitandoEstacionamento.Text = pessoaFisica.nome;
+                txtPesquisarPessoaEstacionamento.ReadOnly = true;
+                btnPesquisarPessoaEstacionamento.Enabled = false;
+                btnCancelarEstacionamento.Enabled = true;
                 if (vaga.isDocente)
                 {
                     cmbDocente.SelectedIndex = 1;
@@ -522,6 +548,8 @@ namespace Sistema.Ifsp.View
             btnCancelarEstacionamento.Enabled = false;
             btnSalvarUsoEstacionamento.Enabled = false;
             btnPesquisarPessoaEstacionamento.Enabled = true;
+            btnDeletar.Enabled = false;
+            btnAlterar.Enabled = false;
             cmbDocente.SelectedIndex = 0;
             cmbDomingo.SelectedIndex = 0;
             cmbSegunda.SelectedIndex = 0;
@@ -542,21 +570,25 @@ namespace Sistema.Ifsp.View
             }
             else
             {
+                DateTime data = DateTime.Now;
                 if (rdbFornecedor.Checked == true)
                 {
                     var f = new Fornecedor()
                     {
                         empresa = txtEmpresaFornecedorVisitante.Text,
-                        entrada = DateTime.Now,
+                        entrada = data,
                         motivo = txtMotivoFornecedorVisitante.Text,
                         nome = txtNomeFornecedorVisitante.Text,
-                        rg = txtRgFornecedorVisitante.Text
+                        rg = txtRgFornecedorVisitante.Text,
+                        saida = data
                     };
                     var fDAO = new FornecedorDAO();
                     if (fDAO.adicionar(f))
                     {
                         mensagem("Entrada de Forncedor registrada com sucesso!");
                         limparTelaRegistrarEntradaVisitanteFornecedor();
+                        dgvFornecedores.Rows.Add(f.idFornecedor, f.nome, f.empresa, f.entrada);
+                        preencherGridVisitanteFornecedores();
                     }
                     else
                     {
@@ -571,13 +603,16 @@ namespace Sistema.Ifsp.View
                         entrada = DateTime.Now,
                         motivo = txtMotivoFornecedorVisitante.Text,
                         nome = txtNomeFornecedorVisitante.Text,
-                        rg = txtRgFornecedorVisitante.Text
+                        rg = txtRgFornecedorVisitante.Text,
+                        saida = data
                     };
                     var vDAO = new VisitanteDAO();
                     if (vDAO.adicionar(v))
                     {
                         mensagem("Entrada de visitante registrada com sucesso!");
                         limparTelaRegistrarEntradaVisitanteFornecedor();
+                        dgvVisitante.Rows.Add(v.idVisitante, v.nome, v.empresa, v.entrada);
+                        preencherGridVisitanteFornecedores();
                     }
                     else
                     {
@@ -786,6 +821,423 @@ namespace Sistema.Ifsp.View
             catch (Exception ex)
             {
                 mensagem("Falha ao atualizar cadasro. Detalhes: " + ex);
+            }
+        }
+
+        /*As 07:00h, as 12:30h e as 18:00h a quantidade de vagas são atualziadas*/
+        private void timerAtualizaEstacionamento_Tick(object sender, EventArgs e)
+        {
+            DateTime data = DateTime.Now;
+            DateTime seteHoras = new DateTime(data.Year, data.Month, data.Day, 7, 0, 0);
+            DateTime seisQuarentaCinco = new DateTime(data.Year, data.Month, data.Day, 6, 45, 0);
+            DateTime dozeQuize = new DateTime(data.Year, data.Month, data.Day, 12, 15, 0);
+            DateTime dozeMeia = new DateTime(data.Year, data.Month, data.Day, 12, 30, 0);
+            DateTime dezesseteQuarentaCinco = new DateTime(data.Year, data.Month, data.Day, 17, 45, 0);
+            DateTime dezoito = new DateTime(data.Year, data.Month, data.Day, 18, 0, 0);
+
+            if (data > seisQuarentaCinco && data < seteHoras)
+            {
+                var vagaDao = new VagaDAO();
+
+                if (data.DayOfWeek == DayOfWeek.Friday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.sexta_feira.periodo == "Manhã" || s.sexta_feira.periodo == "Manhã e tarde" || s.sexta_feira.periodo == "Manhã e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Monday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.segunda_feira.periodo == "Manhã" || s.segunda_feira.periodo == "Manhã e tarde" || s.segunda_feira.periodo == "Manhã e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.sabado.periodo == "Manhã" || s.sabado.periodo == "Manhã e tarde" || s.sabado.periodo == "Manhã e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.domingo.periodo == "Manhã" || s.domingo.periodo == "Manhã e tarde" || s.domingo.periodo == "Manhã e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Thursday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.quinta_feira.periodo == "Manhã" || s.quinta_feira.periodo == "Manhã e tarde" || s.quinta_feira.periodo == "Manhã e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Tuesday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.terca_feira.periodo == "Manhã" || s.terca_feira.periodo == "Manhã e tarde" || s.terca_feira.periodo == "Manhã e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Wednesday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.quarta_feira.periodo == "Manhã" || s.quarta_feira.periodo == "Manhã e tarde" || s.quarta_feira.periodo == "Manhã e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+            }
+            else if (data > dozeQuize && data < dozeMeia)
+            {
+                var vagaDao = new VagaDAO();
+                if (data.DayOfWeek == DayOfWeek.Friday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.sexta_feira.periodo == "Tarde" || s.sexta_feira.periodo == "Manhã e tarde" || s.sexta_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Monday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.segunda_feira.periodo == "Tarde" || s.segunda_feira.periodo == "Manhã e tarde" || s.segunda_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.sabado.periodo == "Tarde" || s.sabado.periodo == "Manhã e tarde" || s.sabado.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.domingo.periodo == "Tarde" || s.domingo.periodo == "Manhã e tarde" || s.domingo.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Thursday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.quinta_feira.periodo == "Tarde" || s.quinta_feira.periodo == "Manhã e tarde" || s.quinta_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Tuesday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.terca_feira.periodo == "Tarde" || s.terca_feira.periodo == "Manhã e tarde" || s.terca_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Wednesday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.quarta_feira.periodo == "Tarde" || s.quarta_feira.periodo == "Manhã e tarde" || s.quarta_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+            }
+            else if (data > dezesseteQuarentaCinco && data < dezoito)
+            {
+                var vagaDao = new VagaDAO();
+                if (data.DayOfWeek == DayOfWeek.Friday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.sexta_feira.periodo == "Noite" || s.sexta_feira.periodo == "Manhã e noite" || s.sexta_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Monday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.segunda_feira.periodo == "Noite" || s.segunda_feira.periodo == "Manhã e noite" || s.segunda_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.sabado.periodo == "Noite" || s.sabado.periodo == "Manhã e noite" || s.sabado.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.domingo.periodo == "Noite" || s.domingo.periodo == "Manhã e noite" || s.domingo.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Thursday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.quinta_feira.periodo == "Noite" || s.quinta_feira.periodo == "Manhã e noite" || s.quinta_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Tuesday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.terca_feira.periodo == "Noite" || s.terca_feira.periodo == "Manhã e noite" || s.terca_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+                else if (data.DayOfWeek == DayOfWeek.Wednesday)
+                {
+                    try
+                    {
+                        vagas = vagaDao.get((s => s.quarta_feira.periodo == "Noite" || s.quarta_feira.periodo == "Manhã e noite" || s.quarta_feira.periodo == "Tarde e noite")).ToList();
+                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
+                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
+                        // exibindo a quantidade de vagas destinada sa docentes
+                        lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            var vDAO = new VagaDAO();
+            try
+            {
+                if (vDAO.excluir(v => v.pessoaFisica == pessoaFisica))
+                {
+                    mensagem("Excluido com sucesso");
+                }
+                else
+                {
+                    mensagem("Falha ao excluir!");
+                }
+            }
+            catch (Exception ex)
+            {
+                mensagem("Falha ao excluir. Detalhes: " + ex);
+            }
+        }
+
+        private void btnRegistarSaidaFornecedor_Click(object sender, EventArgs e)
+        {
+            if (dgvFornecedores.Rows.Count == 0)
+            {
+                mensagem("Selecione a linha que corresponde a um fonecedor");
+            }
+            else
+            {
+                int id = Convert.ToInt32(dgvFornecedores.CurrentRow.Cells[0].Value);
+                FornecedorDAO fDao = new FornecedorDAO();
+                var fornecedor = fDao.find(id);
+                fornecedor.saida = DateTime.Now;
+                if (fDao.atualizar(fornecedor))
+                {
+                    preencherGridVisitanteFornecedores();
+                    mensagem("Registro de saída finalizado com sucesso!");
+                }
+            }
+        }
+
+        private void btnResgistrarSaidaVisitante_Click(object sender, EventArgs e)
+        {
+            if (dgvVisitante.Rows.Count == 0)
+            {
+                mensagem("Selecione a linha que corresponde a um fonecedor");
+            }
+            else
+            {
+                int id = Convert.ToInt32(dgvVisitante.CurrentRow.Cells[0].Value);
+                VisitanteDAO vDao = new VisitanteDAO();
+                var visitantes = vDao.find(id);
+                visitantes.saida = DateTime.Now;
+                if (vDao.atualizar(visitantes))
+                {
+                    preencherGridVisitanteFornecedores();
+                    mensagem("Registro de saída finalizado com sucesso!");
+                }
+            }
+        }
+
+        private void cmbDocente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbDocente.SelectedItem.ToString() == "Não")
+            {
+                txtCodigoPlaca.Enabled = false;
+                txtCodigoPlaca.Visible = false;
+                lblCodigoPlaca.Visible = false;
+            }
+            else
+            {
+                txtCodigoPlaca.Enabled = true;
+                txtCodigoPlaca.Visible = true;
+                lblCodigoPlaca.Visible = true;
             }
         }
     }

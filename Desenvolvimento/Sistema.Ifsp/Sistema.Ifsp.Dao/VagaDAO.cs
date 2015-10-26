@@ -1,4 +1,5 @@
-﻿using Sistema.Ifsp.Model;
+﻿using System;
+using Sistema.Ifsp.Model;
 
 namespace Sistema.Ifsp.DAO
 {

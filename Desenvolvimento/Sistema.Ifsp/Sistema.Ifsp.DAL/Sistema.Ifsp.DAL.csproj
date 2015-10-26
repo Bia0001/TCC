@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201510032355553_excluindo-atributo-nome-da-classe-vaga.Designer.cs">
       <DependentUpon>201510032355553_excluindo-atributo-nome-da-classe-vaga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510090103441_adiconando-pessoaFisica-in-dia.cs" />
+    <Compile Include="Migrations\201510090103441_adiconando-pessoaFisica-in-dia.Designer.cs">
+      <DependentUpon>201510090103441_adiconando-pessoaFisica-in-dia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlConfiguration.cs" />
     <Compile Include="MySqlHistoryContext.cs" />
@@ -89,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510032355553_excluindo-atributo-nome-da-classe-vaga.resx">
       <DependentUpon>201510032355553_excluindo-atributo-nome-da-classe-vaga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510090103441_adiconando-pessoaFisica-in-dia.resx">
+      <DependentUpon>201510090103441_adiconando-pessoaFisica-in-dia.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

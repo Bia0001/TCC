@@ -33,3 +33,4 @@ C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.criandobasededados.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.excluindoatributonomedaclassevaga.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.adiconandopessoaFisicaindia.resources

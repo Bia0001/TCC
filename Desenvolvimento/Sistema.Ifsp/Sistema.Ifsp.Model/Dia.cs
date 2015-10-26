@@ -9,5 +9,6 @@ namespace Sistema.Ifsp.Model
         [Key]
         public int idDia { set; get; }
         public string periodo { set; get; }
+        public virtual PessoaFisica pessoaFisica { get; set; }
     }
 }

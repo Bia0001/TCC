@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.dgvPessoaFisica = new System.Windows.Forms.DataGridView();
-            this.btnSelecionarPessoa = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSelecionarPessoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoaFisica)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPessoaFisica
             // 
+            this.dgvPessoaFisica.AllowUserToAddRows = false;
             this.dgvPessoaFisica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPessoaFisica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPessoaFisica.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -50,16 +51,6 @@
             this.dgvPessoaFisica.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPessoaFisica.Size = new System.Drawing.Size(733, 390);
             this.dgvPessoaFisica.TabIndex = 0;
-            // 
-            // btnSelecionarPessoa
-            // 
-            this.btnSelecionarPessoa.Location = new System.Drawing.Point(670, 475);
-            this.btnSelecionarPessoa.Name = "btnSelecionarPessoa";
-            this.btnSelecionarPessoa.Size = new System.Drawing.Size(75, 23);
-            this.btnSelecionarPessoa.TabIndex = 1;
-            this.btnSelecionarPessoa.Text = "Selecionar pessoa";
-            this.btnSelecionarPessoa.UseVisualStyleBackColor = true;
-            this.btnSelecionarPessoa.Click += new System.EventHandler(this.btnSelecionarPessoa_Click);
             // 
             // Column1
             // 
@@ -78,6 +69,16 @@
             this.Column3.HeaderText = "RG";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            // 
+            // btnSelecionarPessoa
+            // 
+            this.btnSelecionarPessoa.Location = new System.Drawing.Point(670, 475);
+            this.btnSelecionarPessoa.Name = "btnSelecionarPessoa";
+            this.btnSelecionarPessoa.Size = new System.Drawing.Size(75, 23);
+            this.btnSelecionarPessoa.TabIndex = 1;
+            this.btnSelecionarPessoa.Text = "Selecionar pessoa";
+            this.btnSelecionarPessoa.UseVisualStyleBackColor = true;
+            this.btnSelecionarPessoa.Click += new System.EventHandler(this.btnSelecionarPessoa_Click);
             // 
             // frmPessoasFisicas
             // 
