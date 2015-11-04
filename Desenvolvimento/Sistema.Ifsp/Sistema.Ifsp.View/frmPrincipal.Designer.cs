@@ -149,9 +149,7 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lblVagasReservadas = new System.Windows.Forms.Label();
-            this.lblTotalVeiculosEstaacionamento = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.timerAtualizaSolicitacoes = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
@@ -1280,6 +1278,7 @@
             this.btnCancelarRegistro.TabIndex = 15;
             this.toolTip1.SetToolTip(this.btnCancelarRegistro, "Cancelar Registro");
             this.btnCancelarRegistro.UseVisualStyleBackColor = false;
+            this.btnCancelarRegistro.Click += new System.EventHandler(this.btnCancelarRegistro_Click);
             // 
             // btnRegistrarEntradaFornecedorVisitante
             // 
@@ -1353,6 +1352,7 @@
             this.txtMotivoFornecedorVisitante.Name = "txtMotivoFornecedorVisitante";
             this.txtMotivoFornecedorVisitante.Size = new System.Drawing.Size(981, 72);
             this.txtMotivoFornecedorVisitante.TabIndex = 9;
+            this.txtMotivoFornecedorVisitante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMotivoFornecedorVisitante_KeyPress);
             // 
             // label18
             // 
@@ -1376,6 +1376,7 @@
             this.txtEmpresaFornecedorVisitante.Name = "txtEmpresaFornecedorVisitante";
             this.txtEmpresaFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
             this.txtEmpresaFornecedorVisitante.TabIndex = 7;
+            this.txtEmpresaFornecedorVisitante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmpresaFornecedorVisitante_KeyPress);
             // 
             // label17
             // 
@@ -1399,6 +1400,7 @@
             this.txtRgFornecedorVisitante.Name = "txtRgFornecedorVisitante";
             this.txtRgFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
             this.txtRgFornecedorVisitante.TabIndex = 5;
+            this.txtRgFornecedorVisitante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRgFornecedorVisitante_KeyPress);
             // 
             // label16
             // 
@@ -1422,6 +1424,7 @@
             this.txtNomeFornecedorVisitante.Name = "txtNomeFornecedorVisitante";
             this.txtNomeFornecedorVisitante.Size = new System.Drawing.Size(981, 25);
             this.txtNomeFornecedorVisitante.TabIndex = 0;
+            this.txtNomeFornecedorVisitante.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomeFornecedorVisitante_KeyPress);
             // 
             // tabRegistrarSaidaFornecedor
             // 
@@ -1588,9 +1591,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.lblVagasReservadas);
-            this.tabPage1.Controls.Add(this.lblTotalVeiculosEstaacionamento);
             this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(1090, 587);
@@ -1602,39 +1603,21 @@
             // 
             this.lblVagasReservadas.AutoSize = true;
             this.lblVagasReservadas.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVagasReservadas.Location = new System.Drawing.Point(895, 205);
+            this.lblVagasReservadas.Location = new System.Drawing.Point(921, 54);
             this.lblVagasReservadas.Name = "lblVagasReservadas";
-            this.lblVagasReservadas.Size = new System.Drawing.Size(0, 31);
+            this.lblVagasReservadas.Size = new System.Drawing.Size(31, 31);
             this.lblVagasReservadas.TabIndex = 3;
-            // 
-            // lblTotalVeiculosEstaacionamento
-            // 
-            this.lblTotalVeiculosEstaacionamento.AutoSize = true;
-            this.lblTotalVeiculosEstaacionamento.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalVeiculosEstaacionamento.Location = new System.Drawing.Point(895, 43);
-            this.lblTotalVeiculosEstaacionamento.Name = "lblTotalVeiculosEstaacionamento";
-            this.lblTotalVeiculosEstaacionamento.Size = new System.Drawing.Size(0, 31);
-            this.lblTotalVeiculosEstaacionamento.TabIndex = 2;
+            this.lblVagasReservadas.Text = "0";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(36, 205);
+            this.label27.Location = new System.Drawing.Point(62, 54);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(412, 31);
             this.label27.TabIndex = 1;
             this.label27.Text = "Quantidades de vagas a reservar:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Georgia", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(36, 43);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(565, 31);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Cadastrado para uso do estacionamento hoje:";
             // 
             // timerAtualizaSolicitacoes
             // 
@@ -1950,9 +1933,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label lblVagasReservadas;
-        private System.Windows.Forms.Label lblTotalVeiculosEstaacionamento;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Timer timerAtualizaEstacionamento;
         private System.Windows.Forms.Button btnDeletar;
     }

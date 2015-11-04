@@ -32,6 +32,7 @@ namespace Sistema.Ifsp.View
             porteiro = porteiroDao.find(3);
             preencherGridsSolicitacoes();
             preencherGridVisitanteFornecedores();
+            atualizaEstacionamento();
         }
 
         private void preencherGridVisitanteFornecedores()
@@ -570,54 +571,61 @@ namespace Sistema.Ifsp.View
             }
             else
             {
-                DateTime data = DateTime.Now;
-                if (rdbFornecedor.Checked == true)
+                if (MessageBox.Show("Deseja realmente cadastrar entrada de visitante/fornecedor?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var f = new Fornecedor()
+                    DateTime data = DateTime.Now;
+                    if (rdbFornecedor.Checked == true)
                     {
-                        empresa = txtEmpresaFornecedorVisitante.Text,
-                        entrada = data,
-                        motivo = txtMotivoFornecedorVisitante.Text,
-                        nome = txtNomeFornecedorVisitante.Text,
-                        rg = txtRgFornecedorVisitante.Text,
-                        saida = data
-                    };
-                    var fDAO = new FornecedorDAO();
-                    if (fDAO.adicionar(f))
-                    {
-                        mensagem("Entrada de Forncedor registrada com sucesso!");
-                        limparTelaRegistrarEntradaVisitanteFornecedor();
-                        dgvFornecedores.Rows.Add(f.idFornecedor, f.nome, f.empresa, f.entrada);
-                        preencherGridVisitanteFornecedores();
+                        var f = new Fornecedor()
+                        {
+                            empresa = txtEmpresaFornecedorVisitante.Text,
+                            entrada = data,
+                            motivo = txtMotivoFornecedorVisitante.Text,
+                            nome = txtNomeFornecedorVisitante.Text,
+                            rg = txtRgFornecedorVisitante.Text,
+                            saida = data
+                        };
+                        var fDAO = new FornecedorDAO();
+                        if (fDAO.adicionar(f))
+                        {
+                            mensagem("Entrada de Forncedor registrada com sucesso!");
+                            limparTelaRegistrarEntradaVisitanteFornecedor();
+                            dgvFornecedores.Rows.Add(f.idFornecedor, f.nome, f.empresa, f.entrada);
+                            preencherGridVisitanteFornecedores();
+                        }
+                        else
+                        {
+                            mensagem("Falha ao registrar entrada de fornecedor");
+                        }
                     }
                     else
                     {
-                        mensagem("Falha ao registrar entrada de fornecedor");
+                        var v = new Visitante()
+                        {
+                            empresa = txtEmpresaFornecedorVisitante.Text,
+                            entrada = DateTime.Now,
+                            motivo = txtMotivoFornecedorVisitante.Text,
+                            nome = txtNomeFornecedorVisitante.Text,
+                            rg = txtRgFornecedorVisitante.Text,
+                            saida = data
+                        };
+                        var vDAO = new VisitanteDAO();
+                        if (vDAO.adicionar(v))
+                        {
+                            mensagem("Entrada de visitante registrada com sucesso!");
+                            limparTelaRegistrarEntradaVisitanteFornecedor();
+                            dgvVisitante.Rows.Add(v.idVisitante, v.nome, v.empresa, v.entrada);
+                            preencherGridVisitanteFornecedores();
+                        }
+                        else
+                        {
+                            mensagem("Falha ao regstrar entrada de visitante");
+                        }
                     }
                 }
                 else
                 {
-                    var v = new Visitante()
-                    {
-                        empresa = txtEmpresaFornecedorVisitante.Text,
-                        entrada = DateTime.Now,
-                        motivo = txtMotivoFornecedorVisitante.Text,
-                        nome = txtNomeFornecedorVisitante.Text,
-                        rg = txtRgFornecedorVisitante.Text,
-                        saida = data
-                    };
-                    var vDAO = new VisitanteDAO();
-                    if (vDAO.adicionar(v))
-                    {
-                        mensagem("Entrada de visitante registrada com sucesso!");
-                        limparTelaRegistrarEntradaVisitanteFornecedor();
-                        dgvVisitante.Rows.Add(v.idVisitante, v.nome, v.empresa, v.entrada);
-                        preencherGridVisitanteFornecedores();
-                    }
-                    else
-                    {
-                        mensagem("Falha ao regstrar entrada de visitante");
-                    }
+                    return;
                 }
             }
         }
@@ -670,115 +678,122 @@ namespace Sistema.Ifsp.View
         /*Persistindo no banco de dados os dias de uso do estacionamento*/
         private void btnSalvarEstacionamento_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("Deseja realmente cadastrar uso do estacionamento?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                /*verifiando se o campo código da plava foi preenchido caso o cadastro seja para um menbro do corpo docente*/
-                if (cmbDocente.SelectedText == "Sim" && (txtCodigoPlaca.Text == "" || txtCodigoPlaca.Text == null))
+                try
                 {
-                    mensagem("Preencha todos os campos");
-                }
-                else
-                {
-                    bool docente = false;
-                    string domingo_periodo = null;
-                    string segunda_periodo = null;
-                    string terca_periodo = null;
-                    string quarta_periodo = null;
-                    string quinta_periodo = null;
-                    string sexta_periodo = null;
-                    string sabado_periodo = null;
-                    string codigo_placa = null;
-                    /*Verificando se o menbro a se cadastrar é docente ou não*/
-                    if (cmbDocente.SelectedItem.ToString() == "Sim")
+                    /*verifiando se o campo código da plava foi preenchido caso o cadastro seja para um menbro do corpo docente*/
+                    if (cmbDocente.SelectedText == "Sim" && (txtCodigoPlaca.Text == "" || txtCodigoPlaca.Text == null))
                     {
-                        codigo_placa = txtCodigoPlaca.Text;
-                        docente = true;
+                        mensagem("Preencha todos os campos");
                     }
                     else
                     {
-                        codigo_placa = getCodigoPlacaCarro();
-                    }
-                    /*Quais dias e períodos foram selecionados*/
-                    if (cmbDomingo.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
-                    {
-                        domingo_periodo = cmbDomingo.SelectedItem.ToString();
-                    }
-                    if (cmbSegunda.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
-                    {
-                        segunda_periodo = cmbSegunda.SelectedItem.ToString();
-                    }
-                    if (cmbTerca.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
-                    {
-                        terca_periodo = cmbTerca.SelectedItem.ToString();
-                    }
-                    if (cmbQuarta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
-                    {
-                        quarta_periodo = cmbQuarta.SelectedItem.ToString();
-                    }
-                    if (cmbQuinta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
-                    {
-                        quinta_periodo = cmbQuinta.SelectedItem.ToString();
-                    }
-                    if (cmbSexta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
-                    {
-                        sexta_periodo = cmbSexta.SelectedItem.ToString();
-                    }
-                    if (cmbSabado.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
-                    {
-                        sabado_periodo = cmbSabado.SelectedItem.ToString();
-                    }
-                    var vaga = new Vaga()
-                    {
-                        codigoPlaca = codigo_placa,
-                        domingo = new Dia()
+                        bool docente = false;
+                        string domingo_periodo = null;
+                        string segunda_periodo = null;
+                        string terca_periodo = null;
+                        string quarta_periodo = null;
+                        string quinta_periodo = null;
+                        string sexta_periodo = null;
+                        string sabado_periodo = null;
+                        string codigo_placa = null;
+                        /*Verificando se o menbro a se cadastrar é docente ou não*/
+                        if (cmbDocente.SelectedItem.ToString() == "Sim")
                         {
-                            periodo = domingo_periodo
-                        },
-                        isDocente = docente,
-                        pessoaFisica = pessoaFisica,
-                        quarta_feira = new Dia()
-                        {
-                            periodo = quarta_periodo
-                        },
-                        quinta_feira = new Dia()
-                        {
-                            periodo = quinta_periodo
-                        },
-                        sabado = new Dia()
-                        {
-                            periodo = sabado_periodo
-                        },
-                        segunda_feira = new Dia()
-                        {
-                            periodo = segunda_periodo
-                        },
-                        sexta_feira = new Dia()
-                        {
-                            periodo = sexta_periodo
-                        },
-                        terca_feira = new Dia()
-                        {
-                            periodo = terca_periodo
+                            codigo_placa = txtCodigoPlaca.Text;
+                            docente = true;
                         }
-                    };
-                    var vDAO = new VagaDAO();
-                    if (vDAO.adicionar(vaga))
-                    {
-                        telaUsoEstacionamentoInicial();
-                        mensagem("Cadastro realizado com sucesso");
-                        frmCodigoPlaca f = new frmCodigoPlaca(codigo_placa);
-                        f.Show();
-                    }
-                    else
-                    {
-                        mensagem("Falha ao cadastrar uso do estacionamento. Tente novamente");
+                        else
+                        {
+                            codigo_placa = getCodigoPlacaCarro();
+                        }
+                        /*Quais dias e períodos foram selecionados*/
+                        if (cmbDomingo.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                        {
+                            domingo_periodo = cmbDomingo.SelectedItem.ToString();
+                        }
+                        if (cmbSegunda.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                        {
+                            segunda_periodo = cmbSegunda.SelectedItem.ToString();
+                        }
+                        if (cmbTerca.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                        {
+                            terca_periodo = cmbTerca.SelectedItem.ToString();
+                        }
+                        if (cmbQuarta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                        {
+                            quarta_periodo = cmbQuarta.SelectedItem.ToString();
+                        }
+                        if (cmbQuinta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                        {
+                            quinta_periodo = cmbQuinta.SelectedItem.ToString();
+                        }
+                        if (cmbSexta.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                        {
+                            sexta_periodo = cmbSexta.SelectedItem.ToString();
+                        }
+                        if (cmbSabado.SelectedItem.ToString() != "Sem uso" || cmbDomingo.SelectedItem.ToString() != null)
+                        {
+                            sabado_periodo = cmbSabado.SelectedItem.ToString();
+                        }
+                        var vaga = new Vaga()
+                        {
+                            codigoPlaca = codigo_placa,
+                            domingo = new Dia()
+                            {
+                                periodo = domingo_periodo
+                            },
+                            isDocente = docente,
+                            pessoaFisica = pessoaFisica,
+                            quarta_feira = new Dia()
+                            {
+                                periodo = quarta_periodo
+                            },
+                            quinta_feira = new Dia()
+                            {
+                                periodo = quinta_periodo
+                            },
+                            sabado = new Dia()
+                            {
+                                periodo = sabado_periodo
+                            },
+                            segunda_feira = new Dia()
+                            {
+                                periodo = segunda_periodo
+                            },
+                            sexta_feira = new Dia()
+                            {
+                                periodo = sexta_periodo
+                            },
+                            terca_feira = new Dia()
+                            {
+                                periodo = terca_periodo
+                            }
+                        };
+                        var vDAO = new VagaDAO();
+                        if (vDAO.adicionar(vaga))
+                        {
+                            telaUsoEstacionamentoInicial();
+                            mensagem("Cadastro realizado com sucesso");
+                            frmCodigoPlaca f = new frmCodigoPlaca(codigo_placa);
+                            f.Show();
+                        }
+                        else
+                        {
+                            mensagem("Falha ao cadastrar uso do estacionamento. Tente novamente");
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    mensagem("Falha ao cadastrar uso do estacionamento. Detalhes: " + ex);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                mensagem("Falha ao cadastrar uso do estacionamento. Detalhes: " + ex);
-            }
+                return;
+            }            
         }
 
         private void btnCancelarEstacionamento_Click(object sender, EventArgs e)
@@ -788,54 +803,63 @@ namespace Sistema.Ifsp.View
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            bool docente = false;
-            if (cmbDocente.SelectedIndex == 1)
+            if (MessageBox.Show("Deseja realmente alterar esse cadastro?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                docente = true;
-            }
-            btnPesquisarPessoaEstacionamento.Enabled = false;
-            txtPesquisarPessoaEstacionamento.ReadOnly = true;
-            vaga.codigoPlaca = txtCodigoPlaca.Text;
-            vaga.domingo.periodo = cmbDomingo.SelectedText;
-            vaga.isDocente = docente;
-            vaga.pessoaFisica = pessoaFisica;
-            vaga.quarta_feira.periodo = cmbQuarta.SelectedText;
-            vaga.quinta_feira.periodo = cmbQuinta.SelectedText;
-            vaga.sabado.periodo = cmbSabado.Text;
-            vaga.segunda_feira.periodo = cmbSegunda.Text;
-            vaga.sexta_feira.periodo = cmbSexta.Text;
-            vaga.terca_feira.periodo = cmbTerca.Text;
-            var vDAO = new VagaDAO();
-            try
-            {
-                if (vDAO.atualizar(vaga))
+                bool docente = false;
+                if (cmbDocente.SelectedIndex == 1)
                 {
-                    mensagem("Cadastro atualizado com sucesso");
-                    telaUsoEstacionamentoInicial();
+                    docente = true;
                 }
-                else
+                btnPesquisarPessoaEstacionamento.Enabled = false;
+                txtPesquisarPessoaEstacionamento.ReadOnly = true;
+                vaga.codigoPlaca = txtCodigoPlaca.Text;
+                vaga.domingo.periodo = cmbDomingo.SelectedText;
+                vaga.isDocente = docente;
+                vaga.pessoaFisica = pessoaFisica;
+                vaga.quarta_feira.periodo = cmbQuarta.SelectedText;
+                vaga.quinta_feira.periodo = cmbQuinta.SelectedText;
+                vaga.sabado.periodo = cmbSabado.Text;
+                vaga.segunda_feira.periodo = cmbSegunda.Text;
+                vaga.sexta_feira.periodo = cmbSexta.Text;
+                vaga.terca_feira.periodo = cmbTerca.Text;
+                var vDAO = new VagaDAO();
+                try
                 {
-                    mensagem("Falha ao atualizar cadasro. Tente novamente");
+                    if (vDAO.atualizar(vaga))
+                    {
+                        mensagem("Cadastro atualizado com sucesso");
+                        telaUsoEstacionamentoInicial();
+                    }
+                    else
+                    {
+                        mensagem("Falha ao atualizar cadasro. Tente novamente");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    mensagem("Falha ao atualizar cadasro. Detalhes: " + ex);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                mensagem("Falha ao atualizar cadasro. Detalhes: " + ex);
-            }
+                return;
+            }            
         }
 
         /*As 07:00h, as 12:30h e as 18:00h a quantidade de vagas são atualziadas*/
         private void timerAtualizaEstacionamento_Tick(object sender, EventArgs e)
         {
-            DateTime data = DateTime.Now;
-            DateTime seteHoras = new DateTime(data.Year, data.Month, data.Day, 7, 0, 0);
-            DateTime seisQuarentaCinco = new DateTime(data.Year, data.Month, data.Day, 6, 45, 0);
-            DateTime dozeQuize = new DateTime(data.Year, data.Month, data.Day, 12, 15, 0);
-            DateTime dozeMeia = new DateTime(data.Year, data.Month, data.Day, 12, 30, 0);
-            DateTime dezesseteQuarentaCinco = new DateTime(data.Year, data.Month, data.Day, 17, 45, 0);
-            DateTime dezoito = new DateTime(data.Year, data.Month, data.Day, 18, 0, 0);
+            atualizaEstacionamento();
+        }
 
-            if (data > seisQuarentaCinco && data < seteHoras)
+        private void atualizaEstacionamento()
+        {
+            DateTime data = DateTime.Now;
+            DateTime seisQuarentaCinco = new DateTime(data.Year, data.Month, data.Day, 6, 45, 0);
+            DateTime dozeQuinze = new DateTime(data.Year, data.Month, data.Day, 12, 15, 0);
+            DateTime dezesseteQuarentaCinco = new DateTime(data.Year, data.Month, data.Day, 17, 45, 0);
+
+            if (data > seisQuarentaCinco && data < dozeQuinze)
             {
                 var vagaDao = new VagaDAO();
 
@@ -844,8 +868,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.sexta_feira.periodo == "Manhã" || s.sexta_feira.periodo == "Manhã e tarde" || s.sexta_feira.periodo == "Manhã e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -859,8 +881,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.segunda_feira.periodo == "Manhã" || s.segunda_feira.periodo == "Manhã e tarde" || s.segunda_feira.periodo == "Manhã e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -874,8 +894,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.sabado.periodo == "Manhã" || s.sabado.periodo == "Manhã e tarde" || s.sabado.periodo == "Manhã e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -889,8 +907,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.domingo.periodo == "Manhã" || s.domingo.periodo == "Manhã e tarde" || s.domingo.periodo == "Manhã e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -904,8 +920,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.quinta_feira.periodo == "Manhã" || s.quinta_feira.periodo == "Manhã e tarde" || s.quinta_feira.periodo == "Manhã e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -919,8 +933,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.terca_feira.periodo == "Manhã" || s.terca_feira.periodo == "Manhã e tarde" || s.terca_feira.periodo == "Manhã e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -934,8 +946,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.quarta_feira.periodo == "Manhã" || s.quarta_feira.periodo == "Manhã e tarde" || s.quarta_feira.periodo == "Manhã e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -945,7 +955,7 @@ namespace Sistema.Ifsp.View
                     }
                 }
             }
-            else if (data > dozeQuize && data < dozeMeia)
+            else if (data > dozeQuinze && data < dezesseteQuarentaCinco)
             {
                 var vagaDao = new VagaDAO();
                 if (data.DayOfWeek == DayOfWeek.Friday)
@@ -953,8 +963,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.sexta_feira.periodo == "Tarde" || s.sexta_feira.periodo == "Manhã e tarde" || s.sexta_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -968,8 +976,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.segunda_feira.periodo == "Tarde" || s.segunda_feira.periodo == "Manhã e tarde" || s.segunda_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -983,8 +989,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.sabado.periodo == "Tarde" || s.sabado.periodo == "Manhã e tarde" || s.sabado.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -998,8 +1002,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.domingo.periodo == "Tarde" || s.domingo.periodo == "Manhã e tarde" || s.domingo.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1013,8 +1015,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.quinta_feira.periodo == "Tarde" || s.quinta_feira.periodo == "Manhã e tarde" || s.quinta_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1028,8 +1028,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.terca_feira.periodo == "Tarde" || s.terca_feira.periodo == "Manhã e tarde" || s.terca_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1043,8 +1041,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.quarta_feira.periodo == "Tarde" || s.quarta_feira.periodo == "Manhã e tarde" || s.quarta_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1054,7 +1050,7 @@ namespace Sistema.Ifsp.View
                     }
                 }
             }
-            else if (data > dezesseteQuarentaCinco && data < dezoito)
+            else if (data > dezesseteQuarentaCinco)
             {
                 var vagaDao = new VagaDAO();
                 if (data.DayOfWeek == DayOfWeek.Friday)
@@ -1062,8 +1058,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.sexta_feira.periodo == "Noite" || s.sexta_feira.periodo == "Manhã e noite" || s.sexta_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1077,8 +1071,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.segunda_feira.periodo == "Noite" || s.segunda_feira.periodo == "Manhã e noite" || s.segunda_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1092,8 +1084,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.sabado.periodo == "Noite" || s.sabado.periodo == "Manhã e noite" || s.sabado.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1107,8 +1097,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.domingo.periodo == "Noite" || s.domingo.periodo == "Manhã e noite" || s.domingo.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1122,8 +1110,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.quinta_feira.periodo == "Noite" || s.quinta_feira.periodo == "Manhã e noite" || s.quinta_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1137,8 +1123,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.terca_feira.periodo == "Noite" || s.terca_feira.periodo == "Manhã e noite" || s.terca_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1152,8 +1136,6 @@ namespace Sistema.Ifsp.View
                     try
                     {
                         vagas = vagaDao.get((s => s.quarta_feira.periodo == "Noite" || s.quarta_feira.periodo == "Manhã e noite" || s.quarta_feira.periodo == "Tarde e noite")).ToList();
-                        // exibiando a quantidade total de vagas destina ao estacionamento aquele dia
-                        lblTotalVeiculosEstaacionamento.Text = vagas.Count().ToString();
                         // exibindo a quantidade de vagas destinada sa docentes
                         lblVagasReservadas.Text = vagas.Where(v => v.isDocente == true).Count().ToString();
                     }
@@ -1167,62 +1149,80 @@ namespace Sistema.Ifsp.View
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            var vDAO = new VagaDAO();
-            try
+            if (MessageBox.Show("Deseja realmente excluir esse cadastro?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (vDAO.excluir(v => v.pessoaFisica == pessoaFisica))
+                var vDAO = new VagaDAO();
+                try
                 {
-                    mensagem("Excluido com sucesso");
+                    if (vDAO.excluir(v => v.pessoaFisica == pessoaFisica))
+                    {
+                        mensagem("Excluido com sucesso");
+                    }
+                    else
+                    {
+                        mensagem("Falha ao excluir!");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    mensagem("Falha ao excluir!");
+                    mensagem("Falha ao excluir. Detalhes: " + ex);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                mensagem("Falha ao excluir. Detalhes: " + ex);
-            }
+                return;
+            }            
         }
 
         private void btnRegistarSaidaFornecedor_Click(object sender, EventArgs e)
         {
+
             if (dgvFornecedores.Rows.Count == 0)
             {
                 mensagem("Selecione a linha que corresponde a um fonecedor");
             }
             else
             {
-                int id = Convert.ToInt32(dgvFornecedores.CurrentRow.Cells[0].Value);
-                FornecedorDAO fDao = new FornecedorDAO();
-                var fornecedor = fDao.find(id);
-                fornecedor.saida = DateTime.Now;
-                if (fDao.atualizar(fornecedor))
+                if (MessageBox.Show("Deseja realmente cadastrar a suída desse fornecedor", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    preencherGridVisitanteFornecedores();
-                    mensagem("Registro de saída finalizado com sucesso!");
+                    int id = Convert.ToInt32(dgvFornecedores.CurrentRow.Cells[0].Value);
+                    FornecedorDAO fDao = new FornecedorDAO();
+                    var fornecedor = fDao.find(id);
+                    fornecedor.saida = DateTime.Now;
+                    if (fDao.atualizar(fornecedor))
+                    {
+                        preencherGridVisitanteFornecedores();
+                        mensagem("Registro de saída finalizado com sucesso!");
+                    }
                 }
+                else
+                {
+                    return;
+                }                
             }
         }
 
         private void btnResgistrarSaidaVisitante_Click(object sender, EventArgs e)
         {
-            if (dgvVisitante.Rows.Count == 0)
+            if (MessageBox.Show("Deseja realmente cadastrar a saida desse visitante?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                mensagem("Selecione a linha que corresponde a um fonecedor");
-            }
-            else
-            {
-                int id = Convert.ToInt32(dgvVisitante.CurrentRow.Cells[0].Value);
-                VisitanteDAO vDao = new VisitanteDAO();
-                var visitantes = vDao.find(id);
-                visitantes.saida = DateTime.Now;
-                if (vDao.atualizar(visitantes))
+                if (dgvVisitante.Rows.Count == 0)
                 {
-                    preencherGridVisitanteFornecedores();
-                    mensagem("Registro de saída finalizado com sucesso!");
+                    mensagem("Selecione a linha que corresponde a um fonecedor");
                 }
-            }
+                else
+                {
+                    int id = Convert.ToInt32(dgvVisitante.CurrentRow.Cells[0].Value);
+                    VisitanteDAO vDao = new VisitanteDAO();
+                    var visitantes = vDao.find(id);
+                    visitantes.saida = DateTime.Now;
+                    if (vDao.atualizar(visitantes))
+                    {
+                        preencherGridVisitanteFornecedores();
+                        mensagem("Registro de saída finalizado com sucesso!");
+                    }
+                }
+            }            
         }
 
         private void cmbDocente_SelectedIndexChanged(object sender, EventArgs e)
@@ -1239,6 +1239,48 @@ namespace Sistema.Ifsp.View
                 txtCodigoPlaca.Visible = true;
                 lblCodigoPlaca.Visible = true;
             }
+        }
+
+        private void btnCancelarRegistro_Click(object sender, EventArgs e)
+        {
+            telaInicialRegistrarEntradaVisiForn();
+        }
+
+        private void telaInicialRegistrarEntradaVisiForn()
+        {
+            txtNomeFornecedorVisitante.Text = null;
+            txtEmpresaFornecedorVisitante = null;
+            txtMotivoFornecedorVisitante = null;
+            txtRgFornecedorVisitante = null;
+        }
+
+        private void txtNomeFornecedorVisitante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarAlfanumerico(sender, e);
+        }
+
+        /*validando apenas caracteres alfanumerico, espaço em branco e backspace */
+        private void validarAlfanumerico(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRgFornecedorVisitante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarAlfanumerico(sender, e);
+        }
+
+        private void txtEmpresaFornecedorVisitante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarAlfanumerico(sender, e);
+        }
+
+        private void txtMotivoFornecedorVisitante_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarAlfanumerico(sender, e);
         }
     }
 }

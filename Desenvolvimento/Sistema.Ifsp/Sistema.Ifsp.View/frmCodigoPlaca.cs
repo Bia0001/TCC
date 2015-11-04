@@ -17,5 +17,25 @@ namespace Sistema.Ifsp.View
             InitializeComponent();
             txtCodigoPlaca.Text = codigoPlaca;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            previsualicaoImpressao.Show();
+        }
+
+        /*determinando previsualização em modo maximizado*/
+        private void previsualicaoImpressao_Load(object sender, EventArgs e)
+        {
+            previsualicaoImpressao.WindowState = FormWindowState.Maximized;
+        }
+
+        /*determinando fonte, posição e texto a ser impresso*/
+        private void impressao_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            /*determinando fonte, tamanho em pixel*/
+            Font fonte = new Font("Arial", 200, FontStyle.Bold, GraphicsUnit.Pixel);
+            /*determinando item a ser impresso*/
+            e.Graphics.DrawString(txtCodigoPlaca.Text, fonte, Brushes.Black, 10, 60);
+        }
     }
 }
