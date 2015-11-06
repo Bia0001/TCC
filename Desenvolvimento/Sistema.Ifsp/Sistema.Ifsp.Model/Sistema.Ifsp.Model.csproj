@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministradorSistema.cs" />
     <Compile Include="Aluno.cs" />
     <Compile Include="AssistenteAdministracao.cs" />
     <Compile Include="AssistenteAluno.cs" />
@@ -50,6 +49,7 @@
     <Compile Include="Dia.cs" />
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Funcionario.cs" />
+    <Compile Include="PermanenciaVeiculo.cs" />
     <Compile Include="PessoaFisica.cs" />
     <Compile Include="Porteiro.cs" />
     <Compile Include="Prontuario.cs" />

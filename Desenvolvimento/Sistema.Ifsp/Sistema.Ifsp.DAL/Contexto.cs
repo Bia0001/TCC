@@ -22,11 +22,11 @@ namespace Sistema.Ifsp.DAL
         public DbSet<Solicitacao> solicitacao { get; set; }
         public DbSet<SolicitacaoEntrada> solicitacaoEntrada { get; set; }
         public DbSet<SolicitacaoSaida> solicitacaoSaida { get; set; }
-        public DbSet<AdministradorSistema> administradorSistema { get; set; }
         public DbSet<Visitante> visitante { get; set; }
         public DbSet<Fornecedor> fornecedor { get; set; }
         public DbSet<Prontuario> prontuario { get; set; }
         public DbSet<Vaga> vaga { get; set; }
+        public DbSet<PermanenciaVeiculo> permanenciaVeiculo { get; set; }
         /*removendo convenção de pluralização do Entity Fremework*/
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

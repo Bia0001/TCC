@@ -7,13 +7,13 @@ namespace Sistema.Ifsp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class adiconandopessoaFisicaindia : IMigrationMetadata
+    public sealed partial class adicionandoatributosnaclassepermanenciaVeiculo : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(adiconandopessoaFisicaindia));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(adicionandoatributosnaclassepermanenciaVeiculo));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510090103441_adiconando-pessoaFisica-in-dia"; }
+            get { return "201511052139227_adicionando-atributos-na-classe-permanenciaVeiculo"; }
         }
         
         string IMigrationMetadata.Source

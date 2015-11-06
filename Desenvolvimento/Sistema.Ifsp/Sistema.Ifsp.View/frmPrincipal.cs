@@ -30,9 +30,12 @@ namespace Sistema.Ifsp.View
             assistenteAluno = assistenteDao.find(2);
             var porteiroDao = new PorteiroDAO();
             porteiro = porteiroDao.find(3);
+            var admDAO = new AssistenteAdministracaoDAO();
+            adm = admDAO.find(4);
             preencherGridsSolicitacoes();
             preencherGridVisitanteFornecedores();
             atualizaEstacionamento();
+            atualizaGridPermanenciaVeiculo();
         }
 
         private void preencherGridVisitanteFornecedores()
@@ -54,14 +57,13 @@ namespace Sistema.Ifsp.View
         }
 
         /*variaveis*/
-        AssistenteAdministracao assistenteAdministracao; // usado em cadasrar uso do estacionamento
         public Aluno aluno { set; get; } //usado na tab de solicitações
         public PessoaFisica pessoaFisica { set; get; }// usado na tab cadastro do uso de estacionamento
         Porteiro porteiro; // usado na finalização da solicitação de saída
         AssistenteAluno assistenteAluno; // usado na tab de solitações
         IQueryable<Aluno> alunos; // usado na tab de solicitações
+        AssistenteAdministracao adm;
         int tempoExpiraçãoSolicitacao = 45;
-        private IQueryable<PessoaFisica> pessoas;
         private List<Vaga> vagas;
         Vaga vaga;
 
@@ -793,7 +795,7 @@ namespace Sistema.Ifsp.View
             else
             {
                 return;
-            }            
+            }
         }
 
         private void btnCancelarEstacionamento_Click(object sender, EventArgs e)
@@ -843,7 +845,7 @@ namespace Sistema.Ifsp.View
             else
             {
                 return;
-            }            
+            }
         }
 
         /*As 07:00h, as 12:30h e as 18:00h a quantidade de vagas são atualziadas*/
@@ -1171,7 +1173,7 @@ namespace Sistema.Ifsp.View
             else
             {
                 return;
-            }            
+            }
         }
 
         private void btnRegistarSaidaFornecedor_Click(object sender, EventArgs e)
@@ -1198,7 +1200,7 @@ namespace Sistema.Ifsp.View
                 else
                 {
                     return;
-                }                
+                }
             }
         }
 
@@ -1222,7 +1224,7 @@ namespace Sistema.Ifsp.View
                         mensagem("Registro de saída finalizado com sucesso!");
                     }
                 }
-            }            
+            }
         }
 
         private void cmbDocente_SelectedIndexChanged(object sender, EventArgs e)
@@ -1281,6 +1283,271 @@ namespace Sistema.Ifsp.View
         private void txtMotivoFornecedorVisitante_KeyPress(object sender, KeyPressEventArgs e)
         {
             validarAlfanumerico(sender, e);
+        }
+
+        private void txtPerVeiProntuario1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarAlfanumerico(sender, e);
+        }
+
+        private void txtPerVeiSerPre1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validarLetrasPenas(sender, e);
+        }
+
+        private void validarLetrasPenas(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        /*travando controles na aba permanência de veículo qunado aluno*/
+        private void perVeiControlsAluno()
+        {
+            lblPerVeiCurso.Enabled = true;
+            cmbPerVeiCurso.Enabled = true;
+            lblPerVeiModulo.Enabled = true;
+            cmbPerVeiModulo.Enabled = true;
+            lblPerVeiAno.Enabled = true;
+            cmbPerVeiAnoLetivo.Enabled = true;
+
+            lblPerVeiSetor.Enabled = false;
+            cmbPerVeiSetor.Enabled = false;
+            lblPerVeiDocente.Enabled = false;
+            cmbPerVeiDocente.Enabled = false;
+
+            lblPerVeiSerPre1.Enabled = false;
+            txtPerVeiSerPre1.Enabled = false;
+            txtPerVeiSerPre1.Text = null;
+            lblPerVeiSerPre2.Enabled = false;
+            txtPerVeiSerPre2.Enabled = false;
+            txtPerVeiSerPre2.Text = null;
+            lblPerVeiSerPre3.Enabled = false;
+            txtPerVeiSerPre3.Enabled = false;
+            txtPerVeiSerPre3.Text = null;
+            lblPerVeiSerPre4.Enabled = false;
+            txtPerVeiSerPre4.Enabled = false;
+            txtPerVeiSerPre4.Text = null;
+            lblPerVeiPro1.Enabled = false;
+            txtPerVeiProntuario1.Enabled = false;
+            txtPerVeiProntuario1.Text = null;
+            lblPerVeiPro2.Enabled = false;
+            txtPerVeiProntuario2.Enabled = false;
+            txtPerVeiProntuario2.Text = null;
+            lblPerVeiPro3.Enabled = false;
+            txtPerVeiProntuario3.Enabled = false;
+            txtPerVeiProntuario3.Text = null;
+            lblPerVeiPro4.Enabled = false;
+            txtPerVeiSerPre4.Enabled = false;
+            txtPerVeiProntuario4.Enabled = false;
+        }
+
+        private void perVeiControlsFuncionario()
+        {
+            lblPerVeiCurso.Enabled = false;
+            cmbPerVeiCurso.Enabled = false;
+            lblPerVeiModulo.Enabled = false;
+            cmbPerVeiModulo.Enabled = false;
+            lblPerVeiAno.Enabled = false;
+            cmbPerVeiAnoLetivo.Enabled = false;
+
+            lblPerVeiSetor.Enabled = true;
+            cmbPerVeiSetor.Enabled = true;
+            lblPerVeiDocente.Enabled = true;
+            cmbPerVeiDocente.Enabled = true;
+
+            lblPerVeiSerPre1.Enabled = true;
+            txtPerVeiSerPre1.Enabled = true;
+            txtPerVeiSerPre1.Text = null;
+            lblPerVeiSerPre2.Enabled = true;
+            txtPerVeiSerPre2.Enabled = true;
+            txtPerVeiSerPre2.Text = null;
+            lblPerVeiSerPre3.Enabled = true;
+            txtPerVeiSerPre3.Enabled = true;
+            txtPerVeiSerPre3.Text = null;
+            lblPerVeiSerPre4.Enabled = true;
+            txtPerVeiSerPre4.Enabled = true;
+            txtPerVeiSerPre4.Text = null;
+            lblPerVeiPro1.Enabled = true;
+            txtPerVeiProntuario1.Enabled = true;
+            txtPerVeiProntuario1.Text = null;
+            lblPerVeiPro2.Enabled = true;
+            txtPerVeiProntuario2.Enabled = true;
+            txtPerVeiProntuario2.Text = null;
+            lblPerVeiPro3.Enabled = true;
+            txtPerVeiProntuario3.Enabled = true;
+            txtPerVeiProntuario3.Text = null;
+            lblPerVeiPro4.Enabled = true;
+            txtPerVeiProntuario4.Enabled = true;
+            txtPerVeiProntuario4.Text = null;
+        }
+
+        private void rdbPerVeiAluno_CheckedChanged(object sender, EventArgs e)
+        {
+            perVeiControlsAluno();
+        }
+
+        private void rdbPerVeiFuncionario_CheckedChanged(object sender, EventArgs e)
+        {
+            perVeiControlsFuncionario();
+        }
+
+        private void btnPerVeiCancelar_Click(object sender, EventArgs e)
+        {
+            limparCamposPerVei();
+        }
+
+        private void limparCamposPerVei()
+        {
+            txtPerVeiNome.Text = null;
+            txtPerVeiRG.Text = null;
+            txtPerVeiProntuario.Text = null;
+            txtPerVeiMarca.Text = null;
+            txtPerVeiModelo.Text = null;
+            txtPerVeiPlaca.Text = null;
+            rdbPerVeiAluno.Checked = true;
+            txtPerVeiSerPre1.Text = null;
+            txtPerVeiSerPre2.Text = null;
+            txtPerVeiSerPre3.Text = null;
+            txtPerVeiSerPre4.Text = null;
+            txtPerVeiProntuario1.Text = null;
+            txtPerVeiProntuario2.Text = null;
+            txtPerVeiProntuario3.Text = null;
+            txtPerVeiProntuario4.Text = null;
+        }
+
+        private void brnCadastrar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente cadastrar permanência de veiculo?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (string.IsNullOrWhiteSpace(txtPerVeiNome.Text) || string.IsNullOrWhiteSpace(txtPerVeiRG.Text) || string.IsNullOrWhiteSpace(txtPerVeiProntuario.Text) ||
+                 string.IsNullOrWhiteSpace(txtPerVeiMarca.Text) || string.IsNullOrWhiteSpace(txtPerVeiModelo.Text) || string.IsNullOrWhiteSpace(txtPerVeiPlaca.Text) || 
+                 cmbPerVeiAnoCarro.SelectedItem == null)
+                {
+                    mensagem("Verifique se todos os campos foram preenchidos");
+                    return;
+                }
+                else
+                {
+                    var pDAO = new PermanenciaVeiculoDAO();
+                    var p = new PermanenciaVeiculo();
+                    p.nome = txtPerVeiNome.Text;
+                    p.rg = txtPerVeiRG.Text;
+                    p.prontuario = txtPerVeiRG.Text;
+                    p.marca = txtPerVeiMarca.Text;
+                    p.modelo = txtPerVeiModelo.Text;
+                    p.ano = Convert.ToInt32(cmbPerVeiAnoCarro.SelectedItem);
+                    p.placa = txtPerVeiPlaca.Text;
+                    if (rdbPerVeiAluno.Checked == true)
+                    {
+                        if (cmbPerVeiCurso.SelectedItem == null || cmbPerVeiModulo.SelectedItem == null || cmbPerVeiAnoLetivo.SelectedItem == null)
+                        {
+                            mensagem("Preencha todos os dados referentes ao curso do aluno");
+                            cmbPerVeiCurso.Focus();
+                            return;
+                        }
+                        else
+                        {
+                            try
+                            {
+                                p.tipoSolicitante = "Aluno";
+                                p.curso = cmbPerVeiCurso.Text;
+                                p.modulo = cmbPerVeiModulo.Text;
+                                p.anoLetivo = cmbPerVeiAnoLetivo.Text;
+                                p.assistenteAdministracao = adm;
+                                p.dataEntrada = DateTime.Now;
+                                pDAO.adicionar(p);
+                                mensagem("Permanência de veículo cadastrad com sucesso!");
+                                atualizaGridPermanenciaVeiculo();
+                                limparCamposPerVei();
+                            }
+                            catch (Exception ex)
+                            {
+                                mensagem("Falha ao cadastrar permanência de veículo\nDetalhes: " + ex);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (cmbPerVeiSetor.SelectedItem == null || cmbPerVeiDocente.SelectedItem == null || string.IsNullOrWhiteSpace(txtPerVeiSerPre1.Text) ||
+                             string.IsNullOrWhiteSpace(txtPerVeiProntuario1.Text))
+                        {
+                            mensagem("Verifique se todos os campos foram preenchidos por favor!");
+                        }
+                        else
+                        {
+                            try
+                            {
+                                p.setor = cmbPerVeiSetor.SelectedText;
+                                p.tipoSolicitante = "Funcionário";
+                                p.isDocente = cmbPerVeiDocente.SelectedText;
+                                p.dataEntrada = DateTime.Now;
+                                p.servidorPublico1 = txtPerVeiSerPre1.Text;
+                                p.servidorPublico2 = txtPerVeiSerPre2.Text;
+                                p.servidorPublico3 = txtPerVeiSerPre3.Text;
+                                p.servidorPublico4 = txtPerVeiSerPre4.Text;
+                                p.prontuario1 = txtPerVeiProntuario1.Text;
+                                p.prontuario2 = txtPerVeiProntuario2.Text;
+                                p.prontuario3 = txtPerVeiProntuario3.Text;
+                                p.prontuario4 = txtPerVeiProntuario4.Text;
+                                p.assistenteAdministracao = adm;
+                                pDAO.adicionar(p);
+                                mensagem("Permanência de veículo cadastrada com sucesso!");
+                                atualizaGridPermanenciaVeiculo();
+                                limparCamposPerVei();
+                            }
+                            catch (Exception ex)
+                            {
+                                mensagem("Falha ao cadastrar permanência de veículo\nDetalhes: " + ex);
+                            }
+                        }
+                    }
+                }
+            }            
+        }
+
+        /*atualziando o grid de permanência de veículo*/
+        private void atualizaGridPermanenciaVeiculo()
+        {
+            dgvPermanenciaVeiculo.Rows.Clear();
+            dgvPermanenciaVeiculo.Update();
+            dgvPermanenciaVeiculo.Refresh();
+            var pDAO = new PermanenciaVeiculoDAO();
+            var permanenciasVeiculos = pDAO.get(p => p.dataSaida == null);
+            foreach (PermanenciaVeiculo item in permanenciasVeiculos)
+            {
+                dgvPermanenciaVeiculo.Rows.Add(item.idPermanenciaVeiculo, item.nome, item.placa,item.tipoSolicitante, item.dataEntrada.ToString("dd/MM/yyyy hh:mm:ss"));
+            }
+        }
+
+        private void btnRegistrarSaida_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente registar a saida do veículo", "Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (dgvPermanenciaVeiculo.Rows.Count == 0)
+                {
+                    mensagem("Selecione pelo menos um registro por favor");
+                }
+                else
+                {
+                    var pDAO = new PermanenciaVeiculoDAO();
+                    int id = Convert.ToInt32(dgvPermanenciaVeiculo.CurrentRow.Cells[0].Value);
+                    try
+                    {
+                        var p = pDAO.find(id);
+                        p.dataSaida = DateTime.Now;
+                        pDAO.atualizar(p);
+                        mensagem("Registra atualizado com sucesso!");
+                        atualizaGridPermanenciaVeiculo();
+                    }
+                    catch (Exception ex)
+                    {
+                        mensagem("Falha ao atualizar o registro");
+                    }
+                }
+            }            
         }
     }
 }

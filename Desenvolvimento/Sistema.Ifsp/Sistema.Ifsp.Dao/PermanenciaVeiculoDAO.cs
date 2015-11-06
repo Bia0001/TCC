@@ -2,7 +2,7 @@
 
 namespace Sistema.Ifsp.DAO
 {
-    public class AdministradorSistemaDAO : CRUD<AdministradorSistema>
+    public class PermanenciaVeiculoDAO : CRUD<PermanenciaVeiculo>
     {
     }
 }

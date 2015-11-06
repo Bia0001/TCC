@@ -7,13 +7,13 @@ namespace Sistema.Ifsp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class criandobasededados : IMigrationMetadata
+    public sealed partial class permitindosalvardataDeEntradaclassepermanenciaVeiculo : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(criandobasededados));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(permitindosalvardataDeEntradaclassepermanenciaVeiculo));
         
         string IMigrationMetadata.Id
         {
-            get { return "201510032217582_criando-base-de-dados"; }
+            get { return "201511052338017_permitindo-salvar-dataDeEntrada-classe-permanenciaVeiculo"; }
         }
         
         string IMigrationMetadata.Source
