@@ -64,11 +64,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAbertura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbertura.Designer.cs">
+      <DependentUpon>frmAbertura.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlunos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAlunos.Designer.cs">
       <DependentUpon>frmAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAutenticacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutenticacao.Designer.cs">
+      <DependentUpon>frmAutenticacao.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCodigoPlaca.cs">
       <SubType>Form</SubType>
@@ -91,8 +103,14 @@
     <Compile Include="GerarCodigoPlacaException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAbertura.resx">
+      <DependentUpon>frmAbertura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAlunos.resx">
       <DependentUpon>frmAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAutenticacao.resx">
+      <DependentUpon>frmAutenticacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCodigoPlaca.resx">
       <DependentUpon>frmCodigoPlaca.cs</DependentUpon>

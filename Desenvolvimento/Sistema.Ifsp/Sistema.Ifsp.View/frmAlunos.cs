@@ -46,7 +46,7 @@ namespace Sistema.Ifsp.View
                 {
                     if (aluno.idPessoaFisica == id)
                     {
-                        frmPrincipal f = frmPrincipal.getInstancia();
+                        frmPrincipal f = frmPrincipal.getInstance();
                         f.Show();
                         f.preencherDadosAluno(aluno);
                         f.aluno = aluno;

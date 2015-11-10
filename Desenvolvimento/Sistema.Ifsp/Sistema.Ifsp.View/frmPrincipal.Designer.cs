@@ -147,10 +147,11 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabEstacionamento = new System.Windows.Forms.TabPage();
             this.lblVagasReservadas = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPermanenciaVeiculo = new System.Windows.Forms.TabPage();
+            this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.txtPerVeiPlaca = new System.Windows.Forms.TextBox();
             this.btnPerVeiCancelar = new System.Windows.Forms.Button();
@@ -196,11 +197,38 @@
             this.txtPerVeiRG = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPerVeiNome = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPermanenciaVeiculoEncerrar = new System.Windows.Forms.TabPage();
+            this.btnRegistrarSaida = new System.Windows.Forms.Button();
             this.dgvPermanenciaVeiculo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtCadAltID = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.cmbCadAltNivelAcesso = new System.Windows.Forms.ComboBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtCadAltNome = new System.Windows.Forms.TextBox();
+            this.btnCadAltSenCadAlt = new System.Windows.Forms.Button();
+            this.btnCadAltSenPesquisar = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.txtCadAltSenUsuario = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.txtCadAltSenSenha = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtCadAltPesquisa = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbCadAltTerceirizado = new System.Windows.Forms.RadioButton();
+            this.rdbCadAltFunVinIFSP = new System.Windows.Forms.RadioButton();
+            this.grbCadAltSenTipo = new System.Windows.Forms.GroupBox();
+            this.rdbCadAltId = new System.Windows.Forms.RadioButton();
+            this.rdbCadAltProntuario = new System.Windows.Forms.RadioButton();
+            this.rdbCadAltNome = new System.Windows.Forms.RadioButton();
             this.timerAtualizaSolicitacoes = new System.Windows.Forms.Timer(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -211,13 +239,6 @@
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreNósToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerAtualizaEstacionamento = new System.Windows.Forms.Timer(this.components);
-            this.label32 = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRegistrarSaida = new System.Windows.Forms.Button();
             this.principal.SuspendLayout();
             this.tabSolicitacoes.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -242,10 +263,13 @@
             this.tabRegistrarSaidaVisitante.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.tabEstacionamento.SuspendLayout();
+            this.tabPermanenciaVeiculo.SuspendLayout();
+            this.tabPermanenciaVeiculoEncerrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermanenciaVeiculo)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.grbCadAltSenTipo.SuspendLayout();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -264,11 +288,12 @@
             this.principal.Controls.Add(this.tabEntradaVisitanteForncedor);
             this.principal.Controls.Add(this.tabRegistrarSaidaFornecedor);
             this.principal.Controls.Add(this.tabRegistrarSaidaVisitante);
-            this.principal.Controls.Add(this.tabPage1);
-            this.principal.Controls.Add(this.tabPage2);
-            this.principal.Controls.Add(this.tabPage3);
+            this.principal.Controls.Add(this.tabEstacionamento);
+            this.principal.Controls.Add(this.tabPermanenciaVeiculo);
+            this.principal.Controls.Add(this.tabPermanenciaVeiculoEncerrar);
+            this.principal.Controls.Add(this.tabPage4);
             this.principal.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.principal.Location = new System.Drawing.Point(45, 103);
+            this.principal.Location = new System.Drawing.Point(45, 104);
             this.principal.Name = "principal";
             this.principal.SelectedIndex = 0;
             this.principal.Size = new System.Drawing.Size(1098, 618);
@@ -1648,16 +1673,16 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
-            // tabPage1
+            // tabEstacionamento
             // 
-            this.tabPage1.Controls.Add(this.lblVagasReservadas);
-            this.tabPage1.Controls.Add(this.label27);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1090, 587);
-            this.tabPage1.TabIndex = 7;
-            this.tabPage1.Text = "Estacionamento";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabEstacionamento.Controls.Add(this.lblVagasReservadas);
+            this.tabEstacionamento.Controls.Add(this.label27);
+            this.tabEstacionamento.Location = new System.Drawing.Point(4, 27);
+            this.tabEstacionamento.Name = "tabEstacionamento";
+            this.tabEstacionamento.Size = new System.Drawing.Size(1090, 587);
+            this.tabEstacionamento.TabIndex = 7;
+            this.tabEstacionamento.Text = "Estacionamento";
+            this.tabEstacionamento.UseVisualStyleBackColor = true;
             // 
             // lblVagasReservadas
             // 
@@ -1679,61 +1704,70 @@
             this.label27.TabIndex = 1;
             this.label27.Text = "Quantidades de vagas a reservar:";
             // 
-            // tabPage2
+            // tabPermanenciaVeiculo
             // 
-            this.tabPage2.Controls.Add(this.label32);
-            this.tabPage2.Controls.Add(this.label31);
-            this.tabPage2.Controls.Add(this.txtPerVeiPlaca);
-            this.tabPage2.Controls.Add(this.btnPerVeiCancelar);
-            this.tabPage2.Controls.Add(this.lblPerVeiSerPre4);
-            this.tabPage2.Controls.Add(this.lblPerVeiSerPre3);
-            this.tabPage2.Controls.Add(this.lblPerVeiSerPre2);
-            this.tabPage2.Controls.Add(this.lblPerVeiPro4);
-            this.tabPage2.Controls.Add(this.txtPerVeiProntuario4);
-            this.tabPage2.Controls.Add(this.txtPerVeiSerPre4);
-            this.tabPage2.Controls.Add(this.lblPerVeiPro3);
-            this.tabPage2.Controls.Add(this.txtPerVeiProntuario3);
-            this.tabPage2.Controls.Add(this.txtPerVeiSerPre3);
-            this.tabPage2.Controls.Add(this.lblPerVeiPro2);
-            this.tabPage2.Controls.Add(this.txtPerVeiProntuario2);
-            this.tabPage2.Controls.Add(this.txtPerVeiSerPre2);
-            this.tabPage2.Controls.Add(this.lblPerVeiPro1);
-            this.tabPage2.Controls.Add(this.txtPerVeiProntuario1);
-            this.tabPage2.Controls.Add(this.lblPerVeiSerPre1);
-            this.tabPage2.Controls.Add(this.txtPerVeiSerPre1);
-            this.tabPage2.Controls.Add(this.brnCadastrar);
-            this.tabPage2.Controls.Add(this.cmbPerVeiDocente);
-            this.tabPage2.Controls.Add(this.lblPerVeiDocente);
-            this.tabPage2.Controls.Add(this.cmbPerVeiAnoCarro);
-            this.tabPage2.Controls.Add(this.label35);
-            this.tabPage2.Controls.Add(this.label34);
-            this.tabPage2.Controls.Add(this.txtPerVeiModelo);
-            this.tabPage2.Controls.Add(this.cmbPerVeiSetor);
-            this.tabPage2.Controls.Add(this.lblPerVeiSetor);
-            this.tabPage2.Controls.Add(this.cmbPerVeiAnoLetivo);
-            this.tabPage2.Controls.Add(this.lblPerVeiAno);
-            this.tabPage2.Controls.Add(this.cmbPerVeiModulo);
-            this.tabPage2.Controls.Add(this.lblPerVeiModulo);
-            this.tabPage2.Controls.Add(this.cmbPerVeiCurso);
-            this.tabPage2.Controls.Add(this.lblPerVeiCurso);
-            this.tabPage2.Controls.Add(this.rdbPerVeiFuncionario);
-            this.tabPage2.Controls.Add(this.label30);
-            this.tabPage2.Controls.Add(this.rdbPerVeiAluno);
-            this.tabPage2.Controls.Add(this.label29);
-            this.tabPage2.Controls.Add(this.txtPerVeiMarca);
-            this.tabPage2.Controls.Add(this.label28);
-            this.tabPage2.Controls.Add(this.txtPerVeiProntuario);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.txtPerVeiRG);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.txtPerVeiNome);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1090, 587);
-            this.tabPage2.TabIndex = 8;
-            this.tabPage2.Text = "Cadastrar permanência de veículo";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPermanenciaVeiculo.Controls.Add(this.label32);
+            this.tabPermanenciaVeiculo.Controls.Add(this.label31);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiPlaca);
+            this.tabPermanenciaVeiculo.Controls.Add(this.btnPerVeiCancelar);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiSerPre4);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiSerPre3);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiSerPre2);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiPro4);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiProntuario4);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiSerPre4);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiPro3);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiProntuario3);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiSerPre3);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiPro2);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiProntuario2);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiSerPre2);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiPro1);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiProntuario1);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiSerPre1);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiSerPre1);
+            this.tabPermanenciaVeiculo.Controls.Add(this.brnCadastrar);
+            this.tabPermanenciaVeiculo.Controls.Add(this.cmbPerVeiDocente);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiDocente);
+            this.tabPermanenciaVeiculo.Controls.Add(this.cmbPerVeiAnoCarro);
+            this.tabPermanenciaVeiculo.Controls.Add(this.label35);
+            this.tabPermanenciaVeiculo.Controls.Add(this.label34);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiModelo);
+            this.tabPermanenciaVeiculo.Controls.Add(this.cmbPerVeiSetor);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiSetor);
+            this.tabPermanenciaVeiculo.Controls.Add(this.cmbPerVeiAnoLetivo);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiAno);
+            this.tabPermanenciaVeiculo.Controls.Add(this.cmbPerVeiModulo);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiModulo);
+            this.tabPermanenciaVeiculo.Controls.Add(this.cmbPerVeiCurso);
+            this.tabPermanenciaVeiculo.Controls.Add(this.lblPerVeiCurso);
+            this.tabPermanenciaVeiculo.Controls.Add(this.rdbPerVeiFuncionario);
+            this.tabPermanenciaVeiculo.Controls.Add(this.label30);
+            this.tabPermanenciaVeiculo.Controls.Add(this.rdbPerVeiAluno);
+            this.tabPermanenciaVeiculo.Controls.Add(this.label29);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiMarca);
+            this.tabPermanenciaVeiculo.Controls.Add(this.label28);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiProntuario);
+            this.tabPermanenciaVeiculo.Controls.Add(this.label12);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiRG);
+            this.tabPermanenciaVeiculo.Controls.Add(this.label11);
+            this.tabPermanenciaVeiculo.Controls.Add(this.txtPerVeiNome);
+            this.tabPermanenciaVeiculo.Location = new System.Drawing.Point(4, 27);
+            this.tabPermanenciaVeiculo.Name = "tabPermanenciaVeiculo";
+            this.tabPermanenciaVeiculo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPermanenciaVeiculo.Size = new System.Drawing.Size(1090, 587);
+            this.tabPermanenciaVeiculo.TabIndex = 8;
+            this.tabPermanenciaVeiculo.Text = "Cadastrar permanência de veículo";
+            this.tabPermanenciaVeiculo.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(452, 129);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(135, 18);
+            this.label32.TabIndex = 52;
+            this.label32.Text = "Modelo do Veículo:";
             // 
             // label31
             // 
@@ -2308,17 +2342,27 @@
             this.txtPerVeiNome.TabIndex = 0;
             this.txtPerVeiNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPerVeiSerPre1_KeyPress);
             // 
-            // tabPage3
+            // tabPermanenciaVeiculoEncerrar
             // 
-            this.tabPage3.Controls.Add(this.btnRegistrarSaida);
-            this.tabPage3.Controls.Add(this.dgvPermanenciaVeiculo);
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1090, 587);
-            this.tabPage3.TabIndex = 9;
-            this.tabPage3.Text = "Encerrar permanência de veículo";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPermanenciaVeiculoEncerrar.Controls.Add(this.btnRegistrarSaida);
+            this.tabPermanenciaVeiculoEncerrar.Controls.Add(this.dgvPermanenciaVeiculo);
+            this.tabPermanenciaVeiculoEncerrar.Location = new System.Drawing.Point(4, 27);
+            this.tabPermanenciaVeiculoEncerrar.Name = "tabPermanenciaVeiculoEncerrar";
+            this.tabPermanenciaVeiculoEncerrar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPermanenciaVeiculoEncerrar.Size = new System.Drawing.Size(1090, 587);
+            this.tabPermanenciaVeiculoEncerrar.TabIndex = 9;
+            this.tabPermanenciaVeiculoEncerrar.Text = "Encerrar permanência de veículo";
+            this.tabPermanenciaVeiculoEncerrar.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistrarSaida
+            // 
+            this.btnRegistrarSaida.Location = new System.Drawing.Point(901, 529);
+            this.btnRegistrarSaida.Name = "btnRegistrarSaida";
+            this.btnRegistrarSaida.Size = new System.Drawing.Size(128, 30);
+            this.btnRegistrarSaida.TabIndex = 3;
+            this.btnRegistrarSaida.Text = "Registrar Saída";
+            this.btnRegistrarSaida.UseVisualStyleBackColor = true;
+            this.btnRegistrarSaida.Click += new System.EventHandler(this.btnRegistrarSaida_Click);
             // 
             // dgvPermanenciaVeiculo
             // 
@@ -2342,25 +2386,272 @@
             this.dgvPermanenciaVeiculo.Size = new System.Drawing.Size(969, 443);
             this.dgvPermanenciaVeiculo.TabIndex = 2;
             // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Placa do Veículo";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Pedido por";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "Data de abertura";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.txtCadAltID);
+            this.tabPage4.Controls.Add(this.label40);
+            this.tabPage4.Controls.Add(this.label39);
+            this.tabPage4.Controls.Add(this.cmbCadAltNivelAcesso);
+            this.tabPage4.Controls.Add(this.label38);
+            this.tabPage4.Controls.Add(this.txtCadAltNome);
+            this.tabPage4.Controls.Add(this.btnCadAltSenCadAlt);
+            this.tabPage4.Controls.Add(this.btnCadAltSenPesquisar);
+            this.tabPage4.Controls.Add(this.label37);
+            this.tabPage4.Controls.Add(this.txtCadAltSenUsuario);
+            this.tabPage4.Controls.Add(this.label36);
+            this.tabPage4.Controls.Add(this.txtCadAltSenSenha);
+            this.tabPage4.Controls.Add(this.label33);
+            this.tabPage4.Controls.Add(this.txtCadAltPesquisa);
+            this.tabPage4.Controls.Add(this.groupBox1);
+            this.tabPage4.Controls.Add(this.grbCadAltSenTipo);
+            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1090, 587);
+            this.tabPage4.TabIndex = 10;
+            this.tabPage4.Text = "Cadastrar/Alterar Senha";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txtCadAltID
+            // 
+            this.txtCadAltID.Location = new System.Drawing.Point(110, 298);
+            this.txtCadAltID.Name = "txtCadAltID";
+            this.txtCadAltID.ReadOnly = true;
+            this.txtCadAltID.Size = new System.Drawing.Size(34, 25);
+            this.txtCadAltID.TabIndex = 15;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(158, 277);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(54, 18);
+            this.label40.TabIndex = 14;
+            this.label40.Text = "Nome:";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(611, 343);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(115, 18);
+            this.label39.TabIndex = 13;
+            this.label39.Text = "Nível de Acesso:";
+            // 
+            // cmbCadAltNivelAcesso
+            // 
+            this.cmbCadAltNivelAcesso.FormattingEnabled = true;
+            this.cmbCadAltNivelAcesso.Items.AddRange(new object[] {
+            "Administração",
+            "Coordenadoria",
+            "Assistência de Alunos",
+            "Portaria",
+            "Administrador do Sistema"});
+            this.cmbCadAltNivelAcesso.Location = new System.Drawing.Point(614, 364);
+            this.cmbCadAltNivelAcesso.Name = "cmbCadAltNivelAcesso";
+            this.cmbCadAltNivelAcesso.Size = new System.Drawing.Size(121, 26);
+            this.cmbCadAltNivelAcesso.TabIndex = 12;
+            this.cmbCadAltNivelAcesso.Text = "Selecione";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(107, 277);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(31, 18);
+            this.label38.TabIndex = 11;
+            this.label38.Text = "ID:";
+            // 
+            // txtCadAltNome
+            // 
+            this.txtCadAltNome.Location = new System.Drawing.Point(161, 298);
+            this.txtCadAltNome.Name = "txtCadAltNome";
+            this.txtCadAltNome.ReadOnly = true;
+            this.txtCadAltNome.Size = new System.Drawing.Size(817, 25);
+            this.txtCadAltNome.TabIndex = 10;
+            // 
+            // btnCadAltSenCadAlt
+            // 
+            this.btnCadAltSenCadAlt.Location = new System.Drawing.Point(823, 480);
+            this.btnCadAltSenCadAlt.Name = "btnCadAltSenCadAlt";
+            this.btnCadAltSenCadAlt.Size = new System.Drawing.Size(155, 36);
+            this.btnCadAltSenCadAlt.TabIndex = 9;
+            this.btnCadAltSenCadAlt.Text = "Cadastar/Alterar";
+            this.btnCadAltSenCadAlt.UseVisualStyleBackColor = true;
+            this.btnCadAltSenCadAlt.Click += new System.EventHandler(this.btnCadAltSenCadAlt_Click);
+            // 
+            // btnCadAltSenPesquisar
+            // 
+            this.btnCadAltSenPesquisar.Location = new System.Drawing.Point(891, 226);
+            this.btnCadAltSenPesquisar.Name = "btnCadAltSenPesquisar";
+            this.btnCadAltSenPesquisar.Size = new System.Drawing.Size(87, 36);
+            this.btnCadAltSenPesquisar.TabIndex = 8;
+            this.btnCadAltSenPesquisar.Text = "Pesquisar";
+            this.btnCadAltSenPesquisar.UseVisualStyleBackColor = true;
+            this.btnCadAltSenPesquisar.Click += new System.EventHandler(this.btnCadAltSenPesquisar_Click);
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(109, 343);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(66, 18);
+            this.label37.TabIndex = 7;
+            this.label37.Text = "Usuário:";
+            // 
+            // txtCadAltSenUsuario
+            // 
+            this.txtCadAltSenUsuario.Location = new System.Drawing.Point(110, 364);
+            this.txtCadAltSenUsuario.Name = "txtCadAltSenUsuario";
+            this.txtCadAltSenUsuario.Size = new System.Drawing.Size(425, 25);
+            this.txtCadAltSenUsuario.TabIndex = 6;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(109, 421);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(54, 18);
+            this.label36.TabIndex = 5;
+            this.label36.Text = "Senha:";
+            // 
+            // txtCadAltSenSenha
+            // 
+            this.txtCadAltSenSenha.Location = new System.Drawing.Point(110, 442);
+            this.txtCadAltSenSenha.Name = "txtCadAltSenSenha";
+            this.txtCadAltSenSenha.Size = new System.Drawing.Size(425, 25);
+            this.txtCadAltSenSenha.TabIndex = 4;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(109, 211);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(70, 18);
+            this.label33.TabIndex = 3;
+            this.label33.Text = "Pesquisa:";
+            // 
+            // txtCadAltPesquisa
+            // 
+            this.txtCadAltPesquisa.Location = new System.Drawing.Point(110, 232);
+            this.txtCadAltPesquisa.Name = "txtCadAltPesquisa";
+            this.txtCadAltPesquisa.Size = new System.Drawing.Size(775, 25);
+            this.txtCadAltPesquisa.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rdbCadAltTerceirizado);
+            this.groupBox1.Controls.Add(this.rdbCadAltFunVinIFSP);
+            this.groupBox1.Location = new System.Drawing.Point(110, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(868, 80);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtro:";
+            // 
+            // rdbCadAltTerceirizado
+            // 
+            this.rdbCadAltTerceirizado.AutoSize = true;
+            this.rdbCadAltTerceirizado.Location = new System.Drawing.Point(344, 34);
+            this.rdbCadAltTerceirizado.Name = "rdbCadAltTerceirizado";
+            this.rdbCadAltTerceirizado.Size = new System.Drawing.Size(107, 22);
+            this.rdbCadAltTerceirizado.TabIndex = 1;
+            this.rdbCadAltTerceirizado.Text = "Terceirizado";
+            this.rdbCadAltTerceirizado.UseVisualStyleBackColor = true;
+            this.rdbCadAltTerceirizado.CheckedChanged += new System.EventHandler(this.rdbCadAltTerceirizado_CheckedChanged);
+            // 
+            // rdbCadAltFunVinIFSP
+            // 
+            this.rdbCadAltFunVinIFSP.AutoSize = true;
+            this.rdbCadAltFunVinIFSP.Checked = true;
+            this.rdbCadAltFunVinIFSP.Location = new System.Drawing.Point(28, 34);
+            this.rdbCadAltFunVinIFSP.Name = "rdbCadAltFunVinIFSP";
+            this.rdbCadAltFunVinIFSP.Size = new System.Drawing.Size(233, 22);
+            this.rdbCadAltFunVinIFSP.TabIndex = 0;
+            this.rdbCadAltFunVinIFSP.TabStop = true;
+            this.rdbCadAltFunVinIFSP.Text = "Funcionário vinculado ao IFSP";
+            this.rdbCadAltFunVinIFSP.UseVisualStyleBackColor = true;
+            this.rdbCadAltFunVinIFSP.CheckedChanged += new System.EventHandler(this.rdbCadAltFunVinIFSP_CheckedChanged);
+            // 
+            // grbCadAltSenTipo
+            // 
+            this.grbCadAltSenTipo.Controls.Add(this.rdbCadAltId);
+            this.grbCadAltSenTipo.Controls.Add(this.rdbCadAltProntuario);
+            this.grbCadAltSenTipo.Controls.Add(this.rdbCadAltNome);
+            this.grbCadAltSenTipo.Location = new System.Drawing.Point(110, 107);
+            this.grbCadAltSenTipo.Name = "grbCadAltSenTipo";
+            this.grbCadAltSenTipo.Size = new System.Drawing.Size(868, 76);
+            this.grbCadAltSenTipo.TabIndex = 0;
+            this.grbCadAltSenTipo.TabStop = false;
+            this.grbCadAltSenTipo.Text = "Tipo de Pesquisa:";
+            // 
+            // rdbCadAltId
+            // 
+            this.rdbCadAltId.AutoSize = true;
+            this.rdbCadAltId.Location = new System.Drawing.Point(276, 39);
+            this.rdbCadAltId.Name = "rdbCadAltId";
+            this.rdbCadAltId.Size = new System.Drawing.Size(182, 22);
+            this.rdbCadAltId.TabIndex = 2;
+            this.rdbCadAltId.Text = "Código de Identificação";
+            this.rdbCadAltId.UseVisualStyleBackColor = true;
+            // 
+            // rdbCadAltProntuario
+            // 
+            this.rdbCadAltProntuario.AutoSize = true;
+            this.rdbCadAltProntuario.Location = new System.Drawing.Point(135, 39);
+            this.rdbCadAltProntuario.Name = "rdbCadAltProntuario";
+            this.rdbCadAltProntuario.Size = new System.Drawing.Size(98, 22);
+            this.rdbCadAltProntuario.TabIndex = 1;
+            this.rdbCadAltProntuario.Text = "Prontuário";
+            this.rdbCadAltProntuario.UseVisualStyleBackColor = true;
+            // 
+            // rdbCadAltNome
+            // 
+            this.rdbCadAltNome.AutoSize = true;
+            this.rdbCadAltNome.Checked = true;
+            this.rdbCadAltNome.Location = new System.Drawing.Point(28, 39);
+            this.rdbCadAltNome.Name = "rdbCadAltNome";
+            this.rdbCadAltNome.Size = new System.Drawing.Size(67, 22);
+            this.rdbCadAltNome.TabIndex = 0;
+            this.rdbCadAltNome.TabStop = true;
+            this.rdbCadAltNome.Text = "Nome";
+            this.rdbCadAltNome.UseVisualStyleBackColor = true;
+            // 
             // timerAtualizaSolicitacoes
             // 
             this.timerAtualizaSolicitacoes.Enabled = true;
             this.timerAtualizaSolicitacoes.Interval = 61500;
             this.timerAtualizaSolicitacoes.Tick += new System.EventHandler(this.timerAtualizaSolicitacoes_Tick);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.AutoSize = true;
-            this.btnLogout.BackColor = System.Drawing.Color.White;
-            this.btnLogout.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.Location = new System.Drawing.Point(947, 11);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(78, 35);
-            this.btnLogout.TabIndex = 4;
-            this.btnLogout.Text = "Logout";
-            this.toolTip1.SetToolTip(this.btnLogout, "Sair");
-            this.btnLogout.UseVisualStyleBackColor = false;
             // 
             // pnlMenu
             // 
@@ -2370,7 +2661,6 @@
             this.pnlMenu.BackColor = System.Drawing.Color.White;
             this.pnlMenu.Controls.Add(this.pictureBox1);
             this.pnlMenu.Controls.Add(this.label9);
-            this.pnlMenu.Controls.Add(this.btnLogout);
             this.pnlMenu.Controls.Add(this.toolStripContainer1);
             this.pnlMenu.Location = new System.Drawing.Point(3, 2);
             this.pnlMenu.Name = "pnlMenu";
@@ -2464,55 +2754,6 @@
             this.timerAtualizaEstacionamento.Interval = 1000;
             this.timerAtualizaEstacionamento.Tick += new System.EventHandler(this.timerAtualizaEstacionamento_Tick);
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(452, 129);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(135, 18);
-            this.label32.TabIndex = 52;
-            this.label32.Text = "Modelo do Veículo:";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Placa do Veículo";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Pedido por";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Data de abertura";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
-            // btnRegistrarSaida
-            // 
-            this.btnRegistrarSaida.Location = new System.Drawing.Point(901, 529);
-            this.btnRegistrarSaida.Name = "btnRegistrarSaida";
-            this.btnRegistrarSaida.Size = new System.Drawing.Size(128, 30);
-            this.btnRegistrarSaida.TabIndex = 3;
-            this.btnRegistrarSaida.Text = "Registrar Saída";
-            this.btnRegistrarSaida.UseVisualStyleBackColor = true;
-            this.btnRegistrarSaida.Click += new System.EventHandler(this.btnRegistrarSaida_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2558,12 +2799,18 @@
             this.tabRegistrarSaidaVisitante.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitante)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.tabEstacionamento.ResumeLayout(false);
+            this.tabEstacionamento.PerformLayout();
+            this.tabPermanenciaVeiculo.ResumeLayout(false);
+            this.tabPermanenciaVeiculo.PerformLayout();
+            this.tabPermanenciaVeiculoEncerrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPermanenciaVeiculo)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.grbCadAltSenTipo.ResumeLayout(false);
+            this.grbCadAltSenTipo.PerformLayout();
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -2670,7 +2917,6 @@
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreNósToolStripMenuItem;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
@@ -2707,13 +2953,13 @@
         private System.Windows.Forms.Button btnPesquisarPessoaEstacionamento;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabEstacionamento;
         private System.Windows.Forms.Label lblVagasReservadas;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Timer timerAtualizaEstacionamento;
         private System.Windows.Forms.Button btnDeletar;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPermanenciaVeiculo;
+        private System.Windows.Forms.TabPage tabPermanenciaVeiculoEncerrar;
         private System.Windows.Forms.DataGridView dgvPermanenciaVeiculo;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtPerVeiMarca;
@@ -2767,5 +3013,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.Button btnRegistrarSaida;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox grbCadAltSenTipo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbCadAltTerceirizado;
+        private System.Windows.Forms.RadioButton rdbCadAltFunVinIFSP;
+        private System.Windows.Forms.RadioButton rdbCadAltId;
+        private System.Windows.Forms.RadioButton rdbCadAltProntuario;
+        private System.Windows.Forms.RadioButton rdbCadAltNome;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.TextBox txtCadAltPesquisa;
+        private System.Windows.Forms.Button btnCadAltSenPesquisar;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox txtCadAltSenUsuario;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.TextBox txtCadAltSenSenha;
+        private System.Windows.Forms.Button btnCadAltSenCadAlt;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txtCadAltNome;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.ComboBox cmbCadAltNivelAcesso;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox txtCadAltID;
     }
 }

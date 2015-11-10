@@ -46,6 +46,8 @@
     <Compile Include="AssistenteAdministracao.cs" />
     <Compile Include="AssistenteAluno.cs" />
     <Compile Include="AssistenteCoordenadoria.cs" />
+    <Compile Include="Autenticacao.cs" />
+    <Compile Include="Cripitografia.cs" />
     <Compile Include="Dia.cs" />
     <Compile Include="Fornecedor.cs" />
     <Compile Include="Funcionario.cs" />

@@ -60,17 +60,13 @@
   <ItemGroup>
     <Compile Include="AcessoContexto.cs" />
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201511051504296_criando-database.cs" />
-    <Compile Include="Migrations\201511051504296_criando-database.Designer.cs">
-      <DependentUpon>201511051504296_criando-database.cs</DependentUpon>
+    <Compile Include="Migrations\201511101615487_criando-database.cs" />
+    <Compile Include="Migrations\201511101615487_criando-database.Designer.cs">
+      <DependentUpon>201511101615487_criando-database.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511052139227_adicionando-atributos-na-classe-permanenciaVeiculo.cs" />
-    <Compile Include="Migrations\201511052139227_adicionando-atributos-na-classe-permanenciaVeiculo.Designer.cs">
-      <DependentUpon>201511052139227_adicionando-atributos-na-classe-permanenciaVeiculo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511052338017_permitindo-salvar-dataDeEntrada-classe-permanenciaVeiculo.cs" />
-    <Compile Include="Migrations\201511052338017_permitindo-salvar-dataDeEntrada-classe-permanenciaVeiculo.Designer.cs">
-      <DependentUpon>201511052338017_permitindo-salvar-dataDeEntrada-classe-permanenciaVeiculo.cs</DependentUpon>
+    <Compile Include="Migrations\201511101840592_alteracao-database.cs" />
+    <Compile Include="Migrations\201511101840592_alteracao-database.Designer.cs">
+      <DependentUpon>201511101840592_alteracao-database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlConfiguration.cs" />
@@ -88,14 +84,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511051504296_criando-database.resx">
-      <DependentUpon>201511051504296_criando-database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511101615487_criando-database.resx">
+      <DependentUpon>201511101615487_criando-database.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511052139227_adicionando-atributos-na-classe-permanenciaVeiculo.resx">
-      <DependentUpon>201511052139227_adicionando-atributos-na-classe-permanenciaVeiculo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511052338017_permitindo-salvar-dataDeEntrada-classe-permanenciaVeiculo.resx">
-      <DependentUpon>201511052338017_permitindo-salvar-dataDeEntrada-classe-permanenciaVeiculo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511101840592_alteracao-database.resx">
+      <DependentUpon>201511101840592_alteracao-database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

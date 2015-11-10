@@ -27,6 +27,7 @@ namespace Sistema.Ifsp.DAL
         public DbSet<Prontuario> prontuario { get; set; }
         public DbSet<Vaga> vaga { get; set; }
         public DbSet<PermanenciaVeiculo> permanenciaVeiculo { get; set; }
+        public DbSet<Autenticacao> atenticacoes { get; set; }
         /*removendo convenção de pluralização do Entity Fremework*/
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

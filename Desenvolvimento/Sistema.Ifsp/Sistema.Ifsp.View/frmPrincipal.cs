@@ -14,15 +14,18 @@ namespace Sistema.Ifsp.View
 {
     public partial class frmPrincipal : Form
     {
-        private static frmPrincipal instancia;
-        public static frmPrincipal getInstancia()
+        private static frmPrincipal instance;
+
+        /*Singleton*/
+        public static frmPrincipal getInstance()
         {
-            if (instancia == null)
+            if (instance == null)
             {
-                instancia = new frmPrincipal();
+                instance = new frmPrincipal();
             }
-            return instancia;
+            return instance;
         }
+        
         private frmPrincipal()
         {
             InitializeComponent();
@@ -57,6 +60,7 @@ namespace Sistema.Ifsp.View
         }
 
         /*variaveis*/
+        public object acessoPessoa { set; get; } //usado em todoa aplicação em tempo de execução
         public Aluno aluno { set; get; } //usado na tab de solicitações
         public PessoaFisica pessoaFisica { set; get; }// usado na tab cadastro do uso de estacionamento
         Porteiro porteiro; // usado na finalização da solicitação de saída
@@ -66,8 +70,8 @@ namespace Sistema.Ifsp.View
         int tempoExpiraçãoSolicitacao = 45;
         private List<Vaga> vagas;
         Vaga vaga;
-
-        /*BOTÕES*/
+        private PessoaFisica usuarioLogado;
+        
         private void btnPesquisarAluno_Click(object sender, EventArgs e)
         {
             if (rdbProntuarioAluno.Checked == true)
@@ -1524,11 +1528,11 @@ namespace Sistema.Ifsp.View
 
         private void btnRegistrarSaida_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja realmente registar a saida do veículo", "Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente registar a saída do veículo?", "Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (dgvPermanenciaVeiculo.Rows.Count == 0)
                 {
-                    mensagem("Selecione pelo menos um registro por favor");
+                    mensagem("Selecione pelo menos um registro");
                 }
                 else
                 {
@@ -1539,15 +1543,223 @@ namespace Sistema.Ifsp.View
                         var p = pDAO.find(id);
                         p.dataSaida = DateTime.Now;
                         pDAO.atualizar(p);
-                        mensagem("Registra atualizado com sucesso!");
+                        mensagem("Registro atualizado com sucesso!");
                         atualizaGridPermanenciaVeiculo();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         mensagem("Falha ao atualizar o registro");
                     }
                 }
             }            
+        }
+
+        private void rdbCadAltTerceirizado_CheckedChanged(object sender, EventArgs e)
+        {
+            rdbCadAltProntuario.Enabled = false;
+        }
+
+        private void rdbCadAltFunVinIFSP_CheckedChanged(object sender, EventArgs e)
+        {
+            rdbCadAltProntuario.Enabled = true;
+        }
+
+        private void btnCadAltSenPesquisar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCadAltPesquisa.Text))
+            {
+                mensagem("Por favor insira um valo no campo 'Pesquisa'");
+            }
+            else
+            {
+                if (rdbCadAltFunVinIFSP.Checked == true && rdbCadAltNome.Checked == true)
+                {
+                    try
+                    {
+                        var fDao = new FuncionarioDAO();
+                        var funcionario = fDao.get(f => f.nome == txtCadAltPesquisa.Text).FirstOrDefault();
+                        if (funcionario.Equals(null))
+                        {
+                            mensagem("Nenhum funcionario encontrado com esse nome");
+                        }
+                        else
+                        {
+                            txtCadAltNome.Text = funcionario.nome;
+                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                            txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
+                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        mensagem("Falha ao pesquisar");
+                    }
+                }
+                else if (rdbCadAltFunVinIFSP.Checked == true && rdbCadAltProntuario.Checked == true)
+                {
+                    try
+                    {
+                        var fDao = new FuncionarioDAO();
+                        var funcionario = fDao.get(f => f.prontuario.prontuario == txtCadAltPesquisa.Text).FirstOrDefault();
+                        if (funcionario.Equals(null))
+                        {
+                            mensagem("Nenhum funcionario encontrado com esse prontuário");
+                        }
+                        else
+                        {
+                            txtCadAltNome.Text = funcionario.nome;
+                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                            txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
+                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        mensagem("Falha ao pesquisar");
+                    }
+                }
+                else if (rdbCadAltFunVinIFSP.Checked == true && rdbCadAltId.Checked == true)
+                {
+                    try
+                    {
+                        var fDao = new FuncionarioDAO();
+                        var funcionario = fDao.get(f => f.idPessoaFisica == Convert.ToInt32(txtCadAltPesquisa.Text)).FirstOrDefault();
+                        if (funcionario.Equals(null))
+                        {
+                            mensagem("Nenhuma funcionário encontrada com esse código de identificação");
+                        }
+                        else
+                        {
+                            txtCadAltNome.Text = funcionario.nome;
+                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                            txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
+                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        mensagem("Falha ao pesquisar");
+                    }
+                } else if (rdbCadAltTerceirizado.Checked == true && rdbCadAltNome.Checked == true)
+                {
+                    try
+                    {
+                        var tDao = new TerceirizadoDAO();
+                        var funcionario = tDao.get(t => t.nome == txtCadAltPesquisa.Text).FirstOrDefault();
+                        if (funcionario.Equals(null))
+                        {
+                            mensagem("Nenhum funcionario terceirizado encontrado com esse nome");
+                        }
+                        else
+                        {
+                            txtCadAltNome.Text = funcionario.nome;
+                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                            txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
+                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        mensagem("Falha ao pesquisar");
+                    }
+                }
+                else if (rdbCadAltTerceirizado.Checked == true && rdbCadAltId.Checked == true)
+                {
+                    try
+                    {
+                        var fDao = new FuncionarioDAO();
+                        var funcionario = fDao.get(f => f.idPessoaFisica == Convert.ToInt32(txtCadAltPesquisa.Text)).FirstOrDefault();
+                        if (funcionario.Equals(null))
+                        {
+                            mensagem("Nenhuma pessoa encontrada com esse código de identificação");
+                        }
+                        else
+                        {
+                            txtCadAltNome.Text = funcionario.nome;
+                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                            txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
+                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        mensagem("Falha ao pesquisar");
+                    }
+                }
+            }
+        }
+
+        private void btnCadAltSenCadAlt_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCadAltSenUsuario.Text) || string.IsNullOrWhiteSpace(txtCadAltSenSenha.Text) ||
+                 cmbCadAltNivelAcesso.SelectedText == "Selecione")
+            {
+                mensagem("É necessário preencher os campos \"Usuário\" e \"Senha\"");
+                txtCadAltSenUsuario.Focus();
+                return;
+            }
+            else
+            {
+                try
+                {
+                    if (cmbCadAltNivelAcesso.SelectedText == "Coordenadoria" || cmbCadAltNivelAcesso.SelectedText == "Administração" ||
+                         cmbCadAltNivelAcesso.SelectedText == "Assistência de Aluno" || cmbCadAltNivelAcesso.SelectedText == "Administrador de Sistema")
+                    {
+                        var fDAO = new FuncionarioDAO();
+                        var f = fDAO.find(Convert.ToInt32(txtCadAltID.Text));
+                        f.autenticacao.nivelAcesso = cmbCadAltNivelAcesso.SelectedText;
+                        f.autenticacao.usuario = txtCadAltSenUsuario.Text;
+                        f.autenticacao.senha = Cripitografia.encripto(txtCadAltSenSenha.Text);
+                        fDAO.atualizar(f);
+                        mensagem("Usuário e Senha cadastrada com sucesso");
+                        limparTabCadAltSenha();
+                    }
+                    else
+                    {
+                        var tDAO = new TerceirizadoDAO();
+                        var t = tDAO.find(Convert.ToInt32(txtCadAltID.Text));
+                        t.autenticacao.nivelAcesso = cmbCadAltNivelAcesso.SelectedText;
+                        t.autenticacao.usuario = txtCadAltSenUsuario.Text;
+                        t.autenticacao.senha = Cripitografia.encripto(txtCadAltSenSenha.Text);
+                        tDAO.atualizar(t);
+                        mensagem("Usuário e Senha cadastrada com sucesso");
+                        limparTabCadAltSenha();
+                    }                    
+                }
+                catch (Exception)
+                {
+                    mensagem("Falha ao cadastar/alterar usuário e senha");
+                    limparTabCadAltSenha();
+                }
+            }
+        }
+
+        private void limparTabCadAltSenha()
+        {
+            rdbCadAltFunVinIFSP.Checked = true;
+            rdbCadAltNome.Checked = true;
+            txtCadAltPesquisa.Text = null;
+            txtCadAltNome.Text = null;
+            txtCadAltSenUsuario = null;
+            txtCadAltSenSenha = null;
+        }
+
+        public void verificarUsuarioLogado(int id)
+        {
+            try
+            {
+                var pDAO = new PessoaFisicaDAO();
+                usuarioLogado = pDAO.find(id);
+                if (true)
+                {
+
+                }
+            }
+            catch (Exception)
+            {
+                mensagem("Falha ao inicializar aplicação.\nTente novamente");
+                Application.Exit();
+            }
         }
     }
 }

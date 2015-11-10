@@ -48,7 +48,7 @@ namespace Sistema.Ifsp.View
                         break;
                     }
                 }
-                frmPrincipal f = frmPrincipal.getInstancia();                
+                frmPrincipal f = frmPrincipal.getInstance();                
                 f.Show();
                 f.pessoaFisica = pessoa;
                 f.preencherFormEstacionamento();

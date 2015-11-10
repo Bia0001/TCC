@@ -8,5 +8,7 @@ namespace Sistema.Ifsp.Model
     {
         public string area { get; set; }
         public string empresa { get; set; }
+
+        public virtual Autenticacao autenticacao { get; set; }
     }
 }

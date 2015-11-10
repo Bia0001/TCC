@@ -65,6 +65,7 @@
     <Compile Include="AssistenteAdministracaoDAO.cs" />
     <Compile Include="AssistenteAlunoDAO.cs" />
     <Compile Include="AssistenteCoordenadoriaDAO.cs" />
+    <Compile Include="AutenticacaoDAO.cs" />
     <Compile Include="CRUD.cs" />
     <Compile Include="FornecedorDAO.cs" />
     <Compile Include="FuncionarioDAO.cs" />

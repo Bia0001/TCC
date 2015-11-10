@@ -7,5 +7,6 @@ namespace Sistema.Ifsp.Model
     {
         public string area { get; set; }
         public Prontuario prontuario { get; set; }
+        public virtual Autenticacao autenticacao { get; set; }
     }
 }
