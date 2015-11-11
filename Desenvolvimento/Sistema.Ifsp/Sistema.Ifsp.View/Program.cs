@@ -16,7 +16,7 @@ namespace Sistema.Ifsp.View
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(frmPrincipal.getInstance());
+            Application.Run(new frmAutenticacao());
         }
     }
 }

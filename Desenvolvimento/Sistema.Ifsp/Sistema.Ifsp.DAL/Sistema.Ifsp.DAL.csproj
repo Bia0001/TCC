@@ -60,13 +60,9 @@
   <ItemGroup>
     <Compile Include="AcessoContexto.cs" />
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201511101615487_criando-database.cs" />
-    <Compile Include="Migrations\201511101615487_criando-database.Designer.cs">
-      <DependentUpon>201511101615487_criando-database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511101840592_alteracao-database.cs" />
-    <Compile Include="Migrations\201511101840592_alteracao-database.Designer.cs">
-      <DependentUpon>201511101840592_alteracao-database.cs</DependentUpon>
+    <Compile Include="Migrations\201511102328412_criando-database.cs" />
+    <Compile Include="Migrations\201511102328412_criando-database.Designer.cs">
+      <DependentUpon>201511102328412_criando-database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlConfiguration.cs" />
@@ -84,11 +80,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511101615487_criando-database.resx">
-      <DependentUpon>201511101615487_criando-database.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511101840592_alteracao-database.resx">
-      <DependentUpon>201511101840592_alteracao-database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511102328412_criando-database.resx">
+      <DependentUpon>201511102328412_criando-database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

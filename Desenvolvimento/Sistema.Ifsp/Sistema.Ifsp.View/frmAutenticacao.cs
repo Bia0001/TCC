@@ -1,20 +1,16 @@
 ﻿using Sistema.Ifsp.DAO;
 using Sistema.Ifsp.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema.Ifsp.View
 {
     public partial class frmAutenticacao : Form
     {
+        public int id { set; get; }
+        public string nivelAcesso { set; get; }
+
         public frmAutenticacao()
         {
             carregarAbertura();
@@ -62,15 +58,15 @@ namespace Sistema.Ifsp.View
                     {
                         var principal = frmPrincipal.getInstance();
                         principal.Show();
-                        principal.acessoPessoa = terceirizado;
-                        Dispose();
+                        principal.verificarUsuarioLogado(terceirizado.idPessoaFisica, terceirizado.autenticacao.nivelAcesso);
+                        Visible = false;
                     }
                     else if ((funcionario != null))
                     {
                         var principal = frmPrincipal.getInstance();
                         principal.Show();
-                        principal.acessoPessoa = funcionario;
-                        Dispose();
+                        principal.verificarUsuarioLogado(funcionario.idPessoaFisica, funcionario.autenticacao.nivelAcesso);
+                        Visible = false;
                     }
                     else
                     {

@@ -21,6 +21,17 @@ namespace Sistema.Ifsp.DAL.Migrations
                 .PrimaryKey(t => t.idPessoaFisica);
             
             CreateTable(
+                "dbo.Autenticacao",
+                c => new
+                    {
+                        idAutenticacao = c.Int(nullable: false, identity: true),
+                        usuario = c.String(nullable: false, unicode: false),
+                        senha = c.String(nullable: false, unicode: false),
+                        nivelAcesso = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.idAutenticacao);
+            
+            CreateTable(
                 "dbo.Prontuario",
                 c => new
                     {
@@ -28,17 +39,6 @@ namespace Sistema.Ifsp.DAL.Migrations
                         prontuario = c.String(nullable: false, unicode: false),
                     })
                 .PrimaryKey(t => t.idProntuario);
-            
-            CreateTable(
-                "dbo.Autenticacao",
-                c => new
-                    {
-                        idAutenticacao = c.Int(nullable: false, identity: true),
-                        usuario = c.String(nullable: false, unicode: false),
-                        senha = c.String(nullable: false, unicode: false),
-                        nivelAcesso = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.idAutenticacao);
             
             CreateTable(
                 "dbo.PermanenciaVeiculo",
@@ -168,23 +168,6 @@ namespace Sistema.Ifsp.DAL.Migrations
                 .PrimaryKey(t => t.idVisitante);
             
             CreateTable(
-                "dbo.Aluno",
-                c => new
-                    {
-                        idPessoaFisica = c.Int(nullable: false),
-                        prontuario_idProntuario = c.Int(nullable: false),
-                        responsavel1 = c.String(nullable: false, unicode: false),
-                        responsavel2 = c.String(unicode: false),
-                        contato1 = c.String(nullable: false, unicode: false),
-                        contato2 = c.String(unicode: false),
-                    })
-                .PrimaryKey(t => t.idPessoaFisica)
-                .ForeignKey("dbo.PessoaFisica", t => t.idPessoaFisica)
-                .ForeignKey("dbo.Prontuario", t => t.prontuario_idProntuario, cascadeDelete: true)
-                .Index(t => t.idPessoaFisica)
-                .Index(t => t.prontuario_idProntuario);
-            
-            CreateTable(
                 "dbo.Funcionario",
                 c => new
                     {
@@ -199,6 +182,33 @@ namespace Sistema.Ifsp.DAL.Migrations
                 .ForeignKey("dbo.Prontuario", t => t.prontuario_idProntuario)
                 .Index(t => t.idPessoaFisica)
                 .Index(t => t.autenticacao_idAutenticacao)
+                .Index(t => t.prontuario_idProntuario);
+            
+            CreateTable(
+                "dbo.AdministradorSistema",
+                c => new
+                    {
+                        idPessoaFisica = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.idPessoaFisica)
+                .ForeignKey("dbo.Funcionario", t => t.idPessoaFisica)
+                .Index(t => t.idPessoaFisica);
+            
+            CreateTable(
+                "dbo.Aluno",
+                c => new
+                    {
+                        idPessoaFisica = c.Int(nullable: false),
+                        prontuario_idProntuario = c.Int(nullable: false),
+                        responsavel1 = c.String(nullable: false, unicode: false),
+                        responsavel2 = c.String(unicode: false),
+                        contato1 = c.String(nullable: false, unicode: false),
+                        contato2 = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.idPessoaFisica)
+                .ForeignKey("dbo.PessoaFisica", t => t.idPessoaFisica)
+                .ForeignKey("dbo.Prontuario", t => t.prontuario_idProntuario, cascadeDelete: true)
+                .Index(t => t.idPessoaFisica)
                 .Index(t => t.prontuario_idProntuario);
             
             CreateTable(
@@ -295,11 +305,12 @@ namespace Sistema.Ifsp.DAL.Migrations
             DropForeignKey("dbo.AssistenteCoordenadoria", "idPessoaFisica", "dbo.Funcionario");
             DropForeignKey("dbo.AssistenteAluno", "idPessoaFisica", "dbo.Funcionario");
             DropForeignKey("dbo.AssistenteAdministracao", "idPessoaFisica", "dbo.Funcionario");
+            DropForeignKey("dbo.Aluno", "prontuario_idProntuario", "dbo.Prontuario");
+            DropForeignKey("dbo.Aluno", "idPessoaFisica", "dbo.PessoaFisica");
+            DropForeignKey("dbo.AdministradorSistema", "idPessoaFisica", "dbo.Funcionario");
             DropForeignKey("dbo.Funcionario", "prontuario_idProntuario", "dbo.Prontuario");
             DropForeignKey("dbo.Funcionario", "autenticacao_idAutenticacao", "dbo.Autenticacao");
             DropForeignKey("dbo.Funcionario", "idPessoaFisica", "dbo.PessoaFisica");
-            DropForeignKey("dbo.Aluno", "prontuario_idProntuario", "dbo.Prontuario");
-            DropForeignKey("dbo.Aluno", "idPessoaFisica", "dbo.PessoaFisica");
             DropForeignKey("dbo.Vaga", "terca_feira_idDia", "dbo.Dia");
             DropForeignKey("dbo.Vaga", "sexta_feira_idDia", "dbo.Dia");
             DropForeignKey("dbo.Vaga", "segunda_feira_idDia", "dbo.Dia");
@@ -321,11 +332,12 @@ namespace Sistema.Ifsp.DAL.Migrations
             DropIndex("dbo.AssistenteCoordenadoria", new[] { "idPessoaFisica" });
             DropIndex("dbo.AssistenteAluno", new[] { "idPessoaFisica" });
             DropIndex("dbo.AssistenteAdministracao", new[] { "idPessoaFisica" });
+            DropIndex("dbo.Aluno", new[] { "prontuario_idProntuario" });
+            DropIndex("dbo.Aluno", new[] { "idPessoaFisica" });
+            DropIndex("dbo.AdministradorSistema", new[] { "idPessoaFisica" });
             DropIndex("dbo.Funcionario", new[] { "prontuario_idProntuario" });
             DropIndex("dbo.Funcionario", new[] { "autenticacao_idAutenticacao" });
             DropIndex("dbo.Funcionario", new[] { "idPessoaFisica" });
-            DropIndex("dbo.Aluno", new[] { "prontuario_idProntuario" });
-            DropIndex("dbo.Aluno", new[] { "idPessoaFisica" });
             DropIndex("dbo.Vaga", new[] { "terca_feira_idDia" });
             DropIndex("dbo.Vaga", new[] { "sexta_feira_idDia" });
             DropIndex("dbo.Vaga", new[] { "segunda_feira_idDia" });
@@ -345,16 +357,17 @@ namespace Sistema.Ifsp.DAL.Migrations
             DropTable("dbo.AssistenteCoordenadoria");
             DropTable("dbo.AssistenteAluno");
             DropTable("dbo.AssistenteAdministracao");
-            DropTable("dbo.Funcionario");
             DropTable("dbo.Aluno");
+            DropTable("dbo.AdministradorSistema");
+            DropTable("dbo.Funcionario");
             DropTable("dbo.Visitante");
             DropTable("dbo.Dia");
             DropTable("dbo.Vaga");
             DropTable("dbo.Solicitacao");
             DropTable("dbo.Fornecedor");
             DropTable("dbo.PermanenciaVeiculo");
-            DropTable("dbo.Autenticacao");
             DropTable("dbo.Prontuario");
+            DropTable("dbo.Autenticacao");
             DropTable("dbo.PessoaFisica");
         }
     }

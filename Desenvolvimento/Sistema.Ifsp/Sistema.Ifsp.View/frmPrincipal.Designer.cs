@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.principal = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabSolicitacoes = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rdbProntuarioAluno = new System.Windows.Forms.RadioButton();
@@ -206,6 +206,7 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnCadAltSenCancelar = new System.Windows.Forms.Button();
             this.txtCadAltID = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -231,7 +232,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -239,7 +240,7 @@
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreNósToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerAtualizaEstacionamento = new System.Windows.Forms.Timer(this.components);
-            this.principal.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.tabSolicitacoes.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -277,28 +278,28 @@
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // principal
+            // tabControl
             // 
-            this.principal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.principal.Controls.Add(this.tabSolicitacoes);
-            this.principal.Controls.Add(this.tabCadastrarUsoEstacionamento);
-            this.principal.Controls.Add(this.tabSolicitacoesSaidaFinalizadasExpiradas);
-            this.principal.Controls.Add(this.tabSolicitacoesSaidaAbertas);
-            this.principal.Controls.Add(this.tabEntradaVisitanteForncedor);
-            this.principal.Controls.Add(this.tabRegistrarSaidaFornecedor);
-            this.principal.Controls.Add(this.tabRegistrarSaidaVisitante);
-            this.principal.Controls.Add(this.tabEstacionamento);
-            this.principal.Controls.Add(this.tabPermanenciaVeiculo);
-            this.principal.Controls.Add(this.tabPermanenciaVeiculoEncerrar);
-            this.principal.Controls.Add(this.tabPage4);
-            this.principal.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.principal.Location = new System.Drawing.Point(45, 104);
-            this.principal.Name = "principal";
-            this.principal.SelectedIndex = 0;
-            this.principal.Size = new System.Drawing.Size(1098, 618);
-            this.principal.TabIndex = 1;
-            this.principal.Tag = "";
+            this.tabControl.Controls.Add(this.tabSolicitacoes);
+            this.tabControl.Controls.Add(this.tabCadastrarUsoEstacionamento);
+            this.tabControl.Controls.Add(this.tabSolicitacoesSaidaFinalizadasExpiradas);
+            this.tabControl.Controls.Add(this.tabSolicitacoesSaidaAbertas);
+            this.tabControl.Controls.Add(this.tabEntradaVisitanteForncedor);
+            this.tabControl.Controls.Add(this.tabRegistrarSaidaFornecedor);
+            this.tabControl.Controls.Add(this.tabRegistrarSaidaVisitante);
+            this.tabControl.Controls.Add(this.tabEstacionamento);
+            this.tabControl.Controls.Add(this.tabPermanenciaVeiculo);
+            this.tabControl.Controls.Add(this.tabPermanenciaVeiculoEncerrar);
+            this.tabControl.Controls.Add(this.tabPage4);
+            this.tabControl.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Location = new System.Drawing.Point(45, 104);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1098, 618);
+            this.tabControl.TabIndex = 1;
+            this.tabControl.Tag = "";
             // 
             // tabSolicitacoes
             // 
@@ -2418,6 +2419,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btnCadAltSenCancelar);
             this.tabPage4.Controls.Add(this.txtCadAltID);
             this.tabPage4.Controls.Add(this.label40);
             this.tabPage4.Controls.Add(this.label39);
@@ -2441,6 +2443,16 @@
             this.tabPage4.TabIndex = 10;
             this.tabPage4.Text = "Cadastrar/Alterar Senha";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnCadAltSenCancelar
+            // 
+            this.btnCadAltSenCancelar.Location = new System.Drawing.Point(662, 480);
+            this.btnCadAltSenCancelar.Name = "btnCadAltSenCancelar";
+            this.btnCadAltSenCancelar.Size = new System.Drawing.Size(155, 36);
+            this.btnCadAltSenCancelar.TabIndex = 16;
+            this.btnCadAltSenCancelar.Text = "Cancelar";
+            this.btnCadAltSenCancelar.UseVisualStyleBackColor = true;
+            this.btnCadAltSenCancelar.Click += new System.EventHandler(this.btnCadAltSenCancelar_Click);
             // 
             // txtCadAltID
             // 
@@ -2660,7 +2672,7 @@
             this.pnlMenu.AutoScroll = true;
             this.pnlMenu.BackColor = System.Drawing.Color.White;
             this.pnlMenu.Controls.Add(this.pictureBox1);
-            this.pnlMenu.Controls.Add(this.label9);
+            this.pnlMenu.Controls.Add(this.lblUsuario);
             this.pnlMenu.Controls.Add(this.toolStripContainer1);
             this.pnlMenu.Location = new System.Drawing.Point(3, 2);
             this.pnlMenu.Name = "pnlMenu";
@@ -2678,16 +2690,16 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // label9
+            // lblUsuario
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1046, 11);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 16);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "[Usuário Atual]";
+            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(966, 20);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(120, 16);
+            this.lblUsuario.TabIndex = 5;
+            this.lblUsuario.Text = "[Usuário Atual]";
             // 
             // toolStripContainer1
             // 
@@ -2695,7 +2707,7 @@
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.menu);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(507, 11);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(507, 0);
             this.toolStripContainer1.Location = new System.Drawing.Point(267, 47);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(507, 36);
@@ -2762,12 +2774,13 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1184, 733);
             this.Controls.Add(this.pnlMenu);
-            this.Controls.Add(this.principal);
+            this.Controls.Add(this.tabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 700);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.principal.ResumeLayout(false);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);
+            this.tabControl.ResumeLayout(false);
             this.tabSolicitacoes.ResumeLayout(false);
             this.tabSolicitacoes.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -2826,7 +2839,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl principal;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabSolicitacoes;
         private System.Windows.Forms.CheckBox ckbSolicitacaoSaida;
         private System.Windows.Forms.CheckBox ckbSolicitacaoEntrada;
@@ -2916,7 +2929,7 @@
         private System.Windows.Forms.ToolStripMenuItem ferramentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobreNósToolStripMenuItem;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
@@ -3035,5 +3048,6 @@
         private System.Windows.Forms.ComboBox cmbCadAltNivelAcesso;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox txtCadAltID;
+        private System.Windows.Forms.Button btnCadAltSenCancelar;
     }
 }

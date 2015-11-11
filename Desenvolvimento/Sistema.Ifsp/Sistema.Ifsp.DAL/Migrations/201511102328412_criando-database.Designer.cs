@@ -13,7 +13,7 @@ namespace Sistema.Ifsp.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201511101615487_criando-database"; }
+            get { return "201511102328412_criando-database"; }
         }
         
         string IMigrationMetadata.Source

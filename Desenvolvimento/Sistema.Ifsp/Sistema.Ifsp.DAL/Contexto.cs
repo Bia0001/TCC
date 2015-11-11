@@ -13,6 +13,7 @@ namespace Sistema.Ifsp.DAL
 
         public DbSet<Aluno> aluno { get; set; }
         public DbSet<Funcionario> funcionario { get; set; }
+        public DbSet<AdministradorSistema> administradoresSistemas { get; set; }
         public DbSet<AssistenteAluno> assistenteAluno { get; set; }
         public DbSet<AssistenteAdministracao> assistenteAdministracao { get; set; }
         public DbSet<AssistenteCoordenadoria> assistenteCoordenadoria { get; set; }

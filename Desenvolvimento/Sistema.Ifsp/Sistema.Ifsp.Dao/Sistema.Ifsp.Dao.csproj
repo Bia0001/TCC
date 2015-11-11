@@ -61,6 +61,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorSistemaDAO.cs" />
     <Compile Include="AlunoDAO.cs" />
     <Compile Include="AssistenteAdministracaoDAO.cs" />
     <Compile Include="AssistenteAlunoDAO.cs" />

@@ -32,4 +32,3 @@ C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema
 C:\Users\Michele Frois\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.adicionandoatributoemsolicitacaoSaida2.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.criandodatabase.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.csproj.GenerateResource.Cache
-C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.DAL\obj\Debug\Sistema.Ifsp.DAL.Migrations.alteracaodatabase.resources

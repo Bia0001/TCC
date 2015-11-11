@@ -82,6 +82,12 @@
     <Compile Include="frmAutenticacao.Designer.cs">
       <DependentUpon>frmAutenticacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAutenticacaoSubstituicao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAutenticacaoSubstituicao.Designer.cs">
+      <DependentUpon>frmAutenticacaoSubstituicao.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCodigoPlaca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAutenticacao.resx">
       <DependentUpon>frmAutenticacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAutenticacaoSubstituicao.resx">
+      <DependentUpon>frmAutenticacaoSubstituicao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCodigoPlaca.resx">
       <DependentUpon>frmCodigoPlaca.cs</DependentUpon>

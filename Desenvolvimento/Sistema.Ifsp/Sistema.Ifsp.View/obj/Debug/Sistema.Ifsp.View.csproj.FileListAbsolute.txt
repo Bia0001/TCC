@@ -46,3 +46,4 @@ C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmCodigoPlaca.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmAutenticacao.resources
 C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmAbertura.resources
+C:\Users\Jônatas\Documents\GitHub\TCC\Desenvolvimento\Sistema.Ifsp\Sistema.Ifsp.View\obj\Debug\Sistema.Ifsp.View.frmAutenticacaoSubstituicao.resources

@@ -25,7 +25,7 @@ namespace Sistema.Ifsp.View
             }
             return instance;
         }
-        
+
         private frmPrincipal()
         {
             InitializeComponent();
@@ -71,7 +71,7 @@ namespace Sistema.Ifsp.View
         private List<Vaga> vagas;
         Vaga vaga;
         private PessoaFisica usuarioLogado;
-        
+
         private void btnPesquisarAluno_Click(object sender, EventArgs e)
         {
             if (rdbProntuarioAluno.Checked == true)
@@ -166,7 +166,7 @@ namespace Sistema.Ifsp.View
                             {
                                 abertura = DateTime.Now,
                                 aluno = aluno,
-                                assistenteAluno = assistenteAluno,
+                                assistenteAluno = (AssistenteAluno) acessoPessoa,
                                 motivo = txtMotivoAluno.Text,
                                 status = StatusSolicitacao.aberto,
                                 saidaSupervisionada = saidaSupervisionada
@@ -196,7 +196,7 @@ namespace Sistema.Ifsp.View
                         {
                             abertura = DateTime.Now,
                             aluno = aluno,
-                            assistenteAluno = assistenteAluno,
+                            assistenteAluno = (AssistenteAluno) acessoPessoa,
                             motivo = txtMotivoAluno.Text
                         };
                         var sDao = new SolicitacaoEntradaDAO();
@@ -388,7 +388,7 @@ namespace Sistema.Ifsp.View
                     var ss = ssDAO.find(Convert.ToInt32(dgvSolicitacoesAbertas.CurrentRow.Cells[0].Value));
                     ss.encerramento = DateTime.Now;
                     ss.status = StatusSolicitacao.encerrado;
-                    ss.porteiro = porteiro;
+                    ss.porteiro = (Porteiro) acessoPessoa;
                     try
                     {
                         if (ssDAO.atualizar(ss))
@@ -1427,7 +1427,7 @@ namespace Sistema.Ifsp.View
             if (MessageBox.Show("Deseja realmente cadastrar permanência de veiculo?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (string.IsNullOrWhiteSpace(txtPerVeiNome.Text) || string.IsNullOrWhiteSpace(txtPerVeiRG.Text) || string.IsNullOrWhiteSpace(txtPerVeiProntuario.Text) ||
-                 string.IsNullOrWhiteSpace(txtPerVeiMarca.Text) || string.IsNullOrWhiteSpace(txtPerVeiModelo.Text) || string.IsNullOrWhiteSpace(txtPerVeiPlaca.Text) || 
+                 string.IsNullOrWhiteSpace(txtPerVeiMarca.Text) || string.IsNullOrWhiteSpace(txtPerVeiModelo.Text) || string.IsNullOrWhiteSpace(txtPerVeiPlaca.Text) ||
                  cmbPerVeiAnoCarro.SelectedItem == null)
                 {
                     mensagem("Verifique se todos os campos foram preenchidos");
@@ -1460,7 +1460,7 @@ namespace Sistema.Ifsp.View
                                 p.curso = cmbPerVeiCurso.Text;
                                 p.modulo = cmbPerVeiModulo.Text;
                                 p.anoLetivo = cmbPerVeiAnoLetivo.Text;
-                                p.assistenteAdministracao = adm;
+                                p.assistenteAdministracao = (AssistenteAdministracao) acessoPessoa;
                                 p.dataEntrada = DateTime.Now;
                                 pDAO.adicionar(p);
                                 mensagem("Permanência de veículo cadastrad com sucesso!");
@@ -1496,7 +1496,7 @@ namespace Sistema.Ifsp.View
                                 p.prontuario2 = txtPerVeiProntuario2.Text;
                                 p.prontuario3 = txtPerVeiProntuario3.Text;
                                 p.prontuario4 = txtPerVeiProntuario4.Text;
-                                p.assistenteAdministracao = adm;
+                                p.assistenteAdministracao = (AssistenteAdministracao) acessoPessoa;
                                 pDAO.adicionar(p);
                                 mensagem("Permanência de veículo cadastrada com sucesso!");
                                 atualizaGridPermanenciaVeiculo();
@@ -1509,7 +1509,7 @@ namespace Sistema.Ifsp.View
                         }
                     }
                 }
-            }            
+            }
         }
 
         /*atualziando o grid de permanência de veículo*/
@@ -1522,7 +1522,7 @@ namespace Sistema.Ifsp.View
             var permanenciasVeiculos = pDAO.get(p => p.dataSaida == null);
             foreach (PermanenciaVeiculo item in permanenciasVeiculos)
             {
-                dgvPermanenciaVeiculo.Rows.Add(item.idPermanenciaVeiculo, item.nome, item.placa,item.tipoSolicitante, item.dataEntrada.ToString("dd/MM/yyyy hh:mm:ss"));
+                dgvPermanenciaVeiculo.Rows.Add(item.idPermanenciaVeiculo, item.nome, item.placa, item.tipoSolicitante, item.dataEntrada.ToString("dd/MM/yyyy hh:mm:ss"));
             }
         }
 
@@ -1551,7 +1551,7 @@ namespace Sistema.Ifsp.View
                         mensagem("Falha ao atualizar o registro");
                     }
                 }
-            }            
+            }
         }
 
         private void rdbCadAltTerceirizado_CheckedChanged(object sender, EventArgs e)
@@ -1585,9 +1585,13 @@ namespace Sistema.Ifsp.View
                         else
                         {
                             txtCadAltNome.Text = funcionario.nome;
-                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
                             txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
-                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            if (funcionario.autenticacao != null)
+                            {
+                                txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                                cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            }
+                            txtCadAltPesquisa.ReadOnly = true;
                         }
                     }
                     catch (Exception)
@@ -1608,9 +1612,13 @@ namespace Sistema.Ifsp.View
                         else
                         {
                             txtCadAltNome.Text = funcionario.nome;
-                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
                             txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
-                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            if (funcionario.autenticacao != null)
+                            {
+                                txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                                cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            }
+                            txtCadAltPesquisa.ReadOnly = true;
                         }
                     }
                     catch (Exception)
@@ -1631,16 +1639,21 @@ namespace Sistema.Ifsp.View
                         else
                         {
                             txtCadAltNome.Text = funcionario.nome;
-                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
                             txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
-                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            if (funcionario.autenticacao != null)
+                            {
+                                txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                                cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            }
+                            txtCadAltPesquisa.ReadOnly = true;
                         }
                     }
                     catch (Exception)
                     {
                         mensagem("Falha ao pesquisar");
                     }
-                } else if (rdbCadAltTerceirizado.Checked == true && rdbCadAltNome.Checked == true)
+                }
+                else if (rdbCadAltTerceirizado.Checked == true && rdbCadAltNome.Checked == true)
                 {
                     try
                     {
@@ -1653,9 +1666,13 @@ namespace Sistema.Ifsp.View
                         else
                         {
                             txtCadAltNome.Text = funcionario.nome;
-                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
                             txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
-                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            if (funcionario.autenticacao != null)
+                            {
+                                txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
+                                cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            }
+                            txtCadAltPesquisa.ReadOnly = true;
                         }
                     }
                     catch (Exception)
@@ -1667,18 +1684,22 @@ namespace Sistema.Ifsp.View
                 {
                     try
                     {
-                        var fDao = new FuncionarioDAO();
-                        var funcionario = fDao.get(f => f.idPessoaFisica == Convert.ToInt32(txtCadAltPesquisa.Text)).FirstOrDefault();
-                        if (funcionario.Equals(null))
+                        var tDao = new TerceirizadoDAO();
+                        var terceirizado = tDao.get(t => t.idPessoaFisica == Convert.ToInt32(txtCadAltPesquisa.Text)).FirstOrDefault();
+                        if (terceirizado.Equals(null))
                         {
                             mensagem("Nenhuma pessoa encontrada com esse código de identificação");
                         }
                         else
                         {
-                            txtCadAltNome.Text = funcionario.nome;
-                            txtCadAltSenUsuario.Text = funcionario.autenticacao.usuario;
-                            txtCadAltID.Text = funcionario.idPessoaFisica.ToString();
-                            cmbCadAltNivelAcesso.SelectedItem = funcionario.autenticacao.nivelAcesso;
+                            txtCadAltNome.Text = terceirizado.nome;
+                            txtCadAltID.Text = terceirizado.idPessoaFisica.ToString();
+                            if (terceirizado.autenticacao != null)
+                            {
+                                txtCadAltSenUsuario.Text = terceirizado.autenticacao.usuario;
+                                cmbCadAltNivelAcesso.SelectedItem = terceirizado.autenticacao.nivelAcesso;
+                            }
+                            txtCadAltPesquisa.ReadOnly = true;
                         }
                     }
                     catch (Exception)
@@ -1692,9 +1713,9 @@ namespace Sistema.Ifsp.View
         private void btnCadAltSenCadAlt_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCadAltSenUsuario.Text) || string.IsNullOrWhiteSpace(txtCadAltSenSenha.Text) ||
-                 cmbCadAltNivelAcesso.SelectedText == "Selecione")
+                 cmbCadAltNivelAcesso.SelectedItem == null)
             {
-                mensagem("É necessário preencher os campos \"Usuário\" e \"Senha\"");
+                mensagem("É necessário preencher os campos \"Usuário\" e \"Senha\" e selecionar o nível de acesso");
                 txtCadAltSenUsuario.Focus();
                 return;
             }
@@ -1702,14 +1723,18 @@ namespace Sistema.Ifsp.View
             {
                 try
                 {
-                    if (cmbCadAltNivelAcesso.SelectedText == "Coordenadoria" || cmbCadAltNivelAcesso.SelectedText == "Administração" ||
-                         cmbCadAltNivelAcesso.SelectedText == "Assistência de Aluno" || cmbCadAltNivelAcesso.SelectedText == "Administrador de Sistema")
+                    if (cmbCadAltNivelAcesso.SelectedItem.ToString() == "Coordenadoria" || cmbCadAltNivelAcesso.SelectedItem.ToString() == "Administração" ||
+                         cmbCadAltNivelAcesso.SelectedItem.ToString() == "Assistência de Alunos" || cmbCadAltNivelAcesso.SelectedItem.ToString() == "Administrador do Sistema")
                     {
                         var fDAO = new FuncionarioDAO();
                         var f = fDAO.find(Convert.ToInt32(txtCadAltID.Text));
-                        f.autenticacao.nivelAcesso = cmbCadAltNivelAcesso.SelectedText;
-                        f.autenticacao.usuario = txtCadAltSenUsuario.Text;
-                        f.autenticacao.senha = Cripitografia.encripto(txtCadAltSenSenha.Text);
+                        Autenticacao aut = new Autenticacao()
+                        {
+                            nivelAcesso = cmbCadAltNivelAcesso.SelectedItem.ToString(),
+                            senha = Cripitografia.encripto(txtCadAltSenSenha.Text),
+                            usuario = txtCadAltSenUsuario.Text
+                        };
+                        f.autenticacao = aut;
                         fDAO.atualizar(f);
                         mensagem("Usuário e Senha cadastrada com sucesso");
                         limparTabCadAltSenha();
@@ -1718,13 +1743,17 @@ namespace Sistema.Ifsp.View
                     {
                         var tDAO = new TerceirizadoDAO();
                         var t = tDAO.find(Convert.ToInt32(txtCadAltID.Text));
-                        t.autenticacao.nivelAcesso = cmbCadAltNivelAcesso.SelectedText;
-                        t.autenticacao.usuario = txtCadAltSenUsuario.Text;
-                        t.autenticacao.senha = Cripitografia.encripto(txtCadAltSenSenha.Text);
+                        Autenticacao aut = new Autenticacao()
+                        {
+                            nivelAcesso = cmbCadAltNivelAcesso.SelectedItem.ToString(),
+                            senha = Cripitografia.encripto(txtCadAltSenSenha.Text),
+                            usuario = txtCadAltSenUsuario.Text
+                        };
+                        t.autenticacao = aut;
                         tDAO.atualizar(t);
                         mensagem("Usuário e Senha cadastrada com sucesso");
                         limparTabCadAltSenha();
-                    }                    
+                    }
                 }
                 catch (Exception)
                 {
@@ -1740,19 +1769,43 @@ namespace Sistema.Ifsp.View
             rdbCadAltNome.Checked = true;
             txtCadAltPesquisa.Text = null;
             txtCadAltNome.Text = null;
-            txtCadAltSenUsuario = null;
-            txtCadAltSenSenha = null;
+            txtCadAltSenUsuario.Text = null;
+            txtCadAltSenSenha.Text = null;
+            txtCadAltPesquisa.ReadOnly = false;
+            txtCadAltID.Text = null;
         }
 
-        public void verificarUsuarioLogado(int id)
+        public void verificarUsuarioLogado(int id, string nivelAcesso)
         {
             try
             {
                 var pDAO = new PessoaFisicaDAO();
                 usuarioLogado = pDAO.find(id);
-                if (true)
+                lblUsuario.Text = usuarioLogado.nome;
+                if (nivelAcesso == "Administração")
                 {
-
+                    tabControl.TabPages.Clear();
+                    tabControl.TabPages.Add(tabCadastrarUsoEstacionamento);
+                    tabControl.TabPages.Add(tabPermanenciaVeiculo);
+                }
+                else if (nivelAcesso == "Coordenadoria")
+                {
+                    tabControl.TabPages.Clear();
+                }
+                else if (nivelAcesso == "Portaria")
+                {
+                    tabControl.TabPages.Clear();
+                    tabControl.TabPages.Add(tabPermanenciaVeiculoEncerrar);
+                    tabControl.TabPages.Add(tabSolicitacoesSaidaAbertas);
+                    tabControl.TabPages.Add(tabEntradaVisitanteForncedor);
+                    tabControl.TabPages.Add(tabRegistrarSaidaFornecedor);
+                    tabControl.TabPages.Add(tabRegistrarSaidaVisitante);
+                    tabControl.TabPages.Add(tabEstacionamento);
+                }
+                else if (nivelAcesso == "Assistência de Alunos")
+                {
+                    tabControl.TabPages.Clear();
+                    tabControl.TabPages.Add(tabSolicitacoes);
                 }
             }
             catch (Exception)
@@ -1760,6 +1813,16 @@ namespace Sistema.Ifsp.View
                 mensagem("Falha ao inicializar aplicação.\nTente novamente");
                 Application.Exit();
             }
+        }
+
+        private void btnCadAltSenCancelar_Click(object sender, EventArgs e)
+        {
+            limparTabCadAltSenha();
+        }
+
+        private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

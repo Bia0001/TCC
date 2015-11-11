@@ -91,6 +91,40 @@ namespace Sistema.Ifsp.Test.Unitario
             };
             var admDAO = new AssistenteAdministracaoDAO();
             admDAO.adicionar(adm);
+
+            var coo = new AssistenteCoordenadoria()
+            {
+                area = "Coordenação",
+                celular = "00000000000",
+                nascimento = new DateTime(1984, 04, 04),
+                nome = "Grazy",
+                prontuario = new Prontuario()
+                {
+                    prontuario = "43789934"
+                },
+                rg = "545332653",
+                sexo = 'F',
+                telefone = "1934927549"
+            };
+            var cDAO = new AssistenteCoordenadoriaDAO();
+            cDAO.adicionar(coo);
+
+            var adms = new AdministradorSistema()
+            {
+                area = "Administrador de Sistema",
+                celular = "0000000",
+                nascimento = new DateTime(1984, 04, 04),
+                nome = "Lucas Bonetti",
+                prontuario = new Prontuario()
+                {
+                    prontuario = "43288934"
+                },
+                rg = "54532653",
+                sexo = 'M',
+                telefone = "193427549"
+            };
+            var admsDAO = new AdministradorSistemaDAO();
+            admsDAO.adicionar(adms);
         }
     }
 }
